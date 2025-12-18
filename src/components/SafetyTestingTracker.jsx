@@ -63,7 +63,7 @@ export default function SafetyTestingTracker() {
         </p>
       </div>
 
-      {/* Key Evaluators Summary */}
+      {/* Evaluators Summary */}
       <div style={{ marginBottom: '24px' }}>
         <div style={{
           fontSize: '11px',
@@ -73,7 +73,7 @@ export default function SafetyTestingTracker() {
           letterSpacing: '1px',
           marginBottom: '12px',
         }}>
-          Key Evaluators
+          Evaluators
         </div>
 
         {/* New layout: each category has its label ABOVE its evaluators.
@@ -351,7 +351,7 @@ export default function SafetyTestingTracker() {
             <polyline points="15,3 21,3 21,9" />
             <line x1="10" y1="14" x2="21" y2="3" />
           </svg>
-          Source link (model card / system card)
+          Source link (model card / system card / paper / blog post)
         </div>
       </div>
 

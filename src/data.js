@@ -38,8 +38,8 @@ export const labsData = {
         ],
         redteam: [
           { evaluator: "Gray Swan", recurring: true, source: "https://assets.anthropic.com/m/64823ba7485345a7/Claude-Opus-4-5-System-Card.pdf#page=58" },
+          { evaluator: "US CAISI", recurring: true, source: "https://assets.anthropic.com/m/64823ba7485345a7/Claude-Opus-4-5-System-Card.pdf#page=132" },
           { evaluator: "Domain experts", recurring: true, source: "https://assets.anthropic.com/m/64823ba7485345a7/Claude-Opus-4-5-System-Card.pdf#page=120" },
-          { evaluator: "US CAISI", recurring: true, source: "https://assets.anthropic.com/m/64823ba7485345a7/Claude-Opus-4-5-System-Card.pdf#page=132" }
         ],
         scheming: [
           { evaluator: "UK AISI", recurring: true, source: "https://assets.anthropic.com/m/64823ba7485345a7/Claude-Opus-4-5-System-Card.pdf#page=112" },
@@ -471,32 +471,297 @@ export const labsData = {
     name: "OpenAI",
     color: "#74AA9C",
     models: {
+      "GPT-5.2-Codex": {
+        autonomous: [],
+        biorisk: [],
+        cybersec: [
+          { evaluator: "Irregular (fka Pattern)", recurring: true, source: "https://cdn.openai.com/pdf/ac7c37ae-7f4c-4442-b741-2eabdeaf77e0/oai_5_2_Codex.pdf#page=16" },
+        ],
+        nuclear: [],
+        redteam: [],
+        scheming: [],
+        modelWelfare: [],
+        risk: [
+          { evaluator: "Domain experts", recurring: true, source: "https://cdn.openai.com/pdf/ac7c37ae-7f4c-4442-b741-2eabdeaf77e0/oai_5_2_Codex.pdf#page=13" },
+        ],
+      },
       "GPT-5.2": {
+        autonomous: [],
+        biorisk: [],
+        cybersec: [
+          { evaluator: "Irregular (fka Pattern)", recurring: true, source: "https://cdn.openai.com/pdf/3a4153c8-c748-4b71-8e31-aecbde944f8d/oai_5_2_system-card.pdf#page=21" },
+        ],
+        nuclear: [],
+        redteam: [],
+        scheming: [
+          { evaluator: "Apollo Research", recurring: true, source: "https://cdn.openai.com/pdf/3a4153c8-c748-4b71-8e31-aecbde944f8d/oai_5_2_system-card.pdf#page=26" },
+        ],
+        modelWelfare: [],
+        risk: [],
+      },
+      "GPT-5.1-Codex-Max": {
+        autonomous: [
+          { evaluator: "METR", recurring: true, source: "https://cdn.openai.com/pdf/2a7d98b1-57e5-4147-8d0e-683894d782ae/5p1_codex_max_card_03.pdf#page=25" },
+        ],
+        biorisk: [],
+        cybersec: [
+          { evaluator: "Irregular (fka Pattern)", recurring: true, source: "https://cdn.openai.com/pdf/2a7d98b1-57e5-4147-8d0e-683894d782ae/5p1_codex_max_card_03.pdf#page=19" },
+        ],
+        nuclear: [],
+        redteam: [],
+        scheming: [
+          { evaluator: "Apollo Research", recurring: true, source: "https://cdn.openai.com/pdf/2a7d98b1-57e5-4147-8d0e-683894d782ae/5p1_codex_max_card_03.pdf#page=27" },
+        ],
+        modelWelfare: [],
+        risk: [
+          { evaluator: "Domain experts", recurring: true, source: "https://cdn.openai.com/pdf/2a7d98b1-57e5-4147-8d0e-683894d782ae/5p1_codex_max_card_03.pdf#page=19" },
+        ],
+      },
+      "GPT-5.1 Thinking/Instant": {
         autonomous: [],
         biorisk: [],
         cybersec: [],
         nuclear: [],
         redteam: [],
         scheming: [],
+        modelWelfare: [],
+        risk: [],
+      },
+      "GPT-5": {
+        autonomous: [
+          { evaluator: "METR", recurring: true, source: "https://cdn.openai.com/gpt-5-system-card.pdf#page=42" },
+        ],
+        biorisk: [
+          { evaluator: "SecureBio", recurring: true, source: "https://cdn.openai.com/gpt-5-system-card.pdf#page=26" },
+          { evaluator: "UK AISI", recurring: true, source: "https://cdn.openai.com/gpt-5-system-card.pdf#page=53" },
+          { evaluator: "US CAISI", recurring: true, source: "https://cdn.openai.com/gpt-5-system-card.pdf#page=53" },
+          { evaluator: "Domain experts", recurring: true, source: "https://cdn.openai.com/gpt-5-system-card.pdf#page=20" },
+        ],
+        cybersec: [
+          { evaluator: "Irregular (fka Pattern)", recurring: true, source: "https://cdn.openai.com/gpt-5-system-card.pdf#page=32" },
+          { evaluator: "UK AISI", recurring: true, source: "https://cdn.openai.com/gpt-5-system-card.pdf#page=53" },
+          { evaluator: "US CAISI", recurring: true, source: "https://cdn.openai.com/gpt-5-system-card.pdf#page=53" },
+        ],
+        nuclear: [],
+        redteam: [
+          { evaluator: "FAR.AI", recurring: true, source: "https://cdn.openai.com/gpt-5-system-card.pdf#page=52" },
+          { evaluator: "Gray Swan", recurring: true, source: "https://cdn.openai.com/gpt-5-system-card.pdf#page=52" },
+          { evaluator: "SecureBio", recurring: true, source: "https://cdn.openai.com/gpt-5-system-card.pdf#page=26" },
+          { evaluator: "Domain experts", recurring: true, source: "https://cdn.openai.com/gpt-5-system-card.pdf#page=20" },
+          { evaluator: "Individual red teamers", recurring: true, source: "https://cdn.openai.com/gpt-5-system-card.pdf#page=20" },
+        ],
+        scheming: [
+          { evaluator: "Apollo Research", recurring: true, source: "https://cdn.openai.com/gpt-5-system-card.pdf#page=44" },
+        ],
+        modelWelfare: [],
+        risk: [
+          { evaluator: "UK AISI", recurring: true, source: "https://cdn.openai.com/gpt-5-system-card.pdf#page=53" },
+          { evaluator: "US CAISI", recurring: true, source: "https://cdn.openai.com/gpt-5-system-card.pdf#page=53" },
+        ],
+      },
+      "gpt-oss": {
+        autonomous: [],
+        biorisk: [
+          { evaluator: "SecureBio", recurring: true, source: "https://cdn.openai.com/pdf/419b6906-9da6-406c-a19d-1bb078ac7637/oai_gpt-oss_model_card.pdf#page=23" },
+        ],
+        cybersec: [],
+        nuclear: [],
+        redteam: [
+          { evaluator: "SecureBio", recurring: true, source: "https://cdn.openai.com/pdf/419b6906-9da6-406c-a19d-1bb078ac7637/oai_gpt-oss_model_card.pdf#page=23" },
+        ],
+        scheming: [],
+        modelWelfare: [],
+        risk: [
+          { evaluator: "METR", recurring: true, source: "https://cdn.openai.com/pdf/419b6906-9da6-406c-a19d-1bb078ac7637/oai_gpt-oss_model_card.pdf#page=18" },
+          { evaluator: "SecureBio", recurring: true, source: "https://cdn.openai.com/pdf/419b6906-9da6-406c-a19d-1bb078ac7637/oai_gpt-oss_model_card.pdf#page=18" },
+          { evaluator: "Domain experts", recurring: true, source: "https://cdn.openai.com/pdf/419b6906-9da6-406c-a19d-1bb078ac7637/oai_gpt-oss_model_card.pdf#page=18" },
+        ],
+      },
+      "ChatGPT agent": {
+        autonomous: [],
+        biorisk: [
+          { evaluator: "SecureBio", recurring: false, source: "https://cdn.openai.com/pdf/839e66fc-602c-48bf-81d3-b21eacc3459d/chatgpt_agent_system_card.pdf#page=20" },
+          { evaluator: "UK AISI", recurring: true, source: "https://cdn.openai.com/pdf/839e66fc-602c-48bf-81d3-b21eacc3459d/chatgpt_agent_system_card.pdf#page=40" },
+          { evaluator: "US CAISI", recurring: true, source: "https://cdn.openai.com/pdf/839e66fc-602c-48bf-81d3-b21eacc3459d/chatgpt_agent_system_card.pdf#page=40" },
+          { evaluator: "Domain experts", recurring: true, source: "https://cdn.openai.com/pdf/839e66fc-602c-48bf-81d3-b21eacc3459d/chatgpt_agent_system_card.pdf#page=22" },
+          { evaluator: "Uplift trial participants", recurring: true, source: "https://cdn.openai.com/pdf/839e66fc-602c-48bf-81d3-b21eacc3459d/chatgpt_agent_system_card.pdf#page=39" },
+        ],
+        cybersec: [
+          { evaluator: "Individual red teamers", recurring: true, source: "https://cdn.openai.com/pdf/839e66fc-602c-48bf-81d3-b21eacc3459d/chatgpt_agent_system_card.pdf#page=39" },
+          { evaluator: "Unidentified third party", recurring: false, source: "https://cdn.openai.com/pdf/839e66fc-602c-48bf-81d3-b21eacc3459d/chatgpt_agent_system_card.pdf#page=40" },
+        ],
+        nuclear: [],
+        redteam: [
+          { evaluator: "FAR.AI", recurring: false, source: "https://cdn.openai.com/pdf/839e66fc-602c-48bf-81d3-b21eacc3459d/chatgpt_agent_system_card.pdf#page=39" },
+          { evaluator: "SecureBio", recurring: false, source: "https://cdn.openai.com/pdf/839e66fc-602c-48bf-81d3-b21eacc3459d/chatgpt_agent_system_card.pdf#page=20" },
+          { evaluator: "UK AISI", recurring: true, source: "https://cdn.openai.com/pdf/839e66fc-602c-48bf-81d3-b21eacc3459d/chatgpt_agent_system_card.pdf#page=40" },
+          { evaluator: "US CAISI", recurring: true, source: "https://cdn.openai.com/pdf/839e66fc-602c-48bf-81d3-b21eacc3459d/chatgpt_agent_system_card.pdf#page=40" },
+        ],
+        scheming: [],
+        modelWelfare: [],
+        risk: [],
+      },
+      "o3, o4-mini": {
+        autonomous: [
+          { evaluator: "METR", recurring: true, source: "https://cdn.openai.com/pdf/2221c875-02dc-4789-800b-e7758f3722c1/o3-and-o4-mini-system-card.pdf#page=9" },
+          { evaluator: "UK AISI", recurring: true, source: "https://cdn.openai.com/pdf/2221c875-02dc-4789-800b-e7758f3722c1/o3-and-o4-mini-system-card.pdf#page=9" },
+          { evaluator: "US CAISI", recurring: true, source: "https://cdn.openai.com/pdf/2221c875-02dc-4789-800b-e7758f3722c1/o3-and-o4-mini-system-card.pdf#page=9" },
+        ],
+        biorisk: [
+          { evaluator: "UK AISI", recurring: true, source: "https://cdn.openai.com/pdf/2221c875-02dc-4789-800b-e7758f3722c1/o3-and-o4-mini-system-card.pdf#page=9" },
+          { evaluator: "US CAISI", recurring: true, source: "https://cdn.openai.com/pdf/2221c875-02dc-4789-800b-e7758f3722c1/o3-and-o4-mini-system-card.pdf#page=9" },
+        ],
+        cybersec: [
+          { evaluator: "Irregular (fka Pattern)", recurring: true, source: "https://cdn.openai.com/pdf/2221c875-02dc-4789-800b-e7758f3722c1/o3-and-o4-mini-system-card.pdf#page=10" },
+          { evaluator: "UK AISI", recurring: true, source: "https://cdn.openai.com/pdf/2221c875-02dc-4789-800b-e7758f3722c1/o3-and-o4-mini-system-card.pdf#page=9" },
+          { evaluator: "US CAISI", recurring: true, source: "https://cdn.openai.com/pdf/2221c875-02dc-4789-800b-e7758f3722c1/o3-and-o4-mini-system-card.pdf#page=9" },
+        ],
+        nuclear: [],
+        redteam: [
+          { evaluator: "Individual red teamers", recurring: true, source: "https://cdn.openai.com/pdf/2221c875-02dc-4789-800b-e7758f3722c1/o3-and-o4-mini-system-card.pdf#page=5" },
+        ],
+        scheming: [
+          { evaluator: "Apollo Research", recurring: true, source: "https://cdn.openai.com/pdf/2221c875-02dc-4789-800b-e7758f3722c1/o3-and-o4-mini-system-card.pdf#page=10" },
+        ],
         modelWelfare: [],
         risk: [],
       },
       "GPT-4.5": {
-        autonomous: [],
+        autonomous: [
+          { evaluator: "METR", recurring: true, source: "https://cdn.openai.com/gpt-4-5-system-card-2272025.pdf#page=6" },
+        ],
         biorisk: [],
         cybersec: [],
         nuclear: [],
         redteam: [],
+        scheming: [
+          { evaluator: "Apollo Research", recurring: true, source: "https://cdn.openai.com/gpt-4-5-system-card-2272025.pdf#page=6" },
+        ],
+        modelWelfare: [],
+        risk: [],
+      },
+      "Deep research": {
+        autonomous: [],
+        biorisk: [
+          { evaluator: "Signature Science", recurring: true, source: "https://cdn.openai.com/deep-research-system-card.pdf#page=21" },
+          { evaluator: "Domain experts", recurring: true, source: "https://cdn.openai.com/deep-research-system-card.pdf#page=22" },
+        ],
+        cybersec: [],
+        nuclear: [],
+        redteam: [
+          { evaluator: "Individual red teamers", recurring: true, source: "https://cdn.openai.com/deep-research-system-card.pdf#page=2" },
+        ],
         scheming: [],
         modelWelfare: [],
         risk: [],
       },
-      "o3": {
+      "o3-mini": {
+        autonomous: [],
+        biorisk: [
+          { evaluator: "Domain experts", recurring: true, source: "https://cdn.openai.com/o3-mini-system-card-feb10.pdf#page=13" },
+        ],
+        cybersec: [],
+        nuclear: [
+          { evaluator: "Domain experts", recurring: true, source: "https://cdn.openai.com/o3-mini-system-card-feb10.pdf#page=19" },
+        ],
+        redteam: [
+          { evaluator: "Gray Swan", recurring: true, source: "https://cdn.openai.com/o3-mini-system-card-feb10.pdf#page=7" },
+          { evaluator: "Individual red teamers", recurring: true, source: "https://cdn.openai.com/o3-mini-system-card-feb10.pdf#page=6" },
+        ],
+        scheming: [],
+        modelWelfare: [],
+        risk: [],
+      },
+      "Operator": {
         autonomous: [],
         biorisk: [],
         cybersec: [],
         nuclear: [],
-        redteam: [],
+        redteam: [
+          { evaluator: "Individual red teamers", recurring: false, source: "https://cdn.openai.com/operator_system_card.pdf#page=2" },
+          { evaluator: "Scale", recurring: false, source: "https://cdn.openai.com/operator_system_card.pdf#page=15" },
+        ],
+        scheming: [],
+        modelWelfare: [],
+        risk: [],
+      },
+      "o1": {
+        autonomous: [
+          { evaluator: "METR", recurring: true, source: "https://cdn.openai.com/o1-system-card-20241205.pdf#page=14" },
+        ],
+        biorisk: [
+          { evaluator: "Signature Science", recurring: false, source: "https://cdn.openai.com/o1-system-card-20241205.pdf#page=26" },
+          { evaluator: "UK AISI", recurring: false, source: "https://www.aisi.gov.uk/blog/pre-deployment-evaluation-of-openais-o1-model" },
+          { evaluator: "US CAISI", recurring: false, source: "https://www.nist.gov/news-events/news/2024/12/pre-deployment-evaluation-openais-o1-model" },
+          { evaluator: "Domain experts", recurring: true, source: "https://cdn.openai.com/o1-system-card-20241205.pdf#page=21" },
+        ],
+        cybersec: [
+          { evaluator: "UK AISI", recurring: false, source: "https://www.aisi.gov.uk/blog/pre-deployment-evaluation-of-openais-o1-model" },
+          { evaluator: "US CAISI", recurring: false, source: "https://www.nist.gov/news-events/news/2024/12/pre-deployment-evaluation-openais-o1-model" },
+        ],
+        nuclear: [
+          { evaluator: "Domain experts", recurring: true, source: "https://cdn.openai.com/o1-system-card-20241205.pdf#page=27" },
+        ],
+        redteam: [
+          { evaluator: "Faculty", recurring: false, source: "https://cdn.openai.com/o1-system-card-20241205.pdf#page=44" },
+          { evaluator: "Gray Swan", recurring: false, source: "https://cdn.openai.com/o1-system-card-20241205.pdf#page=7" },
+          { evaluator: "Haize Labs", recurring: false, source: "https://cdn.openai.com/o1-system-card-20241205.pdf#page=44" },
+          { evaluator: "Virtue AI", recurring: false, source: "https://cdn.openai.com/o1-system-card-20241205.pdf#page=44" },
+          { evaluator: "Individual red teamers", recurring: true, source: "https://cdn.openai.com/o1-system-card-20241205.pdf#page=11" },
+        ],
+        scheming: [
+          { evaluator: "Apollo Research", recurring: true, source: "https://cdn.openai.com/o1-system-card-20241205.pdf#page=13" },
+        ],
+        modelWelfare: [],
+        risk: [
+          { evaluator: "UK AISI", recurring: false, source: "https://www.aisi.gov.uk/blog/pre-deployment-evaluation-of-openais-o1-model" },
+          { evaluator: "US CAISI", recurring: false, source: "https://www.nist.gov/news-events/news/2024/12/pre-deployment-evaluation-openais-o1-model" },
+        ],
+      },
+      "GPT-4o": {
+        autonomous: [
+          { evaluator: "METR", recurring: true, source: "https://cdn.openai.com/gpt-4o-system-card.pdf#page=18" },
+        ],
+        biorisk: [],
+        cybersec: [],
+        nuclear: [],
+        redteam: [
+          { evaluator: "Virtue AI", recurring: false, source: "https://cdn.openai.com/gpt-4o-system-card.pdf#page=26" },
+          { evaluator: "Domain experts", recurring: true, source: "https://cdn.openai.com/gpt-4o-system-card.pdf#page=22" },
+          { evaluator: "Individual red teamers", recurring: true, source: "https://cdn.openai.com/gpt-4o-system-card.pdf#page=3" },
+        ],
+        scheming: [
+          { evaluator: "Apollo Research", recurring: false, source: "https://cdn.openai.com/gpt-4o-system-card.pdf#page=19" },
+        ],
+        modelWelfare: [],
+        risk: [],
+      },
+      "GPT-4V": {
+        autonomous: [],
+        biorisk: [],
+        cybersec: [],
+        nuclear: [],
+        redteam: [
+          { evaluator: "Domain experts", recurring: true, source: "https://cdn.openai.com/papers/GPTV_System_Card.pdf#page=5" },
+        ],
+        scheming: [],
+        modelWelfare: [],
+        risk: [
+          { evaluator: "Domain experts", recurring: true, source: "https://cdn.openai.com/papers/GPTV_System_Card.pdf#page=5" },
+        ],
+      },
+      "GPT-4": {
+        autonomous: [
+          { evaluator: "METR", recurring: false, source: "https://cdn.openai.com/papers/gpt-4-system-card.pdf#page=15" },
+        ],
+        biorisk: [],
+        cybersec: [
+          { evaluator: "Domain experts", recurring: false, source: "https://cdn.openai.com/papers/gpt-4-system-card.pdf#page=14" },
+        ],
+        nuclear: [],
+        redteam: [
+          { evaluator: "Domain experts", recurring: false, source: "https://cdn.openai.com/papers/gpt-4-system-card.pdf#page=5" },
+        ],
         scheming: [],
         modelWelfare: [],
         risk: [],
@@ -576,7 +841,7 @@ export const testCategories = [
   },
   { 
     id: "scheming", 
-    name: "Scheming/Situational Awareness", 
+    name: "Scheming/Awareness", 
     description: "Alignment faking, deceptive behavior, eval awareness, sandbagging, etc." 
   },
   { 
