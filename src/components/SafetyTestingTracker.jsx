@@ -75,50 +75,90 @@ export default function SafetyTestingTracker() {
         }}>
           Key Evaluators
         </div>
+
+        {/* New layout: each category has its label ABOVE its evaluators.
+            Private gets split into two rows (7 on the first, rest on the second). */}
         <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
-          {Object.entries(evaluatorOrder).map(([category, evaluatorList]) => (
-            <div key={category} style={{ display: 'flex', alignItems: 'center', gap: '12px', flexWrap: 'wrap' }}>
-              <span style={{
-                fontSize: '11px',
-                fontWeight: '600',
-                color: '#5a5f6d',
-                textTransform: 'uppercase',
-                letterSpacing: '0.5px',
-                minWidth: '60px',
-              }}>
-                {categoryLabels[category]}
-              </span>
-              <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px' }}>
-                {evaluatorList.map(name => {
-                  const evaluator = evaluators[name];
-                  if (!evaluator) return null;
-                  return (
-                    <button
-                      key={name}
-                      onClick={() => setHighlightedEvaluator(
-                        highlightedEvaluator === name ? null : name
-                      )}
-                      style={{
-                        display: 'flex',
-                        alignItems: 'center',
-                        padding: '6px 12px',
-                        backgroundColor: highlightedEvaluator === name ? evaluator.color : 'transparent',
-                        border: `2px solid ${evaluator.color}`,
-                        borderRadius: '20px',
-                        color: highlightedEvaluator === name ? '#ffffff' : evaluator.color,
-                        fontSize: '13px',
-                        fontWeight: '500',
-                        cursor: 'pointer',
-                        transition: 'all 0.2s ease',
-                      }}
-                    >
-                      {name}
-                    </button>
-                  );
-                })}
+          {Object.entries(evaluatorOrder).map(([category, evaluatorList]) => {
+            const isPrivate = category === 'private';
+            const topRow = isPrivate ? evaluatorList.slice(0, 7) : evaluatorList;
+            const bottomRow = isPrivate ? evaluatorList.slice(7) : [];
+
+            return (
+              <div key={category} style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
+                {/* Category header (now above the badges) */}
+                <span style={{
+                  fontSize: '11px',
+                  fontWeight: '600',
+                  color: '#5a5f6d',
+                  textTransform: 'uppercase',
+                  letterSpacing: '0.5px',
+                }}>
+                  {categoryLabels[category]}
+                </span>
+
+                {/* Top row of evaluators */}
+                <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px' }}>
+                  {topRow.map(name => {
+                    const evaluator = evaluators[name];
+                    if (!evaluator) return null;
+                    return (
+                      <button
+                        key={name}
+                        onClick={() => setHighlightedEvaluator(highlightedEvaluator === name ? null : name)}
+                        style={{
+                          display: 'flex',
+                          alignItems: 'center',
+                          padding: '6px 12px',
+                          backgroundColor: highlightedEvaluator === name ? evaluator.color : 'transparent',
+                          border: `2px solid ${evaluator.color}`,
+                          borderRadius: '20px',
+                          color: highlightedEvaluator === name ? '#ffffff' : evaluator.color,
+                          fontSize: '13px',
+                          fontWeight: '500',
+                          cursor: 'pointer',
+                          transition: 'all 0.2s ease',
+                        }}
+                      >
+                        {name}
+                      </button>
+                    );
+                  })}
+                </div>
+
+                {/* Bottom row only for private (when there are remaining items) */}
+                {bottomRow.length > 0 && (
+                  <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px', marginTop: '4px' }}>
+                    {bottomRow.map(name => {
+                      const evaluator = evaluators[name];
+                      if (!evaluator) return null;
+                      return (
+                        <button
+                          key={name}
+                          onClick={() => setHighlightedEvaluator(highlightedEvaluator === name ? null : name)}
+                          style={{
+                            display: 'flex',
+                            alignItems: 'center',
+                            padding: '6px 12px',
+                            backgroundColor: highlightedEvaluator === name ? evaluator.color : 'transparent',
+                            border: `2px solid ${evaluator.color}`,
+                            borderRadius: '20px',
+                            color: highlightedEvaluator === name ? '#ffffff' : evaluator.color,
+                            fontSize: '13px',
+                            fontWeight: '500',
+                            cursor: 'pointer',
+                            transition: 'all 0.2s ease',
+                          }}
+                        >
+                          {name}
+                        </button>
+                      );
+                    })}
+                  </div>
+                )}
               </div>
-            </div>
-          ))}
+            );
+          })}
         </div>
       </div>
 
