@@ -68,7 +68,7 @@ export default function SafetyTestingTracker() {
         <div style={{
           fontSize: '11px',
           fontWeight: '600',
-          color: '#6a6f7d',
+          color: '#8a8f9d',
           textTransform: 'uppercase',
           letterSpacing: '1px',
           marginBottom: '12px',

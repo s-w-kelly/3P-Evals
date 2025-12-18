@@ -464,7 +464,7 @@ export const evaluators = {
   "Scale": { color: "#b558e6", type: "private" },
   "SecureBio": { color: "#00d4ff", type: "private" },
   "Signature Science": { color: "#006224", type: "private" },
-  "VirtueAI": { color: "#171fe2", type: "private" },
+  "Virtue AI": { color: "#171fe2", type: "private" },
 
   "NNSA": { color: "#ee8b21", type: "public" },
   "UK AISI": { color: "#b20217", type: "public" },
@@ -489,7 +489,7 @@ export const evaluatorOrder = {
  * Site metadata
  */
 export const siteConfig = {
-  title: "Third-party Evals Tracker",
+  title: "Third-party Evals Monitor",
   subtitle: "Monitoring third-party engagement for pre-deployment safety evaluations across frontier AI labs",
   lastUpdated: "12/18/2025",
   dataSource: "Data compiled from public model cards and system cards, and evaluator papers/blog posts.",
