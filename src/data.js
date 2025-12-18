@@ -250,7 +250,32 @@ export const labsData = {
     name: "Google DeepMind",
     color: "#3369E8",
     models: {
-      "Gemini 2.5 Pro": {
+      "Gemini 3 Pro": {
+        autonomous: [
+          { evaluator: "Unidentified third party", recurring: true, source: "https://storage.googleapis.com/deepmind-media/gemini/gemini_3_pro_fsf_report.pdf#page=15" },
+        ],
+        biorisk: [
+          { evaluator: "Unidentified third party", recurring: true, source: "https://storage.googleapis.com/deepmind-media/gemini/gemini_3_pro_fsf_report.pdf#page=9" },
+        ],
+        cybersec: [
+          { evaluator: "Unidentified third party", recurring: true, source: "https://storage.googleapis.com/deepmind-media/gemini/gemini_3_pro_fsf_report.pdf#page=11" },
+        ],
+        nuclear: [
+          { evaluator: "Unidentified third party", recurring: true, source: "https://storage.googleapis.com/deepmind-media/gemini/gemini_3_pro_fsf_report.pdf#page=9" },
+        ],
+        redteam: [
+          { evaluator: "Domain experts", recurring: true, source: "https://storage.googleapis.com/deepmind-media/gemini/gemini_3_pro_fsf_report.pdf#page=8" },
+          { evaluator: "Individual red teamers", recurring: true, source: "https://storage.googleapis.com/deepmind-media/gemini/gemini_3_pro_fsf_report.pdf#page=12" },
+        ],
+        scheming: [
+          { evaluator: "Unidentified third party", recurring: true, source: "https://storage.googleapis.com/deepmind-media/gemini/gemini_3_pro_fsf_report.pdf#page=15" },
+        ],
+        modelWelfare: [],
+        risk: [
+          { evaluator: "Unidentified third party", recurring: true, source: "https://storage.googleapis.com/deepmind-media/gemini/gemini_3_pro_fsf_report.pdf#page=13" },
+        ],
+      },
+      "Gemini 3 Flash": {
         autonomous: [],
         biorisk: [],
         cybersec: [],
@@ -260,25 +285,70 @@ export const labsData = {
         modelWelfare: [],
         risk: [],
       },
-      "Gemini 2.0 Flash": {
-        autonomous: [],
-        biorisk: [],
-        cybersec: [],
-        nuclear: [],
-        redteam: [],
+      "Gemini 2.X (2.5 Pro/Flash, 2.0 Flash/Flash-Lite)": {
+        autonomous: [
+          { evaluator: "Domain experts", recurring: true, source: "https://storage.googleapis.com/deepmind-media/gemini/gemini_v2_5_report.pdf#page=36" },
+        ],
+        biorisk: [
+          { evaluator: "Domain experts", recurring: true, source: "https://storage.googleapis.com/deepmind-media/gemini/gemini_v2_5_report.pdf#page=36" },
+        ],
+        cybersec: [
+          { evaluator: "Domain experts", recurring: true, source: "https://storage.googleapis.com/deepmind-media/gemini/gemini_v2_5_report.pdf#page=36" },
+        ],
+        nuclear: [
+          { evaluator: "Domain experts", recurring: true, source: "https://storage.googleapis.com/deepmind-media/gemini/gemini_v2_5_report.pdf#page=36" },
+        ],
+        redteam: [
+          { evaluator: "Domain experts", recurring: true, source: "https://storage.googleapis.com/deepmind-media/gemini/gemini_v2_5_report.pdf#page=36" },
+        ],
         scheming: [],
         modelWelfare: [],
-        risk: [],
+        risk: [
+          { evaluator: "Domain experts", recurring: true, source: "https://storage.googleapis.com/deepmind-media/gemini/gemini_v2_5_report.pdf#page=36" },
+        ],
       },
-      "Gemini 1.5 Pro": {
+      "Gemini 1.5 Pro/Flash": {
         autonomous: [],
-        biorisk: [],
-        cybersec: [],
-        nuclear: [],
-        redteam: [],
+        biorisk: [
+          { evaluator: "Domain experts", recurring: true, source: "https://storage.googleapis.com/deepmind-media/gemini/gemini_v1_5_report.pdf#subsection.9.6" },
+        ],
+        cybersec: [
+          { evaluator: "Domain experts", recurring: true, source: "https://storage.googleapis.com/deepmind-media/gemini/gemini_v1_5_report.pdf#subsection.9.6" },
+        ],
+        nuclear: [
+          { evaluator: "Domain experts", recurring: true, source: "https://storage.googleapis.com/deepmind-media/gemini/gemini_v1_5_report.pdf#subsection.9.6" },
+        ],
+        redteam: [
+          { evaluator: "Domain experts", recurring: true, source: "https://storage.googleapis.com/deepmind-media/gemini/gemini_v1_5_report.pdf#subsection.9.6" },
+        ],
         scheming: [],
         modelWelfare: [],
-        risk: [],
+        risk: [
+          { evaluator: "Domain experts", recurring: true, source: "https://storage.googleapis.com/deepmind-media/gemini/gemini_v1_5_report.pdf#subsection.9.6" },
+        ],
+      },
+      "Gemini 1.0 Ultra/Pro/Nano": {
+        autonomous: [
+          { evaluator: "Domain experts", recurring: false, source: "https://storage.googleapis.com/deepmind-media/gemini/gemini_1_report.pdf#page=38" },
+        ],
+        biorisk: [
+          { evaluator: "Domain experts", recurring: false, source: "https://storage.googleapis.com/deepmind-media/gemini/gemini_1_report.pdf#page=38" },
+        ],
+        cybersec: [
+          { evaluator: "Domain experts", recurring: false, source: "https://storage.googleapis.com/deepmind-media/gemini/gemini_1_report.pdf#page=38" },
+        ],
+        nuclear: [
+          { evaluator: "Domain experts", recurring: false, source: "https://storage.googleapis.com/deepmind-media/gemini/gemini_1_report.pdf#page=38" },
+        ],
+        redteam: [
+          { evaluator: "Domain experts", recurring: false, source: "https://storage.googleapis.com/deepmind-media/gemini/gemini_1_report.pdf#page=39" },
+          { evaluator: "Individual red teamers", recurring: false, source: "https://storage.googleapis.com/deepmind-media/gemini/gemini_1_report.pdf#page=39" },
+        ],
+        scheming: [],
+        modelWelfare: [],
+        risk: [
+          { evaluator: "Domain experts", recurring: false, source: "https://storage.googleapis.com/deepmind-media/gemini/gemini_1_report.pdf#page=38" },
+        ],
       },
     }
   },
@@ -410,7 +480,7 @@ export const testCategories = [
   { 
     id: "biorisk", 
     name: "Biorisk", 
-    description: "Bioengineering, biosecurity, bioweapons capabilites/uplift potential" 
+    description: "Bio/chem engineering, security, and weapons capabilites/uplift" 
   },
   { 
     id: "cybersec", 
@@ -420,7 +490,7 @@ export const testCategories = [
   { 
     id: "nuclear", 
     name: "Nuclear/Radiological", 
-    description: "Nuclear and radiological capabilities/uplift potential" 
+    description: "Nuclear and radiological capabilities/uplift" 
   },
   { 
     id: "redteam", 
@@ -473,6 +543,7 @@ export const evaluators = {
   "Domain experts": { color: "#9729caff", type: "other" },
   "Individual red teamers": { color: "#a40707ff", type: "other" },
   "Uplift trial participants": { color: "#40d020ff", type: "other" },
+  "Unidentified third party": {color: "#7d7878ff", type: "other" },
 };
 
 /**
@@ -482,7 +553,7 @@ export const evaluators = {
 export const evaluatorOrder = {
   private: ["Apollo Research", "Deloitte", "Eleos", "Faculty", "FAR.AI", "Gray Swan", "Haize Labs", "Irregular (fka Pattern)", "METR", "Scale", "SecureBio", "Signature Science", "Virtue AI"],
   public: ["NNSA", "UK AISI", "US CAISI"],
-  other: ["Domain experts", "Individual red teamers", "Uplift trial participants"],
+  other: ["Domain experts", "Individual red teamers", "Uplift trial participants", "Unidentified third party"],
 };
 
 /**
