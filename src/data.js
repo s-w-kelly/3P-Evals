@@ -445,29 +445,44 @@ export const testCategories = [
 ];
 
 /**
- * Evaluator color assignments
+ * Evaluator configuration
+ * - color: Display color for highlighting
+ * - type: "private" | "public" | "other"
+ * 
  * Add new evaluators here as they appear in the ecosystem
  */
-export const evaluatorColors = {
-  "Apollo Research": "#17cfb9",
-  "Deloitte": "#86BC24",
-  "Eleos": "#2c44caff",
-  "Faculty": "#7b8a67",
-  "FAR.AI": "#081126ff",
-  "Gray Swan": "#597faaff",
-  "Haize Labs": "#999999",
-  "Irregular (fka Pattern)": "#f7f8f5",
-  "METR": "#9cc78d",
-  "NNSA": "#ee8b21",
-  "Scale": "#b558e6",
-  "SecureBio": "#0a0a2cff",
-  "Signature Science": "#006224",
-  "VirtueAI": "#000000",
-  "UK AISI": "#b20217",
-  "US CAISI": "#00971a",
-  "Domain experts": "#9729caff",
-  "Individual red teamers": "#a40707ff",
-  "Uplift trial participants": "#40d020ff",
+export const evaluators = {
+  "Apollo Research": { color: "#17cfb9", type: "private" },
+  "Deloitte": { color: "#86BC24", type: "private" },
+  "Eleos": { color: "#2c44caff", type: "private" },
+  "Faculty": { color: "#7b8a67", type: "private" },
+  "FAR.AI": { color: "#081126ff", type: "private" },
+  "Gray Swan": { color: "#597faaff", type: "private" },
+  "Haize Labs": { color: "#999999", type: "private" },
+  "Irregular (fka Pattern)": { color: "#f7f8f5", type: "private" },
+  "METR": { color: "#9cc78d", type: "private" },
+  "Scale": { color: "#b558e6", type: "private" },
+  "SecureBio": { color: "#0a0a2cff", type: "private" },
+  "Signature Science": { color: "#006224", type: "private" },
+  "VirtueAI": { color: "#000000", type: "private" },
+
+  "NNSA": { color: "#ee8b21", type: "public" },
+  "UK AISI": { color: "#b20217", type: "public" },
+  "US CAISI": { color: "#00971a", type: "public" },
+
+  "Domain experts": { color: "#9729caff", type: "other" },
+  "Individual red teamers": { color: "#a40707ff", type: "other" },
+  "Uplift trial participants": { color: "#40d020ff", type: "other" },
+};
+
+/**
+ * Evaluator display order within each category
+ * Evaluators will appear in this order in the Key Evaluators section
+ */
+export const evaluatorOrder = {
+  private: ["Apollo Research", "Deloitte", "Eleos", "Faculty", "FAR.AI", "Gray Swan", "Haize Labs", "Irregular (fka Pattern)", "METR", "Scale", "SecureBio", "Signature Science", "Virtue AI"],
+  public: ["NNSA", "UK AISI", "US CAISI"],
+  other: ["Domain experts", "Individual red teamers", "Uplift trial participants"],
 };
 
 /**
@@ -476,6 +491,6 @@ export const evaluatorColors = {
 export const siteConfig = {
   title: "Third-party Evals Tracker",
   subtitle: "Monitoring third-party engagement for pre-deployment safety evaluations across frontier AI labs",
-  lastUpdated: "12/17/2025",
-  dataSource: "Data compiled from public model cards and system cards.",
+  lastUpdated: "12/18/2025",
+  dataSource: "Data compiled from public model cards and system cards, and evaluator papers/blog posts.",
 };

@@ -1,7 +1,7 @@
-import React, { useState, useMemo } from 'react';
-import { labsData, testCategories, evaluatorColors, siteConfig } from '../data';
+import React, { useState } from 'react';
+import { labsData, testCategories, evaluators, evaluatorOrder, siteConfig } from '../data';
 
-const getEvaluatorColor = (name) => evaluatorColors[name] || "#888888";
+const getEvaluatorColor = (name) => evaluators[name]?.color || "#888888";
 
 export default function SafetyTestingTracker() {
   // Initialize selected models to the first (most recent) model for each lab
@@ -12,32 +12,6 @@ export default function SafetyTestingTracker() {
   );
   const [highlightedEvaluator, setHighlightedEvaluator] = useState(null);
 
-  // Calculate key evaluators from currently selected models
-  const keyEvaluators = useMemo(() => {
-    const evaluatorCounts = {};
-    
-    Object.entries(labsData).forEach(([labId, lab]) => {
-      const currentModel = selectedModels[labId];
-      const testing = lab.models[currentModel] || {};
-      
-      Object.values(testing).forEach(tests => {
-        tests.forEach(test => {
-          if (!evaluatorCounts[test.evaluator]) {
-            evaluatorCounts[test.evaluator] = { 
-              count: 0, 
-              color: getEvaluatorColor(test.evaluator) 
-            };
-          }
-          evaluatorCounts[test.evaluator].count++;
-        });
-      });
-    });
-    
-    return Object.entries(evaluatorCounts)
-      .map(([name, data]) => ({ name, ...data }))
-      .sort((a, b) => b.count - a.count);
-  }, [selectedModels]);
-
   const handleModelChange = (labId, model) => {
     setSelectedModels(prev => ({ ...prev, [labId]: model }));
   };
@@ -47,6 +21,13 @@ export default function SafetyTestingTracker() {
   };
 
   const labEntries = Object.entries(labsData);
+
+  // Category labels for display
+  const categoryLabels = {
+    private: "Private",
+    public: "Public", 
+    other: "Other",
+  };
 
   return (
     <div style={{
@@ -94,47 +75,50 @@ export default function SafetyTestingTracker() {
         }}>
           Key Evaluators
         </div>
-        <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px' }}>
-          {keyEvaluators.length === 0 ? (
-            <span style={{ color: '#5a5f6d', fontSize: '13px' }}>
-              No third-party evaluators for selected models
-            </span>
-          ) : (
-            keyEvaluators.map(evaluator => (
-              <button
-                key={evaluator.name}
-                onClick={() => setHighlightedEvaluator(
-                  highlightedEvaluator === evaluator.name ? null : evaluator.name
-                )}
-                style={{
-                  display: 'flex',
-                  alignItems: 'center',
-                  gap: '8px',
-                  padding: '6px 12px',
-                  backgroundColor: highlightedEvaluator === evaluator.name ? evaluator.color : 'transparent',
-                  border: `2px solid ${evaluator.color}`,
-                  borderRadius: '20px',
-                  color: highlightedEvaluator === evaluator.name ? '#ffffff' : evaluator.color,
-                  fontSize: '13px',
-                  fontWeight: '500',
-                  cursor: 'pointer',
-                  transition: 'all 0.2s ease',
-                }}
-              >
-                {evaluator.name}
-                <span style={{
-                  backgroundColor: highlightedEvaluator === evaluator.name ? 'rgba(255,255,255,0.2)' : evaluator.color,
-                  color: highlightedEvaluator === evaluator.name ? '#ffffff' : '#1a1f2e',
-                  padding: '2px 8px',
-                  borderRadius: '10px',
-                  fontSize: '11px',
-                  fontWeight: '600',
-                }}>
-                  {evaluator.count}
-                </span>
-              </button>
-            ))
-          )}
+        <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
+          {Object.entries(evaluatorOrder).map(([category, evaluatorList]) => (
+            <div key={category} style={{ display: 'flex', alignItems: 'center', gap: '12px', flexWrap: 'wrap' }}>
+              <span style={{
+                fontSize: '11px',
+                fontWeight: '600',
+                color: '#5a5f6d',
+                textTransform: 'uppercase',
+                letterSpacing: '0.5px',
+                minWidth: '60px',
+              }}>
+                {categoryLabels[category]}
+              </span>
+              <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px' }}>
+                {evaluatorList.map(name => {
+                  const evaluator = evaluators[name];
+                  if (!evaluator) return null;
+                  return (
+                    <button
+                      key={name}
+                      onClick={() => setHighlightedEvaluator(
+                        highlightedEvaluator === name ? null : name
+                      )}
+                      style={{
+                        display: 'flex',
+                        alignItems: 'center',
+                        padding: '6px 12px',
+                        backgroundColor: highlightedEvaluator === name ? evaluator.color : 'transparent',
+                        border: `2px solid ${evaluator.color}`,
+                        borderRadius: '20px',
+                        color: highlightedEvaluator === name ? '#ffffff' : evaluator.color,
+                        fontSize: '13px',
+                        fontWeight: '500',
+                        cursor: 'pointer',
+                        transition: 'all 0.2s ease',
+                      }}
+                    >
+                      {name}
+                    </button>
+                  );
+                })}
+              </div>
+            </div>
+          ))}
         </div>
       </div>
 
