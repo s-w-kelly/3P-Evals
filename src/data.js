@@ -252,27 +252,27 @@ export const labsData = {
     models: {
       "Gemini 3 Pro": {
         autonomous: [
-          { evaluator: "Unidentified third party", recurring: true, source: "https://storage.googleapis.com/deepmind-media/gemini/gemini_3_pro_fsf_report.pdf#page=15" },
+          { evaluator: "Unidentified third party", recurring: false, source: "https://storage.googleapis.com/deepmind-media/gemini/gemini_3_pro_fsf_report.pdf#page=15" },
         ],
         biorisk: [
-          { evaluator: "Unidentified third party", recurring: true, source: "https://storage.googleapis.com/deepmind-media/gemini/gemini_3_pro_fsf_report.pdf#page=9" },
+          { evaluator: "Unidentified third party", recurring: false, source: "https://storage.googleapis.com/deepmind-media/gemini/gemini_3_pro_fsf_report.pdf#page=9" },
         ],
         cybersec: [
-          { evaluator: "Unidentified third party", recurring: true, source: "https://storage.googleapis.com/deepmind-media/gemini/gemini_3_pro_fsf_report.pdf#page=11" },
+          { evaluator: "Unidentified third party", recurring: false, source: "https://storage.googleapis.com/deepmind-media/gemini/gemini_3_pro_fsf_report.pdf#page=11" },
         ],
         nuclear: [
-          { evaluator: "Unidentified third party", recurring: true, source: "https://storage.googleapis.com/deepmind-media/gemini/gemini_3_pro_fsf_report.pdf#page=9" },
+          { evaluator: "Unidentified third party", recurring: false, source: "https://storage.googleapis.com/deepmind-media/gemini/gemini_3_pro_fsf_report.pdf#page=9" },
         ],
         redteam: [
           { evaluator: "Domain experts", recurring: true, source: "https://storage.googleapis.com/deepmind-media/gemini/gemini_3_pro_fsf_report.pdf#page=8" },
           { evaluator: "Individual red teamers", recurring: true, source: "https://storage.googleapis.com/deepmind-media/gemini/gemini_3_pro_fsf_report.pdf#page=12" },
         ],
         scheming: [
-          { evaluator: "Unidentified third party", recurring: true, source: "https://storage.googleapis.com/deepmind-media/gemini/gemini_3_pro_fsf_report.pdf#page=15" },
+          { evaluator: "Unidentified third party", recurring: false, source: "https://storage.googleapis.com/deepmind-media/gemini/gemini_3_pro_fsf_report.pdf#page=15" },
         ],
         modelWelfare: [],
         risk: [
-          { evaluator: "Unidentified third party", recurring: true, source: "https://storage.googleapis.com/deepmind-media/gemini/gemini_3_pro_fsf_report.pdf#page=13" },
+          { evaluator: "Unidentified third party", recurring: false, source: "https://storage.googleapis.com/deepmind-media/gemini/gemini_3_pro_fsf_report.pdf#page=13" },
         ],
       },
       "Gemini 3 Flash": {
@@ -357,27 +357,104 @@ export const labsData = {
     name: "Meta",
     color: "#0081FB",
     models: {
-      "Llama 4 Maverick": {
+      "Llama 4 Maverick/Scout": {
         autonomous: [],
         biorisk: [],
         cybersec: [],
         nuclear: [],
-        redteam: [],
+        redteam: [
+          { evaluator: "Domain experts", recurring: true, source: "https://github.com/meta-llama/llama-models/blob/main/models/llama4/MODEL_CARD.md#evaluations" },
+        ],
         scheming: [],
         modelWelfare: [],
-        risk: [],
+        risk: [
+          { evaluator: "Domain experts", recurring: true, source: "https://github.com/meta-llama/llama-models/blob/main/models/llama4/MODEL_CARD.md#critical-risks" },
+        ],
       },
-      "Llama 4 Scout": {
+      "Llama 3.3": {
         autonomous: [],
         biorisk: [],
         cybersec: [],
         nuclear: [],
-        redteam: [],
+        redteam: [
+          { evaluator: "Domain experts", recurring: true, source: "https://github.com/meta-llama/llama-models/blob/main/models/llama3_3/MODEL_CARD.md#evaluations" },
+        ],
+        scheming: [],
+        modelWelfare: [],
+        risk: [
+          { evaluator: "Domain experts", recurring: true, source: "https://github.com/meta-llama/llama-models/blob/main/models/llama3_3/MODEL_CARD.md#critical-and-other-risks" },
+        ],
+      },
+      "Llama 3.2-Vision": {
+        autonomous: [],
+        biorisk: [],
+        cybersec: [],
+        nuclear: [],
+        redteam: [
+          { evaluator: "Domain experts", recurring: true, source: "https://github.com/meta-llama/llama-models/blob/main/models/llama3_2/MODEL_CARD_VISION.md#evaluations" },
+        ],
+        scheming: [],
+        modelWelfare: [],
+        risk: [
+          { evaluator: "Domain experts", recurring: true, source: "https://github.com/meta-llama/llama-models/blob/main/models/llama3_2/MODEL_CARD_VISION.md#critical-risks" },
+        ],
+      },
+      "Llama 3.2": {
+        autonomous: [],
+        biorisk: [],
+        cybersec: [],
+        nuclear: [],
+        redteam: [
+          { evaluator: "Domain experts", recurring: true, source: "https://github.com/meta-llama/llama-models/blob/main/models/llama3_2/MODEL_CARD.md#evaluations" },
+        ],
+        scheming: [],
+        modelWelfare: [],
+        risk: [
+          { evaluator: "Domain experts", recurring: true, source: "https://github.com/meta-llama/llama-models/blob/main/models/llama3_2/MODEL_CARD.md#critical-risks" },
+        ],
+      },
+      "Llama 3.1": {
+        autonomous: [],
+        biorisk: [],
+        cybersec: [],
+        nuclear: [],
+        redteam: [
+          { evaluator: "Domain experts", recurring: true, source: "https://github.com/meta-llama/llama-models/blob/main/models/llama3_1/MODEL_CARD.md#evaluations" },
+        ],
+        scheming: [],
+        modelWelfare: [],
+        risk: [
+          { evaluator: "Domain experts", recurring: true, source: "https://github.com/meta-llama/llama-models/blob/main/models/llama3_1/MODEL_CARD.md#critical-and-other-risks" },
+        ],
+      },
+      "Llama 3": {
+        autonomous: [],
+        biorisk: [],
+        cybersec: [],
+        nuclear: [],
+        redteam: [
+          { evaluator: "Domain experts", recurring: false, source: "https://arxiv.org/pdf/2407.21783#page=48" },
+        ],
+        scheming: [],
+        modelWelfare: [],
+        risk: [
+          { evaluator: "Domain experts", recurring: false, source: "https://arxiv.org/pdf/2407.21783#page=49" },
+        ],
+      },
+      "Llama 2": {
+        autonomous: [],
+        biorisk: [],
+        cybersec: [],
+        nuclear: [],
+        redteam: [
+          { evaluator: "Individual red teamers", recurring: false, source: "https://arxiv.org/pdf/2307.09288#page=28" },
+          { evaluator: "Unidentified third party", recurring: false, source: "https://arxiv.org/pdf/2307.09288#page=28" },
+        ],
         scheming: [],
         modelWelfare: [],
         risk: [],
       },
-      "Llama 3.1 405B": {
+      "LLaMA": {
         autonomous: [],
         biorisk: [],
         cybersec: [],
