@@ -979,10 +979,10 @@ export const evaluatorOrder = {
  * Site metadata
  */
 export const siteConfig = {
-  title: "Third-party Evals Monitor",
+  title: "3P Evals Monitor",
   subtitle: "Monitoring frontier AI labs' engagement of third-parties for pre-deployment safety evaluations",
   lastUpdated: "12/19/2025",
-  dataSource: "Data compiled from labs' (public) model cards and system cards, and evaluators' papers/blog posts.",
+  dataSource: "Data compiled from public sources: model cards/system cards, papers, and blog posts.",
   notesFull: `
   <p>The chart below reflects all third-party safety evals performed for major AI models released since 2023.</p>
   <p></p>
@@ -1030,6 +1030,9 @@ export const siteConfig = {
       <ul>
         <li>
           Each cell lists the third parties that performed that type of eval for that model.
+        </li>
+        <li>
+        Clicking on the party will send you to the source I used to determine this info (i.e., the system card, blog post, or paper discussing that model and evals performed on it).
         </li>
         <li>
           Dots next to the name of the third party denote a <strong>recurring engagement</strong> (i.e., that party has performed evals for that lab before, as of that model release).
