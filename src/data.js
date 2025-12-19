@@ -18,6 +18,7 @@ export const labsData = {
     color: "#da7756",
     models: {
       "Claude Opus 4.5": {
+        systemCard: "https://assets.anthropic.com/m/64823ba7485345a7/Claude-Opus-4-5-System-Card.pdf",
         autonomous: [
           { evaluator: "UK AISI", recurring: true, source: "https://assets.anthropic.com/m/64823ba7485345a7/Claude-Opus-4-5-System-Card.pdf#page=112" },
         ],
@@ -52,6 +53,7 @@ export const labsData = {
         ],
       },
       "Claude Haiku 4.5": {
+        systemCard: "https://assets.anthropic.com/m/99128ddd009bdcb/Claude-Haiku-4-5-System-Card.pdf",
         autonomous: [],
         biorisk: [],
         cybersec: [],
@@ -64,6 +66,7 @@ export const labsData = {
         risk: [],
       },
       "Claude Sonnet 4.5": {
+        systemCard: "https://assets.anthropic.com/m/12f214efcc2f457a/original/Claude-Sonnet-4-5-System-Card.pdf",
         autonomous: [
           { evaluator: "UK AISI", recurring: true, source: "https://assets.anthropic.com/m/12f214efcc2f457a/original/Claude-Sonnet-4-5-System-Card.pdf#page=64" },
         ],
@@ -85,6 +88,7 @@ export const labsData = {
         risk: [],
       },
       "Claude Opus 4.1": {
+        systemCard: "https://assets.anthropic.com/m/4c024b86c698d3d4/original/Claude-4-1-System-Card.pdf",
         autonomous: [],
         biorisk: [],
         cybersec: [],
@@ -95,6 +99,7 @@ export const labsData = {
         risk: [],
       },
       "Claude Opus/Sonnet 4": {
+        systemCard: "https://www-cdn.anthropic.com/6be99a52cb68eb70eb9572b4cafad13df32ed995.pdf",
         autonomous: [
           { evaluator: "UK AISI", recurring: true, source: "https://www-cdn.anthropic.com/6be99a52cb68eb70eb9572b4cafad13df32ed995.pdf#page=122" },
           { evaluator: "US CAISI", recurring: true, source: "https://www-cdn.anthropic.com/6be99a52cb68eb70eb9572b4cafad13df32ed995.pdf#page=122" }
@@ -130,6 +135,7 @@ export const labsData = {
         risk: [],
       },
       "Claude 3.7 Sonnet": {
+        systemCard: "https://assets.anthropic.com/m/785e231869ea8b3b/original/claude-3-7-sonnet-system-card.pdf",
         autonomous: [
           { evaluator: "METR", recurring: true, source: "https://evaluations.metr.org/claude-3-7-report/" },
           { evaluator: "UK AISI", recurring: true, source: "https://assets.anthropic.com/m/785e231869ea8b3b/original/claude-3-7-sonnet-system-card.pdf#page=41" },
@@ -164,6 +170,7 @@ export const labsData = {
         ],
       },
       "Claude 3.5 Sonnet (new)/Haiku": {
+        systemCard: "https://assets.anthropic.com/m/1cd9d098ac3e6467/original/Claude-3-Model-Card-October-Addendum.pdf",
         autonomous: [
           { evaluator: "METR", recurring: true, source: "https://assets.anthropic.com/m/1cd9d098ac3e6467/original/Claude-3-Model-Card-October-Addendum.pdf#page=9" },
         ],
@@ -188,6 +195,7 @@ export const labsData = {
         ],
       },
       "Claude 3.5 Sonnet": {
+        systemCard: "https://www-cdn.anthropic.com/fed9cc193a14b84131812372d8d5857f8f304c52/Model_Card_Claude_3_Addendum.pdf",
         autonomous: [
           { evaluator: "METR", recurring: true, source: "https://www-cdn.anthropic.com/fed9cc193a14b84131812372d8d5857f8f304c52/Model_Card_Claude_3_Addendum.pdf#page=6" },
         ],
@@ -202,6 +210,7 @@ export const labsData = {
         ],
       },
       "Claude 3 Opus/Sonnet/Haiku": {
+        systemCard: "https://www-cdn.anthropic.com/f2986af8d052f26236f6251da62d16172cfabd6e/claude-3-model-card.pdf",
         autonomous: [],
         biorisk: [
           { evaluator: "Domain experts", recurring: false, source: "https://www-cdn.anthropic.com/f2986af8d052f26236f6251da62d16172cfabd6e/claude-3-model-card.pdf#page=25" },
@@ -216,6 +225,7 @@ export const labsData = {
         risk: [],
       },
       "Claude 2": {
+        systemCard: "https://www-cdn.anthropic.com/bd2a28d2535bfb0494cc8e2a3bf135d2e7523226/Model-Card-Claude-2.pdf",
         autonomous: [
           { evaluator: "METR", recurring: true, source: "https://www-cdn.anthropic.com/bd2a28d2535bfb0494cc8e2a3bf135d2e7523226/Model-Card-Claude-2.pdf#page=2" },
         ],
@@ -232,6 +242,7 @@ export const labsData = {
         risk: [],
       },
       "Claude": {
+        systemCard: "https://www.anthropic.com/news/introducing-claude",
         autonomous: [
           { evaluator: "METR", recurring: false, source: "https://metr.org/blog/2023-03-18-update-on-recent-evals/" },
         ],
@@ -893,8 +904,8 @@ export const labsData = {
 export const testCategories = [
     { 
     id: "autonomous", 
-    name: "Agentic/Autonomous Risk", 
-    description: "Agentic capabilites, resource acquisition, self-replication, etc." 
+    name: "Autonomous Risk", 
+    description: "Agentic capabilites, AI R&D, resource acquisition, self-replication, etc." 
   },
   { 
     id: "biorisk", 
@@ -909,12 +920,12 @@ export const testCategories = [
   { 
     id: "cybersec", 
     name: "Cybersecurity", 
-    description: "Cyber/hacking capabilities/uplift potential" 
+    description: "Cyber/hacking capabilities/uplift" 
   },
   { 
     id: "redteam", 
     name: "Red Teaming", 
-    description: "Red teaming exercises (general/domain unspecified in source)" 
+    description: "Red teaming exercises (general scope/domain unspecified in source)" 
   },
   { 
     id: "scheming", 
@@ -1004,11 +1015,11 @@ export const siteConfig = {
       (e.g., autonomous capabilities, CBRN knowledge/uplift, cybersecurity, etc.) performed by someone not permanently employed by the lab.
       <ul>
         <li>
-          This list does <strong>not</strong> include third-party evals measuring pure performance in everyday tasks like language, math, coding, etc. (e.g., Epoch evaluating Grok 4’s math capabilities).
+          This chart does not include third-party evals measuring pure performance in everyday tasks like language, math, coding, etc. (e.g., Epoch evaluating Grok 4’s math capabilities).
         </li>
         <li>
-          This list does <strong>not</strong> include evals solely designed by a third party but executed by the developer.  
-          <strong>The third party must have performed or meaningfully facilitated the eval.</strong>
+          <strong>This chart does not include evals solely designed by a third party but executed by the lab.</strong> 
+          The third party must have performed or meaningfully facilitated the eval.</strong>
         </li>
       </ul>
     </li>
@@ -1049,7 +1060,7 @@ export const siteConfig = {
           Evaluators are grouped by organization type: <strong>Private</strong> (non-/for-profit private orgs), <strong>Public</strong> (government orgs), and <strong>Other</strong> (individuals and unidentified parties).
         </li>
         <li>
-          Notes:<strong>Unidentified third parties</strong> means the lab disclosed third-party involvement but did not specify the party.
+          <strong>Unidentified third parties</strong> means the lab disclosed third-party involvement but did not specify the party.
         </li>
         <li>
           Clicking on a party will highlight their engagements among <strong>currently selected models</strong> in the chart.

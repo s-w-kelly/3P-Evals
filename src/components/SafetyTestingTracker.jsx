@@ -343,6 +343,40 @@ const notesStyles = (
                 </option>
               ))}
             </select>
+            {modelData.systemCard && (
+                <a
+                  href={modelData.systemCard}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  style={{
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    gap: '4px',
+                    marginTop: '6px',
+                    fontSize: '11px',
+                    color: 'rgba(255,255,255,0.7)',
+                    textDecoration: 'none',
+                    transition: 'color 0.2s ease',
+                  }}
+                  onMouseEnter={(e) => e.target.style.color = 'rgba(255,255,255,1)'}
+                  onMouseLeave={(e) => e.target.style.color = 'rgba(255,255,255,0.7)'}
+                >
+                  View system card
+                  <svg
+                    width="10"
+                    height="10"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                  >
+                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
+                    <polyline points="15,3 21,3 21,9" />
+                    <line x1="10" y1="14" x2="21" y2="3" />
+                  </svg>
+                </a>
+              )}
           </div>
         ))}
 
