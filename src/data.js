@@ -983,6 +983,39 @@ export const siteConfig = {
   subtitle: "Monitoring third-party engagement for pre-deployment safety evaluations across frontier AI labs",
   lastUpdated: "12/18/2025",
   dataSource: "Data compiled from labs' (public) model cards and system cards, and evaluators' papers/blog posts.",
-  notesShort: "One-line summary",
-  notesFull: "Multi-paragraph background",
+  notesFull: `
+  <p>Below is a list of the third-party safety evals performed for all major AI models released since 2023.</p>
+
+  <p><strong>A few notes:</strong></p>
+
+  <ul>
+    <li>
+      <strong>By “major AI model,”</strong> I mean models released by the “frontier labs” developing the most capable models:
+      Anthropic, Google DeepMind, Meta, OpenAI, and xAI.
+    </li>
+
+    <li>
+      <strong>By “third-party safety evals,”</strong> I mean evals focused on catastrophic-risk-relevant safety/security
+      (e.g., CBRN knowledge/uplift, autonomous capabilities, cybersecurity) performed by someone not permanently employed by the developer.
+      <ul>
+        <li>
+          This list does <strong>not</strong> include evals measuring language, math, coding, etc. (e.g., Epoch AI evaluating Grok 4’s math).
+        </li>
+        <li>
+          This list does <strong>not</strong> include evals solely designed by a third party but executed by the developer.  
+          The third party must have performed or meaningfully facilitated the evaluation.
+        </li>
+      </ul>
+    </li>
+
+    <li>This list only includes <strong>language models</strong>, not image/video-only models.</li>
+
+    <li>
+      Contents are organized by <strong>lab (alphabetical)</strong>, and models are listed in
+      <strong>descending release order</strong>.
+    </li>
+  </ul>
+`,
+
+
 };

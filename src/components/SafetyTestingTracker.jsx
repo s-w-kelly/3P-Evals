@@ -107,9 +107,6 @@ export default function SafetyTestingTracker() {
               <div style={{ fontSize: '13px', color: '#e6e9f2', fontWeight: 600 }}>
                 Notes: Background, scope, working definitions
               </div>
-              <div style={{ fontSize: '12px', color: '#9aa0b3', marginTop: '6px' }}>
-                {notesShort}
-              </div>
             </div>
 
             <button
@@ -161,9 +158,14 @@ export default function SafetyTestingTracker() {
         >
           <div style={{ color: '#c9cfe0', fontSize: '13px', lineHeight: 1.6 }}>
             {/* Render the full notes. If you store HTML in siteConfig, sanitize before injecting. */}
-            {notesFull.split('\n').map((line, i) => (
-              <p key={i} style={{ margin: '8px 0' }}>{line}</p>
-            ))}
+            <div
+              style={{
+                color: '#c9cfe0',
+                fontSize: '13px',
+                lineHeight: 1.6,
+              }}
+              dangerouslySetInnerHTML={{ __html: notesFull }}
+            />
             <p style={{ marginTop: 12, fontSize: '12px', color: '#8f96a8' }}>
               Tip: keep a shorter summary in <code>siteConfig.notesShort</code> and the detailed text in <code>siteConfig.notesFull</code>.
             </p>
