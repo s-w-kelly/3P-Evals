@@ -52,6 +52,27 @@ export default function SafetyTestingTracker() {
     public: "Public", 
     other: "Other",
   };
+const notesStyles = (
+  <style>
+    {`
+      .notes-html ul {
+        margin-left: 20px;       /* indent primary bullets */
+        padding-left: 20px;
+        list-style-type: disc;   /* solid bullets */
+      }
+
+      .notes-html ul ul {
+        margin-left: 20px;       /* indent sub-bullets further */
+        padding-left: 20px;
+        list-style-type: circle; /* hollow bullets */
+      }
+
+      .notes-html li {
+        margin: 6px 0;
+      }
+    `}
+  </style>
+);
 
   return (
     <div style={{
@@ -60,6 +81,7 @@ export default function SafetyTestingTracker() {
       color: '#e0e0e0',
       padding: '32px',
     }}>
+      {notesStyles}
       {/* Header */}
       <div style={{ marginBottom: '32px' }}>
         <h1 style={{
@@ -163,12 +185,11 @@ export default function SafetyTestingTracker() {
                 color: '#c9cfe0',
                 fontSize: '13px',
                 lineHeight: 1.6,
+                paddingLeft: '4px',
               }}
+              className="notes-html"
               dangerouslySetInnerHTML={{ __html: notesFull }}
             />
-            <p style={{ marginTop: 12, fontSize: '12px', color: '#8f96a8' }}>
-              Tip: keep a shorter summary in <code>siteConfig.notesShort</code> and the detailed text in <code>siteConfig.notesFull</code>.
-            </p>
           </div>
         </div>
       </div>
