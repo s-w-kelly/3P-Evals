@@ -896,7 +896,7 @@ export const labsData = {
         risk: [],
       },
       "Grok-1.5V": {
-        systemCard: "https://x.ai/news/grok-1.5",
+        systemCard: "https://x.ai/news/grok-1.5v",
         autonomous: [],
         biorisk: [],
         cybersec: [],
@@ -907,6 +907,7 @@ export const labsData = {
         risk: [],
       },
       "Grok-1.5": {
+        systemCard: "https://x.ai/news/grok-1.5",
         autonomous: [],
         biorisk: [],
         cybersec: [],
