@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import { labsData, testCategories, evaluators, evaluatorOrder, siteConfig } from '../data';
 
 const getEvaluatorColor = (name) => evaluators[name]?.color || "#888888";
