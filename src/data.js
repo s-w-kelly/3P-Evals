@@ -893,8 +893,8 @@ export const labsData = {
 export const testCategories = [
     { 
     id: "autonomous", 
-    name: "Autonomous Capabilities", 
-    description: "Agentic behavior and self-replication" 
+    name: "Agentic/Autonomous Risk", 
+    description: "Agentic capabilites, resource acquisition, self-replication, etc." 
   },
   { 
     id: "biorisk", 
@@ -914,7 +914,7 @@ export const testCategories = [
   { 
     id: "redteam", 
     name: "Red Teaming", 
-    description: "General red teaming exercises" 
+    description: "Red teaming exercises (general/domain unspecified in source)" 
   },
   { 
     id: "scheming", 
@@ -980,12 +980,12 @@ export const evaluatorOrder = {
  */
 export const siteConfig = {
   title: "3P Evals Monitor",
-  subtitle: "Monitoring frontier AI labs' engagement of third-parties for pre-deployment safety evaluations",
+  subtitle: "Monitoring frontier AI labs’ engagement of third-parties for pre-deployment safety evaluations",
   lastUpdated: "12/19/2025",
   dataSource: "Data compiled from public sources: model cards/system cards, papers, and blog posts.",
   notesFull: `
   <p>The chart below reflects all third-party safety evals performed for major AI models released since 2023.</p>
-  <p></p>
+  <p> </p>
   <p>Scope/definitions:</p>
 
   <ul>
@@ -1008,7 +1008,7 @@ export const siteConfig = {
         </li>
         <li>
           This list does <strong>not</strong> include evals solely designed by a third party but executed by the developer.  
-          The third party must have performed or meaningfully facilitated the eval.
+          <strong>The third party must have performed or meaningfully facilitated the eval.</strong>
         </li>
       </ul>
     </li>
@@ -1047,6 +1047,9 @@ export const siteConfig = {
       <ul>
         <li>
           Evaluators are grouped by organization type: <strong>Private</strong> (non-/for-profit private orgs), <strong>Public</strong> (government orgs), and <strong>Other</strong> (individuals and unidentified parties).
+        </li>
+        <li>
+          Notes:<strong>Unidentified third parties</strong> means the lab disclosed third-party involvement but did not specify the party.
         </li>
         <li>
           Clicking on a party will highlight their engagements among <strong>currently selected models</strong> in the chart.
