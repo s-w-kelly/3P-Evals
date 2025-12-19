@@ -986,7 +986,7 @@ export const siteConfig = {
   notesFull: `
   <p>The chart below reflects all third-party safety evals performed for major AI models released since 2023.</p>
 
-  <p>A few notes:</p>
+  <p>Scope/definitions:</p>
 
   <ul>
     <li>
@@ -1021,7 +1021,7 @@ export const siteConfig = {
       Across the top, each lab has a dropdown listing all models within scope (language models released since 2023) in <strong>descending release order</strong> (newest to oldest).
       <ul>
         <li>
-          Models are also <strong>grouped by system card</strong>. E.g., Claude Opus 4 and Sonnet 4 were discussed in one system card, so they show up together in the dropdown. Same for Gemini 2.X models, o3/o4-mini, etc.
+          Models are also <strong>grouped by system card</strong> (or whatever equivalent model release documentation a lab releases). E.g., Claude Opus 4 and Sonnet 4 were discussed in one system card, so they show up together in the dropdown. Same for Gemini 2.X models, o3/o4-mini, etc.
         </li>
       </ul>      
     </li>
@@ -1036,6 +1036,17 @@ export const siteConfig = {
         </li>
         <li>
           Empty cells mean that (at least based on publicly available sources) a third party did not perform that type of eval for that model. This does not mean that type of eval was not run at all for that model, just that, if it was performed, it was not by a third party.
+        </li>
+      </ul>      
+    </li>
+    <li>
+      Above the chart is a list of all third-parties who have performed evals for the models analyzed in this study.
+      <ul>
+        <li>
+          Evaluators are grouped by organization type: <strong>Private</strong> (non-/for-profit private orgs), <strong>Public</strong> (government orgs), and <strong>Other</strong> (individuals and unidentified parties).
+        </li>
+        <li>
+          Clicking on a party will highlight their engagements among <strong>currently selected models</strong> in the chart.
         </li>
       </ul>      
     </li>

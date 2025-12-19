@@ -100,13 +100,6 @@ const notesStyles = (
         }}>
           {siteConfig.subtitle}
         </p>
-        <p style={{
-          fontSize: '12px',
-          color: '#5a5f6d',
-          margin: 0,
-        }}>
-          Click on an evaluator to highlight their engagements
-        </p>
       </div>
 
       {/* Collapsible Background / Notes (NEW) */}
@@ -206,7 +199,13 @@ const notesStyles = (
         }}>
           Evaluators
         </div>
-
+        <p style={{
+          fontSize: '12px',
+          color: '#5a5f6d',
+          margin: 0,
+        }}>
+          Click on an evaluator to highlight their engagements
+        </p>
         {/* Each category has its label ABOVE its evaluators.
             Private gets split into two rows (7 on the first, rest on the second). */}
         <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
