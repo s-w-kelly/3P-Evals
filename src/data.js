@@ -773,7 +773,7 @@ export const labsData = {
     name: "xAI",
     color: "#000000",
     models: {
-      "Grok-4.1-Fast": {
+      "Grok 4.1 Fast": {
         autonomous: [],
         biorisk: [],
         cybersec: [],
@@ -783,7 +783,52 @@ export const labsData = {
         modelWelfare: [],
         risk: [],
       },
-      "Grok-3": {
+      "Grok 4.1": {
+        autonomous: [],
+        biorisk: [],
+        cybersec: [],
+        nuclear: [],
+        redteam: [],
+        scheming: [],
+        modelWelfare: [],
+        risk: [],
+      },
+      "Grok 4 Fast": {
+        autonomous: [],
+        biorisk: [],
+        cybersec: [],
+        nuclear: [],
+        redteam: [],
+        scheming: [],
+        modelWelfare: [],
+        risk: [],
+      },
+      "Grok Code Fast 1": {
+        autonomous: [],
+        biorisk: [],
+        cybersec: [],
+        nuclear: [],
+        redteam: [],
+        scheming: [],
+        modelWelfare: [],
+        risk: [],
+      },
+      "Grok 4": {
+        autonomous: [],
+        biorisk: [
+          { evaluator: "UK AISI", recurring: false, source: "https://x.com/ShakeelHashim/status/1958912301970727050" },
+        ],
+        cybersec: [
+          { evaluator: "UK AISI", recurring: false, source: "https://x.com/ShakeelHashim/status/1958912301970727050" },
+          { evaluator: "Unidentified third party", recurring: false, source: "https://data.x.ai/2025-08-20-grok-4-model-card.pdf#page=2" },
+        ],
+        nuclear: [],
+        redteam: [],
+        scheming: [],
+        modelWelfare: [],
+        risk: [],
+      },
+      "Grok 3": {
         autonomous: [],
         biorisk: [],
         cybersec: [],
@@ -799,6 +844,38 @@ export const labsData = {
         cybersec: [],
         nuclear: [],
         redteam: [],
+        scheming: [],
+        modelWelfare: [],
+        risk: [],
+      },
+      "Grok-1.5V": {
+        autonomous: [],
+        biorisk: [],
+        cybersec: [],
+        nuclear: [],
+        redteam: [],
+        scheming: [],
+        modelWelfare: [],
+        risk: [],
+      },
+      "Grok-1.5": {
+        autonomous: [],
+        biorisk: [],
+        cybersec: [],
+        nuclear: [],
+        redteam: [],
+        scheming: [],
+        modelWelfare: [],
+        risk: [],
+      },
+      "Grok-1": {
+        autonomous: [],
+        biorisk: [],
+        cybersec: [],
+        nuclear: [],
+        redteam: [
+          { evaluator: "Individual red teamers", recurring: false, source: "https://x.ai/news/grok/model-card" },
+        ],
         scheming: [],
         modelWelfare: [],
         risk: [],
@@ -837,7 +914,7 @@ export const testCategories = [
   { 
     id: "redteam", 
     name: "Red Teaming", 
-    description: "Red teaming" 
+    description: "General red teaming exercises" 
   },
   { 
     id: "scheming", 
