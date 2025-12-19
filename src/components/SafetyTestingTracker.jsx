@@ -302,48 +302,51 @@ const notesStyles = (
       }}>
         {/* Header Row */}
         <div style={{ backgroundColor: '#1a1f2e', padding: '16px' }} />
-        {labEntries.map(([labId, lab]) => (
-          <div
-            key={labId}
-            style={{
-              backgroundColor: lab.color,
-              padding: '16px',
-              display: 'flex',
-              flexDirection: 'column',
-              justifyContent: 'flex-end',
-              minHeight: '90px',
-            }}
-          >
-            <div style={{
-              fontSize: '15px',
-              fontWeight: '600',
-              color: '#ffffff',
-              marginBottom: '8px',
-              textAlign: 'center',
-            }}>
-              {lab.name}
-            </div>
-            <select
-              value={selectedModels[labId]}
-              onChange={(e) => handleModelChange(labId, e.target.value)}
+        {labEntries.map(([labId, lab]) => {
+          const currentModel = selectedModels[labId];
+          const modelData = lab.models[currentModel] || {};
+          return (
+            <div
+              key={labId}
               style={{
-                backgroundColor: 'rgba(255,255,255,0.15)',
-                border: '1px solid rgba(255,255,255,0.3)',
-                borderRadius: '4px',
-                color: '#ffffff',
-                padding: '4px 8px',
-                fontSize: '12px',
-                cursor: 'pointer',
-                width: '100%',
+                backgroundColor: lab.color,
+                padding: '16px',
+                display: 'flex',
+                flexDirection: 'column',
+                justifyContent: 'flex-end',
+                minHeight: '90px',
               }}
             >
-              {Object.keys(lab.models).map(model => (
-                <option key={model} value={model} style={{ color: '#1a1f2e' }}>
-                  {model}
-                </option>
-              ))}
-            </select>
-            {modelData.systemCard && (
+              <div style={{
+                fontSize: '15px',
+                fontWeight: '600',
+                color: '#ffffff',
+                marginBottom: '8px',
+                textAlign: 'center',
+              }}>
+                {lab.name}
+              </div>
+              <select
+                value={selectedModels[labId]}
+                onChange={(e) => handleModelChange(labId, e.target.value)}
+                style={{
+                  backgroundColor: 'rgba(255,255,255,0.15)',
+                  border: '1px solid rgba(255,255,255,0.3)',
+                  borderRadius: '4px',
+                  color: '#ffffff',
+                  padding: '4px 8px',
+                  fontSize: '12px',
+                  cursor: 'pointer',
+                  width: '100%',
+                }}
+              >
+                {Object.keys(lab.models).map(model => (
+                  <option key={model} value={model} style={{ color: '#1a1f2e' }}>
+                    {model}
+                  </option>
+                ))}
+              </select>
+              {modelData.systemCard && (
                 <a
                   href={modelData.systemCard}
                   target="_blank"
@@ -377,8 +380,9 @@ const notesStyles = (
                   </svg>
                 </a>
               )}
-          </div>
-        ))}
+            </div>
+          );
+        })}
 
         {/* Data Rows */}
         {testCategories.map(category => (
