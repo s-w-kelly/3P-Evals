@@ -898,18 +898,18 @@ export const testCategories = [
   },
   { 
     id: "biorisk", 
-    name: "Biorisk", 
-    description: "Bio/chem engineering, security, and weapons capabilites/uplift" 
+    name: "Chem/Biorisk", 
+    description: "Chem/bioengineering, security, and weapons capabilites/uplift" 
+  },
+  { 
+    id: "nuclear", 
+    name: "Radiological/Nuclear", 
+    description: "Radiological and nuclear capabilities/uplift" 
   },
   { 
     id: "cybersec", 
     name: "Cybersecurity", 
-    description: "Cyber capabilities/uplift potential" 
-  },
-  { 
-    id: "nuclear", 
-    name: "Nuclear/Radiological", 
-    description: "Nuclear and radiological capabilities/uplift" 
+    description: "Cyber/hacking capabilities/uplift potential" 
   },
   { 
     id: "redteam", 
@@ -982,5 +982,7 @@ export const siteConfig = {
   title: "Third-party Evals Monitor",
   subtitle: "Monitoring third-party engagement for pre-deployment safety evaluations across frontier AI labs",
   lastUpdated: "12/18/2025",
-  dataSource: "Data compiled from public model cards and system cards, and evaluator papers/blog posts.",
+  dataSource: "Data compiled from labs' (public) model cards and system cards, and evaluators' papers/blog posts.",
+  notesShort: "One-line summary",
+  notesFull: "Multi-paragraph background",
 };

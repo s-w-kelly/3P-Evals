@@ -12,6 +12,30 @@ export default function SafetyTestingTracker() {
   );
   const [highlightedEvaluator, setHighlightedEvaluator] = useState(null);
 
+
+  // NEW: notes open/close state
+  const [notesOpen, setNotesOpen] = useState(false);
+  const notesRef = useRef(null);
+  const [notesMaxHeight, setNotesMaxHeight] = useState('0px');
+
+  // compute teasers / full text from siteConfig with fallbacks
+  const notesShort = siteConfig?.notesShort || siteConfig?.backgroundShort || "Scope, working definitions, and sources for this analysis.";
+  const notesFull = siteConfig?.notesFull || siteConfig?.backgroundFull || (
+    "Add your full background, scope, working definitions, and any notes you want viewers to be able to read here."
+    + "Put the long explanatory text in siteConfig.notesFull so the UI can keep it tidy by default."
+  );
+
+  useEffect(() => {
+    if (notesRef.current) {
+      if (notesOpen) {
+        // expand to the content's scrollHeight for a smooth transition
+        setNotesMaxHeight(`${notesRef.current.scrollHeight}px`);
+      } else {
+        setNotesMaxHeight('0px');
+      }
+    }
+  }, [notesOpen, notesFull]);
+
   const handleModelChange = (labId, model) => {
     setSelectedModels(prev => ({ ...prev, [labId]: model }));
   };
