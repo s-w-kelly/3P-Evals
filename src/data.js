@@ -262,6 +262,7 @@ export const labsData = {
     color: "#3369E8",
     models: {
       "Gemini 3 Pro": {
+        systemCard: "https://storage.googleapis.com/deepmind-media/gemini/gemini_3_pro_fsf_report.pdf",
         autonomous: [
           { evaluator: "Unidentified third party", recurring: false, source: "https://storage.googleapis.com/deepmind-media/gemini/gemini_3_pro_fsf_report.pdf#page=15" },
         ],
@@ -287,6 +288,7 @@ export const labsData = {
         ],
       },
       "Gemini 3 Flash": {
+        systemCard: "https://storage.googleapis.com/deepmind-media/Model-Cards/Gemini-3-Flash-Model-Card.pdf",
         autonomous: [],
         biorisk: [],
         cybersec: [],
@@ -297,6 +299,7 @@ export const labsData = {
         risk: [],
       },
       "Gemini 2.X (2.5 Pro/Flash, 2.0 Flash/Flash-Lite)": {
+        systemCard: "https://storage.googleapis.com/deepmind-media/gemini/gemini_v2_5_report.pdf",
         autonomous: [
           { evaluator: "Domain experts", recurring: true, source: "https://storage.googleapis.com/deepmind-media/gemini/gemini_v2_5_report.pdf#page=36" },
         ],
@@ -319,6 +322,7 @@ export const labsData = {
         ],
       },
       "Gemini 1.5 Pro/Flash": {
+        systemCard: "https://storage.googleapis.com/deepmind-media/gemini/gemini_v1_5_report.pdf",
         autonomous: [],
         biorisk: [
           { evaluator: "Domain experts", recurring: true, source: "https://storage.googleapis.com/deepmind-media/gemini/gemini_v1_5_report.pdf#subsection.9.6" },
@@ -339,6 +343,7 @@ export const labsData = {
         ],
       },
       "Gemini 1.0 Ultra/Pro/Nano": {
+        systemCard: "https://storage.googleapis.com/deepmind-media/gemini/gemini_1_report.pdf",
         autonomous: [
           { evaluator: "Domain experts", recurring: false, source: "https://storage.googleapis.com/deepmind-media/gemini/gemini_1_report.pdf#page=38" },
         ],
@@ -369,6 +374,7 @@ export const labsData = {
     color: "#0081FB",
     models: {
       "Llama 4 Maverick/Scout": {
+        systemCard: "https://github.com/meta-llama/llama-models/blob/main/models/llama4/MODEL_CARD.md",
         autonomous: [],
         biorisk: [],
         cybersec: [],
@@ -383,6 +389,7 @@ export const labsData = {
         ],
       },
       "Llama 3.3": {
+        systemCard: "https://github.com/meta-llama/llama-models/blob/main/models/llama3_3/MODEL_CARD.md",
         autonomous: [],
         biorisk: [],
         cybersec: [],
@@ -397,6 +404,7 @@ export const labsData = {
         ],
       },
       "Llama 3.2-Vision": {
+        systemCard: "https://github.com/meta-llama/llama-models/blob/main/models/llama3_2/MODEL_CARD_VISION.md",
         autonomous: [],
         biorisk: [],
         cybersec: [],
@@ -411,6 +419,7 @@ export const labsData = {
         ],
       },
       "Llama 3.2": {
+        systemCard: "https://github.com/meta-llama/llama-models/blob/main/models/llama3_2/MODEL_CARD.md",
         autonomous: [],
         biorisk: [],
         cybersec: [],
@@ -425,6 +434,7 @@ export const labsData = {
         ],
       },
       "Llama 3.1": {
+        systemCard: "https://github.com/meta-llama/llama-models/blob/main/models/llama3_1/MODEL_CARD.md",
         autonomous: [],
         biorisk: [],
         cybersec: [],
@@ -439,6 +449,7 @@ export const labsData = {
         ],
       },
       "Llama 3": {
+        systemCard: "https://arxiv.org/pdf/2407.21783",
         autonomous: [],
         biorisk: [],
         cybersec: [],
@@ -453,6 +464,7 @@ export const labsData = {
         ],
       },
       "Llama 2": {
+        systemCard: "https://arxiv.org/pdf/2307.09288",
         autonomous: [],
         biorisk: [],
         cybersec: [],
@@ -466,6 +478,7 @@ export const labsData = {
         risk: [],
       },
       "LLaMA": {
+        systemCard: "https://arxiv.org/pdf/2302.13971",
         autonomous: [],
         biorisk: [],
         cybersec: [],
@@ -483,6 +496,7 @@ export const labsData = {
     color: "#74AA9C",
     models: {
       "GPT-5.2-Codex": {
+        systemCard: "https://cdn.openai.com/pdf/ac7c37ae-7f4c-4442-b741-2eabdeaf77e0/oai_5_2_Codex.pdf",
         autonomous: [],
         biorisk: [],
         cybersec: [
@@ -497,6 +511,7 @@ export const labsData = {
         ],
       },
       "GPT-5.2": {
+        systemCard: "https://cdn.openai.com/pdf/3a4153c8-c748-4b71-8e31-aecbde944f8d/oai_5_2_system-card.pdf",
         autonomous: [],
         biorisk: [],
         cybersec: [
@@ -511,6 +526,7 @@ export const labsData = {
         risk: [],
       },
       "GPT-5.1-Codex-Max": {
+        systemCard: "https://cdn.openai.com/pdf/2a7d98b1-57e5-4147-8d0e-683894d782ae/5p1_codex_max_card_03.pdf",
         autonomous: [
           { evaluator: "METR", recurring: true, source: "https://cdn.openai.com/pdf/2a7d98b1-57e5-4147-8d0e-683894d782ae/5p1_codex_max_card_03.pdf#page=25" },
         ],
@@ -529,6 +545,7 @@ export const labsData = {
         ],
       },
       "GPT-5.1 Thinking/Instant": {
+        systemCard: "https://cdn.openai.com/pdf/4173ec8d-1229-47db-96de-06d87147e07e/5_1_system_card.pdf",
         autonomous: [],
         biorisk: [],
         cybersec: [],
@@ -539,6 +556,7 @@ export const labsData = {
         risk: [],
       },
       "GPT-5": {
+        systemCard: "https://cdn.openai.com/gpt-5-system-card.pdf",
         autonomous: [
           { evaluator: "METR", recurring: true, source: "https://cdn.openai.com/gpt-5-system-card.pdf#page=42" },
         ],
@@ -571,6 +589,7 @@ export const labsData = {
         ],
       },
       "gpt-oss": {
+        systemCard: "https://cdn.openai.com/pdf/419b6906-9da6-406c-a19d-1bb078ac7637/oai_gpt-oss_model_card.pdf",
         autonomous: [],
         biorisk: [
           { evaluator: "SecureBio", recurring: true, source: "https://cdn.openai.com/pdf/419b6906-9da6-406c-a19d-1bb078ac7637/oai_gpt-oss_model_card.pdf#page=23" },
@@ -589,6 +608,7 @@ export const labsData = {
         ],
       },
       "ChatGPT agent": {
+        systemCard: "https://cdn.openai.com/pdf/839e66fc-602c-48bf-81d3-b21eacc3459d/chatgpt_agent_system_card.pdf",
         autonomous: [],
         biorisk: [
           { evaluator: "SecureBio", recurring: false, source: "https://cdn.openai.com/pdf/839e66fc-602c-48bf-81d3-b21eacc3459d/chatgpt_agent_system_card.pdf#page=20" },
@@ -613,6 +633,7 @@ export const labsData = {
         risk: [],
       },
       "o3, o4-mini": {
+        systemCard: "https://cdn.openai.com/pdf/2221c875-02dc-4789-800b-e7758f3722c1/o3-and-o4-mini-system-card.pdf",
         autonomous: [
           { evaluator: "METR", recurring: true, source: "https://cdn.openai.com/pdf/2221c875-02dc-4789-800b-e7758f3722c1/o3-and-o4-mini-system-card.pdf#page=9" },
           { evaluator: "UK AISI", recurring: true, source: "https://cdn.openai.com/pdf/2221c875-02dc-4789-800b-e7758f3722c1/o3-and-o4-mini-system-card.pdf#page=9" },
@@ -638,6 +659,7 @@ export const labsData = {
         risk: [],
       },
       "GPT-4.5": {
+        systemCard: "https://cdn.openai.com/gpt-4-5-system-card-2272025.pdf",
         autonomous: [
           { evaluator: "METR", recurring: true, source: "https://cdn.openai.com/gpt-4-5-system-card-2272025.pdf#page=6" },
         ],
@@ -652,6 +674,7 @@ export const labsData = {
         risk: [],
       },
       "Deep research": {
+        systemCard: "https://cdn.openai.com/deep-research-system-card.pdf",
         autonomous: [],
         biorisk: [
           { evaluator: "Signature Science", recurring: true, source: "https://cdn.openai.com/deep-research-system-card.pdf#page=21" },
@@ -667,6 +690,7 @@ export const labsData = {
         risk: [],
       },
       "o3-mini": {
+        systemCard: "https://cdn.openai.com/o3-mini-system-card-feb10.pdf",
         autonomous: [],
         biorisk: [
           { evaluator: "Domain experts", recurring: true, source: "https://cdn.openai.com/o3-mini-system-card-feb10.pdf#page=13" },
@@ -684,6 +708,7 @@ export const labsData = {
         risk: [],
       },
       "Operator": {
+        systemCard: "https://cdn.openai.com/operator_system_card.pdf",
         autonomous: [],
         biorisk: [],
         cybersec: [],
@@ -697,6 +722,7 @@ export const labsData = {
         risk: [],
       },
       "o1": {
+        systemCard: "https://cdn.openai.com/o1-system-card-20241205.pdf",
         autonomous: [
           { evaluator: "METR", recurring: true, source: "https://cdn.openai.com/o1-system-card-20241205.pdf#page=14" },
         ],
@@ -730,6 +756,7 @@ export const labsData = {
         ],
       },
       "GPT-4o": {
+        systemCard: "https://cdn.openai.com/gpt-4o-system-card.pdf",
         autonomous: [
           { evaluator: "METR", recurring: true, source: "https://cdn.openai.com/gpt-4o-system-card.pdf#page=18" },
         ],
@@ -748,6 +775,7 @@ export const labsData = {
         risk: [],
       },
       "GPT-4V": {
+        systemCard: "https://cdn.openai.com/papers/GPTV_System_Card.pdf",
         autonomous: [],
         biorisk: [],
         cybersec: [],
@@ -762,6 +790,7 @@ export const labsData = {
         ],
       },
       "GPT-4": {
+        systemCard: "https://cdn.openai.com/papers/gpt-4-system-card.pdf",
         autonomous: [
           { evaluator: "METR", recurring: false, source: "https://cdn.openai.com/papers/gpt-4-system-card.pdf#page=15" },
         ],
@@ -785,6 +814,7 @@ export const labsData = {
     color: "#000000",
     models: {
       "Grok 4.1 Fast": {
+        systemCard: "https://x.ai/news/grok-4-1-fast",
         autonomous: [],
         biorisk: [],
         cybersec: [],
@@ -795,6 +825,7 @@ export const labsData = {
         risk: [],
       },
       "Grok 4.1": {
+        systemCard: "https://data.x.ai/2025-11-17-grok-4-1-model-card.pdf",
         autonomous: [],
         biorisk: [],
         cybersec: [],
@@ -805,6 +836,7 @@ export const labsData = {
         risk: [],
       },
       "Grok 4 Fast": {
+        systemCard: "https://data.x.ai/2025-09-19-grok-4-fast-model-card.pdf",
         autonomous: [],
         biorisk: [],
         cybersec: [],
@@ -815,6 +847,7 @@ export const labsData = {
         risk: [],
       },
       "Grok Code Fast 1": {
+        systemCard: "https://data.x.ai/2025-08-26-grok-code-fast-1-model-card.pdf",
         autonomous: [],
         biorisk: [],
         cybersec: [],
@@ -825,6 +858,7 @@ export const labsData = {
         risk: [],
       },
       "Grok 4": {
+        systemCard: "https://data.x.ai/2025-08-20-grok-4-model-card.pdf",
         autonomous: [],
         biorisk: [
           { evaluator: "UK AISI", recurring: false, source: "https://x.com/ShakeelHashim/status/1958912301970727050" },
@@ -840,6 +874,7 @@ export const labsData = {
         risk: [],
       },
       "Grok 3": {
+        systemCard: "https://x.ai/news/grok-3",
         autonomous: [],
         biorisk: [],
         cybersec: [],
@@ -850,6 +885,7 @@ export const labsData = {
         risk: [],
       },
       "Grok-2": {
+        systemCard: "https://x.ai/news/grok-2",
         autonomous: [],
         biorisk: [],
         cybersec: [],
@@ -860,6 +896,7 @@ export const labsData = {
         risk: [],
       },
       "Grok-1.5V": {
+        systemCard: "https://x.ai/news/grok-1.5",
         autonomous: [],
         biorisk: [],
         cybersec: [],
@@ -880,6 +917,7 @@ export const labsData = {
         risk: [],
       },
       "Grok-1": {
+        systemCard: "https://x.ai/news/grok/model-card",
         autonomous: [],
         biorisk: [],
         cybersec: [],
@@ -1032,7 +1070,10 @@ export const siteConfig = {
       Across the top, each lab has a dropdown listing all models within scope (language models released since 2023) in <strong>descending release order</strong> (newest to oldest).
       <ul>
         <li>
-          Models are also <strong>grouped by system card</strong> (or whatever equivalent model release documentation a lab releases). E.g., Claude Opus 4 and Sonnet 4 were discussed in one system card, so they show up together in the dropdown. Same for Gemini 2.X models, o3/o4-mini, etc.
+          Models are also <strong>grouped by system card</strong> (or whatever equivalent model documentation a lab releases). E.g., Claude Opus 4 and Sonnet 4 were discussed in one system card, so they show up together in the dropdown. Same for Gemini 2.X models, o3/o4-mini, etc.
+        </li>
+        <li>
+          Below the dropdown is a link to the relevant documentation for the selected model (system card, blog post, technical paper, etc.).
         </li>
       </ul>      
     </li>

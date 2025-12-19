@@ -365,7 +365,7 @@ const notesStyles = (
                   onMouseEnter={(e) => e.target.style.color = 'rgba(255,255,255,1)'}
                   onMouseLeave={(e) => e.target.style.color = 'rgba(255,255,255,0.7)'}
                 >
-                  View system card
+                  View model documentation
                   <svg
                     width="10"
                     height="10"
