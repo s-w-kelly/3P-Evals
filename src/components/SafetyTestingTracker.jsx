@@ -79,11 +79,11 @@ const notesStyles = (
       minHeight: '100vh',
       backgroundColor: '#1a1f2e',
       color: '#e0e0e0',
-      padding: '32px',
+      padding: '20px',
     }}>
       {notesStyles}
       {/* Header */}
-      <div style={{ marginBottom: '32px' }}>
+      <div style={{ marginBottom: '16px' }}>
         <h1 style={{
           fontSize: '28px',
           fontWeight: '600',
@@ -103,7 +103,7 @@ const notesStyles = (
       </div>
 
       {/* Collapsible Background / Notes (NEW) */}
-      <div style={{ marginBottom: '20px' }}>
+      <div style={{ marginBottom: '8px' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
           <div style={{
             flex: 1,
@@ -195,14 +195,13 @@ const notesStyles = (
           color: '#8a8f9d',
           textTransform: 'uppercase',
           letterSpacing: '1px',
-          marginBottom: '12px',
         }}>
           Evaluators
         </div>
         <p style={{
           fontSize: '12px',
           color: '#5a5f6d',
-          margin: 0,
+          marginBottom: '12px',
         }}>
           Click on an evaluator to highlight their engagements
         </p>

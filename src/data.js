@@ -985,7 +985,7 @@ export const siteConfig = {
   dataSource: "Data compiled from labs' (public) model cards and system cards, and evaluators' papers/blog posts.",
   notesFull: `
   <p>The chart below reflects all third-party safety evals performed for major AI models released since 2023.</p>
-
+  <p></p>
   <p>Scope/definitions:</p>
 
   <ul>
