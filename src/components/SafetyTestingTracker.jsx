@@ -87,6 +87,90 @@ export default function SafetyTestingTracker() {
         </p>
       </div>
 
+      {/* Collapsible Background / Notes (NEW) */}
+      <div style={{ marginBottom: '20px' }}>
+        <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
+          <div style={{
+            flex: 1,
+            fontSize: '13px',
+            color: '#c9cfe0',
+            backgroundColor: 'rgba(255,255,255,0.02)',
+            padding: '10px 12px',
+            borderRadius: '8px',
+            border: '1px solid rgba(255,255,255,0.03)',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'space-between',
+            gap: '12px',
+          }}>
+            <div style={{ flex: 1 }}>
+              <div style={{ fontSize: '13px', color: '#e6e9f2', fontWeight: 600 }}>
+                Notes: Background, scope, working definitions
+              </div>
+              <div style={{ fontSize: '12px', color: '#9aa0b3', marginTop: '6px' }}>
+                {notesShort}
+              </div>
+            </div>
+
+            <button
+              onClick={() => setNotesOpen(o => !o)}
+              aria-expanded={notesOpen}
+              aria-controls="background-notes"
+              style={{
+                background: 'transparent',
+                border: `1px solid ${notesOpen ? '#7aa2ff' : 'rgba(255,255,255,0.06)'}`,
+                color: notesOpen ? '#7aa2ff' : '#c9cfe0',
+                padding: '8px 12px',
+                borderRadius: '8px',
+                cursor: 'pointer',
+                fontWeight: 600,
+                fontSize: '13px',
+                display: 'inline-flex',
+                alignItems: 'center',
+                gap: '8px',
+              }}
+            >
+              {notesOpen ? 'Hide' : 'Show full notes'}
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" style={{ transform: notesOpen ? 'rotate(180deg)' : 'none', transition: 'transform 0.2s' }}>
+                <polyline points="6 9 12 15 18 9" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+              </svg>
+            </button>
+          </div>
+
+          {/* optional small download / print button — uncomment if desired
+          <button style={{ ... }}>Download</button>
+          */}
+        </div>
+
+        {/* Collapsible content */}
+        <div
+          id="background-notes"
+          role="region"
+          aria-labelledby="background-notes"
+          ref={notesRef}
+          style={{
+            marginTop: '8px',
+            overflow: 'hidden',
+            transition: 'max-height 250ms ease',
+            maxHeight: notesMaxHeight,
+            borderRadius: '8px',
+            border: '1px solid rgba(255,255,255,0.03)',
+            backgroundColor: '#161920',
+            padding: notesOpen ? '12px' : '0 12px',
+          }}
+        >
+          <div style={{ color: '#c9cfe0', fontSize: '13px', lineHeight: 1.6 }}>
+            {/* Render the full notes. If you store HTML in siteConfig, sanitize before injecting. */}
+            {notesFull.split('\n').map((line, i) => (
+              <p key={i} style={{ margin: '8px 0' }}>{line}</p>
+            ))}
+            <p style={{ marginTop: 12, fontSize: '12px', color: '#8f96a8' }}>
+              Tip: keep a shorter summary in <code>siteConfig.notesShort</code> and the detailed text in <code>siteConfig.notesFull</code>.
+            </p>
+          </div>
+        </div>
+      </div>
+
       {/* Evaluators Summary */}
       <div style={{ marginBottom: '24px' }}>
         <div style={{
@@ -100,7 +184,7 @@ export default function SafetyTestingTracker() {
           Evaluators
         </div>
 
-        {/* New layout: each category has its label ABOVE its evaluators.
+        {/* Each category has its label ABOVE its evaluators.
             Private gets split into two rows (7 on the first, rest on the second). */}
         <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
           {Object.entries(evaluatorOrder).map(([category, evaluatorList]) => {
