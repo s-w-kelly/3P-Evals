@@ -984,35 +984,39 @@ export const siteConfig = {
   lastUpdated: "12/19/2025",
   dataSource: "Data compiled from labs' (public) model cards and system cards, and evaluators' papers/blog posts.",
   notesFull: `
-  <p>Below is a list of the third-party safety evals performed for all major AI models released since 2023.</p>
+  <p>The chart below reflects all of the third-party safety evals performed for major AI models released since 2023.</p>
 
-  <p><strong>A few notes:</strong></p>
+  <p>A few notes:</p>
 
   <ul>
     <li>
-      <strong>By “major AI model,”</strong> I mean models released by the “frontier labs” developing the most capable models:
+      <strong>By “major AI model,”</strong> I mean models released by “frontier labs” developing the most capable models:
       Anthropic, Google DeepMind, Meta, OpenAI, and xAI.
     </li>
 
     <li>
       <strong>By “third-party safety evals,”</strong> I mean evals focused on catastrophic-risk-relevant safety/security
-      (e.g., CBRN knowledge/uplift, autonomous capabilities, cybersecurity) performed by someone not permanently employed by the developer.
+      (e.g., autonomous capabilities, CBRN knowledge/uplift, cybersecurity, etc.) performed by someone not permanently employed by the lab.
       <ul>
         <li>
-          This list does <strong>not</strong> include evals measuring language, math, coding, etc. (e.g., Epoch AI evaluating Grok 4’s math).
+          This list does <strong>not</strong> include third-party evals measuring pure performance in everyday tasks like language, math, coding, etc. (e.g., Epoch evaluating Grok 4’s math capabilities).
         </li>
         <li>
           This list does <strong>not</strong> include evals solely designed by a third party but executed by the developer.  
-          The third party must have performed or meaningfully facilitated the evaluation.
+          The third party must have performed or meaningfully facilitated the eval.
         </li>
       </ul>
     </li>
 
-    <li>This list only includes <strong>language models</strong>, not image/video-only models.</li>
+    <li>This list only includes <strong>language models</strong> (including multimodal), not image/video-only models like Nano Banana or Sora.</li>
 
     <li>
-      Contents are organized by <strong>lab (alphabetical)</strong>, and models are listed in
-      <strong>descending release order</strong>.
+      Models in the dropdown are listed in <strong>descending release order</strong> (newest to oldest).
+      <ul>
+        <li>
+          Models are also grouped by system card. I.e., Claude Opus 4 and Sonnet 4 were reported in one system card, so they show up together in the dropdown. Same for Gemini 2.X models, o3/o4-mini, etc.
+        </li>
+      </ul>      
     </li>
   </ul>
 `,
