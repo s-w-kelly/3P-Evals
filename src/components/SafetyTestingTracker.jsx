@@ -127,7 +127,7 @@ const notesStyles = (
           }}>
             <div style={{ flex: 1 }}>
               <div style={{ fontSize: '13px', color: '#e6e9f2', fontWeight: 600 }}>
-                Notes: Background, scope, working definitions
+                Notes: Scope, working definitions, chart explanation
               </div>
             </div>
 

@@ -980,11 +980,11 @@ export const evaluatorOrder = {
  */
 export const siteConfig = {
   title: "Third-party Evals Monitor",
-  subtitle: "Monitoring third-party engagement for pre-deployment safety evaluations across frontier AI labs",
+  subtitle: "Monitoring frontier AI labs' engagement of third-parties for pre-deployment safety evaluations",
   lastUpdated: "12/19/2025",
   dataSource: "Data compiled from labs' (public) model cards and system cards, and evaluators' papers/blog posts.",
   notesFull: `
-  <p>The chart below reflects all of the third-party safety evals performed for major AI models released since 2023.</p>
+  <p>The chart below reflects all third-party safety evals performed for major AI models released since 2023.</p>
 
   <p>A few notes:</p>
 
@@ -993,6 +993,11 @@ export const siteConfig = {
       <strong>By “major AI model,”</strong> I mean models released by “frontier labs” developing the most capable models:
       Anthropic, Google DeepMind, Meta, OpenAI, and xAI.
     </li>
+    <ul>
+      <li>
+      This chart only includes <strong>language models</strong> (including multimodal), not image/video-only models like Nano Banana or Sora.
+      </li>
+    </ul>
 
     <li>
       <strong>By “third-party safety evals,”</strong> I mean evals focused on catastrophic-risk-relevant safety/security
@@ -1007,18 +1012,34 @@ export const siteConfig = {
         </li>
       </ul>
     </li>
+  </ul>
 
-    <li>This list only includes <strong>language models</strong> (including multimodal), not image/video-only models like Nano Banana or Sora.</li>
+  <p>Chart explanation:</p>
 
+  <ul>
     <li>
-      Models in the dropdown are listed in <strong>descending release order</strong> (newest to oldest).
+      Across the top, each lab has a dropdown listing all models within scope (language models released since 2023) in <strong>descending release order</strong> (newest to oldest).
       <ul>
         <li>
-          Models are also grouped by system card. I.e., Claude Opus 4 and Sonnet 4 were reported in one system card, so they show up together in the dropdown. Same for Gemini 2.X models, o3/o4-mini, etc.
+          Models are also <strong>grouped by system card</strong>. E.g., Claude Opus 4 and Sonnet 4 were discussed in one system card, so they show up together in the dropdown. Same for Gemini 2.X models, o3/o4-mini, etc.
         </li>
       </ul>      
     </li>
-  </ul>
+    <li>
+      On the left side are the different categories of evals.
+      <ul>
+        <li>
+          Each cell lists the third parties that performed that type of eval for that model.
+        </li>
+        <li>
+          Dots next to the name of the third party denote a <strong>recurring engagement</strong> (i.e., that party has performed evals for that lab before, as of that model release).
+        </li>
+        <li>
+          Empty cells mean that (at least based on publicly available sources) a third party did not perform that type of eval for that model. This does not mean that type of eval was not run at all for that model, just that, if it was performed, it was not by a third party.
+        </li>
+      </ul>      
+    </li>
+ </ul> 
 `,
 
 
