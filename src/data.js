@@ -524,9 +524,7 @@ export const labsData = {
         redteam: [],
         scheming: [],
         modelWelfare: [],
-        method: [
-          { evaluator: "Domain experts", recurring: true, source: "https://cdn.openai.com/pdf/ac7c37ae-7f4c-4442-b741-2eabdeaf77e0/oai_5_2_Codex.pdf#page=13" },
-        ],
+        method: [],
         misc: [],
       },
       "GPT-5.2": {
@@ -560,9 +558,7 @@ export const labsData = {
           { evaluator: "Apollo Research", recurring: true, source: "https://cdn.openai.com/pdf/2a7d98b1-57e5-4147-8d0e-683894d782ae/5p1_codex_max_card_03.pdf#page=27" },
         ],
         modelWelfare: [],
-        method: [
-          { evaluator: "Domain experts", recurring: true, source: "https://cdn.openai.com/pdf/2a7d98b1-57e5-4147-8d0e-683894d782ae/5p1_codex_max_card_03.pdf#page=19" },
-        ],
+        method: [],
         misc: [],
       },
       "GPT-5.1 Thinking/Instant": {
@@ -583,10 +579,10 @@ export const labsData = {
           { evaluator: "METR", recurring: true, source: "https://cdn.openai.com/gpt-5-system-card.pdf#page=42" },
         ],
         biorisk: [
-          { evaluator: "SecureBio", recurring: true, source: "https://cdn.openai.com/gpt-5-system-card.pdf#page=26" },
+          { evaluator: "SecureBio", recurring: true, source: "https://cdn.openai.com/gpt-5-system-card.pdf#page=27" },
           { evaluator: "UK AISI", recurring: true, source: "https://cdn.openai.com/gpt-5-system-card.pdf#page=53" },
           { evaluator: "US CAISI", recurring: true, source: "https://cdn.openai.com/gpt-5-system-card.pdf#page=53" },
-          { evaluator: "Domain experts", recurring: true, source: "https://cdn.openai.com/gpt-5-system-card.pdf#page=20" },
+          { evaluator: "Domain experts", recurring: true, source: "https://cdn.openai.com/gpt-5-system-card.pdf#page=51" },
         ],
         cybersec: [
           { evaluator: "Irregular (fka Pattern)", recurring: true, source: "https://cdn.openai.com/gpt-5-system-card.pdf#page=32" },
@@ -597,9 +593,8 @@ export const labsData = {
         redteam: [
           { evaluator: "FAR.AI", recurring: true, source: "https://cdn.openai.com/gpt-5-system-card.pdf#page=52" },
           { evaluator: "Gray Swan", recurring: true, source: "https://cdn.openai.com/gpt-5-system-card.pdf#page=52" },
-          { evaluator: "SecureBio", recurring: true, source: "https://cdn.openai.com/gpt-5-system-card.pdf#page=26" },
-          { evaluator: "Domain experts", recurring: true, source: "https://cdn.openai.com/gpt-5-system-card.pdf#page=20" },
-          { evaluator: "Individual red teamers", recurring: true, source: "https://cdn.openai.com/gpt-5-system-card.pdf#page=20" },
+          { evaluator: "Domain experts", recurring: true, source: "https://cdn.openai.com/gpt-5-system-card.pdf#page=21" },
+          { evaluator: "Individual red teamers", recurring: true, source: "https://cdn.openai.com/gpt-5-system-card.pdf#page=21" },
         ],
         scheming: [
           { evaluator: "Apollo Research", recurring: true, source: "https://cdn.openai.com/gpt-5-system-card.pdf#page=44" },
@@ -619,9 +614,7 @@ export const labsData = {
         ],
         cybersec: [],
         nuclear: [],
-        redteam: [
-          { evaluator: "SecureBio", recurring: true, source: "https://cdn.openai.com/pdf/419b6906-9da6-406c-a19d-1bb078ac7637/oai_gpt-oss_model_card.pdf#page=23" },
-        ],
+        redteam: [],
         scheming: [],
         modelWelfare: [],
         method: [
@@ -642,17 +635,9 @@ export const labsData = {
           { evaluator: "Domain experts", recurring: true, source: "https://cdn.openai.com/pdf/839e66fc-602c-48bf-81d3-b21eacc3459d/chatgpt_agent_system_card.pdf#page=22" },
           { evaluator: "Uplift trial participants", recurring: true, source: "https://cdn.openai.com/pdf/839e66fc-602c-48bf-81d3-b21eacc3459d/chatgpt_agent_system_card.pdf#page=39" },
         ],
-        cybersec: [
-          { evaluator: "Individual red teamers", recurring: true, source: "https://cdn.openai.com/pdf/839e66fc-602c-48bf-81d3-b21eacc3459d/chatgpt_agent_system_card.pdf#page=39" },
-          { evaluator: "Unidentified third party", recurring: false, source: "https://cdn.openai.com/pdf/839e66fc-602c-48bf-81d3-b21eacc3459d/chatgpt_agent_system_card.pdf#page=40" },
-        ],
+        cybersec: [],
         nuclear: [],
-        redteam: [
-          { evaluator: "FAR.AI", recurring: false, source: "https://cdn.openai.com/pdf/839e66fc-602c-48bf-81d3-b21eacc3459d/chatgpt_agent_system_card.pdf#page=39" },
-          { evaluator: "SecureBio", recurring: false, source: "https://cdn.openai.com/pdf/839e66fc-602c-48bf-81d3-b21eacc3459d/chatgpt_agent_system_card.pdf#page=20" },
-          { evaluator: "UK AISI", recurring: true, source: "https://cdn.openai.com/pdf/839e66fc-602c-48bf-81d3-b21eacc3459d/chatgpt_agent_system_card.pdf#page=40" },
-          { evaluator: "US CAISI", recurring: true, source: "https://cdn.openai.com/pdf/839e66fc-602c-48bf-81d3-b21eacc3459d/chatgpt_agent_system_card.pdf#page=40" },
-        ],
+        redteam: [],
         scheming: [],
         modelWelfare: [],
         method: [],
@@ -663,7 +648,6 @@ export const labsData = {
         autonomous: [
           { evaluator: "METR", recurring: true, source: "https://cdn.openai.com/pdf/2221c875-02dc-4789-800b-e7758f3722c1/o3-and-o4-mini-system-card.pdf#page=9" },
           { evaluator: "UK AISI", recurring: true, source: "https://cdn.openai.com/pdf/2221c875-02dc-4789-800b-e7758f3722c1/o3-and-o4-mini-system-card.pdf#page=9" },
-          { evaluator: "US CAISI", recurring: true, source: "https://cdn.openai.com/pdf/2221c875-02dc-4789-800b-e7758f3722c1/o3-and-o4-mini-system-card.pdf#page=9" },
         ],
         biorisk: [
           { evaluator: "UK AISI", recurring: true, source: "https://cdn.openai.com/pdf/2221c875-02dc-4789-800b-e7758f3722c1/o3-and-o4-mini-system-card.pdf#page=9" },
@@ -682,7 +666,9 @@ export const labsData = {
           { evaluator: "Apollo Research", recurring: true, source: "https://cdn.openai.com/pdf/2221c875-02dc-4789-800b-e7758f3722c1/o3-and-o4-mini-system-card.pdf#page=10" },
         ],
         modelWelfare: [],
-        method: [],
+        method: [
+          { evaluator: "UK AISI", recurring: true, source: "https://cdn.openai.com/pdf/2221c875-02dc-4789-800b-e7758f3722c1/o3-and-o4-mini-system-card.pdf#page=9" },
+        ],
         misc: [],
       },
       "GPT-4.5": {
@@ -781,11 +767,11 @@ export const labsData = {
           { evaluator: "Apollo Research", recurring: true, source: "https://cdn.openai.com/o1-system-card-20241205.pdf#page=13" },
         ],
         modelWelfare: [],
-        method: [
+        method: [],
+        misc: [
           { evaluator: "UK AISI", recurring: false, source: "https://www.aisi.gov.uk/blog/pre-deployment-evaluation-of-openais-o1-model" },
-          { evaluator: "US CAISI", recurring: false, source: "https://www.nist.gov/news-events/news/2024/12/pre-deployment-evaluation-openais-o1-model" },
+          { evaluator: "US CAISI", recurring: false, source: "https://www.nist.gov/news-events/news/2024/12/pre-deployment-evaluation-openais-o1-model" },      
         ],
-        misc: [],
       },
       "GPT-4o": {
         systemCard: "https://cdn.openai.com/gpt-4o-system-card.pdf",
@@ -796,7 +782,7 @@ export const labsData = {
         cybersec: [],
         nuclear: [],
         redteam: [
-          { evaluator: "Virtue AI", recurring: false, source: "https://cdn.openai.com/gpt-4o-system-card.pdf#page=26" },
+          { evaluator: "Virtue AI", recurring: false, source: "https://cdn.openai.com/gpt-4o-system-card.pdf#page=28" },
           { evaluator: "Domain experts", recurring: true, source: "https://cdn.openai.com/gpt-4o-system-card.pdf#page=22" },
           { evaluator: "Individual red teamers", recurring: true, source: "https://cdn.openai.com/gpt-4o-system-card.pdf#page=3" },
         ],
@@ -818,9 +804,7 @@ export const labsData = {
         ],
         scheming: [],
         modelWelfare: [],
-        method: [
-          { evaluator: "Domain experts", recurring: true, source: "https://cdn.openai.com/papers/GPTV_System_Card.pdf#page=5" },
-        ],
+        method: [],
         misc: [],
       },
       "GPT-4": {
@@ -830,7 +814,6 @@ export const labsData = {
         ],
         biorisk: [],
         cybersec: [
-          { evaluator: "Domain experts", recurring: false, source: "https://cdn.openai.com/papers/gpt-4-system-card.pdf#page=14" },
         ],
         nuclear: [],
         redteam: [
@@ -839,7 +822,9 @@ export const labsData = {
         scheming: [],
         modelWelfare: [],
         method: [],
-        misc: [],
+        misc: [
+          { evaluator: "Domain experts", recurring: false, source: "https://cdn.openai.com/papers/gpt-4-system-card.pdf#page=14" },
+        ],
       },
     }
   },
@@ -1024,7 +1009,7 @@ export const testCategories = [
   { 
     id: "method", 
     name: "Methodology/Risk Consultation", 
-    description: "Consultation re responsible scaling policy risk classification, eval approach/methodology, etc." 
+    description: "Consultation re responsible scaling policy classification, eval approach/methodology, risk mitigation, etc." 
   },  
   { 
     id: "misc", 
@@ -1140,7 +1125,7 @@ export const siteConfig = {
           Dots next to the name of the third party denote a <strong>recurring engagement</strong> (i.e., that party has performed evals for that lab before, as of that model release).
         </li>
         <li>
-          Empty cells mean that (at least based on publicly available sources) a third party did not perform that type of eval for that model. This does not mean that type of eval was not run at all for that model, just that, if it was performed, it was not by a third party (or, if a third party did perform it, that was not disclosed publicly).
+          <strong>Empty cells</strong> mean that (at least based on publicly available sources) a third party did not perform that type of eval for that model. <strong>This does not mean that type of eval was not run at all for that model</strong>, just that, if it was performed, it was not by a third party (or, if a third party did perform it, that was not disclosed publicly).
         </li>
       </ul>      
     </li>
