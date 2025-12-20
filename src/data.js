@@ -46,11 +46,12 @@ export const labsData = {
           { evaluator: "UK AISI", recurring: true, source: "https://assets.anthropic.com/m/64823ba7485345a7/Claude-Opus-4-5-System-Card.pdf#page=112" },
         ],
         modelWelfare: [],
-        risk: [
+        method: [
           { evaluator: "UK AISI", recurring: true, source: "https://assets.anthropic.com/m/64823ba7485345a7/Claude-Opus-4-5-System-Card.pdf#page=151" },          
           { evaluator: "US CAISI", recurring: true, source: "https://assets.anthropic.com/m/64823ba7485345a7/Claude-Opus-4-5-System-Card.pdf#page=151" },
           { evaluator: "Domain experts", recurring: true, source: "https://assets.anthropic.com/m/64823ba7485345a7/Claude-Opus-4-5-System-Card.pdf#page=12" },
         ],
+        misc: [],
       },
       "Claude Haiku 4.5": {
         systemCard: "https://assets.anthropic.com/m/99128ddd009bdcb/Claude-Haiku-4-5-System-Card.pdf",
@@ -63,7 +64,8 @@ export const labsData = {
         ],
         scheming: [],
         modelWelfare: [],
-        risk: [],
+        method: [],
+        misc: [],
       },
       "Claude Sonnet 4.5": {
         systemCard: "https://assets.anthropic.com/m/12f214efcc2f457a/original/Claude-Sonnet-4-5-System-Card.pdf",
@@ -85,7 +87,8 @@ export const labsData = {
           { evaluator: "UK AISI", recurring: true, source: "https://assets.anthropic.com/m/12f214efcc2f457a/original/Claude-Sonnet-4-5-System-Card.pdf#page=64" },
         ],
         modelWelfare: [],
-        risk: [],
+        method: [],
+        misc: [],
       },
       "Claude Opus 4.1": {
         systemCard: "https://assets.anthropic.com/m/4c024b86c698d3d4/original/Claude-4-1-System-Card.pdf",
@@ -96,7 +99,8 @@ export const labsData = {
         redteam: [],
         scheming: [],
         modelWelfare: [],
-        risk: [],
+        method: [],
+        misc: [],
       },
       "Claude Opus/Sonnet 4": {
         systemCard: "https://www-cdn.anthropic.com/6be99a52cb68eb70eb9572b4cafad13df32ed995.pdf",
@@ -132,7 +136,8 @@ export const labsData = {
           { evaluator: "Eleos", recurring: false, source: "https://www-cdn.anthropic.com/6be99a52cb68eb70eb9572b4cafad13df32ed995.pdf#page=54" }
 
         ],
-        risk: [],
+        method: [],
+        misc: [],
       },
       "Claude 3.7 Sonnet": {
         systemCard: "https://assets.anthropic.com/m/785e231869ea8b3b/original/claude-3-7-sonnet-system-card.pdf",
@@ -162,11 +167,13 @@ export const labsData = {
         ],
         scheming: [],
         modelWelfare: [],
-        risk: [
+        method: [
           { evaluator: "METR", recurring: true, source: "https://assets.anthropic.com/m/785e231869ea8b3b/original/claude-3-7-sonnet-system-card.pdf#page=41" },
+                    { evaluator: "Domain experts", recurring: true, source: "https://assets.anthropic.com/m/785e231869ea8b3b/original/claude-3-7-sonnet-system-card.pdf#page=6" },
+        ],
+        misc: [
           { evaluator: "UK AISI", recurring: true, source: "https://assets.anthropic.com/m/785e231869ea8b3b/original/claude-3-7-sonnet-system-card.pdf#page=41" },
           { evaluator: "US CAISI", recurring: true, source: "https://assets.anthropic.com/m/785e231869ea8b3b/original/claude-3-7-sonnet-system-card.pdf#page=41" },
-          { evaluator: "Domain experts", recurring: true, source: "https://assets.anthropic.com/m/785e231869ea8b3b/original/claude-3-7-sonnet-system-card.pdf#page=6" },
         ],
       },
       "Claude 3.5 Sonnet (new)/Haiku": {
@@ -189,10 +196,11 @@ export const labsData = {
         ],
         scheming: [],
         modelWelfare: [],
-        risk: [
+        method: [
           { evaluator: "UK AISI", recurring: true, source: "https://www.aisi.gov.uk/blog/pre-deployment-evaluation-of-anthropics-upgraded-claude-3-5-sonnet" },
           { evaluator: "US CAISI", recurring: false, source: "https://www.nist.gov/news-events/news/2024/11/pre-deployment-evaluation-anthropics-upgraded-claude-35-sonnet" },
         ],
+        misc: [],
       },
       "Claude 3.5 Sonnet": {
         systemCard: "https://www-cdn.anthropic.com/fed9cc193a14b84131812372d8d5857f8f304c52/Model_Card_Claude_3_Addendum.pdf",
@@ -205,9 +213,10 @@ export const labsData = {
         redteam: [],
         scheming: [],
         modelWelfare: [],
-        risk: [
+        method: [
           { evaluator: "UK AISI", recurring: false, source: "https://www-cdn.anthropic.com/fed9cc193a14b84131812372d8d5857f8f304c52/Model_Card_Claude_3_Addendum.pdf#page=6" },
         ],
+        misc: [],
       },
       "Claude 3 Opus/Sonnet/Haiku": {
         systemCard: "https://www-cdn.anthropic.com/f2986af8d052f26236f6251da62d16172cfabd6e/claude-3-model-card.pdf",
@@ -222,7 +231,8 @@ export const labsData = {
         redteam: [],
         scheming: [],
         modelWelfare: [],
-        risk: [],
+        method: [],
+        misc: [],
       },
       "Claude 2": {
         systemCard: "https://www-cdn.anthropic.com/bd2a28d2535bfb0494cc8e2a3bf135d2e7523226/Model-Card-Claude-2.pdf",
@@ -239,7 +249,8 @@ export const labsData = {
         ],
         scheming: [],
         modelWelfare: [],
-        risk: [],
+        method: [],
+        misc: [],
       },
       "Claude": {
         systemCard: "https://www.anthropic.com/news/introducing-claude",
@@ -252,7 +263,8 @@ export const labsData = {
         redteam: [],
         scheming: [],
         modelWelfare: [],
-        risk: [],
+        method: [],
+        misc: [],
       },
     }
   },
@@ -283,9 +295,10 @@ export const labsData = {
           { evaluator: "Unidentified third party", recurring: false, source: "https://storage.googleapis.com/deepmind-media/gemini/gemini_3_pro_fsf_report.pdf#page=15" },
         ],
         modelWelfare: [],
-        risk: [
+        method: [
           { evaluator: "Unidentified third party", recurring: false, source: "https://storage.googleapis.com/deepmind-media/gemini/gemini_3_pro_fsf_report.pdf#page=13" },
         ],
+        misc: [],
       },
       "Gemini 3 Flash": {
         systemCard: "https://storage.googleapis.com/deepmind-media/Model-Cards/Gemini-3-Flash-Model-Card.pdf",
@@ -296,7 +309,8 @@ export const labsData = {
         redteam: [],
         scheming: [],
         modelWelfare: [],
-        risk: [],
+        method: [],
+        misc: [],
       },
       "Gemini 2.X (2.5 Pro/Flash, 2.0 Flash/Flash-Lite)": {
         systemCard: "https://storage.googleapis.com/deepmind-media/gemini/gemini_v2_5_report.pdf",
@@ -317,9 +331,10 @@ export const labsData = {
         ],
         scheming: [],
         modelWelfare: [],
-        risk: [
+        method: [
           { evaluator: "Domain experts", recurring: true, source: "https://storage.googleapis.com/deepmind-media/gemini/gemini_v2_5_report.pdf#page=36" },
         ],
+        misc: [],
       },
       "Gemini 1.5 Pro/Flash": {
         systemCard: "https://storage.googleapis.com/deepmind-media/gemini/gemini_v1_5_report.pdf",
@@ -338,9 +353,10 @@ export const labsData = {
         ],
         scheming: [],
         modelWelfare: [],
-        risk: [
+        method: [
           { evaluator: "Domain experts", recurring: true, source: "https://storage.googleapis.com/deepmind-media/gemini/gemini_v1_5_report.pdf#subsection.9.6" },
         ],
+        misc: [],
       },
       "Gemini 1.0 Ultra/Pro/Nano": {
         systemCard: "https://storage.googleapis.com/deepmind-media/gemini/gemini_1_report.pdf",
@@ -362,9 +378,10 @@ export const labsData = {
         ],
         scheming: [],
         modelWelfare: [],
-        risk: [
+        method: [
           { evaluator: "Domain experts", recurring: false, source: "https://storage.googleapis.com/deepmind-media/gemini/gemini_1_report.pdf#page=38" },
         ],
+        misc: [],
       },
     }
   },
@@ -384,9 +401,10 @@ export const labsData = {
         ],
         scheming: [],
         modelWelfare: [],
-        risk: [
+        method: [
           { evaluator: "Domain experts", recurring: true, source: "https://github.com/meta-llama/llama-models/blob/main/models/llama4/MODEL_CARD.md#critical-risks" },
         ],
+        misc: [],
       },
       "Llama 3.3": {
         systemCard: "https://github.com/meta-llama/llama-models/blob/main/models/llama3_3/MODEL_CARD.md",
@@ -399,9 +417,10 @@ export const labsData = {
         ],
         scheming: [],
         modelWelfare: [],
-        risk: [
+        method: [
           { evaluator: "Domain experts", recurring: true, source: "https://github.com/meta-llama/llama-models/blob/main/models/llama3_3/MODEL_CARD.md#critical-and-other-risks" },
         ],
+        misc: [],
       },
       "Llama 3.2-Vision": {
         systemCard: "https://github.com/meta-llama/llama-models/blob/main/models/llama3_2/MODEL_CARD_VISION.md",
@@ -414,9 +433,10 @@ export const labsData = {
         ],
         scheming: [],
         modelWelfare: [],
-        risk: [
+        method: [
           { evaluator: "Domain experts", recurring: true, source: "https://github.com/meta-llama/llama-models/blob/main/models/llama3_2/MODEL_CARD_VISION.md#critical-risks" },
         ],
+        misc: [],
       },
       "Llama 3.2": {
         systemCard: "https://github.com/meta-llama/llama-models/blob/main/models/llama3_2/MODEL_CARD.md",
@@ -429,9 +449,10 @@ export const labsData = {
         ],
         scheming: [],
         modelWelfare: [],
-        risk: [
+        method: [
           { evaluator: "Domain experts", recurring: true, source: "https://github.com/meta-llama/llama-models/blob/main/models/llama3_2/MODEL_CARD.md#critical-risks" },
         ],
+        misc: [],
       },
       "Llama 3.1": {
         systemCard: "https://github.com/meta-llama/llama-models/blob/main/models/llama3_1/MODEL_CARD.md",
@@ -444,9 +465,10 @@ export const labsData = {
         ],
         scheming: [],
         modelWelfare: [],
-        risk: [
+        method: [
           { evaluator: "Domain experts", recurring: true, source: "https://github.com/meta-llama/llama-models/blob/main/models/llama3_1/MODEL_CARD.md#critical-and-other-risks" },
         ],
+        misc: [],
       },
       "Llama 3": {
         systemCard: "https://arxiv.org/pdf/2407.21783",
@@ -459,9 +481,10 @@ export const labsData = {
         ],
         scheming: [],
         modelWelfare: [],
-        risk: [
+        method: [
           { evaluator: "Domain experts", recurring: false, source: "https://arxiv.org/pdf/2407.21783#page=49" },
         ],
+        misc: [],
       },
       "Llama 2": {
         systemCard: "https://arxiv.org/pdf/2307.09288",
@@ -475,7 +498,8 @@ export const labsData = {
         ],
         scheming: [],
         modelWelfare: [],
-        risk: [],
+        method: [],
+        misc: [],
       },
       "LLaMA": {
         systemCard: "https://arxiv.org/pdf/2302.13971",
@@ -486,7 +510,8 @@ export const labsData = {
         redteam: [],
         scheming: [],
         modelWelfare: [],
-        risk: [],
+        method: [],
+        misc: [],
       },
     }
   },
@@ -506,9 +531,10 @@ export const labsData = {
         redteam: [],
         scheming: [],
         modelWelfare: [],
-        risk: [
+        method: [
           { evaluator: "Domain experts", recurring: true, source: "https://cdn.openai.com/pdf/ac7c37ae-7f4c-4442-b741-2eabdeaf77e0/oai_5_2_Codex.pdf#page=13" },
         ],
+        misc: [],
       },
       "GPT-5.2": {
         systemCard: "https://cdn.openai.com/pdf/3a4153c8-c748-4b71-8e31-aecbde944f8d/oai_5_2_system-card.pdf",
@@ -523,7 +549,8 @@ export const labsData = {
           { evaluator: "Apollo Research", recurring: true, source: "https://cdn.openai.com/pdf/3a4153c8-c748-4b71-8e31-aecbde944f8d/oai_5_2_system-card.pdf#page=26" },
         ],
         modelWelfare: [],
-        risk: [],
+        method: [],
+        misc: [],
       },
       "GPT-5.1-Codex-Max": {
         systemCard: "https://cdn.openai.com/pdf/2a7d98b1-57e5-4147-8d0e-683894d782ae/5p1_codex_max_card_03.pdf",
@@ -540,9 +567,10 @@ export const labsData = {
           { evaluator: "Apollo Research", recurring: true, source: "https://cdn.openai.com/pdf/2a7d98b1-57e5-4147-8d0e-683894d782ae/5p1_codex_max_card_03.pdf#page=27" },
         ],
         modelWelfare: [],
-        risk: [
+        method: [
           { evaluator: "Domain experts", recurring: true, source: "https://cdn.openai.com/pdf/2a7d98b1-57e5-4147-8d0e-683894d782ae/5p1_codex_max_card_03.pdf#page=19" },
         ],
+        misc: [],
       },
       "GPT-5.1 Thinking/Instant": {
         systemCard: "https://cdn.openai.com/pdf/4173ec8d-1229-47db-96de-06d87147e07e/5_1_system_card.pdf",
@@ -553,7 +581,8 @@ export const labsData = {
         redteam: [],
         scheming: [],
         modelWelfare: [],
-        risk: [],
+        method: [],
+        misc: []
       },
       "GPT-5": {
         systemCard: "https://cdn.openai.com/gpt-5-system-card.pdf",
@@ -583,10 +612,11 @@ export const labsData = {
           { evaluator: "Apollo Research", recurring: true, source: "https://cdn.openai.com/gpt-5-system-card.pdf#page=44" },
         ],
         modelWelfare: [],
-        risk: [
+        method: [
           { evaluator: "UK AISI", recurring: true, source: "https://cdn.openai.com/gpt-5-system-card.pdf#page=53" },
           { evaluator: "US CAISI", recurring: true, source: "https://cdn.openai.com/gpt-5-system-card.pdf#page=53" },
         ],
+        misc: [],
       },
       "gpt-oss": {
         systemCard: "https://cdn.openai.com/pdf/419b6906-9da6-406c-a19d-1bb078ac7637/oai_gpt-oss_model_card.pdf",
@@ -601,16 +631,18 @@ export const labsData = {
         ],
         scheming: [],
         modelWelfare: [],
-        risk: [
+        method: [
           { evaluator: "METR", recurring: true, source: "https://cdn.openai.com/pdf/419b6906-9da6-406c-a19d-1bb078ac7637/oai_gpt-oss_model_card.pdf#page=18" },
           { evaluator: "SecureBio", recurring: true, source: "https://cdn.openai.com/pdf/419b6906-9da6-406c-a19d-1bb078ac7637/oai_gpt-oss_model_card.pdf#page=18" },
           { evaluator: "Domain experts", recurring: true, source: "https://cdn.openai.com/pdf/419b6906-9da6-406c-a19d-1bb078ac7637/oai_gpt-oss_model_card.pdf#page=18" },
         ],
+        misc: [],
       },
       "ChatGPT agent": {
         systemCard: "https://cdn.openai.com/pdf/839e66fc-602c-48bf-81d3-b21eacc3459d/chatgpt_agent_system_card.pdf",
         autonomous: [],
         biorisk: [
+          { evaluator: "FAR.AI", recurring: false, source: "https://cdn.openai.com/pdf/839e66fc-602c-48bf-81d3-b21eacc3459d/chatgpt_agent_system_card.pdf#page=39" },
           { evaluator: "SecureBio", recurring: false, source: "https://cdn.openai.com/pdf/839e66fc-602c-48bf-81d3-b21eacc3459d/chatgpt_agent_system_card.pdf#page=20" },
           { evaluator: "UK AISI", recurring: true, source: "https://cdn.openai.com/pdf/839e66fc-602c-48bf-81d3-b21eacc3459d/chatgpt_agent_system_card.pdf#page=40" },
           { evaluator: "US CAISI", recurring: true, source: "https://cdn.openai.com/pdf/839e66fc-602c-48bf-81d3-b21eacc3459d/chatgpt_agent_system_card.pdf#page=40" },
@@ -630,7 +662,8 @@ export const labsData = {
         ],
         scheming: [],
         modelWelfare: [],
-        risk: [],
+        method: [],
+        misc: [],
       },
       "o3, o4-mini": {
         systemCard: "https://cdn.openai.com/pdf/2221c875-02dc-4789-800b-e7758f3722c1/o3-and-o4-mini-system-card.pdf",
@@ -656,7 +689,8 @@ export const labsData = {
           { evaluator: "Apollo Research", recurring: true, source: "https://cdn.openai.com/pdf/2221c875-02dc-4789-800b-e7758f3722c1/o3-and-o4-mini-system-card.pdf#page=10" },
         ],
         modelWelfare: [],
-        risk: [],
+        method: [],
+        misc: [],
       },
       "GPT-4.5": {
         systemCard: "https://cdn.openai.com/gpt-4-5-system-card-2272025.pdf",
@@ -671,7 +705,8 @@ export const labsData = {
           { evaluator: "Apollo Research", recurring: true, source: "https://cdn.openai.com/gpt-4-5-system-card-2272025.pdf#page=6" },
         ],
         modelWelfare: [],
-        risk: [],
+        method: [],
+        misc: [],
       },
       "Deep research": {
         systemCard: "https://cdn.openai.com/deep-research-system-card.pdf",
@@ -687,7 +722,8 @@ export const labsData = {
         ],
         scheming: [],
         modelWelfare: [],
-        risk: [],
+        method: [],
+        misc: [],
       },
       "o3-mini": {
         systemCard: "https://cdn.openai.com/o3-mini-system-card-feb10.pdf",
@@ -705,7 +741,8 @@ export const labsData = {
         ],
         scheming: [],
         modelWelfare: [],
-        risk: [],
+        method: [],
+        misc: [],
       },
       "Operator": {
         systemCard: "https://cdn.openai.com/operator_system_card.pdf",
@@ -719,7 +756,8 @@ export const labsData = {
         ],
         scheming: [],
         modelWelfare: [],
-        risk: [],
+        method: [],
+        misc: [],
       },
       "o1": {
         systemCard: "https://cdn.openai.com/o1-system-card-20241205.pdf",
@@ -750,10 +788,11 @@ export const labsData = {
           { evaluator: "Apollo Research", recurring: true, source: "https://cdn.openai.com/o1-system-card-20241205.pdf#page=13" },
         ],
         modelWelfare: [],
-        risk: [
+        method: [
           { evaluator: "UK AISI", recurring: false, source: "https://www.aisi.gov.uk/blog/pre-deployment-evaluation-of-openais-o1-model" },
           { evaluator: "US CAISI", recurring: false, source: "https://www.nist.gov/news-events/news/2024/12/pre-deployment-evaluation-openais-o1-model" },
         ],
+        misc: [],
       },
       "GPT-4o": {
         systemCard: "https://cdn.openai.com/gpt-4o-system-card.pdf",
@@ -772,7 +811,8 @@ export const labsData = {
           { evaluator: "Apollo Research", recurring: false, source: "https://cdn.openai.com/gpt-4o-system-card.pdf#page=19" },
         ],
         modelWelfare: [],
-        risk: [],
+        method: [],
+        misc: [],
       },
       "GPT-4V": {
         systemCard: "https://cdn.openai.com/papers/GPTV_System_Card.pdf",
@@ -785,9 +825,10 @@ export const labsData = {
         ],
         scheming: [],
         modelWelfare: [],
-        risk: [
+        method: [
           { evaluator: "Domain experts", recurring: true, source: "https://cdn.openai.com/papers/GPTV_System_Card.pdf#page=5" },
         ],
+        misc: [],
       },
       "GPT-4": {
         systemCard: "https://cdn.openai.com/papers/gpt-4-system-card.pdf",
@@ -804,7 +845,8 @@ export const labsData = {
         ],
         scheming: [],
         modelWelfare: [],
-        risk: [],
+        method: [],
+        misc: [],
       },
     }
   },
@@ -822,7 +864,8 @@ export const labsData = {
         redteam: [],
         scheming: [],
         modelWelfare: [],
-        risk: [],
+        method: [],
+        misc: [],
       },
       "Grok 4.1": {
         systemCard: "https://data.x.ai/2025-11-17-grok-4-1-model-card.pdf",
@@ -833,7 +876,8 @@ export const labsData = {
         redteam: [],
         scheming: [],
         modelWelfare: [],
-        risk: [],
+        method: [],
+        misc: [],
       },
       "Grok 4 Fast": {
         systemCard: "https://data.x.ai/2025-09-19-grok-4-fast-model-card.pdf",
@@ -844,7 +888,8 @@ export const labsData = {
         redteam: [],
         scheming: [],
         modelWelfare: [],
-        risk: [],
+        method: [],
+        misc: [],
       },
       "Grok Code Fast 1": {
         systemCard: "https://data.x.ai/2025-08-26-grok-code-fast-1-model-card.pdf",
@@ -855,23 +900,25 @@ export const labsData = {
         redteam: [],
         scheming: [],
         modelWelfare: [],
-        risk: [],
+        method: [],
+        misc: [],
       },
       "Grok 4": {
         systemCard: "https://data.x.ai/2025-08-20-grok-4-model-card.pdf",
         autonomous: [],
         biorisk: [
-          { evaluator: "UK AISI", recurring: false, source: "https://x.com/ShakeelHashim/status/1958912301970727050" },
+          { evaluator: "UK AISI", recurring: false, source: "https://www.transformernews.ai/p/sam-altman-ai-bubble#:~:text=xAI%20finally%20published%20a%20model%20card%20for%20Grok%204" },
         ],
         cybersec: [
-          { evaluator: "UK AISI", recurring: false, source: "https://x.com/ShakeelHashim/status/1958912301970727050" },
+          { evaluator: "UK AISI", recurring: false, source: "https://www.transformernews.ai/p/sam-altman-ai-bubble#:~:text=xAI%20finally%20published%20a%20model%20card%20for%20Grok%204" },
           { evaluator: "Unidentified third party", recurring: false, source: "https://data.x.ai/2025-08-20-grok-4-model-card.pdf#page=2" },
         ],
         nuclear: [],
         redteam: [],
         scheming: [],
         modelWelfare: [],
-        risk: [],
+        method: [],
+        misc: [],
       },
       "Grok 3": {
         systemCard: "https://x.ai/news/grok-3",
@@ -882,7 +929,8 @@ export const labsData = {
         redteam: [],
         scheming: [],
         modelWelfare: [],
-        risk: [],
+        method: [],
+        misc: [],
       },
       "Grok-2": {
         systemCard: "https://x.ai/news/grok-2",
@@ -893,7 +941,8 @@ export const labsData = {
         redteam: [],
         scheming: [],
         modelWelfare: [],
-        risk: [],
+        method: [],
+        misc: [],
       },
       "Grok-1.5V": {
         systemCard: "https://x.ai/news/grok-1.5v",
@@ -904,7 +953,8 @@ export const labsData = {
         redteam: [],
         scheming: [],
         modelWelfare: [],
-        risk: [],
+        method: [],
+        misc: [],
       },
       "Grok-1.5": {
         systemCard: "https://x.ai/news/grok-1.5",
@@ -915,7 +965,8 @@ export const labsData = {
         redteam: [],
         scheming: [],
         modelWelfare: [],
-        risk: [],
+        method: [],
+        misc: [],
       },
       "Grok-1": {
         systemCard: "https://x.ai/news/grok/model-card",
@@ -924,11 +975,12 @@ export const labsData = {
         cybersec: [],
         nuclear: [],
         redteam: [
-          { evaluator: "Individual red teamers", recurring: false, source: "https://x.ai/news/grok/model-card" },
+          { evaluator: "Individual red teamers", recurring: false, source: "https://x.ai/news/grok/model-card#:~:text=We%20have%20engaged%20with%20early%20alpha%20testers%20to%20evaluate%20a%20version%20of%20Grok%2D1%20including%20adversarial%20testing%2E" },
         ],
         scheming: [],
         modelWelfare: [],
-        risk: [],
+        method: [],
+        misc: [],
       },
     }
   },
@@ -976,10 +1028,15 @@ export const testCategories = [
     name: "Model Welfare", 
     description: "AI consciousness and welfare assessments" 
   },
-    { 
-    id: "risk", 
-    name: "General Risk Consultation", 
-    description: "Misc evals, consultation re risk classification or deployment decisions, etc." 
+  { 
+    id: "method", 
+    name: "Methodology/Risk Consultation", 
+    description: "Consultation re responsible scaling policy risk classification, eval methodology, deployment decisions, etc." 
+  },  
+  { 
+    id: "misc", 
+    name: "Misc Evals", 
+    description: "Catch-all/misc evals" 
   },
 ];
 
