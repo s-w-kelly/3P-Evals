@@ -1055,7 +1055,7 @@ export const evaluators = {
  * Evaluators will appear in this order in the Key Evaluators section
  */
 export const evaluatorOrder = {
-  private: ["Apollo Research", "Deloitte", "Eleos", "Faculty", "FAR.AI", "Gray Swan", "Haize Labs", "Irregular (fka Pattern)", "METR", "Scale", "SecureBio", "Signature Science", "Virtue AI"],
+  private: ["Apollo Research", "Deloitte", "Eleos", "Faculty", "FAR.AI", "Gray Swan", "Haize Labs", "Irregular (fka Pattern)", "METR", "Microsoft", "SecureBio", "Signature Science", "Virtue AI"],
   public: ["NNSA", "UK AISI", "US CAISI"],
   other: ["Domain experts", "Individual red teamers", "Uplift trial participants", "Unidentified third party"],
 };
