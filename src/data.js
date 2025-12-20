@@ -393,10 +393,10 @@ export const labsData = {
         ],
         scheming: [],
         modelWelfare: [],
-        method: [
-          { evaluator: "Domain experts", recurring: true, source: "https://github.com/meta-llama/llama-models/blob/main/models/llama4/MODEL_CARD.md#critical-risks" },
+        method: [],
+        misc: [
+          { evaluator: "Domain experts", recurring: true, source: "https://github.com/meta-llama/llama-models/blob/main/models/llama4/MODEL_CARD.md#critical-risks" },          
         ],
-        misc: [],
       },
       "Llama 3.3": {
         systemCard: "https://github.com/meta-llama/llama-models/blob/main/models/llama3_3/MODEL_CARD.md",
@@ -409,10 +409,10 @@ export const labsData = {
         ],
         scheming: [],
         modelWelfare: [],
-        method: [
-          { evaluator: "Domain experts", recurring: true, source: "https://github.com/meta-llama/llama-models/blob/main/models/llama3_3/MODEL_CARD.md#critical-and-other-risks" },
+        method: [],
+        misc: [
+          { evaluator: "Domain experts", recurring: true, source: "https://github.com/meta-llama/llama-models/blob/main/models/llama3_3/MODEL_CARD.md#2-child-safety" },
         ],
-        misc: [],
       },
       "Llama 3.2-Vision": {
         systemCard: "https://github.com/meta-llama/llama-models/blob/main/models/llama3_2/MODEL_CARD_VISION.md",
@@ -425,10 +425,10 @@ export const labsData = {
         ],
         scheming: [],
         modelWelfare: [],
-        method: [
+        method: [],
+        misc: [
           { evaluator: "Domain experts", recurring: true, source: "https://github.com/meta-llama/llama-models/blob/main/models/llama3_2/MODEL_CARD_VISION.md#critical-risks" },
         ],
-        misc: [],
       },
       "Llama 3.2": {
         systemCard: "https://github.com/meta-llama/llama-models/blob/main/models/llama3_2/MODEL_CARD.md",
@@ -441,10 +441,10 @@ export const labsData = {
         ],
         scheming: [],
         modelWelfare: [],
-        method: [
+        method: [],
+        misc: [
           { evaluator: "Domain experts", recurring: true, source: "https://github.com/meta-llama/llama-models/blob/main/models/llama3_2/MODEL_CARD.md#critical-risks" },
         ],
-        misc: [],
       },
       "Llama 3.1": {
         systemCard: "https://github.com/meta-llama/llama-models/blob/main/models/llama3_1/MODEL_CARD.md",
@@ -457,10 +457,10 @@ export const labsData = {
         ],
         scheming: [],
         modelWelfare: [],
-        method: [
+        method: [],
+        misc: [
           { evaluator: "Domain experts", recurring: true, source: "https://github.com/meta-llama/llama-models/blob/main/models/llama3_1/MODEL_CARD.md#critical-and-other-risks" },
         ],
-        misc: [],
       },
       "Llama 3": {
         systemCard: "https://arxiv.org/pdf/2407.21783",
@@ -469,14 +469,14 @@ export const labsData = {
         cybersec: [],
         nuclear: [],
         redteam: [
-          { evaluator: "Domain experts", recurring: false, source: "https://arxiv.org/pdf/2407.21783#page=48" },
+          { evaluator: "Domain experts", recurring: true, source: "https://arxiv.org/pdf/2407.21783#page=48" },
         ],
         scheming: [],
         modelWelfare: [],
-        method: [
-          { evaluator: "Domain experts", recurring: false, source: "https://arxiv.org/pdf/2407.21783#page=49" },
+        method: [],
+        misc: [
+          { evaluator: "Domain experts", recurring: true, source: "https://arxiv.org/pdf/2407.21783#page=48" },
         ],
-        misc: [],
       },
       "Llama 2": {
         systemCard: "https://arxiv.org/pdf/2307.09288",
@@ -485,6 +485,7 @@ export const labsData = {
         cybersec: [],
         nuclear: [],
         redteam: [
+          { evaluator: "Domain experts", recurring: false, source: "https://arxiv.org/pdf/2307.09288#page=28" },
           { evaluator: "Individual red teamers", recurring: false, source: "https://arxiv.org/pdf/2307.09288#page=28" },
           { evaluator: "Unidentified third party", recurring: false, source: "https://arxiv.org/pdf/2307.09288#page=28" },
         ],
@@ -1139,7 +1140,7 @@ export const siteConfig = {
           Dots next to the name of the third party denote a <strong>recurring engagement</strong> (i.e., that party has performed evals for that lab before, as of that model release).
         </li>
         <li>
-          Empty cells mean that (at least based on publicly available sources) a third party did not perform that type of eval for that model. This does not mean that type of eval was not run at all for that model, just that, if it was performed, it was not by a third party.
+          Empty cells mean that (at least based on publicly available sources) a third party did not perform that type of eval for that model. This does not mean that type of eval was not run at all for that model, just that, if it was performed, it was not by a third party (or, if a third party did perform it, that was not disclosed publicly).
         </li>
       </ul>      
     </li>
