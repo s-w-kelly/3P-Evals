@@ -593,6 +593,7 @@ export const labsData = {
         redteam: [
           { evaluator: "FAR.AI", recurring: true, source: "https://cdn.openai.com/gpt-5-system-card.pdf#page=52" },
           { evaluator: "Gray Swan", recurring: true, source: "https://cdn.openai.com/gpt-5-system-card.pdf#page=52" },
+          { evaluator: "Microsoft", recurring: true, source: "https://cdn.openai.com/gpt-5-system-card.pdf#page=22" },
           { evaluator: "Domain experts", recurring: true, source: "https://cdn.openai.com/gpt-5-system-card.pdf#page=21" },
           { evaluator: "Individual red teamers", recurring: true, source: "https://cdn.openai.com/gpt-5-system-card.pdf#page=21" },
         ],
@@ -731,7 +732,6 @@ export const labsData = {
         nuclear: [],
         redteam: [
           { evaluator: "Individual red teamers", recurring: false, source: "https://cdn.openai.com/operator_system_card.pdf#page=2" },
-          { evaluator: "Scale", recurring: false, source: "https://cdn.openai.com/operator_system_card.pdf#page=15" },
         ],
         scheming: [],
         modelWelfare: [],
@@ -1035,7 +1035,7 @@ export const evaluators = {
   "Haize Labs": { color: "#999999", type: "private" },
   "Irregular (fka Pattern)": { color: "#f7f8f5", type: "private" },
   "METR": { color: "#9cc78d", type: "private" },
-  "Scale": { color: "#b558e6", type: "private" },
+  "Microsoft": { color: "#F34F1C", type: "private" },
   "SecureBio": { color: "#00d4ff", type: "private" },
   "Signature Science": { color: "#006224", type: "private" },
   "Virtue AI": { color: "#171fe2", type: "private" },
