@@ -269,7 +269,7 @@ export const labsData = {
       "Gemini 3 Pro": {
         systemCard: "https://storage.googleapis.com/deepmind-media/gemini/gemini_3_pro_fsf_report.pdf",
         autonomous: [
-          { evaluator: "Unidentified third party", recurring: false, source: "https://storage.googleapis.com/deepmind-media/gemini/gemini_3_pro_fsf_report.pdf#page=15" },
+          { evaluator: "Unidentified third party", recurring: false, source: "https://storage.googleapis.com/deepmind-media/gemini/gemini_3_pro_fsf_report.pdf#page=17" },
         ],
         biorisk: [
           { evaluator: "Unidentified third party", recurring: false, source: "https://storage.googleapis.com/deepmind-media/gemini/gemini_3_pro_fsf_report.pdf#page=9" },
@@ -282,16 +282,15 @@ export const labsData = {
         ],
         redteam: [
           { evaluator: "Domain experts", recurring: true, source: "https://storage.googleapis.com/deepmind-media/gemini/gemini_3_pro_fsf_report.pdf#page=8" },
-          { evaluator: "Individual red teamers", recurring: true, source: "https://storage.googleapis.com/deepmind-media/gemini/gemini_3_pro_fsf_report.pdf#page=12" },
         ],
         scheming: [
           { evaluator: "Unidentified third party", recurring: false, source: "https://storage.googleapis.com/deepmind-media/gemini/gemini_3_pro_fsf_report.pdf#page=15" },
         ],
         modelWelfare: [],
-        method: [
+        method: [],
+        misc: [
           { evaluator: "Unidentified third party", recurring: false, source: "https://storage.googleapis.com/deepmind-media/gemini/gemini_3_pro_fsf_report.pdf#page=13" },
         ],
-        misc: [],
       },
       "Gemini 3 Flash": {
         systemCard: "https://storage.googleapis.com/deepmind-media/Model-Cards/Gemini-3-Flash-Model-Card.pdf",
@@ -324,10 +323,10 @@ export const labsData = {
         ],
         scheming: [],
         modelWelfare: [],
-        method: [
+        method: [],
+        misc: [
           { evaluator: "Domain experts", recurring: true, source: "https://storage.googleapis.com/deepmind-media/gemini/gemini_v2_5_report.pdf#page=36" },
         ],
-        misc: [],
       },
       "Gemini 1.5 Pro/Flash": {
         systemCard: "https://storage.googleapis.com/deepmind-media/gemini/gemini_v1_5_report.pdf",
@@ -346,10 +345,10 @@ export const labsData = {
         ],
         scheming: [],
         modelWelfare: [],
-        method: [
+        method: [],
+        misc: [
           { evaluator: "Domain experts", recurring: true, source: "https://storage.googleapis.com/deepmind-media/gemini/gemini_v1_5_report.pdf#subsection.9.6" },
         ],
-        misc: [],
       },
       "Gemini 1.0 Ultra/Pro/Nano": {
         systemCard: "https://storage.googleapis.com/deepmind-media/gemini/gemini_1_report.pdf",
@@ -371,10 +370,10 @@ export const labsData = {
         ],
         scheming: [],
         modelWelfare: [],
-        method: [
+        method: [],
+        misc: [
           { evaluator: "Domain experts", recurring: false, source: "https://storage.googleapis.com/deepmind-media/gemini/gemini_1_report.pdf#page=38" },
         ],
-        misc: [],
       },
     }
   },
@@ -1107,8 +1106,7 @@ export const siteConfig = {
           This chart does not include third-party evals measuring pure performance in everyday tasks like language, math, coding, etc. (e.g., Epoch evaluating Grok 4’s math capabilities).
         </li>
         <li>
-          <strong>This chart does not include evals solely designed by a third party but executed by the lab.</strong> 
-          The third party must have performed or meaningfully facilitated the eval.</strong>
+          <strong>This chart does not include evals solely designed by a third party but executed by the lab.</strong> The third party must have performed or meaningfully facilitated the eval.
         </li>
       </ul>
     </li>
