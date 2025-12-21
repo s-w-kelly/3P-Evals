@@ -1094,6 +1094,9 @@ export const siteConfig = {
         <li>
           <strong>This chart does not include evals solely designed by a third party but executed by the lab.</strong> The third party must have performed or meaningfully facilitated the eval.
         </li>
+        <li>
+          Third parties whose role was merely to supply red teamers or uplift trial participants (i.e., as a sort of vender or staffing intermediary) are not reflected in the chart.
+        </li>
       </ul>
     </li>
   </ul>
@@ -1144,6 +1147,8 @@ export const siteConfig = {
       </ul>      
     </li>
  </ul> 
+
+ <p><strong>Classification methodology:</strong> Evaluator classifications are based on careful review of publicly available sources. Lab disclosures vary in specificity, and some eval engagements span multiple risk domains or are described ambiguously. Where judgment calls were required, I prioritized the primary focus of the engagement as described in the source material. Readers may reasonably reach different conclusions on certain classifications.</p>
 `,
 
 
