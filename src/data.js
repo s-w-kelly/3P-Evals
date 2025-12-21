@@ -1069,13 +1069,13 @@ export const siteConfig = {
   lastUpdated: "12/19/2025",
   dataSource: "Data compiled from public sources: model cards/system cards, papers, and blog posts.",
   notesFull: `
-  <p>The chart below reflects all third-party safety evals performed for major AI models released since 2023.</p>
+  <p>The chart below reflects all third-party safety evaluations performed for major AI models released since 2023.</p>
   <p> </p>
   <p>Scope/definitions:</p>
 
   <ul>
     <li>
-      <strong>By “major AI model,”</strong> I mean models released by “frontier labs” developing the most capable models:
+      <strong>By “major AI model,”</strong> I mean large language models released by American “frontier labs”:
       Anthropic, Google DeepMind, Meta, OpenAI, and xAI.
     </li>
     <ul>
@@ -1085,8 +1085,8 @@ export const siteConfig = {
     </ul>
 
     <li>
-      <strong>By “third-party safety evals,”</strong> I mean evals focused on catastrophic-risk-relevant safety/security
-      (e.g., autonomous capabilities, CBRN knowledge/uplift, cybersecurity, etc.) performed by someone not permanently employed by the lab.
+      <strong>By “third-party safety evals,”</strong> I mean evals focused on safety/security risks
+      (e.g., autonomous capabilities, CBRN knowledge/uplift, cybersecurity, etc.) performed by someone not permanently employed by the model developer.
       <ul>
         <li>
           This chart does not include third-party evals measuring pure performance in everyday tasks like language, math, coding, etc. (e.g., Epoch evaluating Grok 4’s math capabilities).
