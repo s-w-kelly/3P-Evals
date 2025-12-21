@@ -1105,7 +1105,7 @@ export const siteConfig = {
 
   <ul>
     <li>
-      Across the top, each lab has a dropdown listing all models within scope (language models released since 2023) in <strong>descending release order</strong> (newest to oldest).
+      Across the top, each lab has a dropdown listing all models within scope (major large language models released since 2023) in <strong>descending release order</strong> (newest to oldest).
       <ul>
         <li>
           Models are also <strong>grouped by system card</strong> (or whatever equivalent model documentation a lab releases). E.g., Claude Opus 4 and Sonnet 4 were discussed in one system card, so they show up together in the dropdown. Same for Gemini 2.X models, o3/o4-mini, etc.
