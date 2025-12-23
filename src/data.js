@@ -1067,10 +1067,10 @@ export const siteConfig = {
   title: "3P Evals Monitor",
   subtitle: "Monitoring frontier AI labs’ engagement of third-parties for pre-deployment safety evaluations",
   lastUpdated: "12/23/2025",
-  dataSource: "Data compiled from public sources: model cards/system cards, papers, and blog posts.",
+  dataSource: "Data compiled from public sources.",
   notesFull: `
   <p>The chart below reflects all third-party safety evaluations performed for major AI models released since 2023.</p>
-  <p> </p>
+  <br>
   <p>Scope/definitions:</p>
 
   <ul>
@@ -1147,9 +1147,10 @@ export const siteConfig = {
       </ul>      
     </li>
  </ul> 
-
+ <br>
  <p><strong>Classification methodology:</strong> Evaluator classifications are based on careful review of publicly available sources. Lab disclosures vary in specificity, and some eval engagements span multiple risk domains or are described ambiguously. Where judgment calls were required, I prioritized the primary focus of the engagement as described in the source material. Readers may reasonably reach different conclusions on certain classifications.</p>
- <p><strong>Motivations/Why I made this thing:</strong> I believe third-party evals will be an essential component of any workable frontier AI governance regime. AI labs cannot be trusted to govern themselves (as is currently occurring) and government agencies are unlikely to have the technical capacity or resources to evaluate every frontier model themselves, which means private evaluators will need to play a significant role. As this third-party evaluation ecosystem is developing, I wanted to understand what it looks like under voluntary conditions: which labs are seeking external evaluation, what risk domains are being tested, and which organizations are emerging as evaluators. I hope this can serve as a resource for thinking about how to incorporate third-party oversight into frontier AI governance.</p>
+ <br>
+ <p><strong>Motivations/Why I made this thing:</strong> I believe third-party evals, likely at least in party by private organizations, will be an essential component of any workable frontier AI governance regime. AI labs can't be trusted to govern themselves (as is currently occurring) and government agencies are unlikely to have the technical capacity or resources to evaluate every frontier model themselves, which means private evaluators will likely need to play a significant role. As this third-party evaluation ecosystem is developing, I wanted to understand what it looks like under voluntary conditions: which labs are seeking external evaluation, what risk domains are being tested, and which organizations are emerging as evaluators. I hope this can serve as a resource for thinking about how to incorporate third-party oversight into frontier AI governance.</p>
 `,
 
 
