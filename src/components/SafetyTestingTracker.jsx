@@ -88,6 +88,20 @@ const notesStyles = (
       {notesStyles}
       {/* Header */}
       <div style={{ marginBottom: '16px' }}>
+        <div
+          style={{
+          display: 'flex',
+          alignItems: 'center',
+          gap: '12px',
+          marginBottom: '8px',
+        }}>
+      <img
+        src="/3pfavnew.png"
+        alt="Site logo"
+        style={{
+          height: '32px',
+          width: '32px',
+        }}/>
         <h1 style={{
           fontSize: '28px',
           fontWeight: '600',
@@ -97,6 +111,7 @@ const notesStyles = (
         }}>
           {siteConfig.title}
         </h1>
+      </div>
         <p style={{
           fontSize: '14px',
           color: '#8a8f9d',
