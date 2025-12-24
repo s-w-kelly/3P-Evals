@@ -99,8 +99,8 @@ const notesStyles = (
         src="/3pfavnew.png"
         alt="Site logo"
         style={{
-          height: '32px',
-          width: '32px',
+          height: '64px',
+          width: '64px',
         }}/>
         <h1 style={{
           fontSize: '28px',
