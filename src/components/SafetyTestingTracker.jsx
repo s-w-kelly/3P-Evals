@@ -81,6 +81,10 @@ const notesStyles = (
       color: '#e0e0e0',
       padding: '20px',
     }}>
+      <div style={{
+        maxWidth: '1280px',
+        margin: '0 auto',
+      }}>
       {notesStyles}
       {/* Header */}
       <div style={{ marginBottom: '16px' }}>
@@ -291,15 +295,17 @@ const notesStyles = (
         </div>
       </div>
 
-      {/* Main Grid */}
-      <div style={{
-        display: 'grid',
-        gridTemplateColumns: `180px repeat(${labEntries.length}, 1fr)`,
-        gap: '2px',
-        backgroundColor: '#2a2f3e',
-        borderRadius: '8px',
-        overflow: 'hidden',
-      }}>
+      {/* Main Grid - Scrollable Container */}
+      <div style={{ overflowX: 'auto', paddingBottom: '16px' }}>
+        <div style={{
+          display: 'grid',
+          gridTemplateColumns: `180px repeat(${labEntries.length}, minmax(140px, 1fr))`,
+          gap: '2px',
+          backgroundColor: '#2a2f3e',
+          borderRadius: '8px',
+          overflow: 'hidden',
+          minWidth: '900px',
+        }}>
         {/* Header Row */}
         <div style={{ backgroundColor: '#1a1f2e', padding: '16px' }} />
         {labEntries.map(([labId, lab]) => {
@@ -493,6 +499,7 @@ const notesStyles = (
           </React.Fragment>
         ))}
       </div>
+      </div>
 
       {/* Legend */}
       <div style={{
@@ -532,6 +539,7 @@ const notesStyles = (
       }}>
         <div>Last updated: {siteConfig.lastUpdated}</div>
         <div>{siteConfig.dataSource}</div>
+      </div>
       </div>
     </div>
   );
