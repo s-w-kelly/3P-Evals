@@ -536,7 +536,7 @@ export default function SafetyTestingTracker() {
                   alignItems: 'flex-start',
                   justifyContent: 'space-between',
                   width: '100%',
-                  maxWidth: '180px',
+                  maxWidth: '170px',
                   padding: '4px 8px',
                   paddingLeft: '10px',
                   backgroundColor: highlighted ? 'var(--bg-tertiary)' : 'var(--bg-secondary)',

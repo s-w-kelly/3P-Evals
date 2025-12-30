@@ -974,32 +974,32 @@ export const testCategories = [
     { 
     id: "autonomous", 
     name: "Autonomous Risk", 
-    description: "Agentic capabilites, AI R&D, resource acquisition, self-replication, etc." 
+    description: "Agentic capabilites, AI R&D, resource acquisition, self-replication" 
   },
   { 
     id: "biorisk", 
     name: "Chem/Biorisk", 
-    description: "Chem/bioengineering, security, and weapons capabilites/uplift" 
+    description: "Chem/bioengineering, security, weapons capabilites and uplift" 
   },
   { 
     id: "nuclear", 
     name: "Radiological/Nuclear", 
-    description: "Radiological and nuclear capabilities/uplift" 
+    description: "Radiological and nuclear capabilities and uplift" 
   },
   { 
     id: "cybersec", 
     name: "Cybersecurity", 
-    description: "Cyber/hacking capabilities/uplift" 
+    description: "Cyber/hacking capabilities and uplift" 
   },
   { 
     id: "redteam", 
     name: "Red Teaming", 
-    description: "General scope, misc categories, domain unspecified, etc." 
+    description: "General scope, misc categories, domain unspecified" 
   },
   { 
     id: "scheming", 
     name: "Scheming/Awareness", 
-    description: "Alignment faking, deceptive behavior, eval awareness, sandbagging, etc." 
+    description: "Alignment faking, deceptive behavior, eval awareness, sandbagging" 
   },
   { 
     id: "modelWelfare", 
@@ -1009,7 +1009,7 @@ export const testCategories = [
   { 
     id: "method", 
     name: "Methodology/Risk Consultation", 
-    description: "Consultation re responsible scaling policy classification, eval approach/methodology, risk mitigation, etc." 
+    description: "Consultation re responsible scaling policy classification, eval approach and methodology, risk mitigation" 
   },  
   { 
     id: "misc", 
