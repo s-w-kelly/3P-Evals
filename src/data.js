@@ -1066,7 +1066,7 @@ export const evaluatorOrder = {
 export const siteConfig = {
   title: "3P Evals Monitor",
   subtitle: "Monitoring frontier AI labs’ engagement of third-parties for pre-deployment safety evaluations",
-  lastUpdated: "12/23/2025",
+  lastUpdated: "12/30/2025",
   dataSource: "Data compiled from public sources.",
   notesFull: `
   <p>The chart below reflects all third-party safety evaluations performed for major AI models released since 2023.</p>
