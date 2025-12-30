@@ -646,12 +646,7 @@ export default function SafetyTestingTracker() {
         <header style={styles.header}>
           <div style={styles.headerTop}>
             <div style={styles.headerLeft}>
-              <img
-                src="/3pfavnew.png"
-                alt="3P Evals Monitor"
-                style={styles.logo}
-              />
-              <div style={styles.headerContent}>
+                <div style={styles.headerContent}>
                 <h1 style={styles.title}>{siteConfig.title}</h1>
                 <p style={styles.subtitle}>{siteConfig.subtitle}</p>
               </div>
