@@ -880,7 +880,7 @@ export default function SafetyTestingTracker() {
             fontSize: '0.6875rem',
             color: 'var(--text-muted)',
             textAlign: 'right',
-            maxWidth: '320px',
+            maxWidth: '640px',
           }}>
             Data compiled from publicly available model cards/system cards, technical reports, blog posts, and others disclosures.
           </div>
