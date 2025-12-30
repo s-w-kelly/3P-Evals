@@ -1008,13 +1008,13 @@ export const testCategories = [
   },
   { 
     id: "method", 
-    name: "Methodology/Risk Consultation", 
+    name: "Methodology/Risk", 
     description: "Consultation re responsible scaling policy classification, eval approach and methodology, risk mitigation" 
   },  
   { 
     id: "misc", 
     name: "Misc Evals", 
-    description: "Catch-all for misc evals" 
+    description: "Catch-all for misc/unspecified evals" 
   },
 ];
 
