@@ -1065,11 +1065,10 @@ export const evaluatorOrder = {
  */
 export const siteConfig = {
   title: "3P Evals Monitor",
-  subtitle: "Monitoring frontier AI labs’ engagement of third-parties for pre-deployment safety evaluations",
+  subtitle: "Tracking frontier AI labs’ third-party engagement for pre-deployment safety evaluations",
   lastUpdated: "12/30/2025",
-  dataSource: "Data compiled from public sources.",
   notesFull: `
-  <p>The chart below reflects all third-party safety evaluations performed for major AI models released since 2023.</p>
+  <p>The dashboard below reflects all third-party safety evaluations performed for major AI models released since 2023.</p>
   <br>
   <p>Scope/definitions:</p>
 
@@ -1080,7 +1079,7 @@ export const siteConfig = {
     </li>
     <ul>
       <li>
-      This chart only includes <strong>language models</strong> (including multimodal), not image/video-only models like Nano Banana or Sora.
+      This dashboard only includes <strong>language models</strong> (including multimodal), not image/video-only models like Nano Banana or Sora.
       </li>
     </ul>
 
@@ -1089,10 +1088,10 @@ export const siteConfig = {
       (e.g., autonomous capabilities, CBRN knowledge/uplift, cybersecurity, etc.) performed by someone not permanently employed by the model developer.
       <ul>
         <li>
-          This chart does not include third-party evals measuring pure performance in everyday tasks like language, math, coding, etc. (e.g., Epoch evaluating Grok 4’s math capabilities).
+          This dashboard does not include third-party evals measuring pure performance in everyday tasks like language, math, coding, etc. (e.g., Epoch evaluating Grok 4’s math capabilities).
         </li>
         <li>
-          <strong>This chart does not include evals solely designed by a third party but executed by the lab.</strong> The third party must have performed or meaningfully facilitated the eval.
+          <strong>This dashboard does not include evals solely designed by a third party but executed by the lab.</strong> The third party must have performed or meaningfully facilitated the eval.
         </li>
         <li>
           Third parties whose role was merely to supply red teamers or uplift trial participants (i.e., as a sort of vender or staffing intermediary) are not reflected in the chart.
@@ -1101,7 +1100,7 @@ export const siteConfig = {
     </li>
   </ul>
  <br>
-  <p>Chart explanation:</p>
+  <p>Dashboard explanation:</p>
   <ul>
     <li>
       Across the top, each lab has a dropdown listing all models within scope (major large language models released since 2023) in <strong>descending release order</strong> (newest to oldest).
@@ -1132,7 +1131,7 @@ export const siteConfig = {
       </ul>      
     </li>
     <li>
-      Above the chart is a list of all third-parties who have performed evals for the models analyzed in this study.
+      Above the dashboard is a list of all third-parties who have performed evals for the models analyzed in this study.
       <ul>
         <li>
           Evaluators are grouped by organization type: <strong>Private</strong> (non-/for-profit private orgs), <strong>Public</strong> (government orgs), and <strong>Other</strong> (individuals and unidentified parties).
@@ -1141,7 +1140,7 @@ export const siteConfig = {
           <strong>Unidentified third parties</strong> means the lab disclosed third-party involvement but did not specify the party.
         </li>
         <li>
-          Clicking on a party will highlight their engagements among <strong>currently selected models</strong> in the chart.
+          Clicking on a party will highlight their engagements among <strong>currently selected models</strong> in the dashboard.
         </li>
       </ul>      
     </li>
@@ -1149,7 +1148,7 @@ export const siteConfig = {
  <br>
  <p><strong>Classification methodology:</strong> Evaluator classifications are based on careful review of publicly available sources. Lab disclosures vary in specificity, and some eval engagements span multiple risk domains or are described ambiguously. Where judgment calls were required, I prioritized the primary focus of the engagement as described in the source material. Readers may reasonably reach different conclusions on certain classifications.</p>
  <br>
- <p><strong>Motivations/Why I made this thing:</strong> I believe third-party evals, probably at least in party by private organizations, will be an essential component of any workable frontier AI governance regime. AI labs can’t be trusted to govern themselves (as is currently occurring) and government agencies are unlikely to have the technical capacity or resources to evaluate every frontier model across every risk area themselves, so private evaluators will likely need to play a significant role. As this third-party evaluation ecosystem is developing, I wanted to understand which labs are seeking external evaluation, what risk domains are being tested, and which organizations are emerging as evaluators. I hope this can serve as a resource for thinking about how to incorporate third-party oversight into frontier AI governance.</p>
+ <p><strong>Motivations/Why this matters:</strong> I believe third-party evals, probably at least in party by private organizations, will be an essential component of any workable frontier AI governance regime. AI labs can’t be trusted to govern themselves (as is currently occurring) and government agencies are unlikely to have the technical capacity or resources to evaluate every frontier model across every risk area themselves, so private evaluators will likely need to play a significant role. As this third-party evaluation ecosystem is developing, I wanted to understand which labs are seeking external evaluation, what risk domains are being tested, and which organizations are emerging as evaluators. I hope this can serve as a resource for thinking about how to incorporate third-party oversight into frontier AI governance.</p>
 `,
 
 

@@ -715,7 +715,7 @@ export default function SafetyTestingTracker() {
                 <line x1="12" y1="16" x2="12" y2="12"/>
                 <line x1="12" y1="8" x2="12.01" y2="8"/>
               </svg>
-              Methodology, Scope & Definitions
+              Methodology, Scope, and Definitions
             </div>
             <button
               style={{
@@ -819,7 +819,7 @@ export default function SafetyTestingTracker() {
               borderRadius: '2px',
               border: '1px solid var(--border-light)',
             }} />
-            <span>No third-party engagement disclosed</span>
+            <span>No third-party engagement found</span>
           </div>
         </div>
 
@@ -882,7 +882,7 @@ export default function SafetyTestingTracker() {
             textAlign: 'right',
             maxWidth: '320px',
           }}>
-            Data compiled from publicly available system cards, technical reports, and official disclosures.
+            Data compiled from publicly available model cards/system cards, technical reports, blog posts, and others disclosures.
           </div>
         </footer>
       </div>
