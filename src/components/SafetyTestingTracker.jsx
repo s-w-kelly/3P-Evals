@@ -1102,7 +1102,7 @@ export default function SafetyTestingTracker() {
           <div style={styles.analysisContainer}>
             <section style={styles.analysisSection}>
               <h2 style={styles.analysisSectionTitle}>
-                Analysis/Insights
+                Key Insights/Analysis
               </h2>
               {analysisContent.analysisInsights.map((item) => (
                 <AccordionItem
