@@ -1025,27 +1025,11 @@ export default function SafetyTestingTracker() {
         {/* Analysis Tab Content */}
         {activeTab === 'analysis' && (
           <div style={styles.analysisContainer}>
-            {/* What's Working Section */}
             <section style={styles.analysisSection}>
               <h2 style={styles.analysisSectionTitle}>
-                What's Working
+                Analysis/Insights
               </h2>
-              {analysisContent.whatsWorking.map((item) => (
-                <AccordionItem
-                  key={item.id}
-                  item={item}
-                  isOpen={openAccordions[item.id]}
-                  onToggle={() => toggleAccordion(item.id)}
-                />
-              ))}
-            </section>
-
-            {/* What Isn't Working Section */}
-            <section style={styles.analysisSection}>
-              <h2 style={styles.analysisSectionTitle}>
-                What Isn't Working
-              </h2>
-              {analysisContent.whatsNotWorking.map((item) => (
+              {analysisContent.analysisInsights.map((item) => (
                 <AccordionItem
                   key={item.id}
                   item={item}
