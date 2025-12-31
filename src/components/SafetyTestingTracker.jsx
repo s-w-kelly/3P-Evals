@@ -873,6 +873,8 @@ export default function SafetyTestingTracker() {
         {/* Dashboard Tab Content */}
         {activeTab === 'dashboard' && (
           <>
+        <h2 style={styles.analysisSectionTitle}>Dashboard</h2>
+
         {/* Notes Section */}
         <div style={styles.notesCard} className="no-print">
           <div
