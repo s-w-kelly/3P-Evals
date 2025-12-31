@@ -1203,8 +1203,8 @@ export const analysisContent = {
       `,
     },
     {
-      id: "Meta and xAI show minimal third-party engagement",
-      title: "Section 2: Placeholder Title",
+      id: "analysis-5",
+      title: "Meta and xAI show minimal third-party engagement",
       content: `
         <p>Anthropic, Google DeepMind, and OpenAI consistently seek third-party evaluation of their models, albeit with limitations and problems described elsewhere.</p>
         <p>Meta’s documentation does not clearly indicate third-party involvement for models after Llama 2.</p>
@@ -1238,7 +1238,7 @@ export const analysisContent = {
     },
     {
       id: "analysis-7",
-      title: "Open-weight models pose inherent risks",
+      title: "Open-weight models pose signifcant risks",
       content: `
         <p>Open-weight models are inherently harder to control once released since anyone can fine-tune the model to unlock or enhance dangerous use cases. This makes pre-deployment evals and third-party oversight even more critical to fully understand model capabilities and mitigate risks. Unfortunately, open model developers seem to be the worst at reliably performing evals and getting external input.</p>
         <p>As noted, Meta is doing poorly in this regard. But the situation is worse in China, where <a href="https://www.interconnects.ai/p/kimi-k2-and-when-deepseek-moments">the best open models</a> are coming from. <a href="https://ailabwatch.org/companies/deepseek">DeepSeek</a> “seems to be doing nothing to prepare for catastrophic risks.” <a href="https://aisafetychina.substack.com/p/ai-safety-in-china-20?open=false#%C2%A7alibaba-publishes-comprehensive-report-on-safety-practice">Alibaba's evals</a> of its Qwen models “mostly focus on compliance with local Chinese regulations and standards, and [its safety plan] lacks discussion of catastrophic safety risks.” Moonshot’s safety evals for Kimi K2 <a href="https://www.arxiv.org/pdf/2507.20534">were minimal</a>.</p>
