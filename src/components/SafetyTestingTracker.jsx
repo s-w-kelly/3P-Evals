@@ -857,7 +857,7 @@ export default function SafetyTestingTracker() {
             }}
             onClick={() => setActiveTab('dashboard')}
           >
-            Third-Party Evals Dashboard
+            Dashboard
           </button>
           <button
             style={{
@@ -873,7 +873,7 @@ export default function SafetyTestingTracker() {
         {/* Dashboard Tab Content */}
         {activeTab === 'dashboard' && (
           <>
-        <h2 style={styles.analysisSectionTitle}>Dashboard</h2>
+        <h2 style={styles.analysisSectionTitle}>Third-Party Evals Dashboard</h2>
 
         {/* Notes Section */}
         <div style={styles.notesCard} className="no-print">
@@ -1080,7 +1080,7 @@ export default function SafetyTestingTracker() {
                 maxWidth: '640px',
               }}
             >
-              Built and maintained by{' '}
+              Created and maintained by{' '}
               <a
                 href="https://www.linkedin.com/in/spencerwkelly/"
                 target="_blank"
