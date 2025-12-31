@@ -857,7 +857,7 @@ export default function SafetyTestingTracker() {
             }}
             onClick={() => setActiveTab('dashboard')}
           >
-            Dashboard
+            Third-Party Evals Dashboard
           </button>
           <button
             style={{
@@ -937,7 +937,7 @@ export default function SafetyTestingTracker() {
 
         {/* Evaluators Section */}
         <section style={styles.evaluatorsSection} className="no-print">
-          <h2 style={styles.sectionHeader}>Third-Party Evaluators</h2>
+          <h2 style={styles.sectionHeader}>Evaluators</h2>
           <p style={styles.sectionSubheader}>
             Select an evaluator to highlight their engagements
           </p>
@@ -1014,7 +1014,7 @@ export default function SafetyTestingTracker() {
               <polyline points="7 10 12 15 17 10"/>
               <line x1="12" y1="15" x2="12" y2="3"/>
             </svg>
-            Export CSV
+            Export data
           </button>
         </div>
 
