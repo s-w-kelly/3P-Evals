@@ -1150,6 +1150,95 @@ export const siteConfig = {
  <br>
  <p><strong>Motivations/Why this matters:</strong> I believe third-party evals, probably at least in party by private organizations, will be an essential component of any workable frontier AI governance regime. AI labs can’t be trusted to govern themselves (as is currently occurring) and government agencies are unlikely to have the technical capacity or resources to evaluate every frontier model across every risk area themselves, so private evaluators will likely need to play a significant role. As this third-party evaluation ecosystem is developing, I wanted to understand which labs are seeking external evaluation, what risk domains are being tested, and which organizations are emerging as evaluators. I hope this can serve as a resource for thinking about how to incorporate third-party oversight into frontier AI governance.</p>
 `,
+};
 
-
+/**
+ * Analysis Page Content
+ *
+ * EDITING GUIDE:
+ * - Each section has a "title" and "content" (HTML string)
+ * - To add a new section: Add a new object to the appropriate array
+ * - Content supports HTML: <p>, <ul>, <li>, <strong>, <em>, <a href="...">, etc.
+ * - Sections appear in the order listed below
+ */
+export const analysisContent = {
+  whatsWorking: [
+    {
+      id: "working-1",
+      title: "Section 1: Placeholder Title",
+      content: `
+        <p>This is placeholder content for the first "What's Working" section.</p>
+        <p>You can add multiple paragraphs, lists, and other HTML elements here.</p>
+        <ul>
+          <li>Example bullet point 1</li>
+          <li>Example bullet point 2</li>
+        </ul>
+      `,
+    },
+    {
+      id: "working-2",
+      title: "Section 2: Placeholder Title",
+      content: `
+        <p>This is placeholder content for the second section.</p>
+      `,
+    },
+    {
+      id: "working-3",
+      title: "Section 3: Placeholder Title",
+      content: `
+        <p>This is placeholder content for the third section.</p>
+      `,
+    },
+    {
+      id: "working-4",
+      title: "Section 4: Placeholder Title",
+      content: `
+        <p>This is placeholder content for the fourth section.</p>
+      `,
+    },
+  ],
+  whatsNotWorking: [
+    {
+      id: "notworking-1",
+      title: "Section 1: Placeholder Title",
+      content: `
+        <p>This is placeholder content for the first "What Isn't Working" section.</p>
+      `,
+    },
+    {
+      id: "notworking-2",
+      title: "Section 2: Placeholder Title",
+      content: `
+        <p>This is placeholder content for the second section.</p>
+      `,
+    },
+    {
+      id: "notworking-3",
+      title: "Section 3: Placeholder Title",
+      content: `
+        <p>This is placeholder content for the third section.</p>
+      `,
+    },
+    {
+      id: "notworking-4",
+      title: "Section 4: Placeholder Title",
+      content: `
+        <p>This is placeholder content for the fourth section.</p>
+      `,
+    },
+    {
+      id: "notworking-5",
+      title: "Section 5: Placeholder Title",
+      content: `
+        <p>This is placeholder content for the fifth section.</p>
+      `,
+    },
+    {
+      id: "notworking-6",
+      title: "Section 6: Placeholder Title",
+      content: `
+        <p>This is placeholder content for the sixth section.</p>
+      `,
+    },
+  ],
 };

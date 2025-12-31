@@ -1,5 +1,5 @@
 import React, { useState, useRef, useEffect, useCallback } from 'react';
-import { labsData, testCategories, evaluators, evaluatorOrder, siteConfig } from '../data';
+import { labsData, testCategories, evaluators, evaluatorOrder, siteConfig, analysisContent } from '../data';
 
 // Muted, professional evaluator colors (for left border accent only)
 const evaluatorAccentColors = {
@@ -46,6 +46,8 @@ export default function SafetyTestingTracker() {
   const [notesOpen, setNotesOpen] = useState(false);
   const notesRef = useRef(null);
   const [notesMaxHeight, setNotesMaxHeight] = useState('0px');
+  const [activeTab, setActiveTab] = useState('dashboard');
+  const [openAccordions, setOpenAccordions] = useState({});
 
   const notesFull = siteConfig?.notesFull || "";
 
@@ -57,6 +59,10 @@ export default function SafetyTestingTracker() {
 
   const handleModelChange = (labId, model) => {
     setSelectedModels(prev => ({ ...prev, [labId]: model }));
+  };
+
+  const toggleAccordion = (id) => {
+    setOpenAccordions(prev => ({ ...prev, [id]: !prev[id] }));
   };
 
   const isHighlighted = (evaluator) => {
@@ -174,6 +180,89 @@ export default function SafetyTestingTracker() {
       color: 'var(--text-secondary)',
       lineHeight: 1.5,
       maxWidth: '600px',
+    },
+    // Tabs
+    tabContainer: {
+      display: 'flex',
+      gap: '4px',
+      marginBottom: 'var(--space-lg)',
+      borderBottom: '1px solid var(--border-light)',
+      paddingBottom: '0',
+    },
+    tab: {
+      padding: '10px 20px',
+      backgroundColor: 'transparent',
+      border: 'none',
+      borderBottom: '2px solid transparent',
+      color: 'var(--text-tertiary)',
+      fontSize: '0.875rem',
+      fontWeight: '500',
+      fontFamily: 'var(--font-body)',
+      cursor: 'pointer',
+      transition: 'all 0.15s ease',
+      marginBottom: '-1px',
+    },
+    tabActive: {
+      color: 'var(--text-primary)',
+      borderBottomColor: 'var(--accent-primary, #2563eb)',
+    },
+    // Analysis page styles
+    analysisContainer: {
+      maxWidth: '900px',
+    },
+    analysisSection: {
+      marginBottom: 'var(--space-xl)',
+    },
+    analysisSectionTitle: {
+      fontFamily: 'var(--font-display)',
+      fontSize: '1.25rem',
+      fontWeight: '700',
+      color: 'var(--text-primary)',
+      marginBottom: 'var(--space-md)',
+      display: 'flex',
+      alignItems: 'center',
+      gap: 'var(--space-sm)',
+    },
+    accordionItem: {
+      backgroundColor: 'var(--bg-secondary)',
+      border: '1px solid var(--border-light)',
+      borderRadius: 'var(--radius-md)',
+      marginBottom: 'var(--space-sm)',
+      overflow: 'hidden',
+    },
+    accordionHeader: {
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'space-between',
+      padding: 'var(--space-md) var(--space-lg)',
+      cursor: 'pointer',
+      backgroundColor: 'var(--bg-secondary)',
+      border: 'none',
+      width: '100%',
+      textAlign: 'left',
+      transition: 'background-color 0.15s ease',
+    },
+    accordionTitle: {
+      fontFamily: 'var(--font-body)',
+      fontSize: '0.9375rem',
+      fontWeight: '600',
+      color: 'var(--text-primary)',
+    },
+    accordionIcon: {
+      transition: 'transform 0.2s ease',
+      color: 'var(--text-tertiary)',
+    },
+    accordionContent: {
+      overflow: 'hidden',
+      transition: 'max-height 0.3s ease-in-out',
+    },
+    accordionInner: {
+      padding: 'var(--space-md) var(--space-lg)',
+      paddingTop: '12px',
+      fontSize: '0.875rem',
+      lineHeight: 1.7,
+      color: 'var(--text-secondary)',
+      borderTop: '1px solid var(--border-light)',
     },
     // Export button
     exportButton: {
@@ -323,6 +412,62 @@ export default function SafetyTestingTracker() {
       color: 'var(--text-tertiary)',
       lineHeight: 1.6,
     },
+  };
+
+  // Accordion component for Analysis tab
+  const AccordionItem = ({ item, isOpen, onToggle }) => {
+    const contentRef = useRef(null);
+    const [maxHeight, setMaxHeight] = useState('0px');
+
+    useEffect(() => {
+      if (contentRef.current) {
+        setMaxHeight(isOpen ? `${contentRef.current.scrollHeight}px` : '0px');
+      }
+    }, [isOpen]);
+
+    return (
+      <div style={styles.accordionItem}>
+        <button
+          style={styles.accordionHeader}
+          onClick={onToggle}
+          onMouseEnter={(e) => {
+            e.currentTarget.style.backgroundColor = 'var(--bg-tertiary)';
+          }}
+          onMouseLeave={(e) => {
+            e.currentTarget.style.backgroundColor = 'var(--bg-secondary)';
+          }}
+        >
+          <span style={styles.accordionTitle}>{item.title}</span>
+          <svg
+            width="12"
+            height="12"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="2"
+            style={{
+              ...styles.accordionIcon,
+              transform: isOpen ? 'rotate(180deg)' : 'none',
+            }}
+          >
+            <polyline points="6 9 12 15 18 9" />
+          </svg>
+        </button>
+        <div
+          ref={contentRef}
+          style={{
+            ...styles.accordionContent,
+            maxHeight: maxHeight,
+          }}
+        >
+          <div
+            style={styles.accordionInner}
+            className="notes-html"
+            dangerouslySetInnerHTML={{ __html: item.content }}
+          />
+        </div>
+      </div>
+    );
   };
 
   // Evaluator button - muted style with colored left border
@@ -644,6 +789,31 @@ export default function SafetyTestingTracker() {
           </div>
         </header>
 
+        {/* Tabs */}
+        <div style={styles.tabContainer} className="no-print">
+          <button
+            style={{
+              ...styles.tab,
+              ...(activeTab === 'dashboard' ? styles.tabActive : {}),
+            }}
+            onClick={() => setActiveTab('dashboard')}
+          >
+            Dashboard
+          </button>
+          <button
+            style={{
+              ...styles.tab,
+              ...(activeTab === 'analysis' ? styles.tabActive : {}),
+            }}
+            onClick={() => setActiveTab('analysis')}
+          >
+            Analysis
+          </button>
+        </div>
+
+        {/* Dashboard Tab Content */}
+        {activeTab === 'dashboard' && (
+          <>
         {/* Notes Section */}
         <div style={styles.notesCard} className="no-print">
           <div
@@ -849,6 +1019,43 @@ export default function SafetyTestingTracker() {
             Data compiled from publicly available model cards/system cards, technical reports, blog posts, and others disclosures.
           </div>
         </footer>
+          </>
+        )}
+
+        {/* Analysis Tab Content */}
+        {activeTab === 'analysis' && (
+          <div style={styles.analysisContainer}>
+            {/* What's Working Section */}
+            <section style={styles.analysisSection}>
+              <h2 style={styles.analysisSectionTitle}>
+                What's Working
+              </h2>
+              {analysisContent.whatsWorking.map((item) => (
+                <AccordionItem
+                  key={item.id}
+                  item={item}
+                  isOpen={openAccordions[item.id]}
+                  onToggle={() => toggleAccordion(item.id)}
+                />
+              ))}
+            </section>
+
+            {/* What Isn't Working Section */}
+            <section style={styles.analysisSection}>
+              <h2 style={styles.analysisSectionTitle}>
+                What Isn't Working
+              </h2>
+              {analysisContent.whatsNotWorking.map((item) => (
+                <AccordionItem
+                  key={item.id}
+                  item={item}
+                  isOpen={openAccordions[item.id]}
+                  onToggle={() => toggleAccordion(item.id)}
+                />
+              ))}
+            </section>
+          </div>
+        )}
       </div>
     </div>
   );
