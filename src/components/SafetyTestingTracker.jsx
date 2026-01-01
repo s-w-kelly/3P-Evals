@@ -1104,7 +1104,7 @@ export default function SafetyTestingTracker() {
           >
             Created and maintained by{' '}
             <a
-              href="https://www.linkedin.com/in/spencerwkelly/"
+              href="https://www.skellystuff.net/"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Spencer Kelly on LinkedIn"
@@ -1116,6 +1116,16 @@ export default function SafetyTestingTracker() {
             >
               Spencer Kelly
             </a>.
+          </div>
+          <div
+            style={{
+              fontSize: '0.6875rem',
+              color: 'var(--text-muted)',
+              textAlign: 'right',
+              maxWidth: '640px',
+            }}
+          >
+            This website was built using Claude Code but all research/analysis/content is by me.
           </div>
         </footer>
       </div>
