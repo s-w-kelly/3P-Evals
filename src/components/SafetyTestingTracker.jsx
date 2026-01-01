@@ -1063,39 +1063,6 @@ export default function SafetyTestingTracker() {
           </div>
         </section>
 
-        {/* Footer */}
-          <footer style={styles.footer}>
-            <div style={styles.footerMeta}>
-              <div style={{ fontWeight: '600', color: 'var(--text-secondary)', marginBottom: '2px' }}>
-                Last updated: {siteConfig.lastUpdated}
-              </div>
-              <div>{siteConfig.dataSource}</div>
-            </div>
-
-            <div
-              style={{
-                fontSize: '0.6875rem',
-                color: 'var(--text-muted)',
-                textAlign: 'right',
-                maxWidth: '640px',
-              }}
-            >
-              Created and maintained by{' '}
-              <a
-                href="https://www.linkedin.com/in/spencerwkelly/"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="Spencer Kelly on LinkedIn"
-                style={{
-                  color: 'inherit',
-                  textDecoration: 'underline',
-                  fontWeight: '500',
-                }}
-              >
-                Spencer Kelly
-              </a>.
-            </div>
-          </footer>
           </>
         )}
 
@@ -1117,6 +1084,40 @@ export default function SafetyTestingTracker() {
             </section>
           </div>
         )}
+
+        {/* Footer */}
+        <footer style={styles.footer}>
+          <div style={styles.footerMeta}>
+            <div style={{ fontWeight: '600', color: 'var(--text-secondary)', marginBottom: '2px' }}>
+              Last updated: {siteConfig.lastUpdated}
+            </div>
+            <div>{siteConfig.dataSource}</div>
+          </div>
+
+          <div
+            style={{
+              fontSize: '0.6875rem',
+              color: 'var(--text-muted)',
+              textAlign: 'right',
+              maxWidth: '640px',
+            }}
+          >
+            Created and maintained by{' '}
+            <a
+              href="https://www.linkedin.com/in/spencerwkelly/"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Spencer Kelly on LinkedIn"
+              style={{
+                color: 'inherit',
+                textDecoration: 'underline',
+                fontWeight: '500',
+              }}
+            >
+              Spencer Kelly
+            </a>.
+          </div>
+        </footer>
       </div>
     </div>
   );
