@@ -1087,6 +1087,7 @@ export default function SafetyTestingTracker() {
 
         {/* Footer */}
         <footer style={styles.footer}>
+          {/* Left column */}
           <div style={styles.footerMeta}>
             <div style={{ fontWeight: '600', color: 'var(--text-secondary)', marginBottom: '2px' }}>
               Last updated: {siteConfig.lastUpdated}
@@ -1094,38 +1095,47 @@ export default function SafetyTestingTracker() {
             <div>{siteConfig.dataSource}</div>
           </div>
 
+          {/* Right column */}
           <div
             style={{
-              fontSize: '0.6875rem',
-              color: 'var(--text-muted)',
+              display: 'flex',
+              flexDirection: 'column',
+              alignItems: 'flex-end',
               textAlign: 'right',
               maxWidth: '640px',
             }}
           >
-            Created and maintained by{' '}
-            <a
-              href="https://www.skellystuff.net/"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="Spencer Kelly on LinkedIn"
+            <div
               style={{
-                color: 'inherit',
-                textDecoration: 'underline',
-                fontWeight: '500',
+                fontSize: '0.6875rem',
+                color: 'var(--text-muted)',
               }}
             >
-              Spencer Kelly
-            </a>.
-          </div>
-          <div
-            style={{
-              fontSize: '0.6875rem',
-              color: 'var(--text-muted)',
-              textAlign: 'right',
-              maxWidth: '640px',
-            }}
-          >
-            This website was built using Claude Code but all research/analysis/content is by me.
+              Created and maintained by{' '}
+              <a
+                href="https://www.skellystuff.net/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Spencer Kelly on LinkedIn"
+                style={{
+                  color: 'inherit',
+                  textDecoration: 'underline',
+                  fontWeight: '500',
+                }}
+              >
+                Spencer Kelly
+              </a>.
+            </div>
+
+            <div
+              style={{
+                fontSize: '0.6875rem',
+                color: 'var(--text-muted)',
+                marginTop: '2px',
+              }}
+            >
+              This website was built using Claude Code but all research/analysis/content is by me.
+            </div>
           </div>
         </footer>
       </div>
