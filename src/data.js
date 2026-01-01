@@ -1064,7 +1064,7 @@ export const evaluatorOrder = {
  * Site metadata
  */
 export const siteConfig = {
-  title: "3P Evals Monitor",
+  title: "3P Eval Monitor",
   subtitle: "Tracking frontier AI labs’ third-party engagement for pre-deployment safety evaluations",
   lastUpdated: "12/31/2025",
   notesFull: `
