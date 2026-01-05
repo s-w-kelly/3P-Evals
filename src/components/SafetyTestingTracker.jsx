@@ -100,7 +100,7 @@ export default function SafetyTestingTracker() {
               modelName,
               category.name,
               tests.map(t => t.evaluator).join('; '),
-              tests.filter(t => t.recurring).map(t => t.evaluator).join('; ') || '—',
+              tests.filter(t => t.recurring).map(t => t.evaluator).join('; ') || '',
               tests.map(t => t.source).join(' | ')
             ]);
           } else {
@@ -108,9 +108,9 @@ export default function SafetyTestingTracker() {
               lab.name,
               modelName,
               category.name,
-              '—',
-              '—',
-              '—'
+              '',
+              '',
+              ''
             ]);
           }
         });
@@ -153,8 +153,8 @@ export default function SafetyTestingTracker() {
     },
     // Header section - more dashboard-like
     header: {
-      marginBottom: 'var(--space-xl)',
-      paddingBottom: 'var(--space-lg)',
+      marginBottom: 'var(--space-sm)',
+      paddingBottom: 'var(--space-sm)',
       borderBottom: '2px solid var(--border-light)',
     },
     headerTop: {
