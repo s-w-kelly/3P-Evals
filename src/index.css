@@ -144,6 +144,16 @@ a:hover {
   color: var(--accent-secondary);
 }
 
+/* Analysis tab link styles */
+.notes-html a {
+  color: inherit;
+  text-decoration: underline;
+}
+
+.notes-html a:hover {
+  color: inherit;
+}
+
 /* Utility animations */
 @keyframes fadeIn {
   from { opacity: 0; transform: translateY(4px); }
