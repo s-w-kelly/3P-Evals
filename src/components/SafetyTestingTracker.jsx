@@ -129,7 +129,7 @@ export default function SafetyTestingTracker() {
     const blob = new Blob([csvContent], { type: 'text/csv;charset=utf-8;' });
     const link = document.createElement('a');
     link.href = URL.createObjectURL(blob);
-    link.download = `3p-evals-monitor-complete-${new Date().toISOString().split('T')[0]}.csv`;
+    link.download = `3p-eval-monitor-data-${new Date().toISOString().split('T')[0]}.csv`;
     link.click();
   }, []);
 
