@@ -1113,7 +1113,7 @@ export default function SafetyTestingTracker() {
             >
               Created and maintained by{' '}
               <a
-                href="https://www.skellystuff.net/"
+                href="https://www.skellydotcom.com/"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Spencer Kelly on LinkedIn"
