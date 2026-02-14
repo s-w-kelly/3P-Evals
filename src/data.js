@@ -1079,6 +1079,7 @@ export const testCategories = [
  * Add new evaluators here as they appear in the ecosystem
  */
 export const evaluators = {
+  "Andon Labs": { color: "#f6efa2", type: "private" },
   "Apollo Research": { color: "#17cfb9", type: "private" },
   "Deloitte": { color: "#86BC24", type: "private" },
   "Eleos": { color: "#2c44caff", type: "private" },
