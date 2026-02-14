@@ -37,7 +37,7 @@ export const labsData = {
         redteam: [
         ],
         scheming: [
-          { evaluator: "Andon Labs", recurring: false, source: "https://www-cdn.anthropic.com/c788cbc0a3da9135112f97cdf6dcd06f2c16cee2.pdf#page=119" },
+          { evaluator: "Andon Labs", recurring: false, source: "https://www-cdn.anthropic.com/c788cbc0a3da9135112f97cdf6dcd06f2c16cee2.pdf#page=120" },
         ],
         modelWelfare: [],
         method: [
@@ -1109,7 +1109,7 @@ export const evaluators = {
  * Evaluators will appear in this order in the Key Evaluators section
  */
 export const evaluatorOrder = {
-  private: ["Apollo Research", "Deloitte", "Eleos", "Faculty", "FAR.AI", "Gray Swan", "Haize Labs", "Irregular (fka Pattern)", "METR", "Microsoft", "SecureBio", "Signature Science", "Virtue AI"],
+  private: ["Andon Labs", "Apollo Research", "Deloitte", "Eleos", "Faculty", "FAR.AI", "Gray Swan", "Haize Labs", "Irregular (fka Pattern)", "METR", "Microsoft", "SecureBio", "Signature Science", "Virtue AI"],
   public: ["NNSA", "UK AISI", "US CAISI"],
   other: ["Domain experts", "Individual red teamers", "Uplift trial participants", "Unidentified third party"],
 };
