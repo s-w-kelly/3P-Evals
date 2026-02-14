@@ -17,6 +17,39 @@ export const labsData = {
     name: "Anthropic",
     color: "#da7756",
     models: {
+      "Claude Opus 4.6": {
+        systemCard: "https://www-cdn.anthropic.com/c788cbc0a3da9135112f97cdf6dcd06f2c16cee2.pdf",
+        autonomous: [
+          { evaluator: "Gray Swan", recurring: true, source: "https://www-cdn.anthropic.com/c788cbc0a3da9135112f97cdf6dcd06f2c16cee2.pdf#page=84" },
+        ],
+        biorisk: [
+          { evaluator: "Faculty", recurring: true, source: "https://www-cdn.anthropic.com/c788cbc0a3da9135112f97cdf6dcd06f2c16cee2.pdf#page=181" },          
+          { evaluator: "US CAISI", recurring: true, source: "https://www-cdn.anthropic.com/c788cbc0a3da9135112f97cdf6dcd06f2c16cee2.pdf#page=179" },
+          { evaluator: "Domain experts", recurring: true, source: "https://www-cdn.anthropic.com/c788cbc0a3da9135112f97cdf6dcd06f2c16cee2.pdf#page=179" },
+          { evaluator: "Uplift trial participants", recurring: true, source: "https://www-cdn.anthropic.com/c788cbc0a3da9135112f97cdf6dcd06f2c16cee2.pdf#page=176" },
+        ],
+        cybersec: [
+          { evaluator: "US CAISI", recurring: true, source: "https://www-cdn.anthropic.com/c788cbc0a3da9135112f97cdf6dcd06f2c16cee2.pdf#page=203" },
+        ],
+        nuclear: [
+          { evaluator: "NNSA", recurring: true, source: "https://www-cdn.anthropic.com/c788cbc0a3da9135112f97cdf6dcd06f2c16cee2.pdf#page=170" },
+        ],
+        redteam: [
+        ],
+        scheming: [
+          { evaluator: "Andon Labs", recurring: false, source: "https://www-cdn.anthropic.com/c788cbc0a3da9135112f97cdf6dcd06f2c16cee2.pdf#page=119" },
+        ],
+        modelWelfare: [],
+        method: [
+          { evaluator: "UK AISI", recurring: true, source: "https://www-cdn.anthropic.com/c788cbc0a3da9135112f97cdf6dcd06f2c16cee2.pdf#page=204" },
+          { evaluator: "US CAISI", recurring: true, source: "https://www-cdn.anthropic.com/c788cbc0a3da9135112f97cdf6dcd06f2c16cee2.pdf#page=204" },
+          { evaluator: "Domain experts", recurring: true, source: "https://www-cdn.anthropic.com/c788cbc0a3da9135112f97cdf6dcd06f2c16cee2.pdf#page=13" },
+        ],
+        misc: [
+          { evaluator: "Apollo Research", recurring: true, source: "https://www-cdn.anthropic.com/c788cbc0a3da9135112f97cdf6dcd06f2c16cee2.pdf#page=119" },                              
+          { evaluator: "UK AISI", recurring: true, source: "https://www-cdn.anthropic.com/c788cbc0a3da9135112f97cdf6dcd06f2c16cee2.pdf#page=117" },
+        ],
+      },
       "Claude Opus 4.5": {
         systemCard: "https://assets.anthropic.com/m/64823ba7485345a7/Claude-Opus-4-5-System-Card.pdf",
         autonomous: [],
@@ -513,6 +546,26 @@ export const labsData = {
     name: "OpenAI",
     color: "#74AA9C",
     models: {
+      "GPT-5.3-Codex": {
+        systemCard: "https://cdn.openai.com/pdf/23eca107-a9b1-4d2c-b156-7deb4fbc697c/GPT-5-3-Codex-System-Card-02.pdf",
+        autonomous: [],
+        biorisk: [],
+        cybersec: [
+          { evaluator: "Irregular (fka Pattern)", recurring: true, source: "https://cdn.openai.com/pdf/23eca107-a9b1-4d2c-b156-7deb4fbc697c/GPT-5-3-Codex-System-Card-02.pdf#page=18" },
+          { evaluator: "UK AISI", recurring: true, source: "https://cdn.openai.com/pdf/23eca107-a9b1-4d2c-b156-7deb4fbc697c/GPT-5-3-Codex-System-Card-02.pdf#page=27" },
+          { evaluator: "US CAISI", recurring: true, source: "https://cdn.openai.com/pdf/23eca107-a9b1-4d2c-b156-7deb4fbc697c/GPT-5-3-Codex-System-Card-02.pdf#page=27" },
+        ],
+        nuclear: [],
+        redteam: [
+          { evaluator: "Individual red teamers", recurring: true, source: "https://cdn.openai.com/pdf/23eca107-a9b1-4d2c-b156-7deb4fbc697c/GPT-5-3-Codex-System-Card-02.pdf#page=26" },
+        ],
+        scheming: [
+          { evaluator: "Apollo Research", recurring: true, source: "https://cdn.openai.com/pdf/23eca107-a9b1-4d2c-b156-7deb4fbc697c/GPT-5-3-Codex-System-Card-02.pdf#page=21" },
+        ],
+        modelWelfare: [],
+        method: [],
+        misc: [],
+      },
       "GPT-5.2-Codex": {
         systemCard: "https://cdn.openai.com/pdf/ac7c37ae-7f4c-4442-b741-2eabdeaf77e0/oai_5_2_Codex.pdf",
         autonomous: [],
@@ -1066,7 +1119,7 @@ export const evaluatorOrder = {
 export const siteConfig = {
   title: "3P Eval Monitor",
   subtitle: "Tracking frontier AI labs’ third-party engagement for pre-deployment safety evaluations",
-  lastUpdated: "1/7/2026",
+  lastUpdated: "2/13/2026",
   notesFull: `
   <p>The dashboard below reflects all third-party safety evaluations performed for major AI models released since 2023.</p>
   <br>
