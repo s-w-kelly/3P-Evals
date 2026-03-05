@@ -17,6 +17,26 @@ export const labsData = {
     name: "Anthropic",
     color: "#da7756",
     models: {
+      "Claude Sonnet 4.6": {
+        systemCard: "https://www-cdn.anthropic.com/78073f739564e986ff3e28522761a7a0b4484f84.pdf",
+        autonomous: [
+          { evaluator: "Gray Swan", recurring: true, source: "https://www-cdn.anthropic.com/78073f739564e986ff3e28522761a7a0b4484f84.pdf#page=97" },
+        ],
+        biorisk: [
+          { evaluator: "Faculty", recurring: true, source: "https://www-cdn.anthropic.com/78073f739564e986ff3e28522761a7a0b4484f84.pdf#page=109" },          
+        ],
+        cybersec: [
+        ],
+        nuclear: [],
+        redteam: [
+        ],
+        scheming: [
+          { evaluator: "Andon Labs", recurring: true, source: "https://www-cdn.anthropic.com/78073f739564e986ff3e28522761a7a0b4484f84.pdf#page=87" },
+        ],
+        modelWelfare: [],
+        method: [],
+        misc: [],
+      },
       "Claude Opus 4.6": {
         systemCard: "https://www-cdn.anthropic.com/c788cbc0a3da9135112f97cdf6dcd06f2c16cee2.pdf",
         autonomous: [
@@ -546,6 +566,18 @@ export const labsData = {
     name: "OpenAI",
     color: "#74AA9C",
     models: {
+      "GPT-5.3 Instant": {
+        systemCard: "https://deploymentsafety.openai.com/gpt-5-3-instant/gpt-5-3-instant.pdf",
+        autonomous: [],
+        biorisk: [],
+        cybersec: [],
+        nuclear: [],
+        redteam: [],
+        scheming: [],
+        modelWelfare: [],
+        method: [],
+        misc: [],
+      },
       "GPT-5.3-Codex": {
         systemCard: "https://cdn.openai.com/pdf/23eca107-a9b1-4d2c-b156-7deb4fbc697c/GPT-5-3-Codex-System-Card-02.pdf",
         autonomous: [],
