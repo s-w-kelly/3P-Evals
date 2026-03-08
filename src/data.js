@@ -566,6 +566,22 @@ export const labsData = {
     name: "OpenAI",
     color: "#74AA9C",
     models: {
+      "GPT-5.4 Thinking": {
+        systemCard: "https://deploymentsafety.openai.com/gpt-5-4-thinking/gpt-5-4-thinking.pdf",
+        autonomous: [],
+        biorisk: [],
+        cybersec: [
+          { evaluator: "Irregular (fka Pattern)", recurring: true, source: "https://deploymentsafety.openai.com/gpt-5-4-thinking/gpt-5-4-thinking.pdf#page=26" },
+        ],
+        nuclear: [],
+        redteam: [],
+        scheming: [
+          { evaluator: "Apollo Research", recurring: true, source: "https://deploymentsafety.openai.com/gpt-5-4-thinking/gpt-5-4-thinking.pdf#page=30" },    
+        ],
+        modelWelfare: [],
+        method: [],
+        misc: [],
+      },
       "GPT-5.3 Instant": {
         systemCard: "https://deploymentsafety.openai.com/gpt-5-3-instant/gpt-5-3-instant.pdf",
         autonomous: [],
@@ -1152,7 +1168,7 @@ export const evaluatorOrder = {
 export const siteConfig = {
   title: "3P Eval Monitor",
   subtitle: "Tracking frontier AI labs’ third-party engagement for pre-deployment safety evaluations",
-  lastUpdated: "3/4/2026",
+  lastUpdated: "3/8/2026",
   notesFull: `
   <p>The dashboard below reflects all third-party safety evaluations performed for major AI models released since 2023.</p>
   <br>
