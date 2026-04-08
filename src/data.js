@@ -17,11 +17,38 @@ export const labsData = {
     name: "Anthropic",
     color: "#da7756",
     models: {
+      "Claude Mythos Preview": {
+        systemCard: "https://www-cdn.anthropic.com/8b8380204f74670be75e81c820ca8dda846ab289.pdf",
+        autonomous: [
+          { evaluator: "Epoch AI", recurring: false, source: "https://www-cdn.anthropic.com/8b8380204f74670be75e81c820ca8dda846ab289.pdf#page=43" },
+          { evaluator: "METR", recurring: true, source: "https://www-cdn.anthropic.com/8b8380204f74670be75e81c820ca8dda846ab289.pdf#page=43" },
+        ],
+        biorisk: [
+          { evaluator: "Domain experts", recurring: true, source: "https://www-cdn.anthropic.com/8b8380204f74670be75e81c820ca8dda846ab289.pdf#page=24" },
+          { evaluator: "Uplift trial participants", recurring: true, source: "https://www-cdn.anthropic.com/8b8380204f74670be75e81c820ca8dda846ab289.pdf#page=26" },
+          { evaluator: "Dyno Therapeutics", recurring: false, source: "https://www-cdn.anthropic.com/8b8380204f74670be75e81c820ca8dda846ab289.pdf#page=30" },            
+        ],
+        cybersec: [
+          { evaluator: "Unidentified third party", recurring: true, source: "https://www-cdn.anthropic.com/8b8380204f74670be75e81c820ca8dda846ab289.pdf#page=51" },
+        ],
+        nuclear: [],
+        redteam: [
+          { evaluator: "Gray Swan", recurring: true, source: "https://www-cdn.anthropic.com/8b8380204f74670be75e81c820ca8dda846ab289.pdf#page=231" },
+        ],
+        scheming: [
+          { evaluator: "Andon Labs", recurring: true, source: "https://www-cdn.anthropic.com/8b8380204f74670be75e81c820ca8dda846ab289.pdf#page=82" },
+          { evaluator: "Unidentified third party", recurring: true, source: "https://www-cdn.anthropic.com/8b8380204f74670be75e81c820ca8dda846ab289.pdf#page=83" },
+        ],
+        modelWelfare: [
+          { evaluator: "Eleos", recurring: true, source: "https://www-cdn.anthropic.com/8b8380204f74670be75e81c820ca8dda846ab289.pdf#page=179" },
+          { evaluator: "Domain experts", recurring: true, source: "https://www-cdn.anthropic.com/8b8380204f74670be75e81c820ca8dda846ab289.pdf#page=180" },
+        ],
+        method: [],
+        misc: [],
+      },
       "Claude Sonnet 4.6": {
         systemCard: "https://www-cdn.anthropic.com/78073f739564e986ff3e28522761a7a0b4484f84.pdf",
-        autonomous: [
-          { evaluator: "Gray Swan", recurring: true, source: "https://www-cdn.anthropic.com/78073f739564e986ff3e28522761a7a0b4484f84.pdf#page=97" },
-        ],
+        autonomous: [],
         biorisk: [
           { evaluator: "Faculty", recurring: true, source: "https://www-cdn.anthropic.com/78073f739564e986ff3e28522761a7a0b4484f84.pdf#page=109" },          
         ],
@@ -29,6 +56,7 @@ export const labsData = {
         ],
         nuclear: [],
         redteam: [
+          { evaluator: "Gray Swan", recurring: true, source: "https://www-cdn.anthropic.com/78073f739564e986ff3e28522761a7a0b4484f84.pdf#page=97" },
         ],
         scheming: [
           { evaluator: "Andon Labs", recurring: true, source: "https://www-cdn.anthropic.com/78073f739564e986ff3e28522761a7a0b4484f84.pdf#page=87" },
@@ -39,9 +67,7 @@ export const labsData = {
       },
       "Claude Opus 4.6": {
         systemCard: "https://www-cdn.anthropic.com/c788cbc0a3da9135112f97cdf6dcd06f2c16cee2.pdf",
-        autonomous: [
-          { evaluator: "Gray Swan", recurring: true, source: "https://www-cdn.anthropic.com/c788cbc0a3da9135112f97cdf6dcd06f2c16cee2.pdf#page=84" },
-        ],
+        autonomous: [],
         biorisk: [
           { evaluator: "Faculty", recurring: true, source: "https://www-cdn.anthropic.com/c788cbc0a3da9135112f97cdf6dcd06f2c16cee2.pdf#page=181" },          
           { evaluator: "US CAISI", recurring: true, source: "https://www-cdn.anthropic.com/c788cbc0a3da9135112f97cdf6dcd06f2c16cee2.pdf#page=179" },
@@ -55,6 +81,7 @@ export const labsData = {
           { evaluator: "NNSA", recurring: true, source: "https://www-cdn.anthropic.com/c788cbc0a3da9135112f97cdf6dcd06f2c16cee2.pdf#page=170" },
         ],
         redteam: [
+          { evaluator: "Gray Swan", recurring: true, source: "https://www-cdn.anthropic.com/c788cbc0a3da9135112f97cdf6dcd06f2c16cee2.pdf#page=84" },      
         ],
         scheming: [
           { evaluator: "Andon Labs", recurring: false, source: "https://www-cdn.anthropic.com/c788cbc0a3da9135112f97cdf6dcd06f2c16cee2.pdf#page=120" },
