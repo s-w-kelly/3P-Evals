@@ -17,6 +17,30 @@ export const labsData = {
     name: "Anthropic",
     color: "#da7756",
     models: {
+      "Claude Opus 4.7": {
+        systemCard: "https://cdn.sanity.io/files/4zrzovbb/website/037f06850df7fbe871e206dad004c3db5fd50340.pdf",
+        autonomous: [
+          { evaluator: "UK AISI", recurring: true, source: "https://cdn.sanity.io/files/4zrzovbb/website/037f06850df7fbe871e206dad004c3db5fd50340.pdf#page=114" },        
+        ],
+        biorisk: [
+          { evaluator: "Domain experts", recurring: true, source: "https://cdn.sanity.io/files/4zrzovbb/website/037f06850df7fbe871e206dad004c3db5fd50340.pdf#page=19" },
+        ],
+        cybersec: [
+          { evaluator: "UK AISI", recurring: true, source: "https://cdn.sanity.io/files/4zrzovbb/website/037f06850df7fbe871e206dad004c3db5fd50340.pdf#page=52" },
+        ],
+        nuclear: [],
+        redteam: [
+          { evaluator: "Gray Swan", recurring: true, source: "https://cdn.sanity.io/files/4zrzovbb/website/037f06850df7fbe871e206dad004c3db5fd50340.pdf#page=92" },        
+        ],
+        scheming: [
+        ],
+        modelWelfare: [
+        ],
+        method: [],
+        misc: [
+          { evaluator: "Unidentified third party", recurring: true, source: "https://cdn.sanity.io/files/4zrzovbb/website/037f06850df7fbe871e206dad004c3db5fd50340.pdf#page=11" },
+        ],
+      },
       "Claude Mythos Preview": {
         systemCard: "https://www-cdn.anthropic.com/8b8380204f74670be75e81c820ca8dda846ab289.pdf",
         autonomous: [
@@ -667,6 +691,30 @@ export const labsData = {
     name: "OpenAI",
     color: "#74AA9C",
     models: {
+      "GPT-5.5": {
+        systemCard: "https://deploymentsafety.openai.com/gpt-5-5/gpt-5-5.pdf",
+        autonomous: [],
+        biorisk: [
+          { evaluator: "SecureBio", recurring: true, source: "https://deploymentsafety.openai.com/gpt-5-5/gpt-5-5.pdf#page=28" },
+          { evaluator: "US CAISI", recurring: true, source: "https://deploymentsafety.openai.com/gpt-5-5/gpt-5-5.pdf#page=28" },
+        ],
+        cybersec: [
+          { evaluator: "Irregular (fka Pattern)", recurring: true, source: "https://deploymentsafety.openai.com/gpt-5-5/gpt-5-5.pdf#page=33" }, 
+          { evaluator: "UK AISI", recurring: true, source: "https://deploymentsafety.openai.com/gpt-5-5/gpt-5-5.pdf#page=34" },
+          { evaluator: "US CAISI", recurring: true, source: "https://deploymentsafety.openai.com/gpt-5-5/gpt-5-5.pdf#page=34" },         
+          { evaluator: "Individual red teamers", recurring: true, source: "https://deploymentsafety.openai.com/gpt-5-5/gpt-5-5.pdf#page=43" },
+        ],
+        nuclear: [],
+        redteam: [],
+        scheming: [
+          { evaluator: "Apollo Research", recurring: true, source: "https://deploymentsafety.openai.com/gpt-5-5/gpt-5-5.pdf#page=39" },        
+        ],
+        modelWelfare: [],
+        method: [
+          { evaluator: "Domain experts", recurring: true, source: "https://deploymentsafety.openai.com/gpt-5-5/gpt-5-5.pdf#page=43" },
+        ],
+        misc: [],
+      },
       "GPT-5.4 Thinking": {
         systemCard: "https://deploymentsafety.openai.com/gpt-5-4-thinking/gpt-5-4-thinking.pdf",
         autonomous: [],
@@ -1269,7 +1317,7 @@ export const evaluatorOrder = {
 export const siteConfig = {
   title: "3P Eval Monitor",
   subtitle: "Tracking frontier AI labs’ third-party engagement for pre-deployment safety evaluations",
-  lastUpdated: "4/11/2026",
+  lastUpdated: "5/6/2026",
   notesFull: `
   <p>The dashboard below reflects all third-party safety evaluations performed for major AI models released since 2023.</p>
   <br>
