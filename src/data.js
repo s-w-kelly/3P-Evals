@@ -17,6 +17,34 @@ export const labsData = {
     name: "Anthropic",
     color: "#da7756",
     models: {
+      "Claude Opus 4.8": {
+        systemCard: "https://cdn.sanity.io/files/4zrzovbb/website/c886650a2e96fc0925c805a1a7ca77314ccbf4a6.pdf",
+        autonomous: [
+          { evaluator: "UK AISI", recurring: true, source: "https://cdn.sanity.io/files/4zrzovbb/website/c886650a2e96fc0925c805a1a7ca77314ccbf4a6.pdf#page=107" },
+        ],
+        biorisk: [
+          { evaluator: "Dyno Therapeutics", recurring: false, source: "https://cdn.sanity.io/files/4zrzovbb/website/c886650a2e96fc0925c805a1a7ca77314ccbf4a6.pdf#page=21" },            
+          { evaluator: "Individual red teamers", recurring: true, source: "https://cdn.sanity.io/files/4zrzovbb/website/c886650a2e96fc0925c805a1a7ca77314ccbf4a6.pdf#page=16" },
+        ],
+        cybersec: [
+        ],
+        nuclear: [],
+        redteam: [
+          { evaluator: "Gray Swan", recurring: true, source: "https://cdn.sanity.io/files/4zrzovbb/website/c886650a2e96fc0925c805a1a7ca77314ccbf4a6.pdf#page=75" },  
+          { evaluator: "Individual red teamers", recurring: true, source: "https://cdn.sanity.io/files/4zrzovbb/website/c886650a2e96fc0925c805a1a7ca77314ccbf4a6.pdf#page=77" },
+        ],
+        scheming: [
+          { evaluator: "Andon Labs", recurring: true, source: "https://cdn.sanity.io/files/4zrzovbb/website/c886650a2e96fc0925c805a1a7ca77314ccbf4a6.pdf#page=108" },
+          { evaluator: "Meridian Labs", recurring: false, source: "https://cdn.sanity.io/files/4zrzovbb/website/c886650a2e96fc0925c805a1a7ca77314ccbf4a6.pdf#page=105" },
+          { evaluator: "UK AISI", recurring: true, source: "https://cdn.sanity.io/files/4zrzovbb/website/c886650a2e96fc0925c805a1a7ca77314ccbf4a6.pdf#page=105" },
+        ],
+        modelWelfare: [
+        ],
+        method: [],
+        misc: [
+          { evaluator: "Unidentified third party", recurring: true, source: "https://cdn.sanity.io/files/4zrzovbb/website/c886650a2e96fc0925c805a1a7ca77314ccbf4a6.pdf#page=87" },
+        ],
+      },
       "Claude Opus 4.7": {
         systemCard: "https://cdn.sanity.io/files/4zrzovbb/website/037f06850df7fbe871e206dad004c3db5fd50340.pdf",
         autonomous: [

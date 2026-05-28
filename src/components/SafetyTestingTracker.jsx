@@ -14,6 +14,7 @@ const evaluatorAccentColors = {
   "Gray Swan": "#4a6a8a",
   "Haize Labs": "#555555",
   "Irregular (fka Pattern)": "#3a3a3a",
+  "Meridian Labs": "#0284c7",
   "METR": "#4a7a45",
   "Microsoft": "#b83a10",
   "SecureBio": "#0078a0",
