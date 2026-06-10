@@ -3,6 +3,8 @@ import { labsData, testCategories, evaluators, evaluatorOrder, siteConfig, analy
 
 // Muted, professional evaluator colors (for left border accent only)
 const evaluatorAccentColors = {
+  "10a Labs": "#142cff",
+  "ALICE": "#2596be",
   "Andon Labs": "#f6efa2",
   "Apollo Research": "#2d7a6d",
   "Deloitte": "#5a8520",
@@ -19,6 +21,7 @@ const evaluatorAccentColors = {
   "Microsoft": "#b83a10",
   "SecureBio": "#0078a0",
   "Signature Science": "#005520",
+  "Trajectory Labs": "#ee6018",
   "Virtue AI": "#3040a0",
   "NNSA": "#a86010",
   "UK AISI": "#901028",

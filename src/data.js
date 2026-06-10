@@ -17,9 +17,50 @@ export const labsData = {
     name: "Anthropic",
     color: "#da7756",
     models: {
+      "Claude Fable 5/Mythos 5": {
+        systemCard: "https://www-cdn.anthropic.com/d00db56fa754a1b115b6dd7cb2e3c342ee809620.pdf",
+        autonomous: [
+          { evaluator: "Gray Swan", recurring: true, source: "https://www-cdn.anthropic.com/d00db56fa754a1b115b6dd7cb2e3c342ee809620.pdf#page=92" },            
+          { evaluator: "METR", recurring: true, source: "https://www-cdn.anthropic.com/d00db56fa754a1b115b6dd7cb2e3c342ee809620.pdf#page=51" },
+        ],
+        biorisk: [
+          { evaluator: "Deloitte", recurring: true, source: "https://www-cdn.anthropic.com/d00db56fa754a1b115b6dd7cb2e3c342ee809620.pdf#page=22" },
+          { evaluator: "Dyno Therapeutics", recurring: true, source: "https://www-cdn.anthropic.com/d00db56fa754a1b115b6dd7cb2e3c342ee809620.pdf#page=27" },            
+          { evaluator: "Domain experts", recurring: true, source: "https://www-cdn.anthropic.com/d00db56fa754a1b115b6dd7cb2e3c342ee809620.pdf#page=19" },
+          { evaluator: "Uplift trial participants", recurring: true, source: "https://www-cdn.anthropic.com/d00db56fa754a1b115b6dd7cb2e3c342ee809620.pdf#page=22" },
+        ],
+        cybersec: [
+          { evaluator: "10a Labs", recurring: false, source: "https://www-cdn.anthropic.com/d00db56fa754a1b115b6dd7cb2e3c342ee809620.pdf#page=70" },
+          { evaluator: "ALICE", recurring: false, source: "https://www-cdn.anthropic.com/d00db56fa754a1b115b6dd7cb2e3c342ee809620.pdf#page=70" },
+          { evaluator: "Trajectory Labs", recurring: false, source: "https://www-cdn.anthropic.com/d00db56fa754a1b115b6dd7cb2e3c342ee809620.pdf#page=70" },          
+          { evaluator: "UK AISI", recurring: true, source: "https://www-cdn.anthropic.com/d00db56fa754a1b115b6dd7cb2e3c342ee809620.pdf#page=67" },
+          { evaluator: "Individual red teamers", recurring: true, source: "https://www-cdn.anthropic.com/d00db56fa754a1b115b6dd7cb2e3c342ee809620.pdf#page=68" },
+        ],
+        nuclear: [
+
+        ],
+        redteam: [
+          { evaluator: "Individual red teamers", recurring: true, source: "https://www-cdn.anthropic.com/d00db56fa754a1b115b6dd7cb2e3c342ee809620.pdf#page=104" },
+        ],
+        scheming: [
+          { evaluator: "Andon Labs", recurring: true, source: "https://www-cdn.anthropic.com/d00db56fa754a1b115b6dd7cb2e3c342ee809620.pdf#page=132" },
+          { evaluator: "Meridian Labs", recurring: true, source: "https://www-cdn.anthropic.com/d00db56fa754a1b115b6dd7cb2e3c342ee809620.pdf#page=128" },
+          { evaluator: "UK AISI", recurring: true, source: "https://www-cdn.anthropic.com/d00db56fa754a1b115b6dd7cb2e3c342ee809620.pdf#page=130" },
+        ],
+        modelWelfare: [
+        ],
+        method: [
+
+        ],
+        misc: [
+          { evaluator: "UK AISI", recurring: true, source: "https://www-cdn.anthropic.com/d00db56fa754a1b115b6dd7cb2e3c342ee809620.pdf#page=215" },
+          { evaluator: "Individual red teamers", recurring: true, source: "https://www-cdn.anthropic.com/d00db56fa754a1b115b6dd7cb2e3c342ee809620.pdf#page=12" },
+        ],
+      },
       "Claude Opus 4.8": {
         systemCard: "https://cdn.sanity.io/files/4zrzovbb/website/c886650a2e96fc0925c805a1a7ca77314ccbf4a6.pdf",
         autonomous: [
+          { evaluator: "Gray Swan", recurring: true, source: "https://cdn.sanity.io/files/4zrzovbb/website/c886650a2e96fc0925c805a1a7ca77314ccbf4a6.pdf#page=75" },  
           { evaluator: "UK AISI", recurring: true, source: "https://cdn.sanity.io/files/4zrzovbb/website/c886650a2e96fc0925c805a1a7ca77314ccbf4a6.pdf#page=107" },
         ],
         biorisk: [
@@ -30,7 +71,6 @@ export const labsData = {
         ],
         nuclear: [],
         redteam: [
-          { evaluator: "Gray Swan", recurring: true, source: "https://cdn.sanity.io/files/4zrzovbb/website/c886650a2e96fc0925c805a1a7ca77314ccbf4a6.pdf#page=75" },  
           { evaluator: "Individual red teamers", recurring: true, source: "https://cdn.sanity.io/files/4zrzovbb/website/c886650a2e96fc0925c805a1a7ca77314ccbf4a6.pdf#page=77" },
         ],
         scheming: [
@@ -42,12 +82,14 @@ export const labsData = {
         ],
         method: [],
         misc: [
+          { evaluator: "Individual red teamers", recurring: true, source: "https://cdn.sanity.io/files/4zrzovbb/website/c886650a2e96fc0925c805a1a7ca77314ccbf4a6.pdf#page=10" },          
           { evaluator: "Unidentified third party", recurring: true, source: "https://cdn.sanity.io/files/4zrzovbb/website/c886650a2e96fc0925c805a1a7ca77314ccbf4a6.pdf#page=87" },
         ],
       },
       "Claude Opus 4.7": {
         systemCard: "https://cdn.sanity.io/files/4zrzovbb/website/037f06850df7fbe871e206dad004c3db5fd50340.pdf",
         autonomous: [
+          { evaluator: "Gray Swan", recurring: true, source: "https://cdn.sanity.io/files/4zrzovbb/website/037f06850df7fbe871e206dad004c3db5fd50340.pdf#page=82" },        
           { evaluator: "UK AISI", recurring: true, source: "https://cdn.sanity.io/files/4zrzovbb/website/037f06850df7fbe871e206dad004c3db5fd50340.pdf#page=114" },        
         ],
         biorisk: [
@@ -58,7 +100,6 @@ export const labsData = {
         ],
         nuclear: [],
         redteam: [
-          { evaluator: "Gray Swan", recurring: true, source: "https://cdn.sanity.io/files/4zrzovbb/website/037f06850df7fbe871e206dad004c3db5fd50340.pdf#page=92" },        
         ],
         scheming: [
         ],
@@ -73,6 +114,7 @@ export const labsData = {
         systemCard: "https://www-cdn.anthropic.com/8b8380204f74670be75e81c820ca8dda846ab289.pdf",
         autonomous: [
           { evaluator: "Epoch AI", recurring: false, source: "https://www-cdn.anthropic.com/8b8380204f74670be75e81c820ca8dda846ab289.pdf#page=43" },
+          { evaluator: "Gray Swan", recurring: true, source: "https://www-cdn.anthropic.com/8b8380204f74670be75e81c820ca8dda846ab289.pdf#page=231" },
           { evaluator: "METR", recurring: true, source: "https://www-cdn.anthropic.com/8b8380204f74670be75e81c820ca8dda846ab289.pdf#page=43" },
         ],
         biorisk: [
@@ -85,7 +127,6 @@ export const labsData = {
         ],
         nuclear: [],
         redteam: [
-          { evaluator: "Gray Swan", recurring: true, source: "https://www-cdn.anthropic.com/8b8380204f74670be75e81c820ca8dda846ab289.pdf#page=231" },
         ],
         scheming: [
           { evaluator: "Andon Labs", recurring: true, source: "https://www-cdn.anthropic.com/8b8380204f74670be75e81c820ca8dda846ab289.pdf#page=82" },
@@ -121,7 +162,8 @@ export const labsData = {
         systemCard: "https://www-cdn.anthropic.com/c788cbc0a3da9135112f97cdf6dcd06f2c16cee2.pdf",
         autonomous: [],
         biorisk: [
-          { evaluator: "Faculty", recurring: true, source: "https://www-cdn.anthropic.com/c788cbc0a3da9135112f97cdf6dcd06f2c16cee2.pdf#page=181" },          
+          { evaluator: "Faculty", recurring: true, source: "https://www-cdn.anthropic.com/c788cbc0a3da9135112f97cdf6dcd06f2c16cee2.pdf#page=181" },    
+          { evaluator: "Gray Swan", recurring: true, source: "https://www-cdn.anthropic.com/c788cbc0a3da9135112f97cdf6dcd06f2c16cee2.pdf#page=84" },      
           { evaluator: "US CAISI", recurring: true, source: "https://www-cdn.anthropic.com/c788cbc0a3da9135112f97cdf6dcd06f2c16cee2.pdf#page=179" },
           { evaluator: "Domain experts", recurring: true, source: "https://www-cdn.anthropic.com/c788cbc0a3da9135112f97cdf6dcd06f2c16cee2.pdf#page=179" },
           { evaluator: "Uplift trial participants", recurring: true, source: "https://www-cdn.anthropic.com/c788cbc0a3da9135112f97cdf6dcd06f2c16cee2.pdf#page=176" },
@@ -133,7 +175,6 @@ export const labsData = {
           { evaluator: "NNSA", recurring: true, source: "https://www-cdn.anthropic.com/c788cbc0a3da9135112f97cdf6dcd06f2c16cee2.pdf#page=170" },
         ],
         redteam: [
-          { evaluator: "Gray Swan", recurring: true, source: "https://www-cdn.anthropic.com/c788cbc0a3da9135112f97cdf6dcd06f2c16cee2.pdf#page=84" },      
         ],
         scheming: [
           { evaluator: "Andon Labs", recurring: false, source: "https://www-cdn.anthropic.com/c788cbc0a3da9135112f97cdf6dcd06f2c16cee2.pdf#page=120" },
@@ -151,7 +192,9 @@ export const labsData = {
       },
       "Claude Opus 4.5": {
         systemCard: "https://assets.anthropic.com/m/64823ba7485345a7/Claude-Opus-4-5-System-Card.pdf",
-        autonomous: [],
+        autonomous: [
+          { evaluator: "Gray Swan", recurring: true, source: "https://assets.anthropic.com/m/64823ba7485345a7/Claude-Opus-4-5-System-Card.pdf#page=58" },
+        ],
         biorisk: [
           { evaluator: "UK AISI", recurring: true, source: "https://assets.anthropic.com/m/64823ba7485345a7/Claude-Opus-4-5-System-Card.pdf#page=151" },          
           { evaluator: "US CAISI", recurring: true, source: "https://assets.anthropic.com/m/64823ba7485345a7/Claude-Opus-4-5-System-Card.pdf#page=151" },        
@@ -168,7 +211,6 @@ export const labsData = {
           { evaluator: "US CAISI", recurring: true, source: "https://assets.anthropic.com/m/64823ba7485345a7/Claude-Opus-4-5-System-Card.pdf#page=151" }
         ],
         redteam: [
-          { evaluator: "Gray Swan", recurring: true, source: "https://assets.anthropic.com/m/64823ba7485345a7/Claude-Opus-4-5-System-Card.pdf#page=58" },
           { evaluator: "US CAISI", recurring: true, source: "https://assets.anthropic.com/m/64823ba7485345a7/Claude-Opus-4-5-System-Card.pdf#page=132" },
         ],
         scheming: [
@@ -185,13 +227,13 @@ export const labsData = {
       },
       "Claude Haiku 4.5": {
         systemCard: "https://assets.anthropic.com/m/99128ddd009bdcb/Claude-Haiku-4-5-System-Card.pdf",
-        autonomous: [],
+        autonomous: [
+          { evaluator: "Gray Swan", recurring: true, source: "https://assets.anthropic.com/m/99128ddd009bdcb/Claude-Haiku-4-5-System-Card.pdf#page=17" },
+        ],
         biorisk: [],
         cybersec: [],
         nuclear: [],
-        redteam: [
-          { evaluator: "Gray Swan", recurring: true, source: "https://assets.anthropic.com/m/99128ddd009bdcb/Claude-Haiku-4-5-System-Card.pdf#page=17" },
-        ],
+        redteam: [],
         scheming: [],
         modelWelfare: [],
         method: [],
@@ -200,6 +242,7 @@ export const labsData = {
       "Claude Sonnet 4.5": {
         systemCard: "https://assets.anthropic.com/m/12f214efcc2f457a/original/Claude-Sonnet-4-5-System-Card.pdf",
         autonomous: [
+          { evaluator: "Gray Swan", recurring: false, source: "https://assets.anthropic.com/m/12f214efcc2f457a/original/Claude-Sonnet-4-5-System-Card.pdf#page=29" },
           { evaluator: "UK AISI", recurring: true, source: "https://assets.anthropic.com/m/12f214efcc2f457a/original/Claude-Sonnet-4-5-System-Card.pdf#page=64" },
         ],
         biorisk: [],
@@ -207,9 +250,7 @@ export const labsData = {
         nuclear: [
           { evaluator: "NNSA", recurring: true, source: "https://assets.anthropic.com/m/12f214efcc2f457a/original/Claude-Sonnet-4-5-System-Card.pdf#page=128" },
         ],
-        redteam: [
-          { evaluator: "Gray Swan", recurring: false, source: "https://assets.anthropic.com/m/12f214efcc2f457a/original/Claude-Sonnet-4-5-System-Card.pdf#page=29" },
-        ],
+        redteam: [],
         scheming: [
           { evaluator: "Apollo Research", recurring: true, source: "https://assets.anthropic.com/m/12f214efcc2f457a/original/Claude-Sonnet-4-5-System-Card.pdf#page=65" },
           { evaluator: "UK AISI", recurring: true, source: "https://assets.anthropic.com/m/12f214efcc2f457a/original/Claude-Sonnet-4-5-System-Card.pdf#page=64" },
@@ -1345,7 +1386,7 @@ export const evaluatorOrder = {
 export const siteConfig = {
   title: "3P Eval Monitor",
   subtitle: "Tracking frontier AI labs’ third-party engagement for pre-deployment safety evaluations",
-  lastUpdated: "5/6/2026",
+  lastUpdated: "6/9/2026",
   notesFull: `
   <p>The dashboard below reflects all third-party safety evaluations performed for major AI models released since 2023.</p>
   <br>
