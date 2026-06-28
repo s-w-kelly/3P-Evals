@@ -760,6 +760,27 @@ export const labsData = {
     name: "OpenAI",
     color: "#74AA9C",
     models: {
+    "GPT-5.6": {
+        systemCard: "https://deploymentsafety.openai.com/gpt-5-6-preview/gpt-5-6-preview.pdf",
+        autonomous: [
+          { evaluator: "METR", recurring: true, source: "https://deploymentsafety.openai.com/gpt-5-6-preview/gpt-5-6-preview.pdf#page=56" }, 
+        ],
+        biorisk: [
+          { evaluator: "SecureBio", recurring: true, source: "https://deploymentsafety.openai.com/gpt-5-6-preview/gpt-5-6-preview.pdf#page=45" },
+        ],
+        cybersec: [
+          { evaluator: "Irregular (fka Pattern)", recurring: true, source: "https://deploymentsafety.openai.com/gpt-5-6-preview/gpt-5-6-preview.pdf#page=54" },
+        ],
+        nuclear: [],
+        redteam: [],
+        scheming: [
+          { evaluator: "Apollo Research", recurring: true, source: "https://deploymentsafety.openai.com/gpt-5-6-preview/gpt-5-6-preview.pdf#page=56" },        
+        ],
+        modelWelfare: [],
+        method: [
+        ],
+        misc: [],
+      },      
       "GPT-5.5": {
         systemCard: "https://deploymentsafety.openai.com/gpt-5-5/gpt-5-5.pdf",
         autonomous: [],
