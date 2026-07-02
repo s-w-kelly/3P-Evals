@@ -17,6 +17,35 @@ export const labsData = {
     name: "Anthropic",
     color: "#da7756",
     models: {
+      "Claude Sonnet 5": {
+        systemCard: "https://www-cdn.anthropic.com/9e6a1044980d8c4ed85669faf9c2a8342e2e9f1e/Claude%20Sonnet%205%20System%20Card.pdf",
+        autonomous: [
+
+        ],
+        biorisk: [
+          { evaluator: "Dyno Therapeutics", recurring: true, source: "https://www-cdn.anthropic.com/9e6a1044980d8c4ed85669faf9c2a8342e2e9f1e/Claude%20Sonnet%205%20System%20Card.pdf#page=16" },            
+        ],
+        cybersec: [
+
+        ],
+        nuclear: [
+
+        ],
+        redteam: [
+          { evaluator: "Individual red teamers", recurring: true, source: "https://www-cdn.anthropic.com/9e6a1044980d8c4ed85669faf9c2a8342e2e9f1e/Claude%20Sonnet%205%20System%20Card.pdf#page=60" },
+        ],
+        scheming: [
+
+        ],
+        modelWelfare: [
+        ],
+        method: [
+
+        ],
+        misc: [
+          { evaluator: "Individual red teamers", recurring: true, source: "https://www-cdn.anthropic.com/9e6a1044980d8c4ed85669faf9c2a8342e2e9f1e/Claude%20Sonnet%205%20System%20Card.pdf#page=8" },
+        ],
+      },
       "Claude Fable 5/Mythos 5": {
         systemCard: "https://www-cdn.anthropic.com/d00db56fa754a1b115b6dd7cb2e3c342ee809620.pdf",
         autonomous: [
@@ -54,7 +83,7 @@ export const labsData = {
         ],
         misc: [
           { evaluator: "UK AISI", recurring: true, source: "https://www-cdn.anthropic.com/d00db56fa754a1b115b6dd7cb2e3c342ee809620.pdf#page=215" },
-          { evaluator: "Individual red teamers", recurring: true, source: "https://www-cdn.anthropic.com/d00db56fa754a1b115b6dd7cb2e3c342ee809620.pdf#page=12" },
+          { evaluator: "Individual red teamers", recurring: true, source: "https://www-cdn.anthropic.com/d00db56fa754a1b115b6dd7cb2e3c342ee809620.pdf#page=11" },
         ],
       },
       "Claude Opus 4.8": {
