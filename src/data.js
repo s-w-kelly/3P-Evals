@@ -468,6 +468,18 @@ export const labsData = {
     name: "Google DeepMind",
     color: "#3369E8",
     models: {
+      "Gemini 3.5 Flash": {
+        systemCard: "https://storage.googleapis.com/deepmind-media/Model-Cards/Gemini-3-5-Flash-Model-Card.pdf",
+        autonomous: [],
+        biorisk: [],
+        cybersec: [],
+        nuclear: [],
+        redteam: [],
+        scheming: [],
+        modelWelfare: [],
+        method: [],
+        misc: [],
+      },
       "Gemini 3.1 Flash Live": {
         systemCard: "https://storage.googleapis.com/deepmind-media/Model-Cards/Gemini-3-1-Flash-Live-Model-Card.pdf",
         autonomous: [],
@@ -666,12 +678,21 @@ export const labsData = {
           { evaluator: "Irregular (fka Pattern)", recurring: false, source: "https://ai.meta.com/static-resource/muse-spark-safety-and-preparedness-report/#page=42" },   
         ],
         nuclear: [],
-        redteam: [],
+        redteam: [
+          { evaluator: "Gray Swan", recurring: false, source: "https://ai.meta.com/static-resource/muse-spark-safety-and-preparedness-report/#page=92" },
+          { evaluator: "Handshake", recurring: false, source: "https://ai.meta.com/static-resource/muse-spark-safety-and-preparedness-report/#page=81" },
+          { evaluator: "Scale", recurring: false, source: "https://ai.meta.com/static-resource/muse-spark-safety-and-preparedness-report/#page=80" },   
+        ],
         scheming: [
-          { evaluator: "Apollo Research", recurring: false, source: "https://ai.meta.com/static-resource/muse-spark-safety-and-preparedness-report/#page=118" },
+          { evaluator: "Apollo Research", recurring: false, source: "https://ai.meta.com/static-resource/muse-spark-safety-and-preparedness-report/#page=56" },
         ],
         modelWelfare: [],
-        method: [],
+        method: [
+          { evaluator: "Deloitte", recurring: false, source: "https://ai.meta.com/static-resource/muse-spark-safety-and-preparedness-report/#page=19" },
+          { evaluator: "Faculty", recurring: false, source: "https://ai.meta.com/static-resource/muse-spark-safety-and-preparedness-report/#page=19" },
+          { evaluator: "Frontier Design", recurring: false, source: "https://ai.meta.com/static-resource/muse-spark-safety-and-preparedness-report/#page=19" },
+          { evaluator: "SecureBio", recurring: false, source: "https://ai.meta.com/static-resource/muse-spark-safety-and-preparedness-report/#page=19" },
+        ],
         misc: [],
       },
       "Llama 4 Maverick/Scout": {
