@@ -658,6 +658,22 @@ export const labsData = {
     name: "Meta",
     color: "#0081FB",
     models: {
+      "Muse Spark": {
+        systemCard: "https://ai.meta.com/static-resource/muse-spark-safety-and-preparedness-report/",
+        autonomous: [],
+        biorisk: [],
+        cybersec: [
+          { evaluator: "Irregular (fka Pattern)", recurring: false, source: "https://ai.meta.com/static-resource/muse-spark-safety-and-preparedness-report/#page=42" },   
+        ],
+        nuclear: [],
+        redteam: [],
+        scheming: [
+          { evaluator: "Apollo Research", recurring: false, source: "https://ai.meta.com/static-resource/muse-spark-safety-and-preparedness-report/#page=118" },
+        ],
+        modelWelfare: [],
+        method: [],
+        misc: [],
+      },
       "Llama 4 Maverick/Scout": {
         systemCard: "https://github.com/meta-llama/llama-models/blob/main/models/llama4/MODEL_CARD.md",
         autonomous: [],
@@ -1199,9 +1215,21 @@ export const labsData = {
   },
 
   xai: {
-    name: "xAI",
+    name: "SpaceXAI",
     color: "#000000",
     models: {
+      "Grok 4.5": {
+        systemCard: "https://docs.x.ai/developers/models/grok-4.5",
+        autonomous: [],
+        biorisk: [],
+        cybersec: [],
+        nuclear: [],
+        redteam: [],
+        scheming: [],
+        modelWelfare: [],
+        method: [],
+        misc: [],
+      },
       "Grok 4.1 Fast": {
         systemCard: "https://x.ai/news/grok-4-1-fast",
         autonomous: [],
@@ -1436,7 +1464,7 @@ export const evaluatorOrder = {
 export const siteConfig = {
   title: "3P Eval Monitor",
   subtitle: "Tracking frontier AI labs’ third-party engagement for pre-deployment safety evaluations",
-  lastUpdated: "6/9/2026",
+  lastUpdated: "7/11/2026",
   notesFull: `
   <p>The dashboard below reflects all third-party safety evaluations performed for major AI models released since 2023.</p>
   <br>
