@@ -17,6 +17,38 @@ export const labsData = {
     name: "Anthropic",
     color: "#da7756",
     models: {
+      "Claude Opus 5": {
+        systemCard: "https://www-cdn.anthropic.com/9e6a1044980d8c4ed85669faf9c2a8342e2e9f1e/Claude%20Sonnet%205%20System%20Card.pdf",
+        autonomous: [
+
+        ],
+        biorisk: [
+          { evaluator: "Dyno Therapeutics", recurring: true, source: "https://www-cdn.anthropic.com/9e6a1044980d8c4ed85669faf9c2a8342e2e9f1e/Claude%20Sonnet%205%20System%20Card.pdf#page=16" },            
+        ],
+        cybersec: [
+          { evaluator: "10a Labs", recurring: true, source: "https://www-cdn.anthropic.com/b514064af1408018e64b1ad24e7d5e75850b4ffd/Claude%20Opus%205%20System%20Card.pdf#page=50" },
+          { evaluator: "Gray Swan", recurring: true, source: "https://www-cdn.anthropic.com/b514064af1408018e64b1ad24e7d5e75850b4ffd/Claude%20Opus%205%20System%20Card.pdf#page=50" },
+          { evaluator: "Trajectory Labs", recurring: true, source: "https://www-cdn.anthropic.com/b514064af1408018e64b1ad24e7d5e75850b4ffd/Claude%20Opus%205%20System%20Card.pdf#page=50" },
+          { evaluator: "US AISI", recurring: true, source: "https://www-cdn.anthropic.com/b514064af1408018e64b1ad24e7d5e75850b4ffd/Claude%20Opus%205%20System%20Card.pdf#page=43" },   
+        ],
+        nuclear: [
+
+        ],
+        redteam: [
+          { evaluator: "Gray Swan", recurring: true, source: "https://www-cdn.anthropic.com/b514064af1408018e64b1ad24e7d5e75850b4ffd/Claude%20Opus%205%20System%20Card.pdf#page=72" },
+        ],
+        scheming: [
+
+        ],
+        modelWelfare: [
+        ],
+        method: [
+
+        ],
+        misc: [
+          { evaluator: "US AISI", recurring: true, source: "https://www-cdn.anthropic.com/b514064af1408018e64b1ad24e7d5e75850b4ffd/Claude%20Opus%205%20System%20Card.pdf#page=43" },   
+        ],
+      },
       "Claude Sonnet 5": {
         systemCard: "https://www-cdn.anthropic.com/9e6a1044980d8c4ed85669faf9c2a8342e2e9f1e/Claude%20Sonnet%205%20System%20Card.pdf",
         autonomous: [
