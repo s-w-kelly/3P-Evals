@@ -500,6 +500,42 @@ export const labsData = {
     name: "Google DeepMind",
     color: "#3369E8",
     models: {
+      "Gemini 3.7 Flash": {
+        systemCard: "https://storage.googleapis.com/deepmind-media/Model-Cards/Gemini-3-7-Flash-Model-Card.pdf",
+        autonomous: [],
+        biorisk: [],
+        cybersec: [],
+        nuclear: [],
+        redteam: [],
+        scheming: [],
+        modelWelfare: [],
+        method: [],
+        misc: [],
+      },
+      "Gemini 3.6 Flash": {
+        systemCard: "https://storage.googleapis.com/deepmind-media/Model-Cards/Gemini-3-6-Flash-Model-Card.pdf",
+        autonomous: [],
+        biorisk: [],
+        cybersec: [],
+        nuclear: [],
+        redteam: [],
+        scheming: [],
+        modelWelfare: [],
+        method: [],
+        misc: [],
+      },
+      "Gemini 3.5 Flash-Lite": {
+        systemCard: "https://storage.googleapis.com/deepmind-media/Model-Cards/Gemini-3-5-Flash-Lite-Model-Card.pdf",
+        autonomous: [],
+        biorisk: [],
+        cybersec: [],
+        nuclear: [],
+        redteam: [],
+        scheming: [],
+        modelWelfare: [],
+        method: [],
+        misc: [],
+      },
       "Gemini 3.5 Flash": {
         systemCard: "https://storage.googleapis.com/deepmind-media/Model-Cards/Gemini-3-5-Flash-Model-Card.pdf",
         autonomous: [],
@@ -702,6 +738,56 @@ export const labsData = {
     name: "Meta",
     color: "#0081FB",
     models: {
+      "Muse Glimmer": {
+        systemCard: "https://huggingface.co/meta-models/Muse-Glimmer-30B",
+        autonomous: [],
+        biorisk: [],
+        cybersec: [
+        ],
+        nuclear: [],
+        redteam: [
+        ],
+        scheming: [
+        ],
+        modelWelfare: [],
+        method: [
+        ],
+        misc: [],
+      },
+      "Muse Spark 1.2": {
+        systemCard: "https://research.meta.ai/static/muse-spark-1-2-methodology",
+        autonomous: [],
+        biorisk: [],
+        cybersec: [
+        ],
+        nuclear: [],
+        redteam: [
+        ],
+        scheming: [
+        ],
+        modelWelfare: [],
+        method: [
+        ],
+        misc: [],
+      },
+      "Muse Spark 1.1": {
+        systemCard: "https://research.meta.ai/static/muse-spark-1-1-evaluation-report",
+        autonomous: [],
+        biorisk: [],
+        cybersec: [
+        ],
+        nuclear: [],
+        redteam: [
+          { evaluator: "Gray Swan", recurring: true, source: "https://research.meta.ai/static/muse-spark-1-1-evaluation-report#page=56" },
+          { evaluator: "Scale", recurring: true, source: "https://research.meta.ai/static/muse-spark-1-1-evaluation-report#page=49" },
+        ],
+        scheming: [
+        ],
+        modelWelfare: [],
+        method: [
+        ],
+        misc: [],
+      },
       "Muse Spark": {
         systemCard: "https://ai.meta.com/static-resource/muse-spark-safety-and-preparedness-report/",
         autonomous: [],
@@ -1271,8 +1357,22 @@ export const labsData = {
     name: "SpaceXAI",
     color: "#000000",
     models: {
+      "Grok 4.6": {
+        systemCard: "https://media.x.ai/v1/website/card-4p6-4cd2dc57.pdf",
+        autonomous: [],
+        biorisk: [],
+        cybersec: [
+          { evaluator: "Unspecified third parties", recurring: false, source: "https://media.x.ai/v1/website/card-4p6-4cd2dc57.pdf#page=25" },
+        ],
+        nuclear: [],
+        redteam: [],
+        scheming: [],
+        modelWelfare: [],
+        method: [],
+        misc: [],
+      },
       "Grok 4.5": {
-        systemCard: "https://docs.x.ai/developers/models/grok-4.5",
+        systemCard: "https://cursor.com/resources/grok-4-5-model-card.pdf",
         autonomous: [],
         biorisk: [],
         cybersec: [],
@@ -1517,7 +1617,7 @@ export const evaluatorOrder = {
 export const siteConfig = {
   title: "3P Eval Monitor",
   subtitle: "Tracking frontier AI labs’ third-party engagement for pre-deployment safety evaluations",
-  lastUpdated: "7/11/2026",
+  lastUpdated: "8/14/2026",
   notesFull: `
   <p>The dashboard below reflects all third-party safety evaluations performed for major AI models released since 2023.</p>
   <br>
