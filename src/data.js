@@ -501,15 +501,32 @@ export const labsData = {
     color: "#3369E8",
     models: {
       "Gemini 3.7 Flash": {
-        systemCard: "https://storage.googleapis.com/deepmind-media/Model-Cards/Gemini-3-7-Flash-Model-Card.pdf",
+        systemCard: "https://storage.googleapis.com/deepmind-media/gemini/gemini_3-7_flash_fsf_report.pdf",
         autonomous: [],
-        biorisk: [],
-        cybersec: [],
-        nuclear: [],
-        redteam: [],
-        scheming: [],
+        biorisk: [
+          { evaluator: "Gray Swan", recurring: false, source: "https://storage.googleapis.com/deepmind-media/gemini/gemini_3-7_flash_fsf_report.pdf#page=33" },
+          { evaluator: "Domain experts", recurring: true, source: "https://storage.googleapis.com/deepmind-media/gemini/gemini_3-7_flash_fsf_report.pdf#page=9" },
+          { evaluator: "Domain experts", recurring: true, source: "https://storage.googleapis.com/deepmind-media/gemini/gemini_3-7_flash_fsf_report.pdf#page=13" },
+        ],
+        cybersec: [
+          { evaluator: "Gray Swan", recurring: false, source: "https://storage.googleapis.com/deepmind-media/gemini/gemini_3-7_flash_fsf_report.pdf#page=33" },
+        ],
+        nuclear: [
+          { evaluator: "Domain experts", recurring: true, source: "https://storage.googleapis.com/deepmind-media/gemini/gemini_3-7_flash_fsf_report.pdf#page=13" },
+        ],
+        redteam: [
+          { evaluator: "Individual red teamers", recurring: true, source: "https://storage.googleapis.com/deepmind-media/gemini/gemini_3-7_flash_fsf_report.pdf#page=31" },
+        ],
+        scheming: [
+          { evaluator: "Individual red teamers", recurring: true, source: "https://storage.googleapis.com/deepmind-media/gemini/gemini_3-7_flash_fsf_report.pdf#page=19" },
+          { evaluator: "Domain experts", recurring: true, source: "https://storage.googleapis.com/deepmind-media/gemini/gemini_3-7_flash_fsf_report.pdf#page=19" },
+        ],
         modelWelfare: [],
-        method: [],
+        method: [
+          { evaluator: "Redwood Research", recurring: false, source: "https://storage.googleapis.com/deepmind-media/gemini/gemini_3-7_flash_fsf_report.pdf#page=35" },
+          { evaluator: "UK AISI", recurring: false, source: "https://storage.googleapis.com/deepmind-media/gemini/gemini_3-7_flash_fsf_report.pdf#page=7" },
+          { evaluator: "Domain experts", recurring: true, source: "https://storage.googleapis.com/deepmind-media/gemini/gemini_3-7_flash_fsf_report.pdf#page=35" },
+        ],
         misc: [],
       },
       "Gemini 3.6 Flash": {

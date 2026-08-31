@@ -21,6 +21,7 @@ const evaluatorAccentColors = {
   "Meridian Labs": "#0284c7",
   "METR": "#4a7a45",
   "Microsoft": "#b83a10",
+  "Redwood Research": "#1a7d5c",
   "Scale": "#000000",
   "SecureBio": "#0078a0",
   "Signature Science": "#005520",
