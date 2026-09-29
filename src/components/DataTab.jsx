@@ -19,8 +19,8 @@ import {
 } from '../stats';
 import './DataTab.css';
 
-// Color follows the lab (by its position in data.js), never its rank or filter state.
-const labColor = (labId) => `var(--lab-${(labIds.indexOf(labId) % 8) + 1})`;
+// Color follows the lab (its brand color, else its position in data.js), never its rank or filter state.
+const labColor = (labId) => `var(--lab-${labId}, var(--lab-${(labIds.indexOf(labId) % 8) + 1}))`;
 const typeColor = (type) => `var(--type-${type})`;
 
 const categoryName = Object.fromEntries(testCategories.map(c => [c.id, c.name]));

@@ -86,7 +86,7 @@ export const labsData = {
           { evaluator: "Unidentified third party", recurring: true, source: "https://www-cdn.anthropic.com/0339e6a7c5c7b87f5c07798616dc32c215d14235/Claude%20Fable%205.1%20&%20Claude%20Mythos%205.1%20System%20Card.pdf#page=96" },
         ],
         modelWelfare: [
-          
+
         ],
         method: [
 
@@ -899,6 +899,24 @@ export const labsData = {
     name: "Meta",
     color: "#0081FB",
     models: {
+      "Muse Spark 1.3": {
+        systemCard: "https://research.meta.ai/static/muse-spark-1-3-multimodal-evaluation-methodology",
+        released: "2026-09-02",
+        frontier: null,
+        autonomous: [],
+        biorisk: [],
+        cybersec: [
+        ],
+        nuclear: [],
+        redteam: [
+        ],
+        scheming: [
+        ],
+        modelWelfare: [],
+        method: [
+        ],
+        misc: [],
+      },
       "Muse Glimmer": {
         systemCard: "https://huggingface.co/meta-models/Muse-Glimmer-30B",
         released: "2026-08-10",
@@ -1129,7 +1147,78 @@ export const labsData = {
     name: "OpenAI",
     color: "#74AA9C",
     models: {
-    "GPT-5.6": {
+      "GPT-6.1 Sol": {
+        systemCard: "https://deploymentsafety.openai.com/gpt-6-1-sol/gpt-6-1-sol.pdf",
+        released: "2026-09-29",
+        frontier: null,
+        autonomous: [
+        ],
+        biorisk: [
+        ],
+        cybersec: [
+        ],
+        nuclear: [],
+        redteam: [
+        ],
+        scheming: [
+        ],
+        modelWelfare: [],
+        method: [
+        ],
+        misc: [
+        ],
+      },  
+      "GPT-6 Sol and Luna": {
+        systemCard: "https://deploymentsafety.openai.com/gpt-6-astra/gpt-6-astra.pdf#page-120",
+        released: "2026-09-22",
+        frontier: null,
+        autonomous: [
+        ],
+        biorisk: [
+        ],
+        cybersec: [
+        ],
+        nuclear: [],
+        redteam: [
+        ],
+        scheming: [
+        ],
+        modelWelfare: [],
+        method: [
+        ],
+        misc: [
+        ],
+      },  
+      "GPT-6 Astra": {
+        systemCard: "https://deploymentsafety.openai.com/gpt-6-astra/gpt-6-astra.pdf",
+        released: "2026-09-03",
+        frontier: true,
+        autonomous: [
+        ],
+        biorisk: [
+          { evaluator: "SecureBio", recurring: true, source: "https://deploymentsafety.openai.com/gpt-6-astra/gpt-6-astra.pdf#page=88" },
+        ],
+        cybersec: [
+          { evaluator: "Irregular (fka Pattern)", recurring: true, source: "https://deploymentsafety.openai.com/gpt-6-astra/gpt-6-astra.pdf#page=97" },
+        ],
+        nuclear: [],
+        redteam: [
+          { evaluator: "Gray Swan", recurring: true, source: "https://deploymentsafety.openai.com/gpt-6-astra/gpt-6-astra.pdf#page=19" },
+          { evaluator: "Individual red teamers", recurring: true, source: "https://deploymentsafety.openai.com/gpt-6-astra/gpt-6-astra.pdf#page=116" },
+        ],
+        scheming: [
+          { evaluator: "Apollo Research", recurring: true, source: "https://deploymentsafety.openai.com/gpt-6-astra/gpt-6-astra.pdf#page=47" },
+          { evaluator: "UK AISI", recurring: true, source: "https://deploymentsafety.openai.com/gpt-6-astra/gpt-6-astra.pdf#page=45" },
+        ],
+        modelWelfare: [],
+        method: [
+        ],
+        misc: [
+          { evaluator: "SecureBio", recurring: true, source: "https://deploymentsafety.openai.com/gpt-6-astra/gpt-6-astra.pdf#page=116" },
+          { evaluator: "UK AISI", recurring: true, source: "https://deploymentsafety.openai.com/gpt-6-astra/gpt-6-astra.pdf#page=74" },
+        ],
+      },  
+    "GPT-5.6 (Sol, Terra, Luna)": {
         systemCard: "https://deploymentsafety.openai.com/gpt-5-6-preview/gpt-5-6-preview.pdf",
         released: "2026-06-25",
         frontier: true,
@@ -1584,6 +1673,22 @@ export const labsData = {
     name: "SpaceXAI",
     color: "#000000",
     models: {
+      "Grok 4.7": {
+        systemCard: "https://media.x.ai/v1/website/card4p7-3a96f40b.pdf",
+        released: "2026-09-21",
+        frontier: null,
+        autonomous: [],
+        biorisk: [],
+        cybersec: [
+          { evaluator: "Unidentified third party", recurring: false, source: "https://media.x.ai/v1/website/card4p7-3a96f40b.pdf#page=17" },
+        ],
+        nuclear: [],
+        redteam: [],
+        scheming: [],
+        modelWelfare: [],
+        method: [],
+        misc: [],
+      },
       "Grok 4.6": {
         systemCard: "https://media.x.ai/v1/website/card-4p6-4cd2dc57.pdf",
         released: "2026-08-12",
@@ -1591,7 +1696,7 @@ export const labsData = {
         autonomous: [],
         biorisk: [],
         cybersec: [
-          { evaluator: "Unidentified third party", recurring: false, source: "https://media.x.ai/v1/website/card-4p6-4cd2dc57.pdf#page=25" },
+          { evaluator: "Unidentified third party", recurring: false, source: "https://media.x.ai/v1/website/card-4p6-4cd2dc57.pdf#page=29" },
         ],
         nuclear: [],
         redteam: [],
@@ -1879,7 +1984,7 @@ export const evaluatorOrder = {
 export const siteConfig = {
   title: "3P Eval Monitor",
   subtitle: "Tracking frontier AI labs’ third-party engagement for pre-deployment safety evaluations",
-  lastUpdated: "8/14/2026",
+  lastUpdated: "9/29/2026",
   notesFull: `
   <p>The dashboard below reflects all third-party safety evaluations performed for major AI models released since 2023.</p>
   <br>

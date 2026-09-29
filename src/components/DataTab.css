@@ -1,10 +1,18 @@
 /*
  * Data tab styles.
- * Chart colors were checked with a colorblind-safety validator against the
+ * Lab colors (--lab-<id>) match the lab card colors in SafetyTestingTracker.jsx.
+ * The numbered --lab-N slots are a fallback for labs without a named color.
+ * Slot colors were checked with a colorblind-safety validator against the
  * site's light (#ffffff) and dark (#1a1d21) card surfaces. Keep the slot order:
  * the order is what keeps neighboring series distinguishable.
  */
 .data-tab {
+  --lab-anthropic: #c96746;
+  --lab-google: #2858c7;
+  --lab-meta: #0070dc;
+  --lab-openai: #0d8a6c;
+  --lab-xai: #1a1c20;
+
   --lab-1: #2a78d6;
   --lab-2: #eb6834;
   --lab-3: #1baf7a;
@@ -25,6 +33,9 @@
 }
 
 [data-theme="dark"] .data-tab {
+  /* xAI's near-black would vanish on the dark card surface */
+  --lab-xai: #c4c8ce;
+
   --lab-1: #3987e5;
   --lab-2: #d95926;
   --lab-3: #199e70;
