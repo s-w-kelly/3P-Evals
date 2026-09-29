@@ -31,6 +31,9 @@ Find the lab in `labsData` and add a new entry to its `models` object. Models sh
 
 ```js
 "Claude 5 Opus": {
+  systemCard: "https://...",
+  released: "2026-05-14",   // YYYY-MM-DD, used by the Data tab trend charts
+  frontier: true,           // pushed the lab's capability frontier? true / false / null (unclassified)
   biorisk: [
     { evaluator: "Faculty", recurring: true, source: "https://..." }
   ],
@@ -40,6 +43,10 @@ Find the lab in `labsData` and add a new entry to its `models` object. Models sh
   modelWelfare: [],
 },
 ```
+
+Leave `released` as `""` if the date is unknown. Undated models still count everywhere except the "Trends over time" section on the Data tab.
+
+`frontier` drives the Data tab's "Frontier only" filter and the frontier trend lines. Models left as `null` are excluded when that filter is on.
 
 ### Adding a new evaluator engagement
 
@@ -57,14 +64,14 @@ The `recurring` flag indicates whether this is a repeat engagement as of this mo
 - `true` = This evaluator tested previous models from this lab
 - `false` = First-time engagement with this lab
 
-### Adding a new evaluator to the color palette
+### Adding a new evaluator
 
-Add the evaluator name and hex color to `evaluatorColors`:
+Add the evaluator to `evaluators` (color + type) and to the matching list in `evaluatorOrder` (button order on the dashboard):
 
 ```js
-export const evaluatorColors = {
+export const evaluators = {
   // ...existing entries...
-  "New Evaluator": "#hexcolor",
+  "New Evaluator": { color: "#hexcolor", type: "private" },  // "private" | "public" | "other"
 };
 ```
 
@@ -104,13 +111,24 @@ newlab: {
 }
 ```
 
+## Data tab
+
+Everything on the Data tab is computed from `labsData` by `src/stats.js`, so it updates automatically as you add models.
+
+- Evaluator types (private / government / other) and dashboard colors come from the `evaluators` registry in `data.js`. Add every new evaluator there (and to `evaluatorOrder`); unregistered names are counted as private and logged as a warning in the browser console during `npm run dev`.
+- Name variants and renames that should count as one evaluator go in `evaluatorAliases` in `src/stats.js` (e.g. `"US AISI"` → `"US CAISI"`).
+- An "engagement" is one (model, evaluator) pair. Domain breakdowns count one entry per (model, evaluator, domain).
+
 ## File Structure
 
 ```
 src/
 ├── data.js                      # ← Edit this for updates
 ├── components/
-│   └── SafetyTestingTracker.jsx # Main component
+│   ├── SafetyTestingTracker.jsx # Main component
+│   ├── DataTab.jsx              # Data tab (charts)
+│   └── DataTab.css
+├── stats.js                     # Aggregations behind the Data tab
 ├── App.jsx
 ├── main.jsx
 └── index.css

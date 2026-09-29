@@ -1,42 +1,9 @@
 import React, { useState, useRef, useEffect, useCallback } from 'react';
 import { labsData, testCategories, evaluators, evaluatorOrder, siteConfig, analysisContent } from '../data';
+import DataTab from './DataTab';
 
-// Muted, professional evaluator colors (for left border accent only)
-const evaluatorAccentColors = {
-  "10a Labs": "#142cff",
-  "ALICE": "#2596be",
-  "Andon Labs": "#f6efa2",
-  "Apollo Research": "#2d7a6d",
-  "Deloitte": "#5a8520",
-  "Dyno Theraputics": "#7691d2",
-  "Eleos": "#4a5cb8",
-  "Epoch AI": "#70efd1",
-  "Faculty": "#5a6b4d",
-  "FAR.AI": "#4a5560",
-  "Frontier Design": "#21c4c4",
-  "Gray Swan": "#4a6a8a",
-  "Haize Labs": "#555555",
-  "Handshake": "#d3fb52",
-  "Irregular (fka Pattern)": "#3a3a3a",
-  "Meridian Labs": "#0284c7",
-  "METR": "#4a7a45",
-  "Microsoft": "#b83a10",
-  "Redwood Research": "#1a7d5c",
-  "Scale": "#000000",
-  "SecureBio": "#0078a0",
-  "Signature Science": "#005520",
-  "Trajectory Labs": "#ee6018",
-  "Virtue AI": "#3040a0",
-  "NNSA": "#a86010",
-  "UK AISI": "#901028",
-  "US CAISI": "#006820",
-  "Domain experts": "#6a2590",
-  "Individual red teamers": "#8a2525",
-  "Uplift trial participants": "#287818",
-  "Unidentified third party": "#505050",
-};
-
-const getEvaluatorColor = (name) => evaluatorAccentColors[name] || "#505050";
+// Evaluator accent colors live in data.js (evaluators registry)
+const getEvaluatorColor = (name) => evaluators[name]?.color || "#505050";
 
 // Lab colors
 const labColors = {
@@ -879,6 +846,15 @@ export default function SafetyTestingTracker() {
           >
             Analysis
           </button>
+          <button
+            style={{
+              ...styles.tab,
+              ...(activeTab === 'data' ? styles.tabActive : {}),
+            }}
+            onClick={() => setActiveTab('data')}
+          >
+            Data
+          </button>
         </div>
 
         {/* Dashboard Tab Content */}
@@ -1095,6 +1071,9 @@ export default function SafetyTestingTracker() {
             </section>
           </div>
         )}
+
+        {/* Data Tab Content */}
+        {activeTab === 'data' && <DataTab />}
 
         {/* Footer */}
         <footer style={styles.footer}>
