@@ -20,10 +20,28 @@ export const labsData = {
     name: "Anthropic",
     color: "#da7756",
     models: {
+      "Claude Sonnet 5.5": {
+        systemCard: "https://www-cdn.anthropic.com/870c8f525702625d2c62fc6dd04c857e3250bec1/Claude%20Sonnet%205.5%20System%20Card.pdf",
+        released: "2026-09-22",
+        frontier: false,
+        autonomous: [],
+        biorisk: [
+          { evaluator: "Dyno Therapeutics", recurring: true, source: "https://www-cdn.anthropic.com/870c8f525702625d2c62fc6dd04c857e3250bec1/Claude%20Sonnet%205.5%20System%20Card.pdf#page=15" },
+        ],
+        cybersec: [],
+        nuclear: [],
+        redteam: [
+          { evaluator: "Gray Swan", recurring: true, source: "https://www-cdn.anthropic.com/870c8f525702625d2c62fc6dd04c857e3250bec1/Claude%20Sonnet%205.5%20System%20Card.pdf#page=49" },
+        ],
+        scheming: [],
+        modelWelfare: [],
+        method: [],
+        misc: [],
+      },
       "Claude Opus 5.5": {
         systemCard: "https://www-cdn.anthropic.com/fc1b44717c85dc068bc6ba5024219938094694bd/Claude%20Opus%205.5%20System%20Card.pdf",
         released: "2026-09-22",
-        frontier: null,
+        frontier: true,
         autonomous: [
           { evaluator: "METR", recurring: true, source: "https://www-cdn.anthropic.com/fc1b44717c85dc068bc6ba5024219938094694bd/Claude%20Opus%205.5%20System%20Card.pdf#page=41" },
         ],
@@ -39,23 +57,14 @@ export const labsData = {
           { evaluator: "Trajectory Labs", recurring: true, source: "https://www-cdn.anthropic.com/fc1b44717c85dc068bc6ba5024219938094694bd/Claude%20Opus%205.5%20System%20Card.pdf#page=59" },
           { evaluator: "US CAISI", recurring: true, source: "https://www-cdn.anthropic.com/fc1b44717c85dc068bc6ba5024219938094694bd/Claude%20Opus%205.5%20System%20Card.pdf#page=59" },
         ],
-        nuclear: [
-
-        ],
+        nuclear: [],
         redteam: [
           { evaluator: "Gray Swan", recurring: true, source: "https://www-cdn.anthropic.com/fc1b44717c85dc068bc6ba5024219938094694bd/Claude%20Opus%205.5%20System%20Card.pdf#page=84" },
         ],
-        scheming: [
-
-        ],
-        modelWelfare: [
-
-        ],
-        method: [
-
-        ],
+        scheming: [],
+        modelWelfare: [],
+        method: [],
         misc: [
-          
           { evaluator: "US CAISI", recurring: true, source: "https://www-cdn.anthropic.com/fc1b44717c85dc068bc6ba5024219938094694bd/Claude%20Opus%205.5%20System%20Card.pdf#page=32" },
         ],
       },
@@ -76,29 +85,21 @@ export const labsData = {
           { evaluator: "Gray Swan", recurring: true, source: "https://www-cdn.anthropic.com/0339e6a7c5c7b87f5c07798616dc32c215d14235/Claude%20Fable%205.1%20&%20Claude%20Mythos%205.1%20System%20Card.pdf#page=58" },
           { evaluator: "Trajectory Labs", recurring: true, source: "https://www-cdn.anthropic.com/0339e6a7c5c7b87f5c07798616dc32c215d14235/Claude%20Fable%205.1%20&%20Claude%20Mythos%205.1%20System%20Card.pdf#page=57" },
         ],
-        nuclear: [
-
-        ],
+        nuclear: [],
         redteam: [
           { evaluator: "Gray Swan", recurring: true, source: "https://www-cdn.anthropic.com/0339e6a7c5c7b87f5c07798616dc32c215d14235/Claude%20Fable%205.1%20&%20Claude%20Mythos%205.1%20System%20Card.pdf#page=82" },
         ],
         scheming: [
           { evaluator: "Unidentified third party", recurring: true, source: "https://www-cdn.anthropic.com/0339e6a7c5c7b87f5c07798616dc32c215d14235/Claude%20Fable%205.1%20&%20Claude%20Mythos%205.1%20System%20Card.pdf#page=96" },
         ],
-        modelWelfare: [
-
-        ],
-        method: [
-
-        ],
-        misc: [
-          
-        ],
+        modelWelfare: [],
+        method: [],
+        misc: [],
       },
       "Claude Opus 5": {
         systemCard: "https://www-cdn.anthropic.com/b514064af1408018e64b1ad24e7d5e75850b4ffd/Claude%20Opus%205%20System%20Card.pdf",
         released: "2026-07-24",
-        frontier: null,
+        frontier: true,
         autonomous: [
 
         ],
@@ -111,20 +112,13 @@ export const labsData = {
           { evaluator: "Trajectory Labs", recurring: true, source: "https://www-cdn.anthropic.com/b514064af1408018e64b1ad24e7d5e75850b4ffd/Claude%20Opus%205%20System%20Card.pdf#page=50" },
           { evaluator: "US CAISI", recurring: true, source: "https://www-cdn.anthropic.com/b514064af1408018e64b1ad24e7d5e75850b4ffd/Claude%20Opus%205%20System%20Card.pdf#page=43" },   
         ],
-        nuclear: [
-
-        ],
+        nuclear: [],
         redteam: [
           { evaluator: "Gray Swan", recurring: true, source: "https://www-cdn.anthropic.com/b514064af1408018e64b1ad24e7d5e75850b4ffd/Claude%20Opus%205%20System%20Card.pdf#page=72" },
         ],
-        scheming: [
-
-        ],
-        modelWelfare: [
-        ],
-        method: [
-
-        ],
+        scheming: [],
+        modelWelfare: [],
+        method: [],
         misc: [
           { evaluator: "US CAISI", recurring: true, source: "https://www-cdn.anthropic.com/b514064af1408018e64b1ad24e7d5e75850b4ffd/Claude%20Opus%205%20System%20Card.pdf#page=43" },   
         ],
@@ -132,30 +126,19 @@ export const labsData = {
       "Claude Sonnet 5": {
         systemCard: "https://www-cdn.anthropic.com/9e6a1044980d8c4ed85669faf9c2a8342e2e9f1e/Claude%20Sonnet%205%20System%20Card.pdf",
         released: "2026-06-30",
-        frontier: null,
-        autonomous: [
-
-        ],
+        frontier: false,
+        autonomous: [],
         biorisk: [
           { evaluator: "Dyno Therapeutics", recurring: true, source: "https://www-cdn.anthropic.com/9e6a1044980d8c4ed85669faf9c2a8342e2e9f1e/Claude%20Sonnet%205%20System%20Card.pdf#page=16" },            
         ],
-        cybersec: [
-
-        ],
-        nuclear: [
-
-        ],
+        cybersec: [],
+        nuclear: [],
         redteam: [
           { evaluator: "Individual red teamers", recurring: true, source: "https://www-cdn.anthropic.com/9e6a1044980d8c4ed85669faf9c2a8342e2e9f1e/Claude%20Sonnet%205%20System%20Card.pdf#page=60" },
         ],
-        scheming: [
-
-        ],
-        modelWelfare: [
-        ],
-        method: [
-
-        ],
+        scheming: [],
+        modelWelfare: [],
+        method: [],
         misc: [
           { evaluator: "Individual red teamers", recurring: true, source: "https://www-cdn.anthropic.com/9e6a1044980d8c4ed85669faf9c2a8342e2e9f1e/Claude%20Sonnet%205%20System%20Card.pdf#page=8" },
         ],
@@ -181,9 +164,7 @@ export const labsData = {
           { evaluator: "UK AISI", recurring: true, source: "https://www-cdn.anthropic.com/d00db56fa754a1b115b6dd7cb2e3c342ee809620.pdf#page=67" },
           { evaluator: "Individual red teamers", recurring: true, source: "https://www-cdn.anthropic.com/d00db56fa754a1b115b6dd7cb2e3c342ee809620.pdf#page=68" },
         ],
-        nuclear: [
-
-        ],
+        nuclear: [],
         redteam: [
           { evaluator: "Individual red teamers", recurring: true, source: "https://www-cdn.anthropic.com/d00db56fa754a1b115b6dd7cb2e3c342ee809620.pdf#page=104" },
         ],
@@ -192,11 +173,8 @@ export const labsData = {
           { evaluator: "Meridian Labs", recurring: true, source: "https://www-cdn.anthropic.com/d00db56fa754a1b115b6dd7cb2e3c342ee809620.pdf#page=128" },
           { evaluator: "UK AISI", recurring: true, source: "https://www-cdn.anthropic.com/d00db56fa754a1b115b6dd7cb2e3c342ee809620.pdf#page=130" },
         ],
-        modelWelfare: [
-        ],
-        method: [
-
-        ],
+        modelWelfare: [],
+        method: [],
         misc: [
           { evaluator: "UK AISI", recurring: true, source: "https://www-cdn.anthropic.com/d00db56fa754a1b115b6dd7cb2e3c342ee809620.pdf#page=215" },
           { evaluator: "Individual red teamers", recurring: true, source: "https://www-cdn.anthropic.com/d00db56fa754a1b115b6dd7cb2e3c342ee809620.pdf#page=11" },
@@ -205,7 +183,7 @@ export const labsData = {
       "Claude Opus 4.8": {
         systemCard: "https://cdn.sanity.io/files/4zrzovbb/website/c886650a2e96fc0925c805a1a7ca77314ccbf4a6.pdf",
         released: "2026-05-28",
-        frontier: null,
+        frontier: true,
         autonomous: [
           { evaluator: "Gray Swan", recurring: true, source: "https://cdn.sanity.io/files/4zrzovbb/website/c886650a2e96fc0925c805a1a7ca77314ccbf4a6.pdf#page=75" },  
           { evaluator: "UK AISI", recurring: true, source: "https://cdn.sanity.io/files/4zrzovbb/website/c886650a2e96fc0925c805a1a7ca77314ccbf4a6.pdf#page=107" },
@@ -214,8 +192,7 @@ export const labsData = {
           { evaluator: "Dyno Therapeutics", recurring: false, source: "https://cdn.sanity.io/files/4zrzovbb/website/c886650a2e96fc0925c805a1a7ca77314ccbf4a6.pdf#page=21" },            
           { evaluator: "Individual red teamers", recurring: true, source: "https://cdn.sanity.io/files/4zrzovbb/website/c886650a2e96fc0925c805a1a7ca77314ccbf4a6.pdf#page=16" },
         ],
-        cybersec: [
-        ],
+        cybersec: [],
         nuclear: [],
         redteam: [
           { evaluator: "Individual red teamers", recurring: true, source: "https://cdn.sanity.io/files/4zrzovbb/website/c886650a2e96fc0925c805a1a7ca77314ccbf4a6.pdf#page=77" },
@@ -225,8 +202,7 @@ export const labsData = {
           { evaluator: "Meridian Labs", recurring: false, source: "https://cdn.sanity.io/files/4zrzovbb/website/c886650a2e96fc0925c805a1a7ca77314ccbf4a6.pdf#page=105" },
           { evaluator: "UK AISI", recurring: true, source: "https://cdn.sanity.io/files/4zrzovbb/website/c886650a2e96fc0925c805a1a7ca77314ccbf4a6.pdf#page=105" },
         ],
-        modelWelfare: [
-        ],
+        modelWelfare: [],
         method: [],
         misc: [
           { evaluator: "Individual red teamers", recurring: true, source: "https://cdn.sanity.io/files/4zrzovbb/website/c886650a2e96fc0925c805a1a7ca77314ccbf4a6.pdf#page=10" },          
@@ -236,7 +212,7 @@ export const labsData = {
       "Claude Opus 4.7": {
         systemCard: "https://cdn.sanity.io/files/4zrzovbb/website/037f06850df7fbe871e206dad004c3db5fd50340.pdf",
         released: "2026-04-16",
-        frontier: null,
+        frontier: true,
         autonomous: [
           { evaluator: "Gray Swan", recurring: true, source: "https://cdn.sanity.io/files/4zrzovbb/website/037f06850df7fbe871e206dad004c3db5fd50340.pdf#page=82" },        
           { evaluator: "UK AISI", recurring: true, source: "https://cdn.sanity.io/files/4zrzovbb/website/037f06850df7fbe871e206dad004c3db5fd50340.pdf#page=114" },        
@@ -248,12 +224,9 @@ export const labsData = {
           { evaluator: "UK AISI", recurring: true, source: "https://cdn.sanity.io/files/4zrzovbb/website/037f06850df7fbe871e206dad004c3db5fd50340.pdf#page=52" },
         ],
         nuclear: [],
-        redteam: [
-        ],
-        scheming: [
-        ],
-        modelWelfare: [
-        ],
+        redteam: [],
+        scheming: [],
+        modelWelfare: [],
         method: [],
         misc: [
           { evaluator: "Unidentified third party", recurring: true, source: "https://cdn.sanity.io/files/4zrzovbb/website/037f06850df7fbe871e206dad004c3db5fd50340.pdf#page=11" },
@@ -293,13 +266,12 @@ export const labsData = {
       "Claude Sonnet 4.6": {
         systemCard: "https://www-cdn.anthropic.com/78073f739564e986ff3e28522761a7a0b4484f84.pdf",
         released: "2026-02-17",
-        frontier: null,
+        frontier: false,
         autonomous: [],
         biorisk: [
           { evaluator: "Faculty", recurring: true, source: "https://www-cdn.anthropic.com/78073f739564e986ff3e28522761a7a0b4484f84.pdf#page=109" },          
         ],
-        cybersec: [
-        ],
+        cybersec: [],
         nuclear: [],
         redteam: [
           { evaluator: "Gray Swan", recurring: true, source: "https://www-cdn.anthropic.com/78073f739564e986ff3e28522761a7a0b4484f84.pdf#page=97" },
@@ -329,8 +301,7 @@ export const labsData = {
         nuclear: [
           { evaluator: "NNSA", recurring: true, source: "https://www-cdn.anthropic.com/c788cbc0a3da9135112f97cdf6dcd06f2c16cee2.pdf#page=170" },
         ],
-        redteam: [
-        ],
+        redteam: [],
         scheming: [
           { evaluator: "Andon Labs", recurring: false, source: "https://www-cdn.anthropic.com/c788cbc0a3da9135112f97cdf6dcd06f2c16cee2.pdf#page=120" },
         ],
@@ -385,7 +356,7 @@ export const labsData = {
       "Claude Haiku 4.5": {
         systemCard: "https://assets.anthropic.com/m/99128ddd009bdcb/Claude-Haiku-4-5-System-Card.pdf",
         released: "2025-10-15",
-        frontier: null,
+        frontier: false,
         autonomous: [
           { evaluator: "Gray Swan", recurring: true, source: "https://assets.anthropic.com/m/99128ddd009bdcb/Claude-Haiku-4-5-System-Card.pdf#page=17" },
         ],
@@ -423,7 +394,7 @@ export const labsData = {
       "Claude Opus 4.1": {
         systemCard: "https://assets.anthropic.com/m/4c024b86c698d3d4/original/Claude-4-1-System-Card.pdf",
         released: "2025-08-05",
-        frontier: null,
+        frontier: true,
         autonomous: [],
         biorisk: [],
         cybersec: [],
@@ -537,7 +508,7 @@ export const labsData = {
       "Claude 3.5 Sonnet": {
         systemCard: "https://www-cdn.anthropic.com/fed9cc193a14b84131812372d8d5857f8f304c52/Model_Card_Claude_3_Addendum.pdf",
         released: "2024-06-21",
-        frontier: null,
+        frontier: true,
         autonomous: [
           { evaluator: "METR", recurring: true, source: "https://www-cdn.anthropic.com/fed9cc193a14b84131812372d8d5857f8f304c52/Model_Card_Claude_3_Addendum.pdf#page=6" },
         ],
@@ -576,7 +547,7 @@ export const labsData = {
       "Claude 2": {
         systemCard: "https://www-cdn.anthropic.com/bd2a28d2535bfb0494cc8e2a3bf135d2e7523226/Model-Card-Claude-2.pdf",
         released: "2023-07-11",
-        frontier: null,
+        frontier: true,
         autonomous: [
           { evaluator: "METR", recurring: true, source: "https://www-cdn.anthropic.com/bd2a28d2535bfb0494cc8e2a3bf135d2e7523226/Model-Card-Claude-2.pdf#page=2" },
         ],
@@ -596,7 +567,7 @@ export const labsData = {
       "Claude": {
         systemCard: "https://www.anthropic.com/news/introducing-claude",
         released: "2023-03-14",
-        frontier: null,
+        frontier: false,
         autonomous: [
           { evaluator: "METR", recurring: false, source: "https://metr.org/blog/2023-03-18-update-on-recent-evals/" },
         ],
@@ -619,7 +590,7 @@ export const labsData = {
       "Gemini 3.7 Flash": {
         systemCard: "https://storage.googleapis.com/deepmind-media/gemini/gemini_3-7_flash_fsf_report.pdf",
         released: "2026-08-13",
-        frontier: null,
+        frontier: false,
         autonomous: [],
         biorisk: [
           { evaluator: "Gray Swan", recurring: false, source: "https://storage.googleapis.com/deepmind-media/gemini/gemini_3-7_flash_fsf_report.pdf#page=33" },
@@ -650,7 +621,7 @@ export const labsData = {
       "Gemini 3.6 Flash": {
         systemCard: "https://storage.googleapis.com/deepmind-media/Model-Cards/Gemini-3-6-Flash-Model-Card.pdf",
         released: "2026-07-21",
-        frontier: null,
+        frontier: false,
         autonomous: [],
         biorisk: [],
         cybersec: [],
@@ -664,7 +635,7 @@ export const labsData = {
       "Gemini 3.5 Flash-Lite": {
         systemCard: "https://storage.googleapis.com/deepmind-media/Model-Cards/Gemini-3-5-Flash-Lite-Model-Card.pdf",
         released: "2026-07-21",
-        frontier: null,
+        frontier: false,
         autonomous: [],
         biorisk: [],
         cybersec: [],
@@ -678,7 +649,7 @@ export const labsData = {
       "Gemini 3.5 Flash": {
         systemCard: "https://storage.googleapis.com/deepmind-media/Model-Cards/Gemini-3-5-Flash-Model-Card.pdf",
         released: "2025-05-19",
-        frontier: null,
+        frontier: false,
         autonomous: [],
         biorisk: [],
         cybersec: [],
@@ -692,7 +663,7 @@ export const labsData = {
       "Gemini 3.1 Flash Live": {
         systemCard: "https://storage.googleapis.com/deepmind-media/Model-Cards/Gemini-3-1-Flash-Live-Model-Card.pdf",
         released: "2026-03-26",
-        frontier: null,
+        frontier: false,
         autonomous: [],
         biorisk: [],
         cybersec: [],
@@ -706,7 +677,7 @@ export const labsData = {
       "Gemini 3.1 Flash-Lite": {
         systemCard: "https://storage.googleapis.com/deepmind-media/Model-Cards/Gemini-3-1-Flash-Lite-Model-Card.pdf",
         released: "2026-05-08",
-        frontier: null,
+        frontier: false,
         autonomous: [],
         biorisk: [],
         cybersec: [],
@@ -720,7 +691,7 @@ export const labsData = {
       "Gemini 3.1 Flash Image": {
         systemCard: "https://storage.googleapis.com/deepmind-media/Model-Cards/Gemini-3-1-Flash-Image-Model-Card.pdf",
         released: "2026-02-26",
-        frontier: null,
+        frontier: false,
         autonomous: [],
         biorisk: [],
         cybersec: [],
@@ -734,7 +705,7 @@ export const labsData = {
       "Gemini 3.1 Pro": {
         systemCard: "https://storage.googleapis.com/deepmind-media/Model-Cards/Gemini-3-1-Pro-Model-Card.pdf",
         released: "2026-02-19",
-        frontier: null,
+        frontier: true,
         autonomous: [
           { evaluator: "Unidentified third party", recurring: false, source: "https://storage.googleapis.com/deepmind-media/Model-Cards/Gemini-3-1-Pro-Model-Card.pdf#page=7" },
         ],
@@ -762,7 +733,7 @@ export const labsData = {
       "Gemini 3 Flash": {
         systemCard: "https://storage.googleapis.com/deepmind-media/Model-Cards/Gemini-3-Flash-Model-Card.pdf",
         released: "2025-12-17",
-        frontier: null,
+        frontier: false,
         autonomous: [],
         biorisk: [],
         cybersec: [],
@@ -776,7 +747,7 @@ export const labsData = {
       "Gemini 3 Pro Image": {
         systemCard: "https://storage.googleapis.com/deepmind-media/Model-Cards/Gemini-3-Pro-Image-Model-Card.pdf",
         released: "2025-11-20",
-        frontier: null,
+        frontier: false,
         autonomous: [],
         biorisk: [],
         cybersec: [],
@@ -790,7 +761,7 @@ export const labsData = {
       "Gemini 3 Pro": {
         systemCard: "https://storage.googleapis.com/deepmind-media/gemini/gemini_3_pro_fsf_report.pdf",
         released: "2025-11-18",
-        frontier: null,
+        frontier: true,
         autonomous: [
           { evaluator: "Unidentified third party", recurring: false, source: "https://storage.googleapis.com/deepmind-media/gemini/gemini_3_pro_fsf_report.pdf#page=17" },
         ],
@@ -844,7 +815,7 @@ export const labsData = {
       "Gemini 1.5 Pro/Flash": {
         systemCard: "https://storage.googleapis.com/deepmind-media/gemini/gemini_v1_5_report.pdf",
         released: "2024-02-15",
-        frontier: null,
+        frontier: true,
         autonomous: [],
         biorisk: [
           { evaluator: "Domain experts", recurring: true, source: "https://storage.googleapis.com/deepmind-media/gemini/gemini_v1_5_report.pdf#subsection.9.6" },
@@ -868,7 +839,7 @@ export const labsData = {
       "Gemini 1.0 Ultra/Pro/Nano": {
         systemCard: "https://storage.googleapis.com/deepmind-media/gemini/gemini_1_report.pdf",
         released: "2023-12-06",
-        frontier: null,
+        frontier: true,
         autonomous: [
           { evaluator: "Domain experts", recurring: false, source: "https://storage.googleapis.com/deepmind-media/gemini/gemini_1_report.pdf#page=38" },
         ],
@@ -902,81 +873,66 @@ export const labsData = {
       "Muse Spark 1.3": {
         systemCard: "https://research.meta.ai/static/muse-spark-1-3-multimodal-evaluation-methodology",
         released: "2026-09-02",
-        frontier: null,
+        frontier: false,
         autonomous: [],
         biorisk: [],
-        cybersec: [
-        ],
+        cybersec: [],
         nuclear: [],
-        redteam: [
-        ],
-        scheming: [
-        ],
+        redteam: [],
+        scheming: [],
         modelWelfare: [],
-        method: [
-        ],
+        method: [],
         misc: [],
       },
       "Muse Glimmer": {
         systemCard: "https://huggingface.co/meta-models/Muse-Glimmer-30B",
         released: "2026-08-10",
-        frontier: null,
+        frontier: false,
         autonomous: [],
         biorisk: [],
-        cybersec: [
-        ],
+        cybersec: [],
         nuclear: [],
-        redteam: [
-        ],
-        scheming: [
-        ],
+        redteam: [],
+        scheming: [],
         modelWelfare: [],
-        method: [
-        ],
+        method: [],
         misc: [],
       },
       "Muse Spark 1.2": {
         systemCard: "https://research.meta.ai/static/muse-spark-1-2-methodology",
         released: "2026-08-05",
-        frontier: null,
+        frontier: false,
         autonomous: [],
         biorisk: [],
-        cybersec: [
-        ],
+        cybersec: [],
         nuclear: [],
-        redteam: [
-        ],
-        scheming: [
-        ],
+        redteam: [],
+        scheming: [],
         modelWelfare: [],
-        method: [
-        ],
+        method: [],
         misc: [],
       },
       "Muse Spark 1.1": {
         systemCard: "https://research.meta.ai/static/muse-spark-1-1-evaluation-report",
         released: "2026-07-09",
-        frontier: null,
+        frontier: false,
         autonomous: [],
         biorisk: [],
-        cybersec: [
-        ],
+        cybersec: [],
         nuclear: [],
         redteam: [
           { evaluator: "Gray Swan", recurring: true, source: "https://research.meta.ai/static/muse-spark-1-1-evaluation-report#page=56" },
           { evaluator: "Scale", recurring: true, source: "https://research.meta.ai/static/muse-spark-1-1-evaluation-report#page=49" },
         ],
-        scheming: [
-        ],
+        scheming: [],
         modelWelfare: [],
-        method: [
-        ],
+        method: [],
         misc: [],
       },
       "Muse Spark": {
         systemCard: "https://ai.meta.com/static-resource/muse-spark-safety-and-preparedness-report/",
         released: "2026-05-26",
-        frontier: null,
+        frontier: false,
         autonomous: [],
         biorisk: [],
         cybersec: [
@@ -1003,7 +959,7 @@ export const labsData = {
       "Llama 4 Maverick/Scout": {
         systemCard: "https://github.com/meta-llama/llama-models/blob/main/models/llama4/MODEL_CARD.md",
         released: "2025-04-05",
-        frontier: null,
+        frontier: false,
         autonomous: [],
         biorisk: [],
         cybersec: [],
@@ -1021,7 +977,7 @@ export const labsData = {
       "Llama 3.3": {
         systemCard: "https://github.com/meta-llama/llama-models/blob/main/models/llama3_3/MODEL_CARD.md",
         released: "2024-12-06",
-        frontier: null,
+        frontier: false,
         autonomous: [],
         biorisk: [],
         cybersec: [],
@@ -1039,7 +995,7 @@ export const labsData = {
       "Llama 3.2-Vision": {
         systemCard: "https://github.com/meta-llama/llama-models/blob/main/models/llama3_2/MODEL_CARD_VISION.md",
         released: "2024-09-25",
-        frontier: null,
+        frontier: false,
         autonomous: [],
         biorisk: [],
         cybersec: [],
@@ -1057,7 +1013,7 @@ export const labsData = {
       "Llama 3.2": {
         systemCard: "https://github.com/meta-llama/llama-models/blob/main/models/llama3_2/MODEL_CARD.md",
         released: "2024-09-25",
-        frontier: null,
+        frontier: false,
         autonomous: [],
         biorisk: [],
         cybersec: [],
@@ -1075,7 +1031,7 @@ export const labsData = {
       "Llama 3.1": {
         systemCard: "https://github.com/meta-llama/llama-models/blob/main/models/llama3_1/MODEL_CARD.md",
         released: "2024-07-23",
-        frontier: null,
+        frontier: true,
         autonomous: [],
         biorisk: [],
         cybersec: [],
@@ -1093,7 +1049,7 @@ export const labsData = {
       "Llama 3": {
         systemCard: "https://arxiv.org/pdf/2407.21783",
         released: "2024-04-18",
-        frontier: null,
+        frontier: true,
         autonomous: [],
         biorisk: [],
         cybersec: [],
@@ -1111,7 +1067,7 @@ export const labsData = {
       "Llama 2": {
         systemCard: "https://arxiv.org/pdf/2307.09288",
         released: "2023-07-18",
-        frontier: null,
+        frontier: true,
         autonomous: [],
         biorisk: [],
         cybersec: [],
@@ -1129,7 +1085,7 @@ export const labsData = {
       "LLaMA": {
         systemCard: "https://arxiv.org/pdf/2302.13971",
         released: "2023-02-24",
-        frontier: null,
+        frontier: true,
         autonomous: [],
         biorisk: [],
         cybersec: [],
@@ -1151,50 +1107,35 @@ export const labsData = {
         systemCard: "https://deploymentsafety.openai.com/gpt-6-1-sol/gpt-6-1-sol.pdf",
         released: "2026-09-29",
         frontier: null,
-        autonomous: [
-        ],
-        biorisk: [
-        ],
-        cybersec: [
-        ],
+        autonomous: [],
+        biorisk: [],
+        cybersec: [],
         nuclear: [],
-        redteam: [
-        ],
-        scheming: [
-        ],
+        redteam: [],
+        scheming: [],
         modelWelfare: [],
-        method: [
-        ],
-        misc: [
-        ],
+        method: [],
+        misc: [],
       },  
       "GPT-6 Sol and Luna": {
         systemCard: "https://deploymentsafety.openai.com/gpt-6-astra/gpt-6-astra.pdf#page-120",
         released: "2026-09-22",
-        frontier: null,
-        autonomous: [
-        ],
-        biorisk: [
-        ],
-        cybersec: [
-        ],
+        frontier: false,
+        autonomous: [],
+        biorisk: [],
+        cybersec: [],
         nuclear: [],
-        redteam: [
-        ],
-        scheming: [
-        ],
+        redteam: [],
+        scheming: [],
         modelWelfare: [],
-        method: [
-        ],
-        misc: [
-        ],
+        method: [],
+        misc: [],
       },  
       "GPT-6 Astra": {
         systemCard: "https://deploymentsafety.openai.com/gpt-6-astra/gpt-6-astra.pdf",
         released: "2026-09-03",
         frontier: true,
-        autonomous: [
-        ],
+        autonomous: [],
         biorisk: [
           { evaluator: "SecureBio", recurring: true, source: "https://deploymentsafety.openai.com/gpt-6-astra/gpt-6-astra.pdf#page=88" },
         ],
@@ -1211,8 +1152,7 @@ export const labsData = {
           { evaluator: "UK AISI", recurring: true, source: "https://deploymentsafety.openai.com/gpt-6-astra/gpt-6-astra.pdf#page=45" },
         ],
         modelWelfare: [],
-        method: [
-        ],
+        method: [],
         misc: [
           { evaluator: "SecureBio", recurring: true, source: "https://deploymentsafety.openai.com/gpt-6-astra/gpt-6-astra.pdf#page=116" },
           { evaluator: "UK AISI", recurring: true, source: "https://deploymentsafety.openai.com/gpt-6-astra/gpt-6-astra.pdf#page=74" },
@@ -1237,8 +1177,7 @@ export const labsData = {
           { evaluator: "Apollo Research", recurring: true, source: "https://deploymentsafety.openai.com/gpt-5-6-preview/gpt-5-6-preview.pdf#page=56" },        
         ],
         modelWelfare: [],
-        method: [
-        ],
+        method: [],
         misc: [],
       },      
       "GPT-5.5": {
@@ -1270,7 +1209,7 @@ export const labsData = {
       "GPT-5.4 Thinking": {
         systemCard: "https://deploymentsafety.openai.com/gpt-5-4-thinking/gpt-5-4-thinking.pdf",
         released: "2026-03-05",
-        frontier: null,
+        frontier: true,
         autonomous: [],
         biorisk: [],
         cybersec: [
@@ -1288,7 +1227,7 @@ export const labsData = {
       "GPT-5.3 Instant": {
         systemCard: "https://deploymentsafety.openai.com/gpt-5-3-instant/gpt-5-3-instant.pdf",
         released: "2026-03-03",
-        frontier: null,
+        frontier: false,
         autonomous: [],
         biorisk: [],
         cybersec: [],
@@ -1302,7 +1241,7 @@ export const labsData = {
       "GPT-5.3-Codex": {
         systemCard: "https://cdn.openai.com/pdf/23eca107-a9b1-4d2c-b156-7deb4fbc697c/GPT-5-3-Codex-System-Card-02.pdf",
         released: "2026-02-05",
-        frontier: null,
+        frontier: true,
         autonomous: [],
         biorisk: [],
         cybersec: [
@@ -1324,7 +1263,7 @@ export const labsData = {
       "GPT-5.2-Codex": {
         systemCard: "https://cdn.openai.com/pdf/ac7c37ae-7f4c-4442-b741-2eabdeaf77e0/oai_5_2_Codex.pdf",
         released: "2025-12-18",
-        frontier: null,
+        frontier: false,
         autonomous: [],
         biorisk: [],
         cybersec: [
@@ -1340,7 +1279,7 @@ export const labsData = {
       "GPT-5.2": {
         systemCard: "https://cdn.openai.com/pdf/3a4153c8-c748-4b71-8e31-aecbde944f8d/oai_5_2_system-card.pdf",
         released: "2025-12-11",
-        frontier: null,
+        frontier: true,
         autonomous: [],
         biorisk: [],
         cybersec: [
@@ -1358,7 +1297,7 @@ export const labsData = {
       "GPT-5.1-Codex-Max": {
         systemCard: "https://cdn.openai.com/pdf/2a7d98b1-57e5-4147-8d0e-683894d782ae/5p1_codex_max_card_03.pdf",
         released: "2025-11-18",
-        frontier: null,
+        frontier: false,
         autonomous: [
           { evaluator: "METR", recurring: true, source: "https://cdn.openai.com/pdf/2a7d98b1-57e5-4147-8d0e-683894d782ae/5p1_codex_max_card_03.pdf#page=25" },
         ],
@@ -1378,7 +1317,7 @@ export const labsData = {
       "GPT-5.1 Thinking/Instant": {
         systemCard: "https://cdn.openai.com/pdf/4173ec8d-1229-47db-96de-06d87147e07e/5_1_system_card.pdf",
         released: "2025-11-12",
-        frontier: null,
+        frontier: true,
         autonomous: [],
         biorisk: [],
         cybersec: [],
@@ -1428,7 +1367,7 @@ export const labsData = {
       "gpt-oss": {
         systemCard: "https://cdn.openai.com/pdf/419b6906-9da6-406c-a19d-1bb078ac7637/oai_gpt-oss_model_card.pdf",
         released: "2025-08-05",
-        frontier: null,
+        frontier: false,
         autonomous: [],
         biorisk: [
           { evaluator: "SecureBio", recurring: true, source: "https://cdn.openai.com/pdf/419b6906-9da6-406c-a19d-1bb078ac7637/oai_gpt-oss_model_card.pdf#page=23" },
@@ -1448,7 +1387,7 @@ export const labsData = {
       "ChatGPT agent": {
         systemCard: "https://cdn.openai.com/pdf/839e66fc-602c-48bf-81d3-b21eacc3459d/chatgpt_agent_system_card.pdf",
         released: "2025-07-17",
-        frontier: null,
+        frontier: false,
         autonomous: [],
         biorisk: [
           { evaluator: "FAR.AI", recurring: false, source: "https://cdn.openai.com/pdf/839e66fc-602c-48bf-81d3-b21eacc3459d/chatgpt_agent_system_card.pdf#page=39" },
@@ -1499,7 +1438,7 @@ export const labsData = {
       "GPT-4.5": {
         systemCard: "https://cdn.openai.com/gpt-4-5-system-card-2272025.pdf",
         released: "2025-02-27",
-        frontier: null,
+        frontier: false,
         autonomous: [
           { evaluator: "METR", recurring: true, source: "https://cdn.openai.com/gpt-4-5-system-card-2272025.pdf#page=6" },
         ],
@@ -1536,7 +1475,7 @@ export const labsData = {
       "o3-mini": {
         systemCard: "https://cdn.openai.com/o3-mini-system-card-feb10.pdf",
         released: "2025-01-31",
-        frontier: null,
+        frontier: false,
         autonomous: [],
         biorisk: [
           { evaluator: "Domain experts", recurring: true, source: "https://cdn.openai.com/o3-mini-system-card-feb10.pdf#page=13" },
@@ -1557,7 +1496,7 @@ export const labsData = {
       "Operator": {
         systemCard: "https://cdn.openai.com/operator_system_card.pdf",
         released: "2025-01-23",
-        frontier: null,
+        frontier: false,
         autonomous: [],
         biorisk: [],
         cybersec: [],
@@ -1676,7 +1615,7 @@ export const labsData = {
       "Grok 4.7": {
         systemCard: "https://media.x.ai/v1/website/card4p7-3a96f40b.pdf",
         released: "2026-09-21",
-        frontier: null,
+        frontier: false,
         autonomous: [],
         biorisk: [],
         cybersec: [
@@ -1692,7 +1631,7 @@ export const labsData = {
       "Grok 4.6": {
         systemCard: "https://media.x.ai/v1/website/card-4p6-4cd2dc57.pdf",
         released: "2026-08-12",
-        frontier: null,
+        frontier: false,
         autonomous: [],
         biorisk: [],
         cybersec: [
@@ -1708,7 +1647,7 @@ export const labsData = {
       "Grok 4.5": {
         systemCard: "https://cursor.com/resources/grok-4-5-model-card.pdf",
         released: "2026-07-14",
-        frontier: null,
+        frontier: false,
         autonomous: [],
         biorisk: [],
         cybersec: [],
@@ -1722,7 +1661,7 @@ export const labsData = {
       "Grok 4.1 Fast": {
         systemCard: "https://x.ai/news/grok-4-1-fast",
         released: "2025-11-19",
-        frontier: null,
+        frontier: false,
         autonomous: [],
         biorisk: [],
         cybersec: [],
@@ -1736,7 +1675,7 @@ export const labsData = {
       "Grok 4.1": {
         systemCard: "https://data.x.ai/2025-11-17-grok-4-1-model-card.pdf",
         released: "2025-11-17",
-        frontier: null,
+        frontier: false,
         autonomous: [],
         biorisk: [],
         cybersec: [],
@@ -1750,7 +1689,7 @@ export const labsData = {
       "Grok 4 Fast": {
         systemCard: "https://data.x.ai/2025-09-19-grok-4-fast-model-card.pdf",
         released: "2025-09-19",
-        frontier: null,
+        frontier: false,
         autonomous: [],
         biorisk: [],
         cybersec: [],
@@ -1764,7 +1703,7 @@ export const labsData = {
       "Grok Code Fast 1": {
         systemCard: "https://data.x.ai/2025-08-26-grok-code-fast-1-model-card.pdf",
         released: "2025-08-28",
-        frontier: null,
+        frontier: false,
         autonomous: [],
         biorisk: [],
         cybersec: [],
@@ -1778,7 +1717,7 @@ export const labsData = {
       "Grok 4": {
         systemCard: "https://data.x.ai/2025-08-20-grok-4-model-card.pdf",
         released: "2025-07-09",
-        frontier: null,
+        frontier: true,
         autonomous: [],
         biorisk: [
           { evaluator: "UK AISI", recurring: false, source: "https://www.transformernews.ai/p/sam-altman-ai-bubble#:~:text=xAI%20finally%20published%20a%20model%20card%20for%20Grok%204" },
@@ -1797,7 +1736,7 @@ export const labsData = {
       "Grok 3": {
         systemCard: "https://x.ai/news/grok-3",
         released: "2025-02-19",
-        frontier: null,
+        frontier: true,
         autonomous: [],
         biorisk: [],
         cybersec: [],
@@ -1811,7 +1750,7 @@ export const labsData = {
       "Grok-2": {
         systemCard: "https://x.ai/news/grok-2",
         released: "2024-08-13",
-        frontier: null,
+        frontier: true,
         autonomous: [],
         biorisk: [],
         cybersec: [],
@@ -1825,7 +1764,7 @@ export const labsData = {
       "Grok-1.5V": {
         systemCard: "https://x.ai/news/grok-1.5v",
         released: "2024-04-12",
-        frontier: null,
+        frontier: false,
         autonomous: [],
         biorisk: [],
         cybersec: [],
@@ -1839,7 +1778,7 @@ export const labsData = {
       "Grok-1.5": {
         systemCard: "https://x.ai/news/grok-1.5",
         released: "2024-03-28",
-        frontier: null,
+        frontier: false,
         autonomous: [],
         biorisk: [],
         cybersec: [],
@@ -1853,7 +1792,7 @@ export const labsData = {
       "Grok-1": {
         systemCard: "https://x.ai/news/grok/model-card",
         released: "2023-11-03",
-        frontier: null,
+        frontier: false,
         autonomous: [],
         biorisk: [],
         cybersec: [],
