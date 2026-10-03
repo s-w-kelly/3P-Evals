@@ -252,16 +252,18 @@ export default function SafetyTestingTracker() {
 
   return (
     <div className="stt">
-      <div className="stt-inner">
-        {/* Header */}
-        <header className="stt-masthead">
-          <h1 className="stt-title">{siteConfig.title}</h1>
-          <p className="stt-subtitle">{siteConfig.subtitle}</p>
-        </header>
-
-        {/* Tabs */}
-        <nav className="stt-nav no-print" aria-label="Sections">
-          <div className="stt-tabs" role="tablist">
+      {/* Site bar: wordmark, tabs, theme toggle */}
+      <div className="stt-sitebar no-print">
+        <div className="stt-bar-inner">
+          <button
+            className="stt-brand"
+            onClick={() => setActiveTab('dashboard')}
+            aria-label={`${siteConfig.title}: go to Dashboard`}
+          >
+            <span className="stt-brand-mark" aria-hidden="true" />
+            <span className="stt-brand-name">{siteConfig.title}</span>
+          </button>
+          <nav className="stt-tabs" role="tablist" aria-label="Sections">
             {tabs.map(tab => (
               <button
                 key={tab.id}
@@ -273,7 +275,7 @@ export default function SafetyTestingTracker() {
                 {tab.label}
               </button>
             ))}
-          </div>
+          </nav>
           <button
             className="stt-icon-btn"
             onClick={() => setDarkMode(prev => !prev)}
@@ -298,8 +300,32 @@ export default function SafetyTestingTracker() {
               </svg>
             )}
           </button>
-        </nav>
+        </div>
+      </div>
 
+      {/* Page header on a tinted band */}
+      <header className="stt-masthead">
+        <div className="stt-bar-inner stt-masthead-inner">
+          <h1 className="stt-title">{siteConfig.title}</h1>
+          <p className="stt-subtitle">{siteConfig.subtitle}</p>
+          <div className="stt-meta">
+            <span>
+              Last updated: <span className="stt-meta-strong">{siteConfig.lastUpdated}</span>
+            </span>
+            {siteConfig.dataSource && <span>{siteConfig.dataSource}</span>}
+            <button className="stt-meta-btn no-print" onClick={exportToCSV}>
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+                <polyline points="7 10 12 15 17 10" />
+                <line x1="12" y1="15" x2="12" y2="3" />
+              </svg>
+              Export data
+            </button>
+          </div>
+        </div>
+      </header>
+
+      <div className="stt-inner">
         <main>
           {/* Dashboard Tab Content */}
           {activeTab === 'dashboard' && (
@@ -361,14 +387,6 @@ export default function SafetyTestingTracker() {
                   <li><ExternalIcon size={10} />Source link</li>
                   <li><span className="stt-empty-swatch" />No third-party engagement found</li>
                 </ul>
-                <button className="stt-btn no-print" onClick={exportToCSV}>
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
-                    <polyline points="7 10 12 15 17 10" />
-                    <line x1="12" y1="15" x2="12" y2="3" />
-                  </svg>
-                  Export data
-                </button>
               </div>
 
               {/* Main Data Grid */}
@@ -420,9 +438,9 @@ export default function SafetyTestingTracker() {
 
         {/* Footer */}
         <footer className="stt-footer">
-          <div>
-            <div className="stt-updated">Last updated: {siteConfig.lastUpdated}</div>
-            <div>{siteConfig.dataSource}</div>
+          <div className="stt-footer-brand">
+            <span className="stt-brand-mark" aria-hidden="true" />
+            {siteConfig.title}
           </div>
 
           <div className="stt-footer-credit">

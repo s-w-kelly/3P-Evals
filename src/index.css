@@ -8,6 +8,7 @@
   --bg-hover: #e7eaea;
   --bg-elevated: #ffffff;
   --bg-empty: #f6f7f7;
+  --bg-band: #f3f5f5;
 
   /* Text hierarchy (one cool gray family) */
   --text-primary: #121819;
@@ -75,6 +76,7 @@
   --bg-hover: #242b2d;
   --bg-elevated: #1c2224;
   --bg-empty: #13181a;
+  --bg-band: #151a1c;
 
   --text-primary: #edf0f0;
   --text-secondary: #bac3c5;
