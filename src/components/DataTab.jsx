@@ -577,10 +577,7 @@ export default function DataTab() {
 
   return (
     <div className="data-tab">
-      <h2 style={{
-        fontFamily: 'var(--font-display)', fontSize: '1.25rem', fontWeight: 700,
-        color: 'var(--text-primary)', marginBottom: 'var(--space-sm)',
-      }}>
+      <h2 className="stt-page-title dt-page-title">
         Data &amp; Trends
       </h2>
       <p className="dt-intro">

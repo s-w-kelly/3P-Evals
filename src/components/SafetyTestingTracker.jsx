@@ -1,18 +1,63 @@
 import React, { useState, useRef, useEffect, useCallback } from 'react';
 import { labsData, testCategories, evaluators, evaluatorOrder, siteConfig, analysisContent } from '../data';
 import DataTab from './DataTab';
+import './SafetyTestingTracker.css';
 
 // Evaluator accent colors live in data.js (evaluators registry)
 const getEvaluatorColor = (name) => evaluators[name]?.color || "#505050";
 
-// Lab colors
-const labColors = {
-  anthropic: { bg: "#c96746", header: "#b85a3c" },
-  google: { bg: "#2858c7", header: "#1e4aa8" },
-  meta: { bg: "#0070dc", header: "#0060c0" },
-  openai: { bg: "#0d8a6c", header: "#0a7058" },
-  xai: { bg: "#1a1c20", header: "#000000" },
+// Lab colors are CSS variables (--lab-<id>) in index.css; fall back to the color in data.js
+const getLabColor = (labId, lab) => `var(--lab-${labId}, ${lab.color})`;
+
+const tabs = [
+  { id: 'dashboard', label: 'Dashboard' },
+  { id: 'analysis', label: 'Analysis' },
+  { id: 'data', label: 'Data' },
+];
+
+const categoryLabels = {
+  private: "Private Organizations",
+  public: "Government Agencies",
+  other: "Other",
 };
+
+const ExternalIcon = ({ size = 10, className }) => (
+  <svg className={className} width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.25" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+    <line x1="7" y1="17" x2="17" y2="7" />
+    <polyline points="8 7 17 7 17 16" />
+  </svg>
+);
+
+const Chevron = ({ size = 10 }) => (
+  <svg className="stt-chevron" width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.25" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+    <polyline points="6 9 12 15 18 9" />
+  </svg>
+);
+
+// Accordion item for the Analysis tab
+function AccordionItem({ item, index, isOpen, onToggle }) {
+  const contentRef = useRef(null);
+  const [maxHeight, setMaxHeight] = useState('0px');
+
+  useEffect(() => {
+    if (contentRef.current) {
+      setMaxHeight(isOpen ? `${contentRef.current.scrollHeight}px` : '0px');
+    }
+  }, [isOpen]);
+
+  return (
+    <li className={`stt-acc-item${isOpen ? ' is-open' : ''}`}>
+      <button className="stt-acc-head" onClick={onToggle} aria-expanded={!!isOpen}>
+        <span className="stt-acc-num">{String(index + 1).padStart(2, '0')}</span>
+        <span className="stt-acc-title">{item.title}</span>
+        <Chevron size={12} />
+      </button>
+      <div ref={contentRef} className="stt-collapse" style={{ maxHeight }}>
+        <div className="stt-acc-body notes-html" dangerouslySetInnerHTML={{ __html: item.content }} />
+      </div>
+    </li>
+  );
+}
 
 export default function SafetyTestingTracker() {
   const [selectedModels, setSelectedModels] = useState(() =>
@@ -54,10 +99,6 @@ export default function SafetyTestingTracker() {
 
   const toggleAccordion = (id) => {
     setOpenAccordions(prev => ({ ...prev, [id]: !prev[id] }));
-  };
-
-  const isHighlighted = (evaluator) => {
-    return highlightedEvaluator === null || highlightedEvaluator === evaluator;
   };
 
   // Export functions - exports ALL data, not just current view
@@ -113,1019 +154,290 @@ export default function SafetyTestingTracker() {
 
   const labEntries = Object.entries(labsData);
 
-  const categoryLabels = {
-    private: "Private Organizations",
-    public: "Government Agencies",
-    other: "Other",
-  };
-
-  const styles = {
-    container: {
-      minHeight: '100vh',
-      backgroundColor: 'var(--bg-primary)',
-    },
-    inner: {
-      maxWidth: '1440px',
-      margin: '0 auto',
-      padding: 'var(--space-xl) var(--space-lg)',
-    },
-    // Header section - more dashboard-like
-    header: {
-      marginBottom: 'var(--space-sm)',
-      paddingBottom: 'var(--space-sm)',
-      borderBottom: '2px solid var(--border-light)',
-    },
-    headerTop: {
-      display: 'flex',
-      alignItems: 'flex-start',
-      justifyContent: 'space-between',
-      gap: 'var(--space-lg)',
-      marginBottom: 'var(--space-md)',
-    },
-    darkModeToggle: {
-      display: 'flex',
-      alignItems: 'center',
-      justifyContent: 'center',
-      width: '36px',
-      height: '36px',
-      backgroundColor: 'var(--bg-secondary)',
-      border: '1px solid var(--border-medium)',
-      borderRadius: 'var(--radius-md)',
-      color: 'var(--text-secondary)',
-      cursor: 'pointer',
-      transition: 'all 0.15s ease',
-      flexShrink: 0,
-    },
-    headerLeft: {
-      display: 'flex',
-      alignItems: 'flex-start',
-      gap: 'var(--space-lg)',
-    },
-    logo: {
-      width: '64px',
-      height: '64px',
-      flexShrink: 0,
-    },
-    headerContent: {
-      flex: 1,
-    },
-    title: {
-      fontFamily: 'var(--font-display)',
-      fontSize: '1.875rem',
-      fontWeight: '700',
-      color: 'var(--text-primary)',
-      letterSpacing: '-0.02em',
-      lineHeight: 1.2,
-      marginBottom: '4px',
-    },
-    subtitle: {
-      fontFamily: 'var(--font-body)',
-      fontSize: '1rem',
-      fontWeight: '400',
-      color: 'var(--text-secondary)',
-      lineHeight: 1.5,
-      maxWidth: '600px',
-    },
-    // Tabs
-    tabContainer: {
-      display: 'flex',
-      gap: '4px',
-      marginBottom: 'var(--space-lg)',
-      borderBottom: '1px solid var(--border-light)',
-      paddingBottom: '0',
-    },
-    tab: {
-      padding: '10px 20px',
-      backgroundColor: 'transparent',
-      border: 'none',
-      borderBottom: '2px solid transparent',
-      color: 'var(--text-tertiary)',
-      fontSize: '0.875rem',
-      fontWeight: '500',
-      fontFamily: 'var(--font-body)',
-      cursor: 'pointer',
-      transition: 'all 0.15s ease',
-      marginBottom: '-1px',
-    },
-    tabActive: {
-      color: 'var(--text-primary)',
-      borderBottomColor: 'var(--accent-primary, #2563eb)',
-    },
-    // Analysis page styles
-    analysisContainer: {
-      maxWidth: '900px',
-    },
-    analysisSection: {
-      marginBottom: 'var(--space-xl)',
-    },
-    analysisSectionTitle: {
-      fontFamily: 'var(--font-display)',
-      fontSize: '1.25rem',
-      fontWeight: '700',
-      color: 'var(--text-primary)',
-      marginBottom: 'var(--space-md)',
-      display: 'flex',
-      alignItems: 'center',
-      gap: 'var(--space-sm)',
-    },
-    accordionItem: {
-      backgroundColor: 'var(--bg-secondary)',
-      border: '1px solid var(--border-light)',
-      borderRadius: 'var(--radius-md)',
-      marginBottom: 'var(--space-sm)',
-      overflow: 'hidden',
-    },
-    accordionHeader: {
-      display: 'flex',
-      alignItems: 'center',
-      justifyContent: 'space-between',
-      padding: 'var(--space-md) var(--space-lg)',
-      cursor: 'pointer',
-      backgroundColor: 'var(--bg-secondary)',
-      border: 'none',
-      width: '100%',
-      textAlign: 'left',
-      transition: 'background-color 0.15s ease',
-    },
-    accordionTitle: {
-      fontFamily: 'var(--font-body)',
-      fontSize: '0.9375rem',
-      fontWeight: '600',
-      color: 'var(--text-primary)',
-    },
-    accordionIcon: {
-      transition: 'transform 0.2s ease',
-      color: 'var(--text-tertiary)',
-    },
-    accordionContent: {
-      overflow: 'hidden',
-      transition: 'max-height 0.3s ease-in-out',
-    },
-    accordionInner: {
-      padding: 'var(--space-md) var(--space-lg)',
-      paddingTop: '12px',
-      fontSize: '0.875rem',
-      lineHeight: 1.7,
-      color: 'var(--text-secondary)',
-      borderTop: '1px solid var(--border-light)',
-    },
-    // Export button
-    exportButton: {
-      display: 'inline-flex',
-      alignItems: 'center',
-      gap: '6px',
-      padding: '8px 14px',
-      backgroundColor: 'var(--bg-secondary)',
-      border: '1px solid var(--border-medium)',
-      borderRadius: 'var(--radius-md)',
-      color: 'var(--text-secondary)',
-      fontSize: '0.8125rem',
-      fontWeight: '500',
-      fontFamily: 'var(--font-body)',
-      cursor: 'pointer',
-      transition: 'all 0.15s ease',
-    },
-    // Notes section
-    notesCard: {
-      backgroundColor: 'var(--bg-secondary)',
-      border: '1px solid var(--border-light)',
-      borderRadius: 'var(--radius-lg)',
-      marginBottom: 'var(--space-lg)',
-      boxShadow: 'var(--shadow-sm)',
-    },
-    notesHeader: {
-      display: 'flex',
-      alignItems: 'center',
-      justifyContent: 'space-between',
-      padding: 'var(--space-md) var(--space-lg)',
-      cursor: 'pointer',
-    },
-    notesTitle: {
-      fontFamily: 'var(--font-body)',
-      fontSize: '0.875rem',
-      fontWeight: '600',
-      color: 'var(--text-primary)',
-      display: 'flex',
-      alignItems: 'center',
-      gap: 'var(--space-sm)',
-    },
-    notesToggle: {
-      display: 'flex',
-      alignItems: 'center',
-      gap: 'var(--space-sm)',
-      padding: '6px 12px',
-      backgroundColor: 'transparent',
-      border: '1px solid var(--border-medium)',
-      borderRadius: 'var(--radius-md)',
-      color: 'var(--text-secondary)',
-      fontSize: '0.75rem',
-      fontWeight: '500',
-      cursor: 'pointer',
-      transition: 'all 0.15s ease',
-    },
-    notesContent: {
-      overflow: 'hidden',
-      transition: 'max-height 300ms ease-in-out',
-    },
-    notesInner: {
-      padding: 'var(--space-lg)',
-      paddingTop: 'var(--space-md)',
-      fontSize: '0.875rem',
-      lineHeight: 1.7,
-      color: 'var(--text-secondary)',
-      borderTop: '1px solid var(--border-light)',
-    },
-    // Evaluators section
-    evaluatorsSection: {
-      marginBottom: 'var(--space-lg)',
-    },
-    sectionHeader: {
-      fontFamily: 'var(--font-display)',
-      fontSize: '0.875rem',
-      fontWeight: '700',
-      color: 'var(--text-primary)',
-      textTransform: 'uppercase',
-      letterSpacing: '0.05em',
-      marginBottom: '4px',
-    },
-    sectionSubheader: {
-      fontSize: '0.8125rem',
-      color: 'var(--text-tertiary)',
-      marginBottom: 'var(--space-md)',
-    },
-    evaluatorCategory: {
-      marginBottom: 'var(--space-md)',
-    },
-    categoryLabel: {
-      fontSize: '0.6875rem',
-      fontWeight: '600',
-      color: 'var(--text-muted)',
-      textTransform: 'uppercase',
-      letterSpacing: '0.08em',
-      marginBottom: '6px',
-    },
-    evaluatorGrid: {
-      display: 'flex',
-      flexWrap: 'wrap',
-      gap: '6px',
-    },
-    // Grid section
-    gridSection: {
-      marginBottom: 'var(--space-xl)',
-    },
-    gridContainer: {
-      overflowX: 'auto',
-      borderRadius: 'var(--radius-lg)',
-      border: '1px solid var(--border-medium)',
-      backgroundColor: 'var(--bg-secondary)',
-      boxShadow: 'var(--shadow-md)',
-    },
-    grid: {
-      display: 'grid',
-      minWidth: '1000px',
-    },
-    // Legend
-    legend: {
-      display: 'flex',
-      flexWrap: 'wrap',
-      gap: 'var(--space-lg)',
-      padding: 'var(--space-md) var(--space-lg)',
-      backgroundColor: 'var(--bg-tertiary)',
-      borderRadius: 'var(--radius-md)',
-      marginBottom: 'var(--space-lg)',
-      border: '1px solid var(--border-light)',
-    },
-    legendItem: {
-      display: 'flex',
-      alignItems: 'center',
-      gap: '6px',
-      fontSize: '0.75rem',
-      color: 'var(--text-tertiary)',
-    },
-    // Footer
-    footer: {
-      paddingTop: 'var(--space-lg)',
-      borderTop: '1px solid var(--border-light)',
-      display: 'flex',
-      justifyContent: 'space-between',
-      alignItems: 'flex-start',
-      flexWrap: 'wrap',
-      gap: 'var(--space-lg)',
-    },
-    footerMeta: {
-      fontSize: '0.75rem',
-      color: 'var(--text-tertiary)',
-      lineHeight: 1.6,
-    },
-  };
-
-  // Accordion component for Analysis tab
-  const AccordionItem = ({ item, isOpen, onToggle }) => {
-    const contentRef = useRef(null);
-    const [maxHeight, setMaxHeight] = useState('0px');
-
-    useEffect(() => {
-      if (contentRef.current) {
-        setMaxHeight(isOpen ? `${contentRef.current.scrollHeight}px` : '0px');
-      }
-    }, [isOpen]);
-
-    return (
-      <div style={styles.accordionItem}>
-        <button
-          style={styles.accordionHeader}
-          onClick={onToggle}
-          onMouseEnter={(e) => {
-            e.currentTarget.style.backgroundColor = 'var(--bg-tertiary)';
-          }}
-          onMouseLeave={(e) => {
-            e.currentTarget.style.backgroundColor = 'var(--bg-secondary)';
-          }}
-        >
-          <span style={styles.accordionTitle}>{item.title}</span>
-          <svg
-            width="12"
-            height="12"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth="2"
-            style={{
-              ...styles.accordionIcon,
-              transform: isOpen ? 'rotate(180deg)' : 'none',
-            }}
-          >
-            <polyline points="6 9 12 15 18 9" />
-          </svg>
-        </button>
-        <div
-          ref={contentRef}
-          style={{
-            ...styles.accordionContent,
-            maxHeight: maxHeight,
-          }}
-        >
-          <div
-            style={styles.accordionInner}
-            className="notes-html"
-            dangerouslySetInnerHTML={{ __html: item.content }}
-          />
-        </div>
-      </div>
-    );
-  };
-
-  // Evaluator button - muted style with colored left border
+  // Evaluator filter chip
   const EvaluatorButton = ({ name }) => {
     const isActive = highlightedEvaluator === name;
-    const color = getEvaluatorColor(name);
-
     return (
       <button
+        className="stt-chip"
+        aria-pressed={isActive}
+        style={{ '--ev': getEvaluatorColor(name) }}
         onClick={() => setHighlightedEvaluator(isActive ? null : name)}
-        style={{
-          display: 'inline-flex',
-          alignItems: 'center',
-          padding: '5px 10px',
-          paddingLeft: '12px',
-          backgroundColor: isActive ? 'var(--bg-tertiary)' : 'var(--bg-secondary)',
-          border: '1px solid var(--border-medium)',
-          borderLeft: `3px solid ${color}`,
-          borderRadius: 'var(--radius-sm)',
-          color: isActive ? 'var(--text-primary)' : 'var(--text-secondary)',
-          fontSize: '0.75rem',
-          fontWeight: '500',
-          fontFamily: 'var(--font-body)',
-          cursor: 'pointer',
-          transition: 'all 0.15s ease',
-          whiteSpace: 'nowrap',
-          boxShadow: isActive ? 'var(--shadow-sm)' : 'none',
-        }}
-        onMouseEnter={(e) => {
-          e.target.style.backgroundColor = 'var(--bg-tertiary)';
-          e.target.style.borderColor = 'var(--border-dark)';
-        }}
-        onMouseLeave={(e) => {
-          e.target.style.backgroundColor = isActive ? 'var(--bg-tertiary)' : 'var(--bg-secondary)';
-          e.target.style.borderColor = 'var(--border-medium)';
-          e.target.style.borderLeftColor = color;
-        }}
       >
+        <span className="stt-swatch" aria-hidden="true" />
         {name}
       </button>
     );
   };
 
-  // Lab header cell
+  // Lab column header
   const LabHeaderCell = ({ labId, lab }) => {
-    const currentModel = selectedModels[labId];
-    const modelData = lab.models[currentModel] || {};
-    const colors = labColors[labId] || { bg: lab.color, header: lab.color };
-
+    const modelData = lab.models[selectedModels[labId]] || {};
     return (
-      <div
-        style={{
-          backgroundColor: colors.bg,
-          padding: 'var(--space-md)',
-          display: 'flex',
-          flexDirection: 'column',
-          justifyContent: 'flex-end',
-          minHeight: '110px',
-        }}
-      >
-        <div style={{
-          fontSize: '0.9375rem',
-          fontWeight: '600',
-          color: '#ffffff',
-          marginBottom: '6px',
-          textAlign: 'center',
-          fontFamily: 'var(--font-body)',
-        }}>
-          {lab.name}
-        </div>
+      <div className="stt-lab-head" style={{ '--lab': getLabColor(labId, lab) }}>
+        <div className="stt-lab-name">{lab.name}</div>
         <select
+          className="stt-select"
           value={selectedModels[labId]}
           onChange={(e) => handleModelChange(labId, e.target.value)}
-          style={{
-            backgroundColor: 'rgba(255,255,255,0.15)',
-            border: '1px solid rgba(255,255,255,0.25)',
-            borderRadius: 'var(--radius-sm)',
-            color: '#ffffff',
-            padding: '6px 10px',
-            fontSize: '0.75rem',
-            fontFamily: 'var(--font-body)',
-            cursor: 'pointer',
-            width: '100%',
-            appearance: 'none',
-            backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='10' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='2'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E")`,
-            backgroundRepeat: 'no-repeat',
-            backgroundPosition: 'right 8px center',
-            paddingRight: '28px',
-          }}
+          aria-label={`${lab.name} model`}
         >
           {Object.keys(lab.models).map(model => (
-            <option key={model} value={model} style={{ color: '#1a1c20' }}>
-              {model}
-            </option>
+            <option key={model} value={model}>{model}</option>
           ))}
         </select>
         {modelData.systemCard && (
-          <a
-            href={modelData.systemCard}
-            target="_blank"
-            rel="noopener noreferrer"
-            style={{
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              gap: '4px',
-              marginTop: '6px',
-              fontSize: '0.6875rem',
-              color: 'rgba(255,255,255,0.8)',
-              textDecoration: 'none',
-            }}
-          >
+          <a className="stt-doc-link" href={modelData.systemCard} target="_blank" rel="noopener noreferrer">
             Documentation
-            <svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-              <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
-              <polyline points="15,3 21,3 21,9" />
-              <line x1="10" y1="14" x2="21" y2="3" />
-            </svg>
+            <ExternalIcon size={9} />
           </a>
         )}
       </div>
     );
   };
 
-  // Category row label
+  // Eval domain row label
   const CategoryLabel = ({ category }) => (
-    <div style={{
-      backgroundColor: 'var(--bg-tertiary)',
-      padding: 'var(--space-md)',
-      display: 'flex',
-      flexDirection: 'column',
-      justifyContent: 'center',
-      borderRight: '1px solid var(--border-light)',
-      borderBottom: '1px solid var(--border-light)',
-    }}>
-      <div style={{
-        fontSize: '0.8125rem',
-        fontWeight: '600',
-        color: 'var(--text-primary)',
-        marginBottom: '2px',
-        fontFamily: 'var(--font-body)',
-      }}>
-        {category.name}
-      </div>
-      <div style={{
-        fontSize: '0.6875rem',
-        color: 'var(--text-tertiary)',
-        lineHeight: 1.4,
-      }}>
-        {category.description}
-      </div>
+    <div className="stt-cat">
+      <div className="stt-cat-name">{category.name}</div>
+      <div className="stt-cat-desc">{category.description}</div>
     </div>
   );
 
-  // Data cell - with null state treatment, centered content, and uniform-width pills
+  // Data cell: one entry per evaluator, linking to its source
   const DataCell = ({ labId, categoryId }) => {
-    const currentModel = selectedModels[labId];
-    const modelData = labsData[labId].models[currentModel] || {};
+    const modelData = labsData[labId].models[selectedModels[labId]] || {};
     const tests = modelData[categoryId] || [];
-    const isEmpty = tests.length === 0;
+
+    if (tests.length === 0) {
+      return (
+        <div className="stt-cell is-empty">
+          <span className="stt-cell-empty">No engagement</span>
+        </div>
+      );
+    }
 
     return (
-      <div style={{
-        backgroundColor: isEmpty ? 'var(--bg-tertiary)' : 'var(--bg-secondary)',
-        padding: 'var(--space-sm) var(--space-md)',
-        minHeight: '56px',
-        display: 'flex',
-        flexDirection: 'column',
-        alignItems: 'center',
-        justifyContent: 'center',
-        gap: '4px',
-        borderRight: '1px solid var(--border-light)',
-        borderBottom: '1px solid var(--border-light)',
-        // Subtle diagonal pattern for empty cells
-        backgroundImage: isEmpty
-          ? 'repeating-linear-gradient(135deg, transparent, transparent 8px, rgba(0,0,0,0.015) 8px, rgba(0,0,0,0.015) 9px)'
-          : 'none',
-      }}>
-        {isEmpty ? (
-          <span style={{
-            color: 'var(--text-muted)',
-            fontSize: '0.6875rem',
-            fontStyle: 'italic',
-            opacity: 0.7,
-          }}>
-            No engagement
-          </span>
-        ) : (
-          tests.map((test, idx) => {
-            const color = getEvaluatorColor(test.evaluator);
-            const highlighted = isHighlighted(test.evaluator);
-
+      <div className="stt-cell">
+        <ul className="stt-entries">
+          {tests.map((test, idx) => {
+            const state = highlightedEvaluator === null
+              ? ''
+              : highlightedEvaluator === test.evaluator ? ' is-match' : ' is-dim';
             return (
-              <a
-                key={idx}
-                href={test.source}
-                target="_blank"
-                rel="noopener noreferrer"
-                style={{
-                  display: 'flex',
-                  alignItems: 'flex-start',
-                  justifyContent: 'space-between',
-                  width: '100%',
-                  maxWidth: '170px',
-                  padding: '4px 8px',
-                  paddingLeft: '10px',
-                  backgroundColor: highlighted ? 'var(--bg-tertiary)' : 'var(--bg-secondary)',
-                  border: '1px solid var(--border-light)',
-                  borderLeft: `3px solid ${highlighted ? color : 'var(--border-medium)'}`,
-                  borderRadius: 'var(--radius-sm)',
-                  color: highlighted ? 'var(--text-primary)' : 'var(--text-muted)',
-                  fontSize: '0.75rem',
-                  fontFamily: 'var(--font-body)',
-                  textDecoration: 'none',
-                  transition: 'all 0.15s ease',
-                  opacity: highlighted ? 1 : 0.5,
-                  boxSizing: 'border-box',
-                }}
-                onMouseEnter={(e) => {
-                  e.currentTarget.style.backgroundColor = 'var(--bg-tertiary)';
-                  e.currentTarget.style.borderLeftColor = color;
-                  e.currentTarget.style.color = 'var(--text-primary)';
-                  e.currentTarget.style.opacity = 1;
-                }}
-                onMouseLeave={(e) => {
-                  e.currentTarget.style.backgroundColor = highlighted ? 'var(--bg-tertiary)' : 'var(--bg-secondary)';
-                  e.currentTarget.style.borderLeftColor = highlighted ? color : 'var(--border-medium)';
-                  e.currentTarget.style.color = highlighted ? 'var(--text-primary)' : 'var(--text-muted)';
-                  e.currentTarget.style.opacity = highlighted ? 1 : 0.5;
-                }}
-              >
-                <span style={{
-                  display: 'flex',
-                  alignItems: 'flex-start',
-                  gap: '5px',
-                  flex: 1,
-                  minWidth: 0,
-                }}>
-                  {test.recurring && (
-                    <span
-                      title="Recurring engagement"
-                      style={{
-                        width: '4px',
-                        height: '4px',
-                        borderRadius: '50%',
-                        backgroundColor: highlighted ? color : 'var(--text-muted)',
-                        flexShrink: 0,
-                        marginTop: '5px',
-                      }}
-                    />
-                  )}
-                  <span style={{ lineHeight: 1.3 }}>
-                    {test.evaluator}
-                  </span>
-                </span>
-                <svg
-                  width="8"
-                  height="8"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                  style={{ opacity: 0.5, flexShrink: 0, marginLeft: '6px', marginTop: '3px' }}
+              <li key={idx}>
+                <a
+                  className={`stt-entry${state}`}
+                  href={test.source}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  style={{ '--ev': getEvaluatorColor(test.evaluator) }}
                 >
-                  <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
-                  <polyline points="15,3 21,3 21,9" />
-                  <line x1="10" y1="14" x2="21" y2="3" />
-                </svg>
-              </a>
+                  <span className="stt-swatch" aria-hidden="true" />
+                  <span className="stt-entry-name">
+                    {test.evaluator}
+                    {test.recurring && (
+                      <span className="stt-recurring-dot" title="Recurring engagement" />
+                    )}
+                  </span>
+                  <ExternalIcon size={9} className="stt-entry-icon" />
+                </a>
+              </li>
             );
-          })
-        )}
+          })}
+        </ul>
       </div>
     );
   };
 
   return (
-    <div style={styles.container}>
-      <div style={styles.inner}>
-        {/* Print styles */}
-        <style>{`
-          @media print {
-            body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
-            .no-print { display: none !important; }
-          }
-          .notes-html {
-            font-family: var(--font-body);
-          }
-          .notes-html p {
-            margin-bottom: 10px;
-          }
-          .notes-html ul {
-            margin-left: 20px;
-            margin-bottom: 10px;
-            list-style-type: disc;
-          }
-          .notes-html ul ul {
-            margin-left: 20px;
-            list-style-type: circle;
-          }
-          .notes-html li {
-            margin: 4px 0;
-          }
-          .notes-html strong {
-            color: var(--text-primary);
-            font-weight: 600;
-          }
-        `}</style>
-
+    <div className="stt">
+      <div className="stt-inner">
         {/* Header */}
-        <header style={styles.header}>
-          <div style={styles.headerTop}>
-            <div style={styles.headerLeft}>
-                <div style={styles.headerContent}>
-                <h1 style={styles.title}>{siteConfig.title}</h1>
-                <p style={styles.subtitle}>{siteConfig.subtitle}</p>
-              </div>
-            </div>
-            <button
-              style={styles.darkModeToggle}
-              onClick={() => setDarkMode(prev => !prev)}
-              onMouseEnter={(e) => {
-                e.currentTarget.style.backgroundColor = 'var(--bg-tertiary)';
-                e.currentTarget.style.borderColor = 'var(--border-dark)';
-              }}
-              onMouseLeave={(e) => {
-                e.currentTarget.style.backgroundColor = 'var(--bg-secondary)';
-                e.currentTarget.style.borderColor = 'var(--border-medium)';
-              }}
-              aria-label={darkMode ? 'Switch to light mode' : 'Switch to dark mode'}
-              className="no-print"
-            >
-              {darkMode ? (
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                  <circle cx="12" cy="12" r="5" />
-                  <line x1="12" y1="1" x2="12" y2="3" />
-                  <line x1="12" y1="21" x2="12" y2="23" />
-                  <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" />
-                  <line x1="18.36" y1="18.36" x2="19.78" y2="19.78" />
-                  <line x1="1" y1="12" x2="3" y2="12" />
-                  <line x1="21" y1="12" x2="23" y2="12" />
-                  <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" />
-                  <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" />
-                </svg>
-              ) : (
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                  <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
-                </svg>
-              )}
-            </button>
-          </div>
+        <header className="stt-masthead">
+          <h1 className="stt-title">{siteConfig.title}</h1>
+          <p className="stt-subtitle">{siteConfig.subtitle}</p>
         </header>
 
         {/* Tabs */}
-        <div style={styles.tabContainer} className="no-print">
-          <button
-            style={{
-              ...styles.tab,
-              ...(activeTab === 'dashboard' ? styles.tabActive : {}),
-            }}
-            onClick={() => setActiveTab('dashboard')}
-          >
-            Dashboard
-          </button>
-          <button
-            style={{
-              ...styles.tab,
-              ...(activeTab === 'analysis' ? styles.tabActive : {}),
-            }}
-            onClick={() => setActiveTab('analysis')}
-          >
-            Analysis
-          </button>
-          <button
-            style={{
-              ...styles.tab,
-              ...(activeTab === 'data' ? styles.tabActive : {}),
-            }}
-            onClick={() => setActiveTab('data')}
-          >
-            Data
-          </button>
-        </div>
-
-        {/* Dashboard Tab Content */}
-        {activeTab === 'dashboard' && (
-          <>
-        <h2 style={styles.analysisSectionTitle}>Third-Party Evals Dashboard</h2>
-
-        {/* Notes Section */}
-        <div style={styles.notesCard} className="no-print">
-          <div
-            style={styles.notesHeader}
-            onClick={() => setNotesOpen(o => !o)}
-            role="button"
-            tabIndex={0}
-            onKeyPress={(e) => e.key === 'Enter' && setNotesOpen(o => !o)}
-          >
-            <div style={styles.notesTitle}>
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                <circle cx="12" cy="12" r="10"/>
-                <line x1="12" y1="16" x2="12" y2="12"/>
-                <line x1="12" y1="8" x2="12.01" y2="8"/>
-              </svg>
-              Methodology, Scope, and Definitions
-            </div>
-            <button
-              style={{
-                ...styles.notesToggle,
-                borderColor: notesOpen ? 'var(--accent-primary)' : 'var(--border-medium)',
-                color: notesOpen ? 'var(--accent-primary)' : 'var(--text-secondary)',
-              }}
-              onClick={(e) => {
-                e.stopPropagation();
-                setNotesOpen(o => !o);
-              }}
-            >
-              {notesOpen ? 'Collapse' : 'Expand'}
-              <svg
-                width="10"
-                height="10"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
-                style={{
-                  transform: notesOpen ? 'rotate(180deg)' : 'none',
-                  transition: 'transform 0.2s ease'
-                }}
+        <nav className="stt-nav no-print" aria-label="Sections">
+          <div className="stt-tabs" role="tablist">
+            {tabs.map(tab => (
+              <button
+                key={tab.id}
+                role="tab"
+                aria-selected={activeTab === tab.id}
+                className="stt-tab"
+                onClick={() => setActiveTab(tab.id)}
               >
-                <polyline points="6 9 12 15 18 9" />
-              </svg>
-            </button>
+                {tab.label}
+              </button>
+            ))}
           </div>
-          <div
-            ref={notesRef}
-            style={{
-              ...styles.notesContent,
-              maxHeight: notesMaxHeight,
-            }}
+          <button
+            className="stt-icon-btn"
+            onClick={() => setDarkMode(prev => !prev)}
+            aria-label={darkMode ? 'Switch to light mode' : 'Switch to dark mode'}
+            title={darkMode ? 'Switch to light mode' : 'Switch to dark mode'}
           >
-            <div
-              style={styles.notesInner}
-              className="notes-html"
-              dangerouslySetInnerHTML={{ __html: notesFull }}
-            />
-          </div>
-        </div>
+            {darkMode ? (
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" aria-hidden="true">
+                <circle cx="12" cy="12" r="4.5" />
+                <line x1="12" y1="2" x2="12" y2="4" />
+                <line x1="12" y1="20" x2="12" y2="22" />
+                <line x1="4.93" y1="4.93" x2="6.34" y2="6.34" />
+                <line x1="17.66" y1="17.66" x2="19.07" y2="19.07" />
+                <line x1="2" y1="12" x2="4" y2="12" />
+                <line x1="20" y1="12" x2="22" y2="12" />
+                <line x1="4.93" y1="19.07" x2="6.34" y2="17.66" />
+                <line x1="17.66" y1="6.34" x2="19.07" y2="4.93" />
+              </svg>
+            ) : (
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                <path d="M20.5 14.5A8.5 8.5 0 1 1 9.5 3.5a7 7 0 0 0 11 11z" />
+              </svg>
+            )}
+          </button>
+        </nav>
 
-        {/* Evaluators Section */}
-        <section style={styles.evaluatorsSection} className="no-print">
-          <h2 style={styles.sectionHeader}>Evaluators</h2>
-          <p style={styles.sectionSubheader}>
-            Select an evaluator to highlight their engagements
-          </p>
+        <main>
+          {/* Dashboard Tab Content */}
+          {activeTab === 'dashboard' && (
+            <>
+              <h2 className="stt-page-title">Third-Party Evals Dashboard</h2>
 
-          {Object.entries(evaluatorOrder).map(([category, evaluatorList]) => {
-            const firstRow = category === 'private' ? evaluatorList.slice(0, 7) : evaluatorList;
-            const secondRow = category === 'private' ? evaluatorList.slice(7) : [];
+              {/* Notes Section */}
+              <div className={`stt-notes no-print${notesOpen ? ' is-open' : ''}`}>
+                <div
+                  className="stt-notes-head"
+                  onClick={() => setNotesOpen(o => !o)}
+                  role="button"
+                  tabIndex={0}
+                  aria-expanded={notesOpen}
+                  onKeyDown={(e) => e.key === 'Enter' && setNotesOpen(o => !o)}
+                >
+                  <span className="stt-notes-title">Methodology, Scope, and Definitions</span>
+                  <button
+                    className="stt-text-btn"
+                    tabIndex={-1}
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      setNotesOpen(o => !o);
+                    }}
+                  >
+                    {notesOpen ? 'Collapse' : 'Expand'}
+                    <Chevron />
+                  </button>
+                </div>
+                <div ref={notesRef} className="stt-collapse" style={{ maxHeight: notesMaxHeight }}>
+                  <div className="stt-notes-body notes-html" dangerouslySetInnerHTML={{ __html: notesFull }} />
+                </div>
+              </div>
 
-            return (
-              <div key={category} style={styles.evaluatorCategory}>
-                <div style={styles.categoryLabel}>{categoryLabels[category]}</div>
-                <div style={styles.evaluatorGrid}>
-                  {firstRow.map(name => (
-                    <EvaluatorButton key={name} name={name} />
+              {/* Evaluators Section */}
+              <section className="stt-evaluators no-print">
+                <div className="stt-section-head">
+                  <h2 className="stt-section-title">Evaluators</h2>
+                  <p className="stt-section-sub">Select an evaluator to highlight their engagements</p>
+                </div>
+                <div className="stt-eval-groups">
+                  {Object.entries(evaluatorOrder).map(([category, evaluatorList]) => (
+                    <div key={category} className="stt-eval-group">
+                      <div className="stt-eval-group-label">{categoryLabels[category]}</div>
+                      <div className="stt-chips">
+                        {evaluatorList.map(name => (
+                          <EvaluatorButton key={name} name={name} />
+                        ))}
+                      </div>
+                    </div>
                   ))}
                 </div>
-                {secondRow.length > 0 && (
-                  <div style={{ ...styles.evaluatorGrid, marginTop: '6px' }}>
-                    {secondRow.map(name => (
-                      <EvaluatorButton key={name} name={name} />
+              </section>
+
+              {/* Legend */}
+              <div className="stt-toolbar">
+                <ul className="stt-legend">
+                  <li><span className="stt-recurring-dot" />Recurring engagement</li>
+                  <li><ExternalIcon size={10} />Source link</li>
+                  <li><span className="stt-empty-swatch" />No third-party engagement found</li>
+                </ul>
+                <button className="stt-btn no-print" onClick={exportToCSV}>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+                    <polyline points="7 10 12 15 17 10" />
+                    <line x1="12" y1="15" x2="12" y2="3" />
+                  </svg>
+                  Export data
+                </button>
+              </div>
+
+              {/* Main Data Grid */}
+              <section className="stt-grid-wrap">
+                <div className="stt-grid-scroll">
+                  <div className="stt-grid" style={{ '--lab-count': labEntries.length }}>
+                    {/* Header Row */}
+                    <div className="stt-grid-corner">Eval Domain</div>
+                    {labEntries.map(([labId, lab]) => (
+                      <LabHeaderCell key={labId} labId={labId} lab={lab} />
+                    ))}
+
+                    {/* Data Rows */}
+                    {testCategories.map(category => (
+                      <React.Fragment key={category.id}>
+                        <CategoryLabel category={category} />
+                        {labEntries.map(([labId]) => (
+                          <DataCell key={labId} labId={labId} categoryId={category.id} />
+                        ))}
+                      </React.Fragment>
                     ))}
                   </div>
-                )}
-              </div>
-            );
-          })}
-        </section>
-
-        {/* Legend */}
-        <div style={styles.legend}>
-          <div style={styles.legendItem}>
-            <span style={{
-              width: '4px',
-              height: '4px',
-              borderRadius: '50%',
-              backgroundColor: 'var(--text-tertiary)',
-            }} />
-            <span>Recurring engagement</span>
-          </div>
-          <div style={styles.legendItem}>
-            <svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-              <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
-              <polyline points="15,3 21,3 21,9" />
-              <line x1="10" y1="14" x2="21" y2="3" />
-            </svg>
-            <span>Source link</span>
-          </div>
-          <div style={styles.legendItem}>
-            <div style={{
-              width: '16px',
-              height: '12px',
-              backgroundColor: 'var(--bg-tertiary)',
-              backgroundImage: 'repeating-linear-gradient(135deg, transparent, transparent 3px, rgba(0,0,0,0.03) 3px, rgba(0,0,0,0.03) 4px)',
-              borderRadius: '2px',
-              border: '1px solid var(--border-light)',
-            }} />
-            <span>No third-party engagement found</span>
-          </div>
-          <button
-            style={{ ...styles.exportButton, marginLeft: 'auto' }}
-            onClick={exportToCSV}
-            className="no-print"
-            onMouseEnter={(e) => {
-              e.target.style.backgroundColor = 'var(--bg-tertiary)';
-              e.target.style.borderColor = 'var(--border-dark)';
-            }}
-            onMouseLeave={(e) => {
-              e.target.style.backgroundColor = 'var(--bg-secondary)';
-              e.target.style.borderColor = 'var(--border-medium)';
-            }}
-          >
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-              <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
-              <polyline points="7 10 12 15 17 10"/>
-              <line x1="12" y1="15" x2="12" y2="3"/>
-            </svg>
-            Export data
-          </button>
-        </div>
-
-        {/* Main Data Grid */}
-        <section style={styles.gridSection}>
-          <div style={styles.gridContainer}>
-            <div style={{
-              ...styles.grid,
-              gridTemplateColumns: `180px repeat(${labEntries.length}, minmax(150px, 1fr))`,
-            }}>
-              {/* Header Row */}
-              <div style={{
-                backgroundColor: 'var(--bg-tertiary)',
-                borderRight: '1px solid var(--border-light)',
-                borderBottom: '1px solid var(--border-medium)',
-                display: 'flex',
-                alignItems: 'flex-end',
-                padding: 'var(--space-md)',
-              }}>
-                <span style={{
-                  fontSize: '0.6875rem',
-                  fontWeight: '700',
-                  color: 'var(--text-muted)',
-                  textTransform: 'uppercase',
-                  letterSpacing: '0.08em',
-                }}>
-                  Eval Domain
-                </span>
-              </div>
-              {labEntries.map(([labId, lab]) => (
-                <div key={labId} style={{ borderBottom: '1px solid var(--border-medium)' }}>
-                  <LabHeaderCell labId={labId} lab={lab} />
                 </div>
-              ))}
+              </section>
+            </>
+          )}
 
-              {/* Data Rows */}
-              {testCategories.map(category => (
-                <React.Fragment key={category.id}>
-                  <CategoryLabel category={category} />
-                  {labEntries.map(([labId]) => (
-                    <DataCell key={labId} labId={labId} categoryId={category.id} />
-                  ))}
-                </React.Fragment>
-              ))}
-            </div>
-          </div>
-        </section>
-
-          </>
-        )}
-
-        {/* Analysis Tab Content */}
-        {activeTab === 'analysis' && (
-          <div style={styles.analysisContainer}>
-            <section style={styles.analysisSection}>
-              <h2 style={styles.analysisSectionTitle}>
-                Key Insights/Analysis
-              </h2>
-              {analysisContent.analysisInsights.map((item) => (
-                <AccordionItem
-                  key={item.id}
-                  item={item}
-                  isOpen={openAccordions[item.id]}
-                  onToggle={() => toggleAccordion(item.id)}
-                />
-              ))}
+          {/* Analysis Tab Content */}
+          {activeTab === 'analysis' && (
+            <section className="stt-analysis">
+              <h2 className="stt-page-title">Key Insights/Analysis</h2>
+              <ol className="stt-accordion">
+                {analysisContent.analysisInsights.map((item, index) => (
+                  <AccordionItem
+                    key={item.id}
+                    item={item}
+                    index={index}
+                    isOpen={openAccordions[item.id]}
+                    onToggle={() => toggleAccordion(item.id)}
+                  />
+                ))}
+              </ol>
             </section>
-          </div>
-        )}
+          )}
 
-        {/* Data Tab Content */}
-        {activeTab === 'data' && <DataTab />}
+          {/* Data Tab Content */}
+          {activeTab === 'data' && <DataTab />}
+        </main>
 
         {/* Footer */}
-        <footer style={styles.footer}>
-          {/* Left column */}
-          <div style={styles.footerMeta}>
-            <div style={{ fontWeight: '600', color: 'var(--text-secondary)', marginBottom: '2px' }}>
-              Last updated: {siteConfig.lastUpdated}
-            </div>
+        <footer className="stt-footer">
+          <div>
+            <div className="stt-updated">Last updated: {siteConfig.lastUpdated}</div>
             <div>{siteConfig.dataSource}</div>
           </div>
 
-          {/* Right column */}
-          <div
-            style={{
-              display: 'flex',
-              flexDirection: 'column',
-              alignItems: 'flex-end',
-              textAlign: 'right',
-              maxWidth: '640px',
-            }}
-          >
-            <div
-              style={{
-                fontSize: '0.6875rem',
-                color: 'var(--text-muted)',
-              }}
-            >
+          <div className="stt-footer-credit">
+            <div>
               Created and maintained by{' '}
               <a
                 href="https://www.skellydotcom.com/"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Spencer Kelly on LinkedIn"
-                style={{
-                  color: 'inherit',
-                  textDecoration: 'underline',
-                  fontWeight: '500',
-                }}
               >
                 Spencer Kelly
               </a>.
             </div>
-
-            <div
-              style={{
-                fontSize: '0.6875rem',
-                color: 'var(--text-muted)',
-                marginTop: '2px',
-              }}
-            >
-              This website was built using Claude Code but all research/analysis/content is by me.
-            </div>
+            <div>This website was built using Claude Code but all research/analysis/content is by me.</div>
           </div>
         </footer>
       </div>
