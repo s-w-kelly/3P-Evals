@@ -20,14 +20,28 @@ export const labsData = {
     name: "Anthropic",
     color: "#da7756",
     models: {
-      "Claude Sonnet 5.5": {
-        systemCard: "https://www-cdn.anthropic.com/870c8f525702625d2c62fc6dd04c857e3250bec1/Claude%20Sonnet%205.5%20System%20Card.pdf",
-        released: "2026-09-22",
+      "Claude Haiku 5.5": {
+        systemCard: "https://www-cdn.anthropic.com/e1080d6bf5ae2018ea3c2f414064be03232f5be5/Claude%20Haiku%205.5%20System%20Card.pdf",
+        released: "2026-10-07",
         frontier: false,
         autonomous: [],
-        biorisk: [
-          { evaluator: "Dyno Therapeutics", recurring: true, source: "https://www-cdn.anthropic.com/870c8f525702625d2c62fc6dd04c857e3250bec1/Claude%20Sonnet%205.5%20System%20Card.pdf#page=15" },
+        biorisk: [],
+        cybersec: [],
+        nuclear: [],
+        redteam: [
+          { evaluator: "Gray Swan", recurring: true, source: "https://www-cdn.anthropic.com/e1080d6bf5ae2018ea3c2f414064be03232f5be5/Claude%20Haiku%205.5%20System%20Card.pdf#page=50" },
         ],
+        scheming: [],
+        modelWelfare: [],
+        method: [],
+        misc: [],
+      },
+      "Claude Sonnet 5.5": {
+        systemCard: "https://www-cdn.anthropic.com/870c8f525702625d2c62fc6dd04c857e3250bec1/Claude%20Sonnet%205.5%20System%20Card.pdf",
+        released: "2026-09-28",
+        frontier: false,
+        autonomous: [],
+        biorisk: [],
         cybersec: [],
         nuclear: [],
         redteam: [
