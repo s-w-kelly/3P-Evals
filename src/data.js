@@ -601,6 +601,40 @@ export const labsData = {
     name: "Google DeepMind",
     color: "#3369E8",
     models: {
+      "Gemini 4 Argon": {
+        systemCard: "https://storage.googleapis.com/deepmind-media/gemini/gemini_4_safety_report.pdf",
+        released: "2026-10-13",
+        frontier: false,
+        autonomous: [
+         { evaluator: "Apollo", recurring: false, source: "https://storage.googleapis.com/deepmind-media/gemini/gemini_4_safety_report.pdf#page=72" },
+        ],
+        biorisk: [
+          { evaluator: "Faculty", recurring: true, source: "https://storage.googleapis.com/deepmind-media/gemini/gemini_4_safety_report.pdf#page=31" },
+          { evaluator: "Gray Swan", recurring: true, source: "https://storage.googleapis.com/deepmind-media/gemini/gemini_4_safety_report.pdf#page=63" },
+          { evaluator: "US CAISI", recurring: false, source: "https://storage.googleapis.com/deepmind-media/gemini/gemini_4_safety_report.pdf#page=21" },
+          { evaluator: "Domain experts", recurring: true, source: "https://storage.googleapis.com/deepmind-media/gemini/gemini_4_safety_report.pdf#page=25" },
+        ],
+        cybersec: [
+          { evaluator: "Faculty", recurring: true, source: "https://storage.googleapis.com/deepmind-media/gemini/gemini_4_safety_report.pdf#page=39" },
+          { evaluator: "Gray Swan", recurring: true, source: "https://storage.googleapis.com/deepmind-media/gemini/gemini_4_safety_report.pdf#page=62" },
+          { evaluator: "Trajectory", recurring: false, source: "https://storage.googleapis.com/deepmind-media/gemini/gemini_4_safety_report.pdf#page=62" },
+          { evaluator: "US CAISI", recurring: false, source: "https://storage.googleapis.com/deepmind-media/gemini/gemini_4_safety_report.pdf#page=21" },
+        ],
+        nuclear: [
+          { evaluator: "Faculty", recurring: true, source: "https://storage.googleapis.com/deepmind-media/gemini/gemini_4_safety_report.pdf#page=31" },
+        ],
+        redteam: [],
+        scheming: [
+          { evaluator: "Apollo", recurring: false, source: "https://storage.googleapis.com/deepmind-media/gemini/gemini_4_safety_report.pdf#page=73" },
+          { evaluator: "pattrn.ai", recurring: false, source: "https://storage.googleapis.com/deepmind-media/gemini/gemini_4_safety_report.pdf#page=53" },
+        ],
+        modelWelfare: [],
+        method: [],
+        misc: [
+          { evaluator: "US CAISI", recurring: false, source: "https://storage.googleapis.com/deepmind-media/gemini/gemini_4_safety_report.pdf#page=21" },
+          { evaluator: "UK AISI", recurring: true, source: "https://storage.googleapis.com/deepmind-media/gemini/gemini_4_safety_report.pdf#page=21" },
+        ],
+      },
       "Gemini 3.7 Flash": {
         systemCard: "https://storage.googleapis.com/deepmind-media/gemini/gemini_3-7_flash_fsf_report.pdf",
         released: "2026-08-13",
@@ -1904,12 +1938,13 @@ export const evaluators = {
   "Meridian Labs": { color: "#0284c7", type: "private" },
   "METR": { color: "#4a7a45", type: "private" },
   "Microsoft": { color: "#b83a10", type: "private" },
+  "pattrn.ai": { color: "#3978f2", type: "private" },
   "Redwood Research": { color: "#1a7d5c", type: "private" },
   "Scale": { color: "#000000", type: "private" },
   "SecureBio": { color: "#0078a0", type: "private" },
   "Signature Science": { color: "#005520", type: "private" },
   "Trajectory Labs": { color: "#ee6018", type: "private" },
-  "Virtue AI": { color: "#3040a0", type: "private" },
+  "Virtue AI": { color: "#3b3b3b", type: "private" },
 
   "NNSA": { color: "#a86010", type: "public" },
   "UK AISI": { color: "#901028", type: "public" },
@@ -1937,7 +1972,7 @@ export const evaluatorOrder = {
 export const siteConfig = {
   title: "3P Eval Monitor",
   subtitle: "Tracking frontier AI labs’ third-party engagement for pre-deployment safety evaluations",
-  lastUpdated: "9/29/2026",
+  lastUpdated: "10/31/2026",
   notesFull: `
   <p>The dashboard below reflects all third-party safety evaluations performed for major AI models released since 2023.</p>
   <br>
