@@ -20,6 +20,37 @@ export const labsData = {
     name: "Anthropic",
     color: "#da7756",
     models: {
+      "Claude Fable 5.2 and Mythos 5.2": {
+        systemCard: "https://assets.claude.com/27d60918d218125e7504bc7354c4b4626ec56b11.pdf",
+        released: "2026-11-09",
+        frontier: true,
+        autonomous: [
+          { evaluator: "METR", recurring: true, source: "https://assets.claude.com/27d60918d218125e7504bc7354c4b4626ec56b11.pdf#page=39" },
+        ],
+        biorisk: [
+          { evaluator: "Dyno Therapeutics", recurring: true, source: "https://assets.claude.com/27d60918d218125e7504bc7354c4b4626ec56b11.pdf#page=21" },
+          { evaluator: "Frontier Design", recurring: true, source: "https://assets.claude.com/27d60918d218125e7504bc7354c4b4626ec56b11.pdf#page=16" },
+          { evaluator: "Domain experts", recurring: true, source: "https://assets.claude.com/27d60918d218125e7504bc7354c4b4626ec56b11.pdf#page=20" },
+          { evaluator: "US CAISSI", recurring: true, source: "https://assets.claude.com/27d60918d218125e7504bc7354c4b4626ec56b11.pdf#page=30" },
+        ],
+        cybersec: [
+          { evaluator: "10a Labs", recurring: true, source: "https://assets.claude.com/27d60918d218125e7504bc7354c4b4626ec56b11.pdf#page=58" },
+          { evaluator: "Gray Swan", recurring: true, source: "https://assets.claude.com/27d60918d218125e7504bc7354c4b4626ec56b11.pdf#page=58" },
+          { evaluator: "Trajectory Labs", recurring: true, source: "https://assets.claude.com/27d60918d218125e7504bc7354c4b4626ec56b11.pdf#page=57" },
+          { evaluator: "US CAISSI", recurring: true, source: "https://assets.claude.com/27d60918d218125e7504bc7354c4b4626ec56b11.pdf#page=57" },
+        ],
+        nuclear: [],
+        redteam: [
+          { evaluator: "Gray Swan", recurring: true, source: "https://assets.claude.com/27d60918d218125e7504bc7354c4b4626ec56b11.pdf#page=83" },
+        ],
+        scheming: [
+          { evaluator: "UK AISI", recurring: true, source: "https://assets.claude.com/27d60918d218125e7504bc7354c4b4626ec56b11.pdf#page=142" },
+          { evaluator: "UK AISI", recurring: true, source: "https://assets.claude.com/27d60918d218125e7504bc7354c4b4626ec56b11.pdf#page=181" },
+        ],
+        modelWelfare: [],
+        method: [],
+        misc: [],
+      },
       "Claude Haiku 5.5": {
         systemCard: "https://www-cdn.anthropic.com/e1080d6bf5ae2018ea3c2f414064be03232f5be5/Claude%20Haiku%205.5%20System%20Card.pdf",
         released: "2026-10-07",
@@ -63,13 +94,13 @@ export const labsData = {
           { evaluator: "Dyno Therapeutics", recurring: true, source: "https://www-cdn.anthropic.com/fc1b44717c85dc068bc6ba5024219938094694bd/Claude%20Opus%205.5%20System%20Card.pdf#page=22" },
           { evaluator: "Frontier Design", recurring: true, source: "https://www-cdn.anthropic.com/fc1b44717c85dc068bc6ba5024219938094694bd/Claude%20Opus%205.5%20System%20Card.pdf#page=18" },
           { evaluator: "Domain experts", recurring: true, source: "https://www-cdn.anthropic.com/fc1b44717c85dc068bc6ba5024219938094694bd/Claude%20Opus%205.5%20System%20Card.pdf#page=18" },
-          { evaluator: "US CAISI", recurring: true, source: "https://www-cdn.anthropic.com/fc1b44717c85dc068bc6ba5024219938094694bd/Claude%20Opus%205.5%20System%20Card.pdf#page=32" }, 
+          { evaluator: "US CAISSI", recurring: true, source: "https://www-cdn.anthropic.com/fc1b44717c85dc068bc6ba5024219938094694bd/Claude%20Opus%205.5%20System%20Card.pdf#page=32" }, 
         ],
         cybersec: [
           { evaluator: "10a Labs", recurring: true, source: "https://www-cdn.anthropic.com/fc1b44717c85dc068bc6ba5024219938094694bd/Claude%20Opus%205.5%20System%20Card.pdf#page=60" },
           { evaluator: "Gray Swan", recurring: true, source: "https://www-cdn.anthropic.com/fc1b44717c85dc068bc6ba5024219938094694bd/Claude%20Opus%205.5%20System%20Card.pdf#page=60" },
           { evaluator: "Trajectory Labs", recurring: true, source: "https://www-cdn.anthropic.com/fc1b44717c85dc068bc6ba5024219938094694bd/Claude%20Opus%205.5%20System%20Card.pdf#page=59" },
-          { evaluator: "US CAISI", recurring: true, source: "https://www-cdn.anthropic.com/fc1b44717c85dc068bc6ba5024219938094694bd/Claude%20Opus%205.5%20System%20Card.pdf#page=59" },
+          { evaluator: "US CAISSI", recurring: true, source: "https://www-cdn.anthropic.com/fc1b44717c85dc068bc6ba5024219938094694bd/Claude%20Opus%205.5%20System%20Card.pdf#page=59" },
         ],
         nuclear: [],
         redteam: [
@@ -79,7 +110,7 @@ export const labsData = {
         modelWelfare: [],
         method: [],
         misc: [
-          { evaluator: "US CAISI", recurring: true, source: "https://www-cdn.anthropic.com/fc1b44717c85dc068bc6ba5024219938094694bd/Claude%20Opus%205.5%20System%20Card.pdf#page=32" },
+          { evaluator: "US CAISSI", recurring: true, source: "https://www-cdn.anthropic.com/fc1b44717c85dc068bc6ba5024219938094694bd/Claude%20Opus%205.5%20System%20Card.pdf#page=32" },
         ],
       },
       "Claude Fable 5.1 and Mythos 5.1": {
@@ -124,7 +155,7 @@ export const labsData = {
           { evaluator: "10a Labs", recurring: true, source: "https://www-cdn.anthropic.com/b514064af1408018e64b1ad24e7d5e75850b4ffd/Claude%20Opus%205%20System%20Card.pdf#page=50" },
           { evaluator: "Gray Swan", recurring: true, source: "https://www-cdn.anthropic.com/b514064af1408018e64b1ad24e7d5e75850b4ffd/Claude%20Opus%205%20System%20Card.pdf#page=50" },
           { evaluator: "Trajectory Labs", recurring: true, source: "https://www-cdn.anthropic.com/b514064af1408018e64b1ad24e7d5e75850b4ffd/Claude%20Opus%205%20System%20Card.pdf#page=50" },
-          { evaluator: "US CAISI", recurring: true, source: "https://www-cdn.anthropic.com/b514064af1408018e64b1ad24e7d5e75850b4ffd/Claude%20Opus%205%20System%20Card.pdf#page=43" },   
+          { evaluator: "US CAISSI", recurring: true, source: "https://www-cdn.anthropic.com/b514064af1408018e64b1ad24e7d5e75850b4ffd/Claude%20Opus%205%20System%20Card.pdf#page=43" },   
         ],
         nuclear: [],
         redteam: [
@@ -134,7 +165,7 @@ export const labsData = {
         modelWelfare: [],
         method: [],
         misc: [
-          { evaluator: "US CAISI", recurring: true, source: "https://www-cdn.anthropic.com/b514064af1408018e64b1ad24e7d5e75850b4ffd/Claude%20Opus%205%20System%20Card.pdf#page=43" },   
+          { evaluator: "US CAISSI", recurring: true, source: "https://www-cdn.anthropic.com/b514064af1408018e64b1ad24e7d5e75850b4ffd/Claude%20Opus%205%20System%20Card.pdf#page=43" },   
         ],
       },
       "Claude Sonnet 5": {
@@ -305,12 +336,12 @@ export const labsData = {
         biorisk: [
           { evaluator: "Faculty", recurring: true, source: "https://www-cdn.anthropic.com/c788cbc0a3da9135112f97cdf6dcd06f2c16cee2.pdf#page=181" },    
           { evaluator: "Gray Swan", recurring: true, source: "https://www-cdn.anthropic.com/c788cbc0a3da9135112f97cdf6dcd06f2c16cee2.pdf#page=84" },      
-          { evaluator: "US CAISI", recurring: true, source: "https://www-cdn.anthropic.com/c788cbc0a3da9135112f97cdf6dcd06f2c16cee2.pdf#page=179" },
+          { evaluator: "US CAISSI", recurring: true, source: "https://www-cdn.anthropic.com/c788cbc0a3da9135112f97cdf6dcd06f2c16cee2.pdf#page=179" },
           { evaluator: "Domain experts", recurring: true, source: "https://www-cdn.anthropic.com/c788cbc0a3da9135112f97cdf6dcd06f2c16cee2.pdf#page=179" },
           { evaluator: "Uplift trial participants", recurring: true, source: "https://www-cdn.anthropic.com/c788cbc0a3da9135112f97cdf6dcd06f2c16cee2.pdf#page=176" },
         ],
         cybersec: [
-          { evaluator: "US CAISI", recurring: true, source: "https://www-cdn.anthropic.com/c788cbc0a3da9135112f97cdf6dcd06f2c16cee2.pdf#page=203" },
+          { evaluator: "US CAISSI", recurring: true, source: "https://www-cdn.anthropic.com/c788cbc0a3da9135112f97cdf6dcd06f2c16cee2.pdf#page=203" },
         ],
         nuclear: [
           { evaluator: "NNSA", recurring: true, source: "https://www-cdn.anthropic.com/c788cbc0a3da9135112f97cdf6dcd06f2c16cee2.pdf#page=170" },
@@ -322,7 +353,7 @@ export const labsData = {
         modelWelfare: [],
         method: [
           { evaluator: "UK AISI", recurring: true, source: "https://www-cdn.anthropic.com/c788cbc0a3da9135112f97cdf6dcd06f2c16cee2.pdf#page=204" },
-          { evaluator: "US CAISI", recurring: true, source: "https://www-cdn.anthropic.com/c788cbc0a3da9135112f97cdf6dcd06f2c16cee2.pdf#page=204" },
+          { evaluator: "US CAISSI", recurring: true, source: "https://www-cdn.anthropic.com/c788cbc0a3da9135112f97cdf6dcd06f2c16cee2.pdf#page=204" },
           { evaluator: "Domain experts", recurring: true, source: "https://www-cdn.anthropic.com/c788cbc0a3da9135112f97cdf6dcd06f2c16cee2.pdf#page=13" },
         ],
         misc: [
@@ -339,21 +370,21 @@ export const labsData = {
         ],
         biorisk: [
           { evaluator: "UK AISI", recurring: true, source: "https://assets.anthropic.com/m/64823ba7485345a7/Claude-Opus-4-5-System-Card.pdf#page=151" },          
-          { evaluator: "US CAISI", recurring: true, source: "https://assets.anthropic.com/m/64823ba7485345a7/Claude-Opus-4-5-System-Card.pdf#page=151" },        
+          { evaluator: "US CAISSI", recurring: true, source: "https://assets.anthropic.com/m/64823ba7485345a7/Claude-Opus-4-5-System-Card.pdf#page=151" },        
           { evaluator: "Domain experts", recurring: true, source: "https://assets.anthropic.com/m/64823ba7485345a7/Claude-Opus-4-5-System-Card.pdf#page=132" },
           { evaluator: "Uplift trial participants", recurring: true, source: "https://assets.anthropic.com/m/64823ba7485345a7/Claude-Opus-4-5-System-Card.pdf#page=130" },
         ],
         cybersec: [
           { evaluator: "UK AISI", recurring: true, source: "https://assets.anthropic.com/m/64823ba7485345a7/Claude-Opus-4-5-System-Card.pdf#page=151" },          
-          { evaluator: "US CAISI", recurring: true, source: "https://assets.anthropic.com/m/64823ba7485345a7/Claude-Opus-4-5-System-Card.pdf#page=151" }
+          { evaluator: "US CAISSI", recurring: true, source: "https://assets.anthropic.com/m/64823ba7485345a7/Claude-Opus-4-5-System-Card.pdf#page=151" }
         ],
         nuclear: [
           { evaluator: "NNSA", recurring: true, source: "https://assets.anthropic.com/m/64823ba7485345a7/Claude-Opus-4-5-System-Card.pdf#page=120" },
           { evaluator: "UK AISI", recurring: true, source: "https://assets.anthropic.com/m/64823ba7485345a7/Claude-Opus-4-5-System-Card.pdf#page=151" },          
-          { evaluator: "US CAISI", recurring: true, source: "https://assets.anthropic.com/m/64823ba7485345a7/Claude-Opus-4-5-System-Card.pdf#page=151" }
+          { evaluator: "US CAISSI", recurring: true, source: "https://assets.anthropic.com/m/64823ba7485345a7/Claude-Opus-4-5-System-Card.pdf#page=151" }
         ],
         redteam: [
-          { evaluator: "US CAISI", recurring: true, source: "https://assets.anthropic.com/m/64823ba7485345a7/Claude-Opus-4-5-System-Card.pdf#page=132" },
+          { evaluator: "US CAISSI", recurring: true, source: "https://assets.anthropic.com/m/64823ba7485345a7/Claude-Opus-4-5-System-Card.pdf#page=132" },
         ],
         scheming: [
           { evaluator: "UK AISI", recurring: true, source: "https://assets.anthropic.com/m/64823ba7485345a7/Claude-Opus-4-5-System-Card.pdf#page=112" },
@@ -364,7 +395,7 @@ export const labsData = {
         ],
         misc: [
           { evaluator: "UK AISI", recurring: true, source: "https://assets.anthropic.com/m/64823ba7485345a7/Claude-Opus-4-5-System-Card.pdf#page=151" },          
-          { evaluator: "US CAISI", recurring: true, source: "https://assets.anthropic.com/m/64823ba7485345a7/Claude-Opus-4-5-System-Card.pdf#page=151" },
+          { evaluator: "US CAISSI", recurring: true, source: "https://assets.anthropic.com/m/64823ba7485345a7/Claude-Opus-4-5-System-Card.pdf#page=151" },
         ],
       },
       "Claude Haiku 4.5": {
@@ -425,25 +456,25 @@ export const labsData = {
         frontier: true,
         autonomous: [
           { evaluator: "UK AISI", recurring: true, source: "https://www-cdn.anthropic.com/6be99a52cb68eb70eb9572b4cafad13df32ed995.pdf#page=122" },
-          { evaluator: "US CAISI", recurring: true, source: "https://www-cdn.anthropic.com/6be99a52cb68eb70eb9572b4cafad13df32ed995.pdf#page=122" }
+          { evaluator: "US CAISSI", recurring: true, source: "https://www-cdn.anthropic.com/6be99a52cb68eb70eb9572b4cafad13df32ed995.pdf#page=122" }
         ],
         biorisk: [
           { evaluator: "Deloitte", recurring: true, source: "https://www-cdn.anthropic.com/6be99a52cb68eb70eb9572b4cafad13df32ed995.pdf#page=93" },
           { evaluator: "Faculty", recurring: false, source: "https://www-cdn.anthropic.com/6be99a52cb68eb70eb9572b4cafad13df32ed995.pdf#page=102" },
           { evaluator: "UK AISI", recurring: true, source: "https://www-cdn.anthropic.com/6be99a52cb68eb70eb9572b4cafad13df32ed995.pdf#page=122" },
-          { evaluator: "US CAISI", recurring: true, source: "https://www-cdn.anthropic.com/6be99a52cb68eb70eb9572b4cafad13df32ed995.pdf#page=122" },
+          { evaluator: "US CAISSI", recurring: true, source: "https://www-cdn.anthropic.com/6be99a52cb68eb70eb9572b4cafad13df32ed995.pdf#page=122" },
           { evaluator: "Domain experts", recurring: true, source: "https://www-cdn.anthropic.com/6be99a52cb68eb70eb9572b4cafad13df32ed995.pdf#page=97" },
           { evaluator: "Uplift trial participants", recurring: true, source: "https://www-cdn.anthropic.com/6be99a52cb68eb70eb9572b4cafad13df32ed995.pdf#page=93" },
         ],
         cybersec: [
           { evaluator: "Irregular (fka Pattern)", recurring: false, source: "https://www.irregular.com/publications/from-scripts-to-strategy-claude-4s-advanced-approach-to-offensive-security" },
           { evaluator: "UK AISI", recurring: true, source: "https://www-cdn.anthropic.com/6be99a52cb68eb70eb9572b4cafad13df32ed995.pdf#page=122" },
-          { evaluator: "US CAISI", recurring: true, source: "https://www-cdn.anthropic.com/6be99a52cb68eb70eb9572b4cafad13df32ed995.pdf#page=122" }
+          { evaluator: "US CAISSI", recurring: true, source: "https://www-cdn.anthropic.com/6be99a52cb68eb70eb9572b4cafad13df32ed995.pdf#page=122" }
         ],
         nuclear: [
           { evaluator: "NNSA", recurring: true, source: "https://www-cdn.anthropic.com/6be99a52cb68eb70eb9572b4cafad13df32ed995.pdf#page=90" },
           { evaluator: "UK AISI", recurring: true, source: "https://www-cdn.anthropic.com/6be99a52cb68eb70eb9572b4cafad13df32ed995.pdf#page=122" },
-          { evaluator: "US CAISI", recurring: true, source: "https://www-cdn.anthropic.com/6be99a52cb68eb70eb9572b4cafad13df32ed995.pdf#page=122" }
+          { evaluator: "US CAISSI", recurring: true, source: "https://www-cdn.anthropic.com/6be99a52cb68eb70eb9572b4cafad13df32ed995.pdf#page=122" }
         ],
         redteam: [],
         scheming: [
@@ -467,18 +498,18 @@ export const labsData = {
         biorisk: [
           { evaluator: "Deloitte", recurring: false, source: "https://assets.anthropic.com/m/785e231869ea8b3b/original/claude-3-7-sonnet-system-card.pdf#page=25" },
           { evaluator: "UK AISI", recurring: true, source: "https://assets.anthropic.com/m/785e231869ea8b3b/original/claude-3-7-sonnet-system-card.pdf#page=41" },
-          { evaluator: "US CAISI", recurring: true, source: "https://assets.anthropic.com/m/785e231869ea8b3b/original/claude-3-7-sonnet-system-card.pdf#page=41" },
+          { evaluator: "US CAISSI", recurring: true, source: "https://assets.anthropic.com/m/785e231869ea8b3b/original/claude-3-7-sonnet-system-card.pdf#page=41" },
           { evaluator: "Domain experts", recurring: true, source: "https://assets.anthropic.com/m/785e231869ea8b3b/original/claude-3-7-sonnet-system-card.pdf#page=27" },
           { evaluator: "Uplift trial participants", recurring: false, source: "https://assets.anthropic.com/m/785e231869ea8b3b/original/claude-3-7-sonnet-system-card.pdf#page=25" },
         ],
         cybersec: [
           { evaluator: "UK AISI", recurring: true, source: "https://assets.anthropic.com/m/785e231869ea8b3b/original/claude-3-7-sonnet-system-card.pdf#page=41" },
-          { evaluator: "US CAISI", recurring: true, source: "https://assets.anthropic.com/m/785e231869ea8b3b/original/claude-3-7-sonnet-system-card.pdf#page=41" },
+          { evaluator: "US CAISSI", recurring: true, source: "https://assets.anthropic.com/m/785e231869ea8b3b/original/claude-3-7-sonnet-system-card.pdf#page=41" },
         ],
         nuclear: [
           { evaluator: "NNSA", recurring: false, source: "https://assets.anthropic.com/m/785e231869ea8b3b/original/claude-3-7-sonnet-system-card.pdf#page=24" },
           { evaluator: "UK AISI", recurring: true, source: "https://assets.anthropic.com/m/785e231869ea8b3b/original/claude-3-7-sonnet-system-card.pdf#page=41" },
-          { evaluator: "US CAISI", recurring: true, source: "https://assets.anthropic.com/m/785e231869ea8b3b/original/claude-3-7-sonnet-system-card.pdf#page=41" }
+          { evaluator: "US CAISSI", recurring: true, source: "https://assets.anthropic.com/m/785e231869ea8b3b/original/claude-3-7-sonnet-system-card.pdf#page=41" }
         ],
         redteam: [],
         scheming: [],
@@ -487,7 +518,7 @@ export const labsData = {
           { evaluator: "METR", recurring: true, source: "https://assets.anthropic.com/m/785e231869ea8b3b/original/claude-3-7-sonnet-system-card.pdf#page=41" },
           { evaluator: "Domain experts", recurring: true, source: "https://assets.anthropic.com/m/785e231869ea8b3b/original/claude-3-7-sonnet-system-card.pdf#page=6" },
           { evaluator: "UK AISI", recurring: true, source: "https://assets.anthropic.com/m/785e231869ea8b3b/original/claude-3-7-sonnet-system-card.pdf#page=41" },
-          { evaluator: "US CAISI", recurring: true, source: "https://assets.anthropic.com/m/785e231869ea8b3b/original/claude-3-7-sonnet-system-card.pdf#page=41" },
+          { evaluator: "US CAISSI", recurring: true, source: "https://assets.anthropic.com/m/785e231869ea8b3b/original/claude-3-7-sonnet-system-card.pdf#page=41" },
         ],
         misc: [],
       },
@@ -500,23 +531,23 @@ export const labsData = {
         ],
         biorisk: [
           { evaluator: "UK AISI", recurring: true, source: "https://www.aisi.gov.uk/blog/pre-deployment-evaluation-of-anthropics-upgraded-claude-3-5-sonnet" },
-          { evaluator: "US CAISI", recurring: false, source: "https://www.nist.gov/news-events/news/2024/11/pre-deployment-evaluation-anthropics-upgraded-claude-35-sonnet" },
+          { evaluator: "US CAISSI", recurring: false, source: "https://www.nist.gov/news-events/news/2024/11/pre-deployment-evaluation-anthropics-upgraded-claude-35-sonnet" },
         ],
         cybersec: [
           { evaluator: "UK AISI", recurring: true, source: "https://www.aisi.gov.uk/blog/pre-deployment-evaluation-of-anthropics-upgraded-claude-3-5-sonnet" },
-          { evaluator: "US CAISI", recurring: false, source: "https://www.nist.gov/news-events/news/2024/11/pre-deployment-evaluation-anthropics-upgraded-claude-35-sonnet" },
+          { evaluator: "US CAISSI", recurring: false, source: "https://www.nist.gov/news-events/news/2024/11/pre-deployment-evaluation-anthropics-upgraded-claude-35-sonnet" },
         ],
         nuclear: [],
         redteam: [
           { evaluator: "UK AISI", recurring: true, source: "https://www.aisi.gov.uk/blog/pre-deployment-evaluation-of-anthropics-upgraded-claude-3-5-sonnet" },
-          { evaluator: "US CAISI", recurring: false, source: "https://www.nist.gov/news-events/news/2024/11/pre-deployment-evaluation-anthropics-upgraded-claude-35-sonnet" },
+          { evaluator: "US CAISSI", recurring: false, source: "https://www.nist.gov/news-events/news/2024/11/pre-deployment-evaluation-anthropics-upgraded-claude-35-sonnet" },
         ],
         scheming: [],
         modelWelfare: [],
         method: [],
         misc: [
           { evaluator: "UK AISI", recurring: true, source: "https://www.aisi.gov.uk/blog/pre-deployment-evaluation-of-anthropics-upgraded-claude-3-5-sonnet" },
-          { evaluator: "US CAISI", recurring: false, source: "https://www.nist.gov/news-events/news/2024/11/pre-deployment-evaluation-anthropics-upgraded-claude-35-sonnet" },
+          { evaluator: "US CAISSI", recurring: false, source: "https://www.nist.gov/news-events/news/2024/11/pre-deployment-evaluation-anthropics-upgraded-claude-35-sonnet" },
         ],
       },
       "Claude 3.5 Sonnet": {
@@ -611,14 +642,14 @@ export const labsData = {
         biorisk: [
           { evaluator: "Faculty", recurring: true, source: "https://storage.googleapis.com/deepmind-media/gemini/gemini_4_safety_report.pdf#page=31" },
           { evaluator: "Gray Swan", recurring: true, source: "https://storage.googleapis.com/deepmind-media/gemini/gemini_4_safety_report.pdf#page=63" },
-          { evaluator: "US CAISI", recurring: false, source: "https://storage.googleapis.com/deepmind-media/gemini/gemini_4_safety_report.pdf#page=21" },
+          { evaluator: "US CAISSI", recurring: false, source: "https://storage.googleapis.com/deepmind-media/gemini/gemini_4_safety_report.pdf#page=21" },
           { evaluator: "Domain experts", recurring: true, source: "https://storage.googleapis.com/deepmind-media/gemini/gemini_4_safety_report.pdf#page=25" },
         ],
         cybersec: [
           { evaluator: "Faculty", recurring: true, source: "https://storage.googleapis.com/deepmind-media/gemini/gemini_4_safety_report.pdf#page=39" },
           { evaluator: "Gray Swan", recurring: true, source: "https://storage.googleapis.com/deepmind-media/gemini/gemini_4_safety_report.pdf#page=62" },
           { evaluator: "Trajectory", recurring: false, source: "https://storage.googleapis.com/deepmind-media/gemini/gemini_4_safety_report.pdf#page=62" },
-          { evaluator: "US CAISI", recurring: false, source: "https://storage.googleapis.com/deepmind-media/gemini/gemini_4_safety_report.pdf#page=21" },
+          { evaluator: "US CAISSI", recurring: false, source: "https://storage.googleapis.com/deepmind-media/gemini/gemini_4_safety_report.pdf#page=21" },
         ],
         nuclear: [
           { evaluator: "Faculty", recurring: true, source: "https://storage.googleapis.com/deepmind-media/gemini/gemini_4_safety_report.pdf#page=31" },
@@ -631,7 +662,7 @@ export const labsData = {
         modelWelfare: [],
         method: [],
         misc: [
-          { evaluator: "US CAISI", recurring: false, source: "https://storage.googleapis.com/deepmind-media/gemini/gemini_4_safety_report.pdf#page=21" },
+          { evaluator: "US CAISSI", recurring: false, source: "https://storage.googleapis.com/deepmind-media/gemini/gemini_4_safety_report.pdf#page=21" },
           { evaluator: "UK AISI", recurring: true, source: "https://storage.googleapis.com/deepmind-media/gemini/gemini_4_safety_report.pdf#page=21" },
         ],
       },
@@ -1235,12 +1266,12 @@ export const labsData = {
         autonomous: [],
         biorisk: [
           { evaluator: "SecureBio", recurring: true, source: "https://deploymentsafety.openai.com/gpt-5-5/gpt-5-5.pdf#page=28" },
-          { evaluator: "US CAISI", recurring: true, source: "https://deploymentsafety.openai.com/gpt-5-5/gpt-5-5.pdf#page=28" },
+          { evaluator: "US CAISSI", recurring: true, source: "https://deploymentsafety.openai.com/gpt-5-5/gpt-5-5.pdf#page=28" },
         ],
         cybersec: [
           { evaluator: "Irregular (fka Pattern)", recurring: true, source: "https://deploymentsafety.openai.com/gpt-5-5/gpt-5-5.pdf#page=33" }, 
           { evaluator: "UK AISI", recurring: true, source: "https://deploymentsafety.openai.com/gpt-5-5/gpt-5-5.pdf#page=34" },
-          { evaluator: "US CAISI", recurring: true, source: "https://deploymentsafety.openai.com/gpt-5-5/gpt-5-5.pdf#page=34" },         
+          { evaluator: "US CAISSI", recurring: true, source: "https://deploymentsafety.openai.com/gpt-5-5/gpt-5-5.pdf#page=34" },         
           { evaluator: "Individual red teamers", recurring: true, source: "https://deploymentsafety.openai.com/gpt-5-5/gpt-5-5.pdf#page=43" },
         ],
         nuclear: [],
@@ -1295,7 +1326,7 @@ export const labsData = {
         cybersec: [
           { evaluator: "Irregular (fka Pattern)", recurring: true, source: "https://cdn.openai.com/pdf/23eca107-a9b1-4d2c-b156-7deb4fbc697c/GPT-5-3-Codex-System-Card-02.pdf#page=18" },
           { evaluator: "UK AISI", recurring: true, source: "https://cdn.openai.com/pdf/23eca107-a9b1-4d2c-b156-7deb4fbc697c/GPT-5-3-Codex-System-Card-02.pdf#page=27" },
-          { evaluator: "US CAISI", recurring: true, source: "https://cdn.openai.com/pdf/23eca107-a9b1-4d2c-b156-7deb4fbc697c/GPT-5-3-Codex-System-Card-02.pdf#page=27" },
+          { evaluator: "US CAISSI", recurring: true, source: "https://cdn.openai.com/pdf/23eca107-a9b1-4d2c-b156-7deb4fbc697c/GPT-5-3-Codex-System-Card-02.pdf#page=27" },
         ],
         nuclear: [],
         redteam: [
@@ -1386,13 +1417,13 @@ export const labsData = {
         biorisk: [
           { evaluator: "SecureBio", recurring: true, source: "https://cdn.openai.com/gpt-5-system-card.pdf#page=27" },
           { evaluator: "UK AISI", recurring: true, source: "https://cdn.openai.com/gpt-5-system-card.pdf#page=53" },
-          { evaluator: "US CAISI", recurring: true, source: "https://cdn.openai.com/gpt-5-system-card.pdf#page=53" },
+          { evaluator: "US CAISSI", recurring: true, source: "https://cdn.openai.com/gpt-5-system-card.pdf#page=53" },
           { evaluator: "Domain experts", recurring: true, source: "https://cdn.openai.com/gpt-5-system-card.pdf#page=51" },
         ],
         cybersec: [
           { evaluator: "Irregular (fka Pattern)", recurring: true, source: "https://cdn.openai.com/gpt-5-system-card.pdf#page=32" },
           { evaluator: "UK AISI", recurring: true, source: "https://cdn.openai.com/gpt-5-system-card.pdf#page=53" },
-          { evaluator: "US CAISI", recurring: true, source: "https://cdn.openai.com/gpt-5-system-card.pdf#page=53" },
+          { evaluator: "US CAISSI", recurring: true, source: "https://cdn.openai.com/gpt-5-system-card.pdf#page=53" },
         ],
         nuclear: [],
         redteam: [
@@ -1408,7 +1439,7 @@ export const labsData = {
         modelWelfare: [],
         method: [
           { evaluator: "UK AISI", recurring: true, source: "https://cdn.openai.com/gpt-5-system-card.pdf#page=53" },
-          { evaluator: "US CAISI", recurring: true, source: "https://cdn.openai.com/gpt-5-system-card.pdf#page=53" },
+          { evaluator: "US CAISSI", recurring: true, source: "https://cdn.openai.com/gpt-5-system-card.pdf#page=53" },
         ],
         misc: [],
       },
@@ -1441,7 +1472,7 @@ export const labsData = {
           { evaluator: "FAR.AI", recurring: false, source: "https://cdn.openai.com/pdf/839e66fc-602c-48bf-81d3-b21eacc3459d/chatgpt_agent_system_card.pdf#page=39" },
           { evaluator: "SecureBio", recurring: false, source: "https://cdn.openai.com/pdf/839e66fc-602c-48bf-81d3-b21eacc3459d/chatgpt_agent_system_card.pdf#page=20" },
           { evaluator: "UK AISI", recurring: true, source: "https://cdn.openai.com/pdf/839e66fc-602c-48bf-81d3-b21eacc3459d/chatgpt_agent_system_card.pdf#page=40" },
-          { evaluator: "US CAISI", recurring: true, source: "https://cdn.openai.com/pdf/839e66fc-602c-48bf-81d3-b21eacc3459d/chatgpt_agent_system_card.pdf#page=40" },
+          { evaluator: "US CAISSI", recurring: true, source: "https://cdn.openai.com/pdf/839e66fc-602c-48bf-81d3-b21eacc3459d/chatgpt_agent_system_card.pdf#page=40" },
           { evaluator: "Domain experts", recurring: true, source: "https://cdn.openai.com/pdf/839e66fc-602c-48bf-81d3-b21eacc3459d/chatgpt_agent_system_card.pdf#page=22" },
           { evaluator: "Uplift trial participants", recurring: true, source: "https://cdn.openai.com/pdf/839e66fc-602c-48bf-81d3-b21eacc3459d/chatgpt_agent_system_card.pdf#page=39" },
         ],
@@ -1463,12 +1494,12 @@ export const labsData = {
         ],
         biorisk: [
           { evaluator: "UK AISI", recurring: true, source: "https://cdn.openai.com/pdf/2221c875-02dc-4789-800b-e7758f3722c1/o3-and-o4-mini-system-card.pdf#page=9" },
-          { evaluator: "US CAISI", recurring: true, source: "https://cdn.openai.com/pdf/2221c875-02dc-4789-800b-e7758f3722c1/o3-and-o4-mini-system-card.pdf#page=9" },
+          { evaluator: "US CAISSI", recurring: true, source: "https://cdn.openai.com/pdf/2221c875-02dc-4789-800b-e7758f3722c1/o3-and-o4-mini-system-card.pdf#page=9" },
         ],
         cybersec: [
           { evaluator: "Irregular (fka Pattern)", recurring: true, source: "https://cdn.openai.com/pdf/2221c875-02dc-4789-800b-e7758f3722c1/o3-and-o4-mini-system-card.pdf#page=10" },
           { evaluator: "UK AISI", recurring: true, source: "https://cdn.openai.com/pdf/2221c875-02dc-4789-800b-e7758f3722c1/o3-and-o4-mini-system-card.pdf#page=9" },
-          { evaluator: "US CAISI", recurring: true, source: "https://cdn.openai.com/pdf/2221c875-02dc-4789-800b-e7758f3722c1/o3-and-o4-mini-system-card.pdf#page=9" },
+          { evaluator: "US CAISSI", recurring: true, source: "https://cdn.openai.com/pdf/2221c875-02dc-4789-800b-e7758f3722c1/o3-and-o4-mini-system-card.pdf#page=9" },
         ],
         nuclear: [],
         redteam: [
@@ -1567,12 +1598,12 @@ export const labsData = {
         biorisk: [
           { evaluator: "Signature Science", recurring: false, source: "https://cdn.openai.com/o1-system-card-20241205.pdf#page=26" },
           { evaluator: "UK AISI", recurring: false, source: "https://www.aisi.gov.uk/blog/pre-deployment-evaluation-of-openais-o1-model" },
-          { evaluator: "US CAISI", recurring: false, source: "https://www.nist.gov/news-events/news/2024/12/pre-deployment-evaluation-openais-o1-model" },
+          { evaluator: "US CAISSI", recurring: false, source: "https://www.nist.gov/news-events/news/2024/12/pre-deployment-evaluation-openais-o1-model" },
           { evaluator: "Domain experts", recurring: true, source: "https://cdn.openai.com/o1-system-card-20241205.pdf#page=21" },
         ],
         cybersec: [
           { evaluator: "UK AISI", recurring: false, source: "https://www.aisi.gov.uk/blog/pre-deployment-evaluation-of-openais-o1-model" },
-          { evaluator: "US CAISI", recurring: false, source: "https://www.nist.gov/news-events/news/2024/12/pre-deployment-evaluation-openais-o1-model" },
+          { evaluator: "US CAISSI", recurring: false, source: "https://www.nist.gov/news-events/news/2024/12/pre-deployment-evaluation-openais-o1-model" },
         ],
         nuclear: [
           { evaluator: "Domain experts", recurring: true, source: "https://cdn.openai.com/o1-system-card-20241205.pdf#page=27" },
@@ -1591,7 +1622,7 @@ export const labsData = {
         method: [],
         misc: [
           { evaluator: "UK AISI", recurring: false, source: "https://www.aisi.gov.uk/blog/pre-deployment-evaluation-of-openais-o1-model" },
-          { evaluator: "US CAISI", recurring: false, source: "https://www.nist.gov/news-events/news/2024/12/pre-deployment-evaluation-openais-o1-model" },      
+          { evaluator: "US CAISSI", recurring: false, source: "https://www.nist.gov/news-events/news/2024/12/pre-deployment-evaluation-openais-o1-model" },      
         ],
       },
       "GPT-4o": {
@@ -1948,7 +1979,7 @@ export const evaluators = {
 
   "NNSA": { color: "#a86010", type: "public" },
   "UK AISI": { color: "#901028", type: "public" },
-  "US CAISI": { color: "#006820", type: "public" },
+  "US CAISSI": { color: "#006820", type: "public" },
 
   "Domain experts": { color: "#6a2590", type: "other" },
   "Individual red teamers": { color: "#8a2525", type: "other" },
@@ -1962,7 +1993,7 @@ export const evaluators = {
  */
 export const evaluatorOrder = {
   private: ["10a Labs", "ALICE", "Andon Labs", "Apollo Research", "Deloitte", "Dyno Therapeutics", "Eleos", "Epoch AI", "Faculty", "FAR.AI", "Frontier Design", "Gray Swan", "Haize Labs", "Handshake", "Irregular (fka Pattern)", "Meridian Labs", "METR", "Microsoft", "Redwood Research", "Scale", "SecureBio", "Signature Science", "Trajectory Labs", "Virtue AI"],
-  public: ["NNSA", "UK AISI", "US CAISI"],
+  public: ["NNSA", "UK AISI", "US CAISSI"],
   other: ["Domain experts", "Individual red teamers", "Uplift trial participants", "Unidentified third party"],
 };
 
@@ -1972,7 +2003,7 @@ export const evaluatorOrder = {
 export const siteConfig = {
   title: "3P Eval Monitor",
   subtitle: "Tracking frontier AI labs’ third-party engagement for pre-deployment safety evaluations",
-  lastUpdated: "10/31/2026",
+  lastUpdated: "11/10/2026",
   notesFull: `
   <p>The dashboard below reflects all third-party safety evaluations performed for major AI models released since 2023.</p>
   <br>

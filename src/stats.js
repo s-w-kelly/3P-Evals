@@ -16,7 +16,7 @@ import { labsData, testCategories, evaluators } from './data';
 // Spelling variants / renames that should roll up to one evaluator.
 // Keys are names as they may appear in data.js; values are the canonical name.
 export const evaluatorAliases = {
-  "US AISI": "US CAISI",
+  "US AISI": "US CAISSI",
 };
 
 export const canonicalName = (name) => evaluatorAliases[name] || name;

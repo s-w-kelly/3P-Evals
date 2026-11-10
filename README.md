@@ -116,7 +116,7 @@ newlab: {
 Everything on the Data tab is computed from `labsData` by `src/stats.js`, so it updates automatically as you add models.
 
 - Evaluator types (private / government / other) and dashboard colors come from the `evaluators` registry in `data.js`. Add every new evaluator there (and to `evaluatorOrder`); unregistered names are counted as private and logged as a warning in the browser console during `npm run dev`.
-- Name variants and renames that should count as one evaluator go in `evaluatorAliases` in `src/stats.js` (e.g. `"US AISI"` → `"US CAISI"`).
+- Name variants and renames that should count as one evaluator go in `evaluatorAliases` in `src/stats.js` (e.g. `"US AISI"` → `"US CAISSI"`).
 - An "engagement" is one (model, evaluator) pair. Domain breakdowns count one entry per (model, evaluator, domain).
 
 ## File Structure
