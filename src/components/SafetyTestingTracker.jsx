@@ -11,8 +11,8 @@ const getLabColor = (labId, lab) => `var(--lab-${labId}, ${lab.color})`;
 
 const tabs = [
   { id: 'dashboard', label: 'Dashboard' },
-  { id: 'analysis', label: 'Analysis' },
   { id: 'data', label: 'Data' },
+  { id: 'analysis', label: 'Analysis' },
 ];
 
 const categoryLabels = {

@@ -578,12 +578,10 @@ export default function DataTab() {
   return (
     <div className="data-tab">
       <h2 className="stt-page-title dt-page-title">
-        Data &amp; Trends
+        Data and Trends
       </h2>
       <p className="dt-intro">
-        Aggregate statistics computed from every model and engagement on the dashboard.
-        These figures measure <strong>what labs disclose</strong>, not necessarily all testing that happened.
-        A low count may reflect how little a lab publishes rather than how little it tests.
+        Aggregate statistics computed from every model and engagement listed on the dashboard.
         An <em>engagement</em> is one evaluator working on one model, however many domains it covered.
       </p>
 
@@ -772,7 +770,7 @@ export default function DataTab() {
             controls={(
               <label className="dt-check">
                 <input type="checkbox" checked={includeOther} onChange={(e) => setIncludeOther(e.target.checked)} />
-                Include individuals &amp; unnamed
+                Include individuals and unnamed
               </label>
             )}
             table={{
@@ -888,7 +886,7 @@ export default function DataTab() {
               subtitle={scope === 'frontier'
                 ? 'Each dot is one frontier model release'
                 : frontierInfo.classified > 0
-                  ? 'Each dot is one model release. Filled dots joined by a line are frontier models; hollow dots are not.'
+                  ? 'Each dot is one model release. Frontier models (determined primarily using the Epoch Capabilities Index frontier trend) have are represented with filled-in dots and joined by a line.'
                   : 'Each dot is one model release'}
               table={{
                 columns: [

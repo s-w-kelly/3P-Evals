@@ -1,7 +1,7 @@
 // Lab data — see the editing guide in ../index.js
 
 export const xai = {
-  name: "SpaceXAI",
+  name: "SpaceXSI",
   color: "#000000",
   models: {
     "Grok 4.7": {

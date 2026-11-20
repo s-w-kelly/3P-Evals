@@ -26,7 +26,7 @@ export const siteConfig = {
       (e.g., autonomous capabilities, CBRN knowledge/uplift, cybersecurity, etc.) performed by someone not permanently employed by the model developer.
       <ul>
         <li>
-          This dashboard does not include third-party evals measuring pure performance in everyday tasks like language, math, coding, etc. (e.g., Epoch evaluating Grok 4’s math capabilities).
+          This dashboard does not include third-party evals measuring pure performance in everyday tasks like language, math, coding, etc. (e.g., Epoch evaluating Grok 4’s math capabilities). However, it does include third-party evals measuring performance for purposes of making a risk classification (e.g., Anthropic’s Responsible Scaling Policy, Google DeepMind’s Frontier Safety Framework, OpenAI’s Preparedness Framework).
         </li>
         <li>
           <strong>This dashboard does not include evals solely designed by a third party but executed by the lab.</strong> The third party must have performed or meaningfully facilitated the eval.

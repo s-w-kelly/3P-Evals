@@ -48,6 +48,17 @@
 .data-tab {
   font-family: var(--font-body);
   color: var(--text-primary);
+}
+
+/* Tabular figures only on numbers: in this font, tnum also widens . and , which
+   reads as a space before punctuation in prose */
+.dt-tile-value,
+.dt-bar-value,
+.dt-hm-cell,
+.dt-hm-scale,
+.dt-mx-num,
+.dt-table td.num,
+.dt-tooltip-row span:last-child {
   font-variant-numeric: tabular-nums;
 }
 

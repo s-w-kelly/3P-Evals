@@ -4,6 +4,55 @@ export const openai = {
   name: "OpenAI",
   color: "#74AA9C",
   models: {
+    "GPT-6.2 Astra and Sol": {
+      systemCard: "https://deploymentsafety.openai.com/gpt-6-2-astra-sol/gpt-6-2-astra-sol.pdf",
+      released: "2026-11-17",
+      frontier: null,
+      autonomous: [
+        { evaluator: "Vals AI", recurring: false, source: "https://deploymentsafety.openai.com/gpt-6-2-astra-sol/gpt-6-2-astra-sol.pdf#page=40" },
+      ],
+      biorisk: [
+        { evaluator: "SecureBio", recurring: true, source: "https://deploymentsafety.openai.com/gpt-6-2-astra-sol/gpt-6-2-astra-sol.pdf#page=21" },
+        { evaluator: "Sequitur Research", recurring: false, source: "https://deploymentsafety.openai.com/gpt-6-2-astra-sol/gpt-6-2-astra-sol.pdf#page=19" },
+        { evaluator: "Domain experts", recurring: true, source: "https://deploymentsafety.openai.com/gpt-6-2-astra-sol/gpt-6-2-astra-sol.pdf#page=23" },
+      ],
+      cybersec: [
+        { evaluator: "Irregular (fka Pattern)", recurring: true, source: "https://deploymentsafety.openai.com/gpt-6-2-astra-sol/gpt-6-2-astra-sol.pdf#page=30" },
+        { evaluator: "UK AISI", recurring: true, source: "https://deploymentsafety.openai.com/gpt-6-2-astra-sol/gpt-6-2-astra-sol.pdf#page=29" },
+      ],
+      nuclear: [],
+      redteam: [
+        { evaluator: "SecureBio", recurring: true, source: "https://deploymentsafety.openai.com/gpt-6-2-astra-sol/gpt-6-2-astra-sol.pdf#page=58" },
+        { evaluator: "UK AISI", recurring: true, source: "https://deploymentsafety.openai.com/gpt-6-2-astra-sol/gpt-6-2-astra-sol.pdf#page=58" },
+        { evaluator: "Unidentified third party", recurring: false, source: "https://deploymentsafety.openai.com/gpt-6-2-astra-sol/gpt-6-2-astra-sol.pdf#page=59" },
+        { evaluator: "Unidentified third party", recurring: false, source: "https://deploymentsafety.openai.com/gpt-6-2-astra-sol/gpt-6-2-astra-sol.pdf#page=59" },
+        { evaluator: "Unidentified third party", recurring: false, source: "https://deploymentsafety.openai.com/gpt-6-2-astra-sol/gpt-6-2-astra-sol.pdf#page=59" },
+        { evaluator: "Unidentified third party", recurring: false, source: "https://deploymentsafety.openai.com/gpt-6-2-astra-sol/gpt-6-2-astra-sol.pdf#page=59" },
+      ],
+      scheming: [
+        { evaluator: "UK AISI", recurring: true, source: "https://deploymentsafety.openai.com/gpt-6-2-astra-sol/gpt-6-2-astra-sol.pdf#page=103" },
+        { evaluator: "UK AISI", recurring: true, source: "https://deploymentsafety.openai.com/gpt-6-2-astra-sol/gpt-6-2-astra-sol.pdf#page=114" },
+      ],
+      modelWelfare: [],
+      method: [],
+      misc: [
+        { evaluator: "Epoch AI", recurring: false, source: "https://deploymentsafety.openai.com/gpt-6-2-astra-sol/gpt-6-2-astra-sol.pdf#page=39" },
+      ],
+    },  
+    "GPT-6.1 Terra": {
+      systemCard: "https://deploymentsafety.openai.com/gpt-6-1-terra/gpt-6-1-terra.pdf",
+      released: "2026-10-26",
+      frontier: null,
+      autonomous: [],
+      biorisk: [],
+      cybersec: [],
+      nuclear: [],
+      redteam: [],
+      scheming: [],
+      modelWelfare: [],
+      method: [],
+      misc: [],
+    },  
     "GPT-6.1 Sol": {
       systemCard: "https://deploymentsafety.openai.com/gpt-6-1-sol/gpt-6-1-sol.pdf",
       released: "2026-09-29",

@@ -4,10 +4,61 @@ export const google = {
   name: "Google DeepMind",
   color: "#3369E8",
   models: {
+    "Gemini 4 Neon": {
+      systemCard: "https://storage.googleapis.com/deepmind-media/Model-Cards/Gemini-4-Neon-Model-Card.pdf", // Safety & Security Report coming soon
+      released: "2026-11-18",
+      frontier: false,
+      autonomous: [],
+      biorisk: [],
+      cybersec: [],
+      nuclear: [],
+      redteam: [],
+      scheming: [],
+      modelWelfare: [],
+      method: [],
+      misc: [],
+    },
+    "Gemini 4 Hydrogen": {
+      systemCard: "https://storage.googleapis.com/deepmind-media/gemini/gemini_4_hydrogen_safety_report.pdf",
+      released: "2026-11-18",
+      frontier: false,
+      autonomous: [],
+      biorisk: [
+        { evaluator: "Gray Swan", recurring: true, source: "https://storage.googleapis.com/deepmind-media/gemini/gemini_4_carbon_safety_report.pdf#page=29" },
+      ],
+      cybersec: [
+        { evaluator: "Gray Swan", recurring: true, source: "https://storage.googleapis.com/deepmind-media/gemini/gemini_4_carbon_safety_report.pdf#page=28" },
+        { evaluator: "Trajectory Labs", recurring: true, source: "https://storage.googleapis.com/deepmind-media/gemini/gemini_4_carbon_safety_report.pdf#page=28" },
+      ],
+      nuclear: [],
+      redteam: [],
+      scheming: [],
+      modelWelfare: [],
+      method: [],
+      misc: [],
+    },
+    "Gemini 4 Carbon": {
+      systemCard: "https://storage.googleapis.com/deepmind-media/gemini/gemini_4_carbon_safety_report.pdf",
+      released: "2026-11-10",
+      frontier: true,
+      autonomous: [],
+      biorisk: [
+        { evaluator: "Gray Swan", recurring: true, source: "https://storage.googleapis.com/deepmind-media/gemini/gemini_4_hydrogen_safety_report.pdf#page=24" },
+      ],
+      cybersec: [
+        { evaluator: "Gray Swan", recurring: true, source: "https://storage.googleapis.com/deepmind-media/gemini/gemini_4_hydrogen_safety_report.pdf#page=24" },
+      ],
+      nuclear: [],
+      redteam: [],
+      scheming: [],
+      modelWelfare: [],
+      method: [],
+      misc: [],
+    },
     "Gemini 4 Argon": {
       systemCard: "https://storage.googleapis.com/deepmind-media/gemini/gemini_4_safety_report.pdf",
       released: "2026-10-13",
-      frontier: false,
+      frontier: true,
       autonomous: [
        { evaluator: "Apollo", recurring: false, source: "https://storage.googleapis.com/deepmind-media/gemini/gemini_4_safety_report.pdf#page=72" },
       ],

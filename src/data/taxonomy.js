@@ -83,13 +83,15 @@ export const evaluators = {
   "Redwood Research": { color: "#1a7d5c", type: "private" },
   "Scale": { color: "#000000", type: "private" },
   "SecureBio": { color: "#0078a0", type: "private" },
+  "Sequitur Research": { color: "#8b7ff0", type: "private" },
   "Signature Science": { color: "#005520", type: "private" },
   "Trajectory Labs": { color: "#ee6018", type: "private" },
+  "Vals AI": { color: "#284d32", type: "private" },
   "Virtue AI": { color: "#3b3b3b", type: "private" },
 
   "NNSA": { color: "#a86010", type: "public" },
   "UK AISI": { color: "#901028", type: "public" },
-  "US CAISSI": { color: "#006820", type: "public" },
+  "US CAISSI (fka CAISI/AISI)": { color: "#006820", type: "public" },
 
   "Domain experts": { color: "#6a2590", type: "other" },
   "Individual red teamers": { color: "#8a2525", type: "other" },
@@ -102,7 +104,7 @@ export const evaluators = {
  * Evaluators will appear in this order in the Key Evaluators section
  */
 export const evaluatorOrder = {
-  private: ["10a Labs", "ALICE", "Andon Labs", "Apollo Research", "Deloitte", "Dyno Therapeutics", "Eleos", "Epoch AI", "Faculty", "FAR.AI", "Frontier Design", "Gray Swan", "Haize Labs", "Handshake", "Irregular (fka Pattern)", "Meridian Labs", "METR", "Microsoft", "Redwood Research", "Scale", "SecureBio", "Signature Science", "Trajectory Labs", "Virtue AI"],
+  private: ["10a Labs", "ALICE", "Andon Labs", "Apollo Research", "Deloitte", "Dyno Therapeutics", "Eleos", "Epoch AI", "Faculty", "FAR.AI", "Frontier Design", "Gray Swan", "Haize Labs", "Handshake", "Irregular (fka Pattern)", "Meridian Labs", "METR", "Microsoft", "Redwood Research", "Scale", "SecureBio", "Sequitur Research", "Signature Science", "Trajectory Labs", "Vals AI", "Virtue AI"],
   public: ["NNSA", "UK AISI", "US CAISSI"],
   other: ["Domain experts", "Individual red teamers", "Uplift trial participants", "Unidentified third party"],
 };
