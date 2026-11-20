@@ -19,7 +19,7 @@ import {
 } from '../stats';
 import './DataTab.css';
 
-// Color follows the lab (its brand color, else its position in data.js), never its rank or filter state.
+// Color follows the lab (its brand color, else its position in labsData), never its rank or filter state.
 const labColor = (labId) => `var(--lab-${labId}, var(--lab-${(labIds.indexOf(labId) % 8) + 1}))`;
 const typeColor = (type) => `var(--type-${type})`;
 
@@ -617,7 +617,7 @@ export default function DataTab() {
       {scope === 'frontier' && frontierInfo.classified < frontierInfo.total && (
         <div className="dt-notice">
           {frontierInfo.classified} of {frontierInfo.total} selected models are marked frontier or not.
-          Set <code>frontier: true</code> or <code>frontier: false</code> on each model in <code>src/data.js</code>.
+          Set <code>frontier: true</code> or <code>frontier: false</code> on each model in <code>src/data/labs/</code>.
           Until then, only the {frontierInfo.frontier} model{frontierInfo.frontier === 1 ? '' : 's'} marked{' '}
           <code>true</code> {frontierInfo.frontier === 1 ? 'is' : 'are'} shown.
         </div>
@@ -830,7 +830,7 @@ export default function DataTab() {
         {dates.dated < dates.total && (
           <div className="dt-notice">
             {dates.dated} of {dates.total} selected models have a release date. Add{' '}
-            <code>released: "YYYY-MM-DD"</code> to each model in <code>src/data.js</code> to fill in these charts.
+            <code>released: "YYYY-MM-DD"</code> to each model in <code>src/data/labs/</code> to fill in these charts.
             Undated models are left out of this section.
           </div>
         )}

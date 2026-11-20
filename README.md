@@ -23,11 +23,17 @@ npm run build
 
 ## Updating the Data
 
-All data lives in `src/data.js`. This is the only file you need to edit for routine updates.
+All data lives in `src/data/`:
+
+- `labs/<lab>.js`: one file per lab, with its models and engagements (most routine updates happen here)
+- `taxonomy.js`: `testCategories`, `evaluators`, `evaluatorOrder`
+- `site.js`: `siteConfig` (title, last-updated date, notes)
+- `analysis.js`: `analysisContent`
+- `index.js`: assembles `labsData` and re-exports everything, so components import from `../data`
 
 ### Adding a new model release
 
-Find the lab in `labsData` and add a new entry to its `models` object. Models should be ordered newest-first (the first key is the default selected model).
+Open the lab's file in `src/data/labs/` and add a new entry to its `models` object. Models should be ordered newest-first (the first key is the default selected model).
 
 ```js
 "Claude 5 Opus": {
@@ -66,7 +72,7 @@ The `recurring` flag indicates whether this is a repeat engagement as of this mo
 
 ### Adding a new evaluator
 
-Add the evaluator to `evaluators` (color + type) and to the matching list in `evaluatorOrder` (button order on the dashboard):
+In `src/data/taxonomy.js`, add the evaluator to `evaluators` (color + type) and to the matching list in `evaluatorOrder` (button order on the dashboard):
 
 ```js
 export const evaluators = {
@@ -77,7 +83,7 @@ export const evaluators = {
 
 ### Adding a new test category
 
-1. Add the category to `testCategories`:
+1. Add the category to `testCategories` in `src/data/taxonomy.js`:
 ```js
 { 
   id: "newCategory",           // Must match keys in testing objects
@@ -86,17 +92,17 @@ export const evaluators = {
 }
 ```
 
-2. Add the category key to all model testing objects in `labsData`:
+2. Add the category key to all model testing objects in the `src/data/labs/` files:
 ```js
 newCategory: [],  // or with evaluator entries
 ```
 
 ### Adding a new lab
 
-Add a new top-level entry to `labsData`:
+Create `src/data/labs/newlab.js`:
 
 ```js
-newlab: {
+export const newlab = {
   name: "Lab Name",
   color: "#hexcolor",  // Header background color
   models: {
@@ -108,14 +114,16 @@ newlab: {
       modelWelfare: [],
     }
   }
-}
+};
 ```
+
+Then import it in `src/data/index.js` and add it to `labsData` (object order is display order).
 
 ## Data tab
 
 Everything on the Data tab is computed from `labsData` by `src/stats.js`, so it updates automatically as you add models.
 
-- Evaluator types (private / government / other) and dashboard colors come from the `evaluators` registry in `data.js`. Add every new evaluator there (and to `evaluatorOrder`); unregistered names are counted as private and logged as a warning in the browser console during `npm run dev`.
+- Evaluator types (private / government / other) and dashboard colors come from the `evaluators` registry in `src/data/taxonomy.js`. Add every new evaluator there (and to `evaluatorOrder`); unregistered names are counted as private and logged as a warning in the browser console during `npm run dev`.
 - Name variants and renames that should count as one evaluator go in `evaluatorAliases` in `src/stats.js` (e.g. `"US AISI"` → `"US CAISSI"`).
 - An "engagement" is one (model, evaluator) pair. Domain breakdowns count one entry per (model, evaluator, domain).
 
@@ -123,7 +131,17 @@ Everything on the Data tab is computed from `labsData` by `src/stats.js`, so it 
 
 ```
 src/
-├── data.js                      # ← Edit this for updates
+├── data/
+│   ├── index.js                 # Assembles labsData, re-exports everything
+│   ├── labs/                    # ← One file per lab; edit these for updates
+│   │   ├── anthropic.js
+│   │   ├── google.js
+│   │   ├── meta.js
+│   │   ├── openai.js
+│   │   └── xai.js
+│   ├── taxonomy.js              # Test categories, evaluators, evaluator order
+│   ├── site.js                  # Site title, last-updated date, notes
+│   └── analysis.js              # Analysis tab content
 ├── components/
 │   ├── SafetyTestingTracker.jsx # Main component
 │   ├── DataTab.jsx              # Data tab (charts)

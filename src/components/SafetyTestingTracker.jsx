@@ -3,10 +3,10 @@ import { labsData, testCategories, evaluators, evaluatorOrder, siteConfig, analy
 import DataTab from './DataTab';
 import './SafetyTestingTracker.css';
 
-// Evaluator accent colors live in data.js (evaluators registry)
+// Evaluator accent colors live in data/taxonomy.js (evaluators registry)
 const getEvaluatorColor = (name) => evaluators[name]?.color || "#505050";
 
-// Lab colors are CSS variables (--lab-<id>) in index.css; fall back to the color in data.js
+// Lab colors are CSS variables (--lab-<id>) in index.css; fall back to the color in data/labs/
 const getLabColor = (labId, lab) => `var(--lab-${labId}, ${lab.color})`;
 
 const tabs = [

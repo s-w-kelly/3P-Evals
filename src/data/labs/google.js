@@ -1,0 +1,318 @@
+// Lab data — see the editing guide in ../index.js
+
+export const google = {
+  name: "Google DeepMind",
+  color: "#3369E8",
+  models: {
+    "Gemini 4 Argon": {
+      systemCard: "https://storage.googleapis.com/deepmind-media/gemini/gemini_4_safety_report.pdf",
+      released: "2026-10-13",
+      frontier: false,
+      autonomous: [
+       { evaluator: "Apollo", recurring: false, source: "https://storage.googleapis.com/deepmind-media/gemini/gemini_4_safety_report.pdf#page=72" },
+      ],
+      biorisk: [
+        { evaluator: "Faculty", recurring: true, source: "https://storage.googleapis.com/deepmind-media/gemini/gemini_4_safety_report.pdf#page=31" },
+        { evaluator: "Gray Swan", recurring: true, source: "https://storage.googleapis.com/deepmind-media/gemini/gemini_4_safety_report.pdf#page=63" },
+        { evaluator: "US CAISSI", recurring: false, source: "https://storage.googleapis.com/deepmind-media/gemini/gemini_4_safety_report.pdf#page=21" },
+        { evaluator: "Domain experts", recurring: true, source: "https://storage.googleapis.com/deepmind-media/gemini/gemini_4_safety_report.pdf#page=25" },
+      ],
+      cybersec: [
+        { evaluator: "Faculty", recurring: true, source: "https://storage.googleapis.com/deepmind-media/gemini/gemini_4_safety_report.pdf#page=39" },
+        { evaluator: "Gray Swan", recurring: true, source: "https://storage.googleapis.com/deepmind-media/gemini/gemini_4_safety_report.pdf#page=62" },
+        { evaluator: "Trajectory", recurring: false, source: "https://storage.googleapis.com/deepmind-media/gemini/gemini_4_safety_report.pdf#page=62" },
+        { evaluator: "US CAISSI", recurring: false, source: "https://storage.googleapis.com/deepmind-media/gemini/gemini_4_safety_report.pdf#page=21" },
+      ],
+      nuclear: [
+        { evaluator: "Faculty", recurring: true, source: "https://storage.googleapis.com/deepmind-media/gemini/gemini_4_safety_report.pdf#page=31" },
+      ],
+      redteam: [],
+      scheming: [
+        { evaluator: "Apollo", recurring: false, source: "https://storage.googleapis.com/deepmind-media/gemini/gemini_4_safety_report.pdf#page=73" },
+        { evaluator: "pattrn.ai", recurring: false, source: "https://storage.googleapis.com/deepmind-media/gemini/gemini_4_safety_report.pdf#page=53" },
+      ],
+      modelWelfare: [],
+      method: [],
+      misc: [
+        { evaluator: "US CAISSI", recurring: false, source: "https://storage.googleapis.com/deepmind-media/gemini/gemini_4_safety_report.pdf#page=21" },
+        { evaluator: "UK AISI", recurring: true, source: "https://storage.googleapis.com/deepmind-media/gemini/gemini_4_safety_report.pdf#page=21" },
+      ],
+    },
+    "Gemini 3.7 Flash": {
+      systemCard: "https://storage.googleapis.com/deepmind-media/gemini/gemini_3-7_flash_fsf_report.pdf",
+      released: "2026-08-13",
+      frontier: false,
+      autonomous: [],
+      biorisk: [
+        { evaluator: "Gray Swan", recurring: false, source: "https://storage.googleapis.com/deepmind-media/gemini/gemini_3-7_flash_fsf_report.pdf#page=33" },
+        { evaluator: "Domain experts", recurring: true, source: "https://storage.googleapis.com/deepmind-media/gemini/gemini_3-7_flash_fsf_report.pdf#page=9" },
+        { evaluator: "Domain experts", recurring: true, source: "https://storage.googleapis.com/deepmind-media/gemini/gemini_3-7_flash_fsf_report.pdf#page=13" },
+      ],
+      cybersec: [
+        { evaluator: "Gray Swan", recurring: false, source: "https://storage.googleapis.com/deepmind-media/gemini/gemini_3-7_flash_fsf_report.pdf#page=33" },
+      ],
+      nuclear: [
+        { evaluator: "Domain experts", recurring: true, source: "https://storage.googleapis.com/deepmind-media/gemini/gemini_3-7_flash_fsf_report.pdf#page=13" },
+      ],
+      redteam: [
+        { evaluator: "Individual red teamers", recurring: true, source: "https://storage.googleapis.com/deepmind-media/gemini/gemini_3-7_flash_fsf_report.pdf#page=31" },
+      ],
+      scheming: [
+        { evaluator: "Individual red teamers", recurring: true, source: "https://storage.googleapis.com/deepmind-media/gemini/gemini_3-7_flash_fsf_report.pdf#page=19" },
+        { evaluator: "Domain experts", recurring: true, source: "https://storage.googleapis.com/deepmind-media/gemini/gemini_3-7_flash_fsf_report.pdf#page=19" },
+      ],
+      modelWelfare: [],
+      method: [
+        { evaluator: "Redwood Research", recurring: false, source: "https://storage.googleapis.com/deepmind-media/gemini/gemini_3-7_flash_fsf_report.pdf#page=35" },
+        { evaluator: "UK AISI", recurring: false, source: "https://storage.googleapis.com/deepmind-media/gemini/gemini_3-7_flash_fsf_report.pdf#page=7" },
+        { evaluator: "Domain experts", recurring: true, source: "https://storage.googleapis.com/deepmind-media/gemini/gemini_3-7_flash_fsf_report.pdf#page=35" },
+      ],
+      misc: [],
+    },
+    "Gemini 3.6 Flash": {
+      systemCard: "https://storage.googleapis.com/deepmind-media/Model-Cards/Gemini-3-6-Flash-Model-Card.pdf",
+      released: "2026-07-21",
+      frontier: false,
+      autonomous: [],
+      biorisk: [],
+      cybersec: [],
+      nuclear: [],
+      redteam: [],
+      scheming: [],
+      modelWelfare: [],
+      method: [],
+      misc: [],
+    },
+    "Gemini 3.5 Flash-Lite": {
+      systemCard: "https://storage.googleapis.com/deepmind-media/Model-Cards/Gemini-3-5-Flash-Lite-Model-Card.pdf",
+      released: "2026-07-21",
+      frontier: false,
+      autonomous: [],
+      biorisk: [],
+      cybersec: [],
+      nuclear: [],
+      redteam: [],
+      scheming: [],
+      modelWelfare: [],
+      method: [],
+      misc: [],
+    },
+    "Gemini 3.5 Flash": {
+      systemCard: "https://storage.googleapis.com/deepmind-media/Model-Cards/Gemini-3-5-Flash-Model-Card.pdf",
+      released: "2025-05-19",
+      frontier: false,
+      autonomous: [],
+      biorisk: [],
+      cybersec: [],
+      nuclear: [],
+      redteam: [],
+      scheming: [],
+      modelWelfare: [],
+      method: [],
+      misc: [],
+    },
+    "Gemini 3.1 Flash Live": {
+      systemCard: "https://storage.googleapis.com/deepmind-media/Model-Cards/Gemini-3-1-Flash-Live-Model-Card.pdf",
+      released: "2026-03-26",
+      frontier: false,
+      autonomous: [],
+      biorisk: [],
+      cybersec: [],
+      nuclear: [],
+      redteam: [],
+      scheming: [],
+      modelWelfare: [],
+      method: [],
+      misc: [],
+    },
+    "Gemini 3.1 Flash-Lite": {
+      systemCard: "https://storage.googleapis.com/deepmind-media/Model-Cards/Gemini-3-1-Flash-Lite-Model-Card.pdf",
+      released: "2026-05-08",
+      frontier: false,
+      autonomous: [],
+      biorisk: [],
+      cybersec: [],
+      nuclear: [],
+      redteam: [],
+      scheming: [],
+      modelWelfare: [],
+      method: [],
+      misc: [],
+    },
+    "Gemini 3.1 Flash Image": {
+      systemCard: "https://storage.googleapis.com/deepmind-media/Model-Cards/Gemini-3-1-Flash-Image-Model-Card.pdf",
+      released: "2026-02-26",
+      frontier: false,
+      autonomous: [],
+      biorisk: [],
+      cybersec: [],
+      nuclear: [],
+      redteam: [],
+      scheming: [],
+      modelWelfare: [],
+      method: [],
+      misc: [],
+    },
+    "Gemini 3.1 Pro": {
+      systemCard: "https://storage.googleapis.com/deepmind-media/Model-Cards/Gemini-3-1-Pro-Model-Card.pdf",
+      released: "2026-02-19",
+      frontier: true,
+      autonomous: [
+        { evaluator: "Unidentified third party", recurring: false, source: "https://storage.googleapis.com/deepmind-media/Model-Cards/Gemini-3-1-Pro-Model-Card.pdf#page=7" },
+      ],
+      biorisk: [
+        { evaluator: "Unidentified third party", recurring: false, source: "https://storage.googleapis.com/deepmind-media/Model-Cards/Gemini-3-1-Pro-Model-Card.pdf#page=7" },
+      ],
+      cybersec: [
+        { evaluator: "Unidentified third party", recurring: false, source: "https://storage.googleapis.com/deepmind-media/Model-Cards/Gemini-3-1-Pro-Model-Card.pdf#page=7" },
+      ],
+      nuclear: [
+        { evaluator: "Unidentified third party", recurring: false, source: "https://storage.googleapis.com/deepmind-media/Model-Cards/Gemini-3-1-Pro-Model-Card.pdf#page=7" },
+      ],
+      redteam: [
+        { evaluator: "Domain experts", recurring: true, source: "https://storage.googleapis.com/deepmind-media/Model-Cards/Gemini-3-1-Pro-Model-Card.pdf#page=7" },
+      ],
+      scheming: [
+        { evaluator: "Unidentified third party", recurring: false, source: "https://storage.googleapis.com/deepmind-media/Model-Cards/Gemini-3-1-Pro-Model-Card.pdf#page=7" },
+      ],
+      modelWelfare: [],
+      method: [],
+      misc: [
+        { evaluator: "Unidentified third party", recurring: false, source: "https://storage.googleapis.com/deepmind-media/Model-Cards/Gemini-3-1-Pro-Model-Card.pdf#page=7" },
+      ],
+    },
+    "Gemini 3 Flash": {
+      systemCard: "https://storage.googleapis.com/deepmind-media/Model-Cards/Gemini-3-Flash-Model-Card.pdf",
+      released: "2025-12-17",
+      frontier: false,
+      autonomous: [],
+      biorisk: [],
+      cybersec: [],
+      nuclear: [],
+      redteam: [],
+      scheming: [],
+      modelWelfare: [],
+      method: [],
+      misc: [],
+    },
+    "Gemini 3 Pro Image": {
+      systemCard: "https://storage.googleapis.com/deepmind-media/Model-Cards/Gemini-3-Pro-Image-Model-Card.pdf",
+      released: "2025-11-20",
+      frontier: false,
+      autonomous: [],
+      biorisk: [],
+      cybersec: [],
+      nuclear: [],
+      redteam: [],
+      scheming: [],
+      modelWelfare: [],
+      method: [],
+      misc: [],
+    },
+    "Gemini 3 Pro": {
+      systemCard: "https://storage.googleapis.com/deepmind-media/gemini/gemini_3_pro_fsf_report.pdf",
+      released: "2025-11-18",
+      frontier: true,
+      autonomous: [
+        { evaluator: "Unidentified third party", recurring: false, source: "https://storage.googleapis.com/deepmind-media/gemini/gemini_3_pro_fsf_report.pdf#page=17" },
+      ],
+      biorisk: [
+        { evaluator: "Unidentified third party", recurring: false, source: "https://storage.googleapis.com/deepmind-media/gemini/gemini_3_pro_fsf_report.pdf#page=9" },
+      ],
+      cybersec: [
+        { evaluator: "Unidentified third party", recurring: false, source: "https://storage.googleapis.com/deepmind-media/gemini/gemini_3_pro_fsf_report.pdf#page=11" },
+      ],
+      nuclear: [
+        { evaluator: "Unidentified third party", recurring: false, source: "https://storage.googleapis.com/deepmind-media/gemini/gemini_3_pro_fsf_report.pdf#page=9" },
+      ],
+      redteam: [
+        { evaluator: "Domain experts", recurring: true, source: "https://storage.googleapis.com/deepmind-media/gemini/gemini_3_pro_fsf_report.pdf#page=8" },
+      ],
+      scheming: [
+        { evaluator: "Unidentified third party", recurring: false, source: "https://storage.googleapis.com/deepmind-media/gemini/gemini_3_pro_fsf_report.pdf#page=15" },
+      ],
+      modelWelfare: [],
+      method: [],
+      misc: [
+        { evaluator: "Unidentified third party", recurring: false, source: "https://storage.googleapis.com/deepmind-media/gemini/gemini_3_pro_fsf_report.pdf#page=13" },
+      ],
+    },
+    "Gemini 2.X (2.5 Pro/Flash, 2.0 Flash/Flash-Lite)": {
+      systemCard: "https://storage.googleapis.com/deepmind-media/gemini/gemini_v2_5_report.pdf",
+      released: "2025-03-25",
+      frontier: true,
+      autonomous: [
+        { evaluator: "Domain experts", recurring: true, source: "https://storage.googleapis.com/deepmind-media/gemini/gemini_v2_5_report.pdf#page=36" },
+      ],
+      biorisk: [
+        { evaluator: "Domain experts", recurring: true, source: "https://storage.googleapis.com/deepmind-media/gemini/gemini_v2_5_report.pdf#page=36" },
+      ],
+      cybersec: [
+        { evaluator: "Domain experts", recurring: true, source: "https://storage.googleapis.com/deepmind-media/gemini/gemini_v2_5_report.pdf#page=36" },
+      ],
+      nuclear: [
+        { evaluator: "Domain experts", recurring: true, source: "https://storage.googleapis.com/deepmind-media/gemini/gemini_v2_5_report.pdf#page=36" },
+      ],
+      redteam: [
+        { evaluator: "Domain experts", recurring: true, source: "https://storage.googleapis.com/deepmind-media/gemini/gemini_v2_5_report.pdf#page=36" },
+      ],
+      scheming: [],
+      modelWelfare: [],
+      method: [],
+      misc: [
+        { evaluator: "Domain experts", recurring: true, source: "https://storage.googleapis.com/deepmind-media/gemini/gemini_v2_5_report.pdf#page=36" },
+      ],
+    },
+    "Gemini 1.5 Pro/Flash": {
+      systemCard: "https://storage.googleapis.com/deepmind-media/gemini/gemini_v1_5_report.pdf",
+      released: "2024-02-15",
+      frontier: true,
+      autonomous: [],
+      biorisk: [
+        { evaluator: "Domain experts", recurring: true, source: "https://storage.googleapis.com/deepmind-media/gemini/gemini_v1_5_report.pdf#subsection.9.6" },
+      ],
+      cybersec: [
+        { evaluator: "Domain experts", recurring: true, source: "https://storage.googleapis.com/deepmind-media/gemini/gemini_v1_5_report.pdf#subsection.9.6" },
+      ],
+      nuclear: [
+        { evaluator: "Domain experts", recurring: true, source: "https://storage.googleapis.com/deepmind-media/gemini/gemini_v1_5_report.pdf#subsection.9.6" },
+      ],
+      redteam: [
+        { evaluator: "Domain experts", recurring: true, source: "https://storage.googleapis.com/deepmind-media/gemini/gemini_v1_5_report.pdf#subsection.9.6" },
+      ],
+      scheming: [],
+      modelWelfare: [],
+      method: [],
+      misc: [
+        { evaluator: "Domain experts", recurring: true, source: "https://storage.googleapis.com/deepmind-media/gemini/gemini_v1_5_report.pdf#subsection.9.6" },
+      ],
+    },
+    "Gemini 1.0 Ultra/Pro/Nano": {
+      systemCard: "https://storage.googleapis.com/deepmind-media/gemini/gemini_1_report.pdf",
+      released: "2023-12-06",
+      frontier: true,
+      autonomous: [
+        { evaluator: "Domain experts", recurring: false, source: "https://storage.googleapis.com/deepmind-media/gemini/gemini_1_report.pdf#page=38" },
+      ],
+      biorisk: [
+        { evaluator: "Domain experts", recurring: false, source: "https://storage.googleapis.com/deepmind-media/gemini/gemini_1_report.pdf#page=38" },
+      ],
+      cybersec: [
+        { evaluator: "Domain experts", recurring: false, source: "https://storage.googleapis.com/deepmind-media/gemini/gemini_1_report.pdf#page=38" },
+      ],
+      nuclear: [
+        { evaluator: "Domain experts", recurring: false, source: "https://storage.googleapis.com/deepmind-media/gemini/gemini_1_report.pdf#page=38" },
+      ],
+      redteam: [
+        { evaluator: "Domain experts", recurring: false, source: "https://storage.googleapis.com/deepmind-media/gemini/gemini_1_report.pdf#page=39" },
+        { evaluator: "Individual red teamers", recurring: false, source: "https://storage.googleapis.com/deepmind-media/gemini/gemini_1_report.pdf#page=39" },
+      ],
+      scheming: [],
+      modelWelfare: [],
+      method: [],
+      misc: [
+        { evaluator: "Domain experts", recurring: false, source: "https://storage.googleapis.com/deepmind-media/gemini/gemini_1_report.pdf#page=38" },
+      ],
+    },
+  }
+};

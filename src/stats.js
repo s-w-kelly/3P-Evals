@@ -2,7 +2,7 @@
  * AI Safety Testing Tracker - Statistics
  *
  * Pure functions that derive every number on the Data tab from labsData.
- * Nothing here is hand-maintained: add models/engagements in data.js and the
+ * Nothing here is hand-maintained: add models/engagements in data/labs/ and the
  * Data tab updates automatically.
  *
  * Counting units:
@@ -14,7 +14,7 @@
 import { labsData, testCategories, evaluators } from './data';
 
 // Spelling variants / renames that should roll up to one evaluator.
-// Keys are names as they may appear in data.js; values are the canonical name.
+// Keys are names as they may appear in labsData; values are the canonical name.
 export const evaluatorAliases = {
   "US AISI": "US CAISSI",
 };
@@ -51,7 +51,7 @@ export const allModels = labIds.flatMap(labId =>
   }))
 );
 
-// One entry per (model, evaluator, domain) as listed in data.js.
+// One entry per (model, evaluator, domain) as listed in labsData.
 export const allRecords = labIds.flatMap(labId =>
   Object.entries(labsData[labId].models).flatMap(([model, data]) =>
     testCategories.flatMap(cat =>
@@ -78,7 +78,7 @@ export const unregisteredEvaluators = [...new Set(
 )];
 
 if (import.meta.env?.DEV && unregisteredEvaluators.length) {
-  console.warn('Evaluators missing from the evaluators registry in data.js:', unregisteredEvaluators);
+  console.warn('Evaluators missing from the evaluators registry in data/taxonomy.js:', unregisteredEvaluators);
 }
 
 // ---------- Filtering ----------
